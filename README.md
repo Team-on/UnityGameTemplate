@@ -17,4 +17,6 @@ I'd be happy for any contribution to make this template as good as it can be.
  * player prefs extended saver
  * Localization manager(polyglot, custom xml)
  * MusicManager
- 
+ * Screenshot/video capture
+ * Add icons to custom toolbar
+ * Camera shake (in LeanTween)
