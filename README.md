@@ -20,3 +20,5 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Screenshot/video capture
  * Add icons to custom toolbar
  * Camera shake (in LeanTween)
+ * !DOCS!
+ 
