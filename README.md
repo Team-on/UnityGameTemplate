@@ -25,12 +25,17 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Camera shake (in LeanTween)
  * Pause
  
- https://github.com/Team-on/CustomToolbar
- http://wiki.unity3d.com/index.php/ArrayPrefs2
- https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126
- https://assetstore.unity.com/packages/tools/animation/leantween-3595
- https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276
- https://assetstore.unity.com/packages/tools/gui/ui-tools-for-unity-124299
- https://archive.codeplex.com/?p=DotNetZip
- https://itch.io/docs/butler/
+ ## Used assets/tools:
+ TODO: import them in right way, cuz untiy now support git packages.  
+ Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md
+ https://github.com/Team-on/CustomToolbar  
+ http://wiki.unity3d.com/index.php/ArrayPrefs2  
+ https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126  
+ https://assetstore.unity.com/packages/tools/animation/leantween-3595  
+ https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276  
+ https://assetstore.unity.com/packages/tools/gui/ui-tools-for-unity-124299  
+ https://archive.codeplex.com/?p=DotNetZip  
+ https://itch.io/docs/butler/  
+https://github.com/Team-on/unity-editor-spotlight
+
  
