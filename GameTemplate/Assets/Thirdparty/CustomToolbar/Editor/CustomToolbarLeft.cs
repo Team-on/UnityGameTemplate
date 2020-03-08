@@ -27,6 +27,11 @@ namespace UnityToolbarExtender {
 		static void OnToolbarGUI() {
 			GUILayout.FlexibleSpace();
 
+			if (GUILayout.Button(EditorGUIUtility.IconContent("SaveFromPlay"), ToolbarStyles.commandButtonStyle)) {
+				Debug.Log("Clear player prefs");
+				PlayerPrefs.DeleteAll();
+			}
+
 			if (GUILayout.Button(new GUIContent((Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Thirdparty/CustomToolbar/Editor/Icons/LookDevSingle1@2x.png", typeof(Texture2D))), ToolbarStyles.commandButtonStyle)) {
 				if (!EditorApplication.isPlaying) {
 					EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
