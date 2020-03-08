@@ -27,7 +27,7 @@ namespace UnityToolbarExtender {
 		static void OnToolbarGUI() {
 			GUILayout.FlexibleSpace();
 
-			if (GUILayout.Button(/*EditorGUIUtility.IconContent("LookDevSingle1@2x")*/EditorGUIUtility.TrTempContent("1"), ToolbarStyles.commandButtonStyle)) {
+			if (GUILayout.Button(new GUIContent((Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Thirdparty/CustomToolbar/Editor/Icons/LookDevSingle1@2x.png", typeof(Texture2D))), ToolbarStyles.commandButtonStyle)) {
 				if (!EditorApplication.isPlaying) {
 					EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
 					EditorPrefs.SetInt("LastActiveScene", EditorSceneManager.GetActiveScene().buildIndex);

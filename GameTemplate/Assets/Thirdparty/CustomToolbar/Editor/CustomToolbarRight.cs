@@ -13,7 +13,7 @@ namespace UnityToolbarExtender {
 
 		static void OnToolbarGUI() {
 			EditorGUIUtility.SetIconSize(new Vector2(17, 17));
-			if (GUILayout.Button(/*EditorGUIUtility.IconContent("LookDevResetEnv@2x")*/EditorGUIUtility.TrTempContent("R"), ToolbarStyles.commandButtonStyle)) {
+			if (GUILayout.Button(new GUIContent((Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Thirdparty/CustomToolbar/Editor/Icons/LookDevResetEnv@2x.png", typeof(Texture2D))), ToolbarStyles.commandButtonStyle)) {
 				if (EditorApplication.isPlaying) {
 					SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 				}
