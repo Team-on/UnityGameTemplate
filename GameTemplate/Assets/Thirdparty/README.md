@@ -3,3 +3,8 @@ Feel free to move any folder whatever you want, except CustomToolbar. Also I rem
 #### [CustomToolbar](https://github.com/Team-on/CustomToolbar) 
  * Remove PlayerPrefs control buttons 
  * Change timescale range to [0, 2]
+ 
+#### [UIElements](https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276) (On Assets/Sprites/_Placeholder/UIElements)
+ * Remove all 1x images in Black/ and White/
+ * Remove circle in Extras/
+ 
