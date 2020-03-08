@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,33 +13,62 @@ public class MenuManager : MonoBehaviour {
 
 		foreach (var menu in Menus) {
 			if (menu != currMenu.Peek())
-				menu.Hide();
+				menu.Hide(true);
 			else
-				menu.Show();
+				menu.Show(true);
 
 			menu.MenuManager = this;
 		}
 	}
 
-	public void HideAll() {
-		while(currMenu.Count != 0)
-			currMenu.Pop().Hide();
+	public void Show(string menuScriptName) {
+		Show(menuScriptName, currMenu.Peek() is PopupMenuBase);
 	}
 
-	public void ShowMenuFromStack() {
-		currMenu.Pop().Hide();
-	}
-
-	public void TransitTo(MenuBase menu, bool hidePrev = true) {
-		if (hidePrev && currMenu.Count > 0) {
-			currMenu.Pop().Hide();
+	public void Show(string menuScriptName, bool hidePrev = true) {
+		MenuBase menu = null;
+		for (int i = 0; i < Menus.Length; ++i) {
+			if (Menus[i].GetType().Name == menuScriptName) {
+				menu = Menus[i];
+				break;
+			}
 		}
 
-		currMenu.Push(menu);
-		menu.Show();
+		if(menu != null) {
+			if (currMenu.Count > 0 && hidePrev) 
+				currMenu.Pop().Hide(false);
+
+			currMenu.Push(menu);
+			menu.Show(false);
+		}
+		else {
+			Debug.LogError($"Cant find menu with name {menuScriptName}");
+		}
+		
 	}
 
+	public void Show(MenuBase menu, bool hidePrev = true) {
+		if (hidePrev && currMenu.Count > 0) 
+			currMenu.Pop().Hide(false);
+
+		currMenu.Push(menu);
+		menu.Show(false);
+	}
+
+	public void HideTopMenu(bool isForce = false) {
+		currMenu.Pop().Hide(isForce);
+	}
+
+	public void HideAll() {
+		while (currMenu.Count != 0)
+			currMenu.Pop().Hide(true);
+	}
+
+
 	public T GetNeededMenu<T>() where T : MenuBase {
-		return Menus.First((m)=>m is T) as T;
+		for (int i = 0; i < Menus.Length; ++i)
+			if(Menus[i] is T)
+				return Menus[i] as T;
+		return null;
 	}
 }

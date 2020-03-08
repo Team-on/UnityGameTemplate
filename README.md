@@ -1,15 +1,18 @@
-# Unity Game Template
+# Unity Game Template (On active development. Use on your own risk)
 **Game Template** is all necessary stuff taken care for Unity users not to worry about creating most boring and tedious work.  
 I'd be happy for any contribution to make this template as good as it can be.  
 //TODO: use as template this https://github.com/nezvers/Godot-GameTemplate
+
+## TODO docs:
+ * Top toolbar
+ * UI for menu/popups (Main menu, credits, options...)
+ * Singleton
 
 ## TODO:
  * BuildManager
  * EventManager
  * GameManager
- * Singleton template
  * Timebomb
- * UI for menu/popups (Main menu, credits, options, language, keybindings)
  * Indexed array
  * Input manager
  * ToastMessage
@@ -20,5 +23,14 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Screenshot/video capture
  * Add icons to custom toolbar
  * Camera shake (in LeanTween)
- * !DOCS!
+ * Pause
+ 
+ https://github.com/Team-on/CustomToolbar
+ http://wiki.unity3d.com/index.php/ArrayPrefs2
+ https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126
+ https://assetstore.unity.com/packages/tools/animation/leantween-3595
+ https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276
+ https://assetstore.unity.com/packages/tools/gui/ui-tools-for-unity-124299
+ https://archive.codeplex.com/?p=DotNetZip
+ https://itch.io/docs/butler/
  

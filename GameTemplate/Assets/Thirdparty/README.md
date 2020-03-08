@@ -1,4 +1,4 @@
-Feel free to move any folder whatever you want. Except CustomToolbar.
+Feel free to move any folder whatever you want, except CustomToolbar. Also I remove all Examples and Docs from assets.
 
 #### [CustomToolbar](https://github.com/Team-on/CustomToolbar) 
  * Remove PlayerPrefs control buttons 
