@@ -27,7 +27,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  
  ## Used assets/tools:
  TODO: import them in right way, cuz untiy now support git packages.  
- Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md
+ Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md  
  https://github.com/Team-on/CustomToolbar  
  http://wiki.unity3d.com/index.php/ArrayPrefs2  
  https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126  
