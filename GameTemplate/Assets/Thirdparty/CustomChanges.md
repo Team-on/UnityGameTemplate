@@ -7,4 +7,7 @@ Feel free to move any folder whatever you want, except CustomToolbar. Also I rem
 #### [UIElements](https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276) (On Assets/Sprites/_Placeholder/UIElements)
  * Remove all 1x images in Black/ and White/
  * Remove circle in Extras/
- 
+
+#### [UnityIngameDebugConsole](https://github.com/yasirkula/UnityIngameDebugConsole)
+ * Remove unused images
+ * Change behaviour to show popup after Error (can be disable with *ShowPopupAfterError* flag)

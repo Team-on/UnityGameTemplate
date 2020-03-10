@@ -45,11 +45,11 @@ namespace IngameDebugConsole
 			if( enablePopup.boolValue)
 			{
 				DrawSubProperty( startInPopupMode );
-				DrawSubProperty( showPopupAfterError );
 			}
 			else 
 			{
 				DrawSubProperty( startMinimized );
+				DrawSubProperty( showPopupAfterError );
 			}
 
 			EditorGUILayout.PropertyField( toggleWithKey );

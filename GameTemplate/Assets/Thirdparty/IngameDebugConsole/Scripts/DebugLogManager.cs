@@ -547,7 +547,12 @@ namespace IngameDebugConsole
 
 			QueuedDebugLogEntry queuedLogEntry = new QueuedDebugLogEntry( logString, stackTrace, logType );
 
-			lock( logEntriesLock )
+			if(!popupManager.gameObject.activeSelf && (logType == LogType.Error || logType == LogType.Exception || logType == LogType.Assert)) {
+				ShowPopup();
+				popupManager.gameObject.SetActive(true);
+			}
+
+			lock ( logEntriesLock )
 			{
 				queuedLogEntries.Add( queuedLogEntry );
 			}
