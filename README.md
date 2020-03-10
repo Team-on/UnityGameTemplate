@@ -24,6 +24,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Add icons to custom toolbar
  * Camera shake (in LeanTween)
  * Pause
+ * Unity crashlitics and feedback
  
  ## Used assets/tools:
  TODO: import them in right way, cuz untiy now support git packages.  
