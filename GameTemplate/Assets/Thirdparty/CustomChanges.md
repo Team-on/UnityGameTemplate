@@ -11,3 +11,6 @@ Feel free to move any folder whatever you want, except CustomToolbar. Also I rem
 #### [UnityIngameDebugConsole](https://github.com/yasirkula/UnityIngameDebugConsole)
  * Remove unused images
  * Change behaviour to show popup after Error (can be disable with *ShowPopupAfterError* flag)
+ 
+ #### UserReporting (Unity services)
+ * Change some text components to TMPro
