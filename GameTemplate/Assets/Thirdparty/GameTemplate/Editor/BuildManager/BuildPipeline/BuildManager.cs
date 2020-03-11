@@ -15,7 +15,7 @@ using Debug = UnityEngine.Debug;
 //TODO: publish to itch.io via butler
 public static class BuildManager {
 	//TODO: move to settings that can be changed in editor;
-	const string butlerRelativePath = @"Editor/butler/butler.exe";
+	const string butlerRelativePath = @"Thirdparty/GameTemplate/Editor/BuildManager/butler/butler.exe";
 	static string[] channelNames = new string[] {
 		"windows-32",
 		"windows-64",
@@ -78,14 +78,13 @@ public static class BuildManager {
 		BuildTarget targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
 		BuildTargetGroup targetGroupBeforeStart = BuildPipeline.GetBuildTargetGroup(targetBeforeStart);
 
-		buildsPath = new List<string>(5);
+		buildsPath = new List<string>(6);
 		buildsPath.Add(BuildWindows(true));
 		buildsPath.Add(BuildWindowsX64(true));
 		buildsPath.Add(BuildLinux(true));
 		buildsPath.Add(BuildOSX(true));
 		buildsPath.Add(BuildWeb(true));
 		buildsPath.Add(BuildAndroid(true));
-
 		EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroupBeforeStart, targetBeforeStart);
 		Debug.Log($"End building all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
 	}
