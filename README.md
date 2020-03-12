@@ -43,5 +43,4 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://itch.io/docs/butler/  
  https://github.com/Team-on/unity-editor-spotlight
  https://github.com/yasirkula/UnityIngameDebugConsole
-
- 
+ https://github.com/2irate2migrate/HierarchyHighlighter
