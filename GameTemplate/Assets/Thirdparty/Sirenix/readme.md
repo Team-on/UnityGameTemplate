@@ -1,1 +1,0 @@
-Move here your copy of Odin Inspector. Don't worry if you don't own it, template will work well without it.

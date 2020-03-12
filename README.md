@@ -3,8 +3,6 @@
 I'd be happy for any contribution to make this template as good as it can be.  
 //TODO: use as template this https://github.com/nezvers/Godot-GameTemplate
 
- Move your copy of Odin Inspector to Assets\Thirdparty\Sirenix. Don't worry if you don't own it, template will work well without it.
-
 ## TODO docs:
  * Top toolbar
  * UI for menu/popups (Main menu, credits, options...)
@@ -48,5 +46,8 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/yasirkula/UnityIngameDebugConsole
  https://github.com/2irate2migrate/HierarchyHighlighter
  https://github.com/dbrizov/NaughtyAttributes/
- https://github.com/TeamSirenix/odin-serializer
- https://odininspector.com/
+ 
+ ## Want to use: 
+ https://github.com/TeamSirenix/odin-serializer 
+ https://odininspector.com/	(Actually, I like this asset, but it's paid, so I'm not sure is it good to keep it in template)
+ https://github.com/5argon/OdinHierarchy
