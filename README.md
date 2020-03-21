@@ -9,6 +9,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Singleton
 
 ## TODO:
+ * Keyboard/gamepad controll in menu
  * BuildManager
  * EventManager
  * GameManager
@@ -46,6 +47,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/yasirkula/UnityIngameDebugConsole
  https://github.com/2irate2migrate/HierarchyHighlighter
  https://github.com/dbrizov/NaughtyAttributes/
+ https://github.com/jedybg/yaSingleton
  
  ## Want to use: 
  https://github.com/TeamSirenix/odin-serializer 

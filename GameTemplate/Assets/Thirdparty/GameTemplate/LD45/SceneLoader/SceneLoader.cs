@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using yaSingleton;
 
+[CreateAssetMenu(fileName = "Scene Loader", menuName = "Singletons/SceneLoader")]
 public class SceneLoader : Singleton<SceneLoader> {
 	AsyncOperation loader;
 
-	void Awake() {
+	protected override void Initialize() {
+		base.Initialize();
+
 		EventManager.OnSceneNeedLoad += OnSceneNeedLoad;
+
 	}
 
-	new void OnDestroy() {
+	protected override void Deinitialize() {
+		base.Deinitialize();
+
 		EventManager.OnSceneNeedLoad -= OnSceneNeedLoad;
 
-		base.OnDestroy();
 	}
 
 	void OnSceneNeedLoad(EventData data) {

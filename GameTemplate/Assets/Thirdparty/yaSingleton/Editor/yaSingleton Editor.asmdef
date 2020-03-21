@@ -1,0 +1,10 @@
+{
+    "name": "yaSingletonEditor",
+    "references": [
+        "yaSingleton"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}
