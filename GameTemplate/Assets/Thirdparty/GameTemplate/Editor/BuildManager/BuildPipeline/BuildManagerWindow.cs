@@ -11,6 +11,8 @@ public class BuildManagerWindow : EditorWindow {
 	static BuildManagerSettings settings;
 
 	static Vector2 scrollPosAll;
+	static bool zipFoldout;
+	static bool itchFoldout;
 	static InspectorList<BuildSequence> sequencesList;
 	static InspectorList<BuildData> buidsList;
 
@@ -25,7 +27,9 @@ public class BuildManagerWindow : EditorWindow {
 		if (settings == null)
 			LoadSettings();
 
-		scrollPosAll = EditorGUILayout.BeginScrollView(scrollPosAll);
+		PlayerSettings.bundleVersion = EditorGUILayout.TextField("Version", PlayerSettings.bundleVersion);
+		PlayerSettings.Android.bundleVersionCode = EditorGUILayout.IntField("Android bundle version", PlayerSettings.Android.bundleVersionCode);
+		EditorGUILayout.Space(20);
 
 		if ((settings?.sequences?.Length ?? 0) != 0) {
 			EditorGUILayout.LabelField("Start build sequence");
@@ -37,6 +41,8 @@ public class BuildManagerWindow : EditorWindow {
 		}
 
 		EditorGUILayout.Space(20);
+		scrollPosAll = EditorGUILayout.BeginScrollView(scrollPosAll);
+
 		settings.sequences = sequencesList.Show();
 		if (sequencesList?.Selected != null) {
 			sequencesList.Selected.editorName = EditorGUILayout.TextField("Sequence name", sequencesList.Selected.editorName);
@@ -64,8 +70,20 @@ public class BuildManagerWindow : EditorWindow {
 			EditorGUILayout.LabelField("Build Options", GUILayout.MinWidth(0));
 			buidsList.Selected.options = (BuildOptions)EditorGUILayout.EnumFlagsField(buidsList.Selected.options);
 			EditorGUILayout.EndHorizontal();
+			EditorGUILayout.Space(20);
+
+			zipFoldout = EditorGUILayout.BeginFoldoutHeaderGroup(zipFoldout, "7zip");
+			if (zipFoldout) {
+				++EditorGUI.indentLevel;
+				buidsList.Selected.needZip = EditorGUILayout.Toggle("Compress", buidsList.Selected.needZip);
+				buidsList.Selected.compressDirPath = EditorGUILayout.TextField("Dir path", buidsList.Selected.compressDirPath);
+				--EditorGUI.indentLevel;
+			}
+			EditorGUILayout.EndFoldoutHeaderGroup();
+
 		}
 
+		EditorUtility.SetDirty(settings);
 		EditorGUILayout.EndScrollView();
 	}
 
@@ -114,6 +132,7 @@ public class BuildManagerWindow : EditorWindow {
 
 	static void OnSequenceSelectionChanged(BuildSequence sequence) {
 		buidsList.Init(sequence.builds, "Builds", FormBuildNameInList);
+		zipFoldout = itchFoldout = false;
 	}
 
 	static void OnBuildSelectionChanged(BuildData data) {

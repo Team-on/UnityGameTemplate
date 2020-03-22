@@ -18,13 +18,14 @@ public class BuildSequence {
 [Serializable]
 public class BuildData {
 	public string outputRoot = "Builds/";
-	public string middlePath = "$NAME_$VERSION_$PLATFORM/$NAME_$VERSION/";
+	public string middlePath = "$NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE";
 
 	public BuildTargetGroup targetGroup = BuildTargetGroup.Unknown;
 	public BuildTarget target = BuildTarget.NoTarget;
 	public BuildOptions options = BuildOptions.None;
 
 	public bool needZip;
+	public string compressDirPath;
 
 	public bool needItchPush;
 

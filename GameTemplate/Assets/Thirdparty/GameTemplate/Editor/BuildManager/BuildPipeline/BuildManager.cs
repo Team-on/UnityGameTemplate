@@ -22,19 +22,35 @@ public static class BuildManager {
 		string[] buildsPath = new string[sequence.builds.Length];
 		for(byte i = 0; i < sequence.builds.Length; ++i) {
 			BuildData data = sequence.builds[i];
-			buildsPath[i] = BaseBuild(data.targetGroup, data.target, data.options, data.outputRoot + GetMiddlePath(data) + GetBuildTargetExecutable(data.target));
+			buildsPath[i] = BaseBuild(data.targetGroup, data.target, data.options, data.outputRoot + GetPathWithVars(data, data.middlePath));
 		}
 
 		EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroupBeforeStart, targetBeforeStart);
 		Debug.Log($"End building all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
+
+		startTime = DateTime.Now;
+		Debug.Log($"Start compressing all");
+
+		for (byte i = 0; i < sequence.builds.Length; ++i) {
+			if (!sequence.builds[i].needZip)
+				continue;
+
+			if (!string.IsNullOrEmpty(buildsPath[i])) 
+				BaseCompress(sequence.builds[i].outputRoot + GetPathWithVars(sequence.builds[i], sequence.builds[i].compressDirPath));
+			else 
+				Debug.LogWarning($"[Compressing] Can't find build for {GetBuildTargetExecutable(sequence.builds[i].target)}");
+		}
+
+		Debug.Log($"End compressing all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
 	}
 
-	public static string GetMiddlePath(BuildData data) {
-		string s = data.middlePath;
+	#region Convert to strings
+	public static string GetPathWithVars(BuildData data, string s) {
 		s = s.Replace("$NAME", GetProductName());
 		s = s.Replace("$PLATFORM", ConvertBuildTargetToString(data.target));
 		s = s.Replace("$VERSION", PlayerSettings.bundleVersion);
-		s = s.Replace("DATE", $"{DateTime.Now.Date.Year}_{DateTime.Now.Date.Month}_{DateTime.Now.Date.Day}");
+		s = s.Replace("$DATE", $"{DateTime.Now.Date.Year}_{DateTime.Now.Date.Month}_{DateTime.Now.Date.Day}");
+		s = s.Replace("$EXECUTABLE", GetBuildTargetExecutable(data.target));
 		return s;
 	}
 
@@ -59,30 +75,34 @@ public static class BuildManager {
 	public static string GetBuildTargetExecutable(BuildTarget target) {
 		switch (target) {
 			case BuildTarget.StandaloneWindows:
-				return GetProductName() + ".exe";
-
 			case BuildTarget.StandaloneWindows64:
-				return GetProductName() + ".exe";
+				return ".exe";
 
 			case BuildTarget.StandaloneLinux64:
-				return GetProductName() + ".x86_64";
+				return ".x86_64";
 
 			case BuildTarget.StandaloneOSX:
-				return GetProductName();
+				return "";
 
 			case BuildTarget.iOS:
-				return GetProductName() + ".ipa";
+				return ".ipa";
 
 			case BuildTarget.Android:
-				return GetProductName() + ".apk";
+				return ".apk";
 
 			case BuildTarget.WebGL:
 				return "";
 		}
 		return "";
 	}
+	#endregion
 
+	#region Base methods
 	static string BaseBuild(BuildTargetGroup buildTargetGroup, BuildTarget buildTarget, BuildOptions buildOptions, string buildPath) {
+		if (buildTarget == BuildTarget.Android && PlayerSettings.Android.useCustomKeystore && string.IsNullOrEmpty(PlayerSettings.Android.keyaliasPass)) {
+			PlayerSettings.Android.keyaliasPass = PlayerSettings.Android.keystorePass = "keystore";
+		}
+
 		BuildTarget targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
 		BuildTargetGroup targetGroupBeforeStart = BuildPipeline.GetBuildTargetGroup(targetBeforeStart);
 
@@ -98,11 +118,11 @@ public static class BuildManager {
 		BuildSummary summary = report.summary;
 
 		if (summary.result == BuildResult.Succeeded) {
-			Debug.Log($"{summary.platform} succeeded.  \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576}");
+			Debug.Log($"{summary.platform} succeeded.  \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576} Mb");
 		}
 		else if (summary.result == BuildResult.Failed) {
 			Debug.Log(
-				$"{summary.platform} failed.   \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576}" + "\n" +
+				$"{summary.platform} failed.   \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576} Mb" + "\n" +
 				$"Warnings: {summary.totalWarnings}" + "\n" +
 				$"Errors:   {summary.totalErrors}"
 			);
@@ -110,4 +130,25 @@ public static class BuildManager {
 
 		return summary.result == BuildResult.Succeeded ? buildPath : "";
 	}
+
+	public static void BaseCompress(string dirPath) {
+		using (ZipFile zip = new ZipFile()) {
+			DateTime startTime = DateTime.Now;
+			if (Directory.Exists(dirPath))
+				zip.AddDirectory(dirPath);
+			else
+				zip.AddFile(dirPath);
+			zip.Save(dirPath + ".zip");
+
+			long uncompresedSize = 0;
+			long compresedSize = 0;
+			foreach (var e in zip.Entries) {
+				uncompresedSize += e.UncompressedSize;
+				compresedSize += e.CompressedSize;
+			}
+			Debug.Log($"Make {dirPath}.zip.  \t Time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}  \t Size: {uncompresedSize / 1048576} Mb - {compresedSize / 1048576} Mb");
+		}
+	}
+
+	#endregion
 }

@@ -13,14 +13,186 @@ MonoBehaviour:
   m_Name: BuildSequences
   m_EditorClassIdentifier: 
   sequences:
-  - editorName: New build sequence
+  - editorName: Local
     builds:
     - outputRoot: Builds/
-      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION
-      targetGroup: 0
-      target: -2
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      targetGroup: 1
+      target: 5
       options: 0
       needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      targetGroup: 1
+      target: 19
+      options: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      targetGroup: 1
+      target: 24
+      options: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      targetGroup: 1
+      target: 2
+      options: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/
+      targetGroup: 13
+      target: 20
+      options: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
+      targetGroup: 7
+      target: 13
+      options: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
+      targetGroup: 4
+      target: 9
+      options: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+  - editorName: Local + Zip
+    builds:
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      targetGroup: 1
+      target: 5
+      options: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      targetGroup: 1
+      target: 19
+      options: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      targetGroup: 1
+      target: 24
+      options: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      targetGroup: 1
+      target: 2
+      options: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/
+      targetGroup: 13
+      target: 20
+      options: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
+      targetGroup: 7
+      target: 13
+      options: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
+      targetGroup: 4
+      target: 9
+      options: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       needItchPush: 0
       useGithubActions: 0
       useUnityActions: 0
