@@ -10,59 +10,57 @@ using UnityEditor.Build.Reporting;
 public static class BuildManagerEditor {
 	[MenuItem("Build/Build All \u2192 ZIP \u2192 itch.io push")]
 	public static void BuildAllZippedPush() {
-		BuildManager.BuildAllSequence(true, true);
+		BuildManagerOld.BuildAllSequence(true, true);
 	}
 
 	[MenuItem("Build/Build All \u2192 itch.io push")]
 	public static void BuildAllPush() {
-		BuildManager.BuildAllSequence(false, true);
+		BuildManagerOld.BuildAllSequence(false, true);
 	}
 
 	[MenuItem("Build/Build All \u2192 ZIP")]
 	public static void BuildAllZipped() {
-		BuildManager.BuildAllSequence(true, false);
+		BuildManagerOld.BuildAllSequence(true, false);
 	}
 
 	[MenuItem("Build/Build All")]
 	public static void BuildAll() {
-		BuildManager.BuildAllSequence(false, false);
+		BuildManagerOld.BuildAllSequence(false, false);
 	}
 
 	[MenuItem("Build/Build Windows")]
 	public static void BuildWindows() {
-		BuildManager.BuildWindows(false);
+		BuildManagerOld.BuildWindows(false);
 	}
 
 	[MenuItem("Build/Build Windows x64")]
 	public static void BuildWindowsX64() {
-		BuildManager.BuildWindowsX64(false);
-
+		BuildManagerOld.BuildWindowsX64(false);
 	}
 
 	[MenuItem("Build/Build Linux")]
 	public static void BuildLinux() {
-		BuildManager.BuildLinux(false);
+		BuildManagerOld.BuildLinux(false);
 
 	}
 
 	[MenuItem("Build/Build OSX")]
 	public static void BuildOSX() {
-		BuildManager.BuildOSX(false);
-
+		BuildManagerOld.BuildOSX(false);
 	}
 
 	[MenuItem("Build/Build Web")]
 	public static void BuildWeb() {
-		BuildManager.BuildWeb(false);
+		BuildManagerOld.BuildWeb(false);
 	}
 
 	[MenuItem("Build/Build Android")]
 	public static void BuildAndroid() {
-		BuildManager.BuildAndroid(false);
+		BuildManagerOld.BuildAndroid(false);
 	}
 
 	[MenuItem("Build/Build Ios")]
 	public static void BuildIos() {
-		BuildManager.BuildIos(false);
+		BuildManagerOld.BuildIos(false);
 	}
 }
