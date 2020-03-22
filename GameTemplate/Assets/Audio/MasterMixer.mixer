@@ -58,7 +58,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MainMixer
+  m_Name: MasterMixer
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -67,7 +67,13 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: cf860ec8586770d43a3df799b601f391
+    name: MasterVolume
+  - guid: eafe685b2dc5ff249b7cd2e39f475a57
+    name: MusicVolume
+  - guid: bb4ddff1abf8c8e4dbe702b0470496f4
+    name: SoundsVolume
   m_AudioMixerGroupViews:
   - guids:
     - 04b9ec8a501bef448b2b5e0e08f50746
@@ -133,6 +139,26 @@ AudioMixerEffectController:
   m_EffectName: Attenuation
   m_MixLevel: b62978cbb82e77c4197b9798fa8e6621
   m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &6624979692562606245
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 7631afe5e886b3e4f8a323a52a7b824d
+  m_EffectName: ParamEQ
+  m_MixLevel: 5da6ac4d04e62d84ea9c000935ba4f56
+  m_Parameters:
+  - m_ParameterName: Center freq
+    m_GUID: 2cdf9d6f6a61b2d47b47984da09888f9
+  - m_ParameterName: Octave range
+    m_GUID: 8919cac8b90d13d42bea671284687eed
+  - m_ParameterName: Frequency gain
+    m_GUID: 1b57f10afd6cd6e4c8db04d48b5c4b11
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0

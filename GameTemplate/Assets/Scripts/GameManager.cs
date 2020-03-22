@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.Advertisements;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using UnityEngine;
+using yaSingleton;
 
+[CreateAssetMenu(fileName = "Game Manager", menuName = "Singletons/GameManager")]
 public class GameManager : Singleton<GameManager> {
 	// guarantee this will be always a singleton only - can't use the constructor!
 	protected GameManager() { }
@@ -13,11 +13,12 @@ public class GameManager : Singleton<GameManager> {
 			return mainCamera;
 	}}
 	public EventManager Events { get; private set; }
+	public AudioManager audioManager;
 
-	public Camera mainCamera;
+	[NonSerialized] public Camera mainCamera;
 
-	new void Awake() {
-		base.Awake();
+	protected override void Initialize() {
+		base.Initialize();
 
 		mainCamera = Camera.main;
 		Events = new EventManager();
@@ -27,8 +28,8 @@ public class GameManager : Singleton<GameManager> {
 		EventManager.OnSceneLoadEnd += OnSceneLoadEnd;
 	}
 
-	new void OnDestroy() {
-		base.OnDestroy();
+	protected override void Deinitialize() {
+		base.Deinitialize();
 
 		EventManager.OnSceneLoadEnd -= OnSceneLoadEnd;
 	}

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19297eb15034c464993a85251aad48be, type: 3}
   m_Name: GameManager
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
+  audioManager: {fileID: 11400000, guid: 1e50efc8570298c4997dbe1167707e66, type: 2}

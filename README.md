@@ -7,6 +7,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Top toolbar
  * UI for menu/popups (Main menu, credits, options...)
  * Singleton
+ * AudioManager
 
 ## TODO:
  * Keyboard/gamepad controll in menu
@@ -20,7 +21,6 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Player prefs viewer
  * player prefs extended saver
  * Localization manager(polyglot, custom xml)
- * MusicManager
  * Screenshot/video capture
  * Add icons to custom toolbar
  * Camera shake (in LeanTween)
@@ -31,6 +31,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Better reporting (https://unitytech.github.io/clouddiagnostics/userreporting/UnityCloudDiagnosticsUserReports.html)
  * Build size explorer. Like this https://github.com/aschearer/unitysizeexplorer but in editor
  * NaughtyAttributes for new input system?
+ * Obj pooling in AudioManager
  
  ## Used assets/tools:
  TODO: import them in right way, cuz untiy now support git packages.  
