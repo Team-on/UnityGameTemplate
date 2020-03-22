@@ -4,9 +4,7 @@ I'd be happy for any contribution to make this template as good as it can be.
 //TODO: use as template this https://github.com/nezvers/Godot-GameTemplate
 
 ## TODO docs:
- * Top toolbar
  * UI for menu/popups (Main menu, credits, options...)
- * Singleton
  * AudioManager
 
 ## TODO:
