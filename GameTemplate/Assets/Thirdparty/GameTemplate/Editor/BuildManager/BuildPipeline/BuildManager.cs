@@ -13,6 +13,8 @@ using Ionic.Zip;
 using Debug = UnityEngine.Debug;
 
 public static class BuildManager {
+	const string butlerRelativePath = @"Thirdparty/GameTemplate/Editor/BuildManager/butler/butler.exe";
+
 	public static void RunBuildSequnce(BuildSequence sequence) {
 		Debug.Log("Start building all");
 		DateTime startTime = DateTime.Now;
@@ -42,6 +44,17 @@ public static class BuildManager {
 		}
 
 		Debug.Log($"End compressing all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
+
+
+		for (byte i = 0; i < sequence.builds.Length; ++i) {
+			if (!sequence.builds[i].needItchPush)
+				continue;
+
+			if (!string.IsNullOrEmpty(buildsPath[i]))
+				PushItch(sequence, sequence.builds[i]);
+			else
+				Debug.LogWarning($"[Itch.io push] Can't find build for {GetBuildTargetExecutable(sequence.builds[i].target)}");
+		}
 	}
 
 	#region Convert to strings
@@ -150,5 +163,24 @@ public static class BuildManager {
 		}
 	}
 
+	public static void PushItch(BuildSequence sequence, BuildData data) {
+		StringBuilder fileName = new StringBuilder(128);
+		StringBuilder args = new StringBuilder(128);
+		fileName.Append(Application.dataPath);
+		fileName.Append("/");
+		fileName.Append(butlerRelativePath);
+
+		args.Append(" push \"");
+		args.Append(Application.dataPath);
+		args.Append("/../");
+		args.Append(data.outputRoot + GetPathWithVars(data, data.itchDirPath));
+		args.Append("\" ");
+
+		args.Append($"{sequence.itchGameLink}:{data.itchChannel} ");
+		args.Append($"--userversion {PlayerSettings.bundleVersion} ");
+
+		Debug.Log(fileName.ToString() + args.ToString());
+		Process.Start(fileName.ToString(), args.ToString());
+	}
 	#endregion
 }

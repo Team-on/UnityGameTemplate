@@ -121,7 +121,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1
+  bundleVersion: 1.0
   preloadedAssets:
   - {fileID: 11400000, guid: 1e50efc8570298c4997dbe1167707e66, type: 2}
   - {fileID: 11400000, guid: 922c9efe0ea91d141a892cebf4220f1e, type: 2}
@@ -170,7 +170,7 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.Team-on.GameTemplate
   buildNumber: {}
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 0

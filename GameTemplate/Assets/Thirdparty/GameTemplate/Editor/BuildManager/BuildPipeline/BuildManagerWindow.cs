@@ -46,6 +46,7 @@ public class BuildManagerWindow : EditorWindow {
 		settings.sequences = sequencesList.Show();
 		if (sequencesList?.Selected != null) {
 			sequencesList.Selected.editorName = EditorGUILayout.TextField("Sequence name", sequencesList.Selected.editorName);
+			sequencesList.Selected.itchGameLink = EditorGUILayout.TextField("Itch.io link", sequencesList.Selected.itchGameLink);
 		}
 
 		EditorGUILayout.Space(20);
@@ -81,6 +82,15 @@ public class BuildManagerWindow : EditorWindow {
 			}
 			EditorGUILayout.EndFoldoutHeaderGroup();
 
+			itchFoldout = EditorGUILayout.BeginFoldoutHeaderGroup(itchFoldout, "itch.io");
+			if (itchFoldout) {
+				++EditorGUI.indentLevel;
+				buidsList.Selected.needItchPush = EditorGUILayout.Toggle("Push to itch.io", buidsList.Selected.needItchPush);
+				buidsList.Selected.itchDirPath = EditorGUILayout.TextField("Dir path", buidsList.Selected.itchDirPath);
+				buidsList.Selected.itchChannel = EditorGUILayout.TextField("Channel", buidsList.Selected.itchChannel);
+				--EditorGUI.indentLevel;
+			}
+			EditorGUILayout.EndFoldoutHeaderGroup();
 		}
 
 		EditorUtility.SetDirty(settings);
@@ -132,7 +142,6 @@ public class BuildManagerWindow : EditorWindow {
 
 	static void OnSequenceSelectionChanged(BuildSequence sequence) {
 		buidsList.Init(sequence.builds, "Builds", FormBuildNameInList);
-		zipFoldout = itchFoldout = false;
 	}
 
 	static void OnBuildSelectionChanged(BuildData data) {

@@ -12,6 +12,7 @@ public class BuildManagerSettings : ScriptableObject{
 [Serializable]
 public class BuildSequence {
 	public string editorName = "New build sequence";
+	public string itchGameLink = "teamon/game-link";
 	public BuildData[] builds = new BuildData[1] { new BuildData() };
 }
 
@@ -28,6 +29,8 @@ public class BuildData {
 	public string compressDirPath;
 
 	public bool needItchPush;
+	public string itchChannel;
+	public string itchDirPath;
 
 	//TODO: 
 	public bool useGithubActions;
