@@ -32,6 +32,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  * NaughtyAttributes for new input system?
  * Obj pooling in AudioManager
  * Complete all actions for build manager
+	* Release notes like https://assetstore.unity.com/packages/tools/utilities/build-3720
  
  ## Used assets/tools:
  TODO: import them in right way, cuz untiy now support git packages.  
