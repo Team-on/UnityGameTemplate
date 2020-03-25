@@ -110,7 +110,7 @@ MonoBehaviour:
       middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       targetGroup: 4
       target: 9
-      options: 0
+      options: 8
       needZip: 0
       compressDirPath: 
       needItchPush: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
       middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       targetGroup: 4
       target: 9
-      options: 0
+      options: 8
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       needItchPush: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
       middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       targetGroup: 4
       target: 9
-      options: 0
+      options: 8
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       needItchPush: 1
