@@ -58,3 +58,4 @@ crashlytics-build.properties
 # Odin Inspector ignore
 **/[Aa]ssets/Thirdparty/Sirenix/
 ![Aa]ssets/Thirdparty/Sirenix/readme.md
+GameTemplate/fpslog/
