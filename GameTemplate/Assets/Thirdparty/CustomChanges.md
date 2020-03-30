@@ -18,3 +18,5 @@ Feel free to move any folder whatever you want, except CustomToolbar. Also I rem
 #### [NaughtyAttributes](https://github.com/dbrizov/NaughtyAttributes/)
  * Remove unnecessary instructions/examples/tests sort of stuff
 
+ #### [#NVJOB FPS Counter and Graph ]( https://nvjob.itch.io/fps-counter-and-graph)
+ * Remove unnecessary examples

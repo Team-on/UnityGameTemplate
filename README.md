@@ -33,6 +33,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Obj pooling in AudioManager
  * Complete all actions for build manager
 	* Release notes like https://assetstore.unity.com/packages/tools/utilities/build-3720
+	* Open folder with builds after
  
  ## Used assets/tools:
  TODO: import them in right way, cuz untiy now support git packages.  
@@ -50,8 +51,12 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/2irate2migrate/HierarchyHighlighter
  https://github.com/dbrizov/NaughtyAttributes/
  https://github.com/jedybg/yaSingleton
+ https://nvjob.itch.io/fps-counter-and-graph
+ https://github.com/ogxd/project-curator
  
  ## Want to use: 
- https://github.com/TeamSirenix/odin-serializer 
- https://odininspector.com/	(Actually, I like this asset, but it's paid, so I'm not sure is it good to keep it in template)
- https://github.com/5argon/OdinHierarchy
+ https://github.com/TeamSirenix/odin-serializer  
+ https://odininspector.com/	(Actually, I like this asset, but it's paid, so I'm not sure is it good to keep it in template)  
+ https://github.com/5argon/OdinHierarchy  
+ https://assetstore.unity.com/packages/tools/gui/cyro-build-debugger-65101  
+ https://assetstore.unity.com/packages/tools/gui/debuggui-graph-139275  
