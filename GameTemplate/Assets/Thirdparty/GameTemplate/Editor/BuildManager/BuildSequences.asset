@@ -13,6 +13,24 @@ MonoBehaviour:
   m_Name: BuildSequences
   m_EditorClassIdentifier: 
   sequences:
+  - editorName: Windows 32 only
+    itchGameLink: 
+    builds:
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_TEST/$NAME$EXECUTABLE
+      targetGroup: 1
+      target: 5
+      options: 12
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
   - editorName: Local
     itchGameLink: 
     builds:
@@ -80,7 +98,7 @@ MonoBehaviour:
       middlePath: $NAME_$VERSION_$PLATFORM/
       targetGroup: 13
       target: 20
-      options: 0
+      options: 8
       needZip: 0
       compressDirPath: 
       needItchPush: 0
@@ -95,21 +113,6 @@ MonoBehaviour:
       middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       targetGroup: 7
       target: 13
-      options: 0
-      needZip: 0
-      compressDirPath: 
-      needItchPush: 0
-      itchChannel: 
-      itchDirPath: 
-      useGithubActions: 0
-      useUnityActions: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDricePush: 0
-    - outputRoot: Builds/
-      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      targetGroup: 4
-      target: 9
       options: 8
       needZip: 0
       compressDirPath: 
@@ -188,7 +191,7 @@ MonoBehaviour:
       middlePath: $NAME_$VERSION_$PLATFORM/
       targetGroup: 13
       target: 20
-      options: 0
+      options: 8
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM
       needItchPush: 0
@@ -203,24 +206,9 @@ MonoBehaviour:
       middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       targetGroup: 7
       target: 13
-      options: 0
+      options: 8
       needZip: 0
       compressDirPath: 
-      needItchPush: 0
-      itchChannel: 
-      itchDirPath: 
-      useGithubActions: 0
-      useUnityActions: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDricePush: 0
-    - outputRoot: Builds/
-      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      targetGroup: 4
-      target: 9
-      options: 8
-      needZip: 1
-      compressDirPath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       needItchPush: 0
       itchChannel: 
       itchDirPath: 
@@ -296,7 +284,7 @@ MonoBehaviour:
       middlePath: $NAME_$VERSION_$PLATFORM/
       targetGroup: 13
       target: 20
-      options: 0
+      options: 8
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM
       needItchPush: 1
@@ -311,26 +299,11 @@ MonoBehaviour:
       middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       targetGroup: 7
       target: 13
-      options: 0
+      options: 8
       needZip: 0
       compressDirPath: 
       needItchPush: 1
       itchChannel: android
-      itchDirPath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      useGithubActions: 0
-      useUnityActions: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDricePush: 0
-    - outputRoot: Builds/
-      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      targetGroup: 4
-      target: 9
-      options: 8
-      needZip: 1
-      compressDirPath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
-      needItchPush: 1
-      itchChannel: ios
       itchDirPath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       useGithubActions: 0
       useUnityActions: 0
