@@ -34,6 +34,8 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Complete all actions for build manager
 	* Release notes like https://assetstore.unity.com/packages/tools/utilities/build-3720
 	* Open folder with builds after
+ * Pool
+ * Hightscores(playfab?)
  
  ## Used assets/tools:
  TODO: import them in right way, cuz untiy now support git packages.  
