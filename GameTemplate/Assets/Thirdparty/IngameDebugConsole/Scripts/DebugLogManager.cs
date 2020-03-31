@@ -147,6 +147,10 @@ namespace IngameDebugConsole
 		[SerializeField]
 		private CanvasGroup logWindowCanvasGroup;
 
+		// Canvas group to modify visibility of the additional window
+		[SerializeField]
+		private CanvasGroup additionalCanvasGroup;
+
 		[SerializeField]
 		private DebugLogPopup popupManager;
 
@@ -436,6 +440,12 @@ namespace IngameDebugConsole
 			logWindowCanvasGroup.interactable = true;
 			logWindowCanvasGroup.blocksRaycasts = true;
 			logWindowCanvasGroup.alpha = 1f;
+			if (additionalCanvasGroup) 
+			{
+				additionalCanvasGroup.interactable = true;
+				additionalCanvasGroup.blocksRaycasts = true;
+				additionalCanvasGroup.alpha = 1f;
+			}
 
 			popupManager.Hide();
 
@@ -452,7 +462,13 @@ namespace IngameDebugConsole
 			logWindowCanvasGroup.interactable = false;
 			logWindowCanvasGroup.blocksRaycasts = false;
 			logWindowCanvasGroup.alpha = 0f;
-
+			if (additionalCanvasGroup)
+				{
+				additionalCanvasGroup.interactable = false;
+				additionalCanvasGroup.blocksRaycasts = false;
+				additionalCanvasGroup.alpha = 0f;
+			}
+				
 			popupManager.Show();
 
 			commandHistoryIndex = -1;
