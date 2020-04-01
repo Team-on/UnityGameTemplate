@@ -261,8 +261,8 @@ namespace IngameDebugConsole
 			recycledListView.Initialize( this, collapsedLogEntries, indicesOfListEntriesToShow, logItemPrefab.Transform.sizeDelta.y );
 			recycledListView.UpdateItemsInTheList( true );
 
-			if( minimumHeight < 200f )
-				minimumHeight = 200f;
+			if( minimumHeight < 80f )
+				minimumHeight = 80f;
 
 			nullPointerEventData = new PointerEventData( null );
 		}

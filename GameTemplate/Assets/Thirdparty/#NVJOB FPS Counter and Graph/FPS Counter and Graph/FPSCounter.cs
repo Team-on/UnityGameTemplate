@@ -78,6 +78,11 @@ public class FPSCounter : MonoBehaviour
     }
 
 
+    private void OnDestroy() {
+        StopCoroutine("DrawGraph");
+    }
+
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -127,6 +132,11 @@ public class FPSCounter : MonoBehaviour
         while (true)
         {
             GameObject obj = GiveLine();
+            if(obj == null) {
+                CreateCounter();
+                obj = GiveLine();
+            }
+
             Image img = obj.GetComponent<Image>();
             RectTransform imgRT = img.rectTransform;
             imgRT.anchorMin = new Vector2(ofsetX, 0);
@@ -193,6 +203,9 @@ public class FPSCounter : MonoBehaviour
     static GameObject GiveLine()
     {
         //--------------
+        if(stLines[0] == null) {
+            return null;
+        }
 
         for (int i = 0; i < stNumLines; i++) if (!stLines[i].activeSelf) return stLines[i];
         return null;

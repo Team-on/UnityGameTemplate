@@ -801,6 +801,7 @@ MonoBehaviour:
   errorEntryCountText: {fileID: 11450122}
   snapToBottomButton: {fileID: 1486651836328188}
   logWindowCanvasGroup: {fileID: 22509978}
+  additionalCanvasGroup: {fileID: 0}
   popupManager: {fileID: 11491080}
   logItemsScrollRect: {fileID: 11405548}
   recycledListView: {fileID: 11453682}
