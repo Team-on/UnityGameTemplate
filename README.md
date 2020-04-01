@@ -48,13 +48,14 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://assetstore.unity.com/packages/tools/gui/ui-tools-for-unity-124299  
  https://archive.codeplex.com/?p=DotNetZip  
  https://itch.io/docs/butler/  
- https://github.com/Team-on/unity-editor-spotlight
- https://github.com/yasirkula/UnityIngameDebugConsole
- https://github.com/2irate2migrate/HierarchyHighlighter
- https://github.com/dbrizov/NaughtyAttributes/
- https://github.com/jedybg/yaSingleton
- https://nvjob.itch.io/fps-counter-and-graph
- https://github.com/ogxd/project-curator
+ https://github.com/Team-on/unity-editor-spotlight  
+ https://github.com/yasirkula/UnityIngameDebugConsole  
+ https://github.com/2irate2migrate/HierarchyHighlighter  
+ https://github.com/dbrizov/NaughtyAttributes/  
+ https://github.com/jedybg/yaSingleton  
+ https://nvjob.itch.io/fps-counter-and-graph  
+ https://github.com/ogxd/project-curator  
+ https://seansleblanc.itch.io/better-minimal-webgl-template  
  
  ## Want to use: 
  https://github.com/TeamSirenix/odin-serializer  

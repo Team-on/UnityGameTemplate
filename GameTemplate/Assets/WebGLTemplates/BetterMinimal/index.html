@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>%UNITY_WEB_NAME%</title>
+	<script src="%UNITY_WEBGL_LOADER_URL%"></script>
+	<script>
+		var gameInstance = UnityLoader.instantiate("gameContainer", "%UNITY_WEBGL_BUILD_URL%");
+		var scaleToFit;
+		try{
+			scaleToFit = !!JSON.parse("%UNITY_CUSTOM_SCALE_TO_FIT%");
+		}catch(e){
+			scaleToFit = true;
+		}
+		window.onresize = function(){
+			var canvas = gameInstance.Module.canvas;
+			var container = gameInstance.container;
+			var w;
+			var h;
+
+			if(scaleToFit){
+				w = window.innerWidth;
+				h = window.innerHeight;
+
+				var r = %UNITY_HEIGHT%/%UNITY_WIDTH%;
+
+				if(w * r > window.innerHeight){
+					w = Math.min(w, Math.ceil(h / r));
+				}
+				h = Math.floor(w * r);
+			}else{
+				w=%UNITY_WIDTH%;
+				h=%UNITY_HEIGHT%;
+			}
+
+			container.style.width = canvas.style.width = w + "px";
+			container.style.height = canvas.style.height = h + "px";
+			container.style.top = Math.floor((window.innerHeight - h)/2) + "px";
+			container.style.left = Math.floor((window.innerWidth - w)/2) + "px";
+		}
+	</script>
+	<style>
+		html,body{
+			background: #000;
+			background: %UNITY_CUSTOM_BACKGROUND%;
+			width: 100%;
+			height: 100%;
+			overflow:visible;
+			padding:0;
+			margin:0;
+		}
+		div#gameContainer{
+			background: transparent!important;
+			position: absolute;
+		}
+		div#gameContainer canvas{
+			position: absolute;
+			image-rendering: optimizeSpeed;
+            image-rendering: -webkit-crisp-edges;
+			image-rendering: -moz-crisp-edges;
+			image-rendering: -o-crisp-edges;
+			image-rendering: crisp-edges;
+			image-rendering: -webkit-optimize-contrast;
+            image-rendering: optimize-contrast;
+			image-rendering: pixelated;
+			-ms-interpolation-mode: nearest-neighbor;
+		}
+	</style>
+</head>
+<body onload="window.onresize();">
+	<div id="gameContainer" style="width: %UNITY_WIDTH%px; height: %UNITY_HEIGHT%px"></div>
+</body>
+</html>
