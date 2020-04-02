@@ -1,4 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using yaSingleton.Helpers;
+using yaSingleton.Utility;
 
 namespace yaSingleton {
     /// <summary>
@@ -9,6 +15,23 @@ namespace yaSingleton {
     [Serializable]
     public abstract class Singleton<TSingleton> : BaseSingleton where TSingleton : BaseSingleton {
         public static TSingleton Instance { get; private set; }
+
+#if UNITY_EDITOR
+        public static TSingleton InstanceEditor {
+            get {
+                var preloadedAssets = UnityEditor.PlayerSettings.GetPreloadedAssets().ToList();
+
+                foreach (var preloadedAsset in preloadedAssets) {
+                    if (preloadedAsset && preloadedAsset is TSingleton) {
+                        return preloadedAsset as TSingleton;
+                    }
+                }
+
+                return null;
+            }
+        }
+#endif
+
 
         internal override void CreateInstance() {
             if(Instance != null) {

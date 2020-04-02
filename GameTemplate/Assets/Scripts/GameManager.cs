@@ -4,16 +4,19 @@ using yaSingleton;
 
 [CreateAssetMenu(fileName = "Game Manager", menuName = "Singletons/GameManager")]
 public class GameManager : Singleton<GameManager> {
-	// guarantee this will be always a singleton only - can't use the constructor!
-	protected GameManager() { }
-
+	//Properties
 	public Camera Camera { get {
 			if(mainCamera == null) 
 				mainCamera = Camera.main;
 			return mainCamera;
 	}}
+
+	//Other singletons
 	public EventManager Events { get; private set; }
 	public AudioManager audioManager;
+
+	//Global data
+	public string buildNameString;
 
 	[NonSerialized] public Camera mainCamera;
 
