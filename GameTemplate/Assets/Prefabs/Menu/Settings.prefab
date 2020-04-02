@@ -960,7 +960,6 @@ MonoBehaviour:
   mainVolumeSlider: {fileID: 7491852241398941360}
   musicVolumeSlider: {fileID: 5779086270684939621}
   soundVolumeSlider: {fileID: 1452902574808222661}
-  test: {fileID: 8300000, guid: a68b721de0cf43944a12174807cad4b2, type: 3}
 --- !u!1 &1680782037914050975
 GameObject:
   m_ObjectHideFlags: 0

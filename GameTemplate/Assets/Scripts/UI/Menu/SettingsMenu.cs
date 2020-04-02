@@ -19,12 +19,13 @@ public class SettingsMenu : PopupMenuBase {
 		musicVolumeSlider.value = AudioManager.Instance.GetVolume(AudioManager.AudioChannel.Music);
 		soundVolumeSlider.value = AudioManager.Instance.GetVolume(AudioManager.AudioChannel.Sound);
 
-		enableOnToggle.onValueChanged.AddListener(OnToggleOn);
+		enableOnToggle.onValueChanged.AddListener(OnToggleOnAudio);
 		mainVolumeSlider.onValueChanged.AddListener(OnMainVolumeSliderChange);
 		musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeSliderChange);
 		soundVolumeSlider.onValueChanged.AddListener(OnSoundVolumeSliderChange);
 	}
 
+	#region Audio Settings
 	public void OnMainVolumeSliderChange(float value) {
 		AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Master, value);
 	}
@@ -37,7 +38,30 @@ public class SettingsMenu : PopupMenuBase {
 		AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Sound, value);
 	}
 
-	public void OnToggleOn(bool value) {
+	public void OnToggleOnAudio(bool value) {
 		AudioManager.Instance.IsEnabled = value;
 	}
+	#endregion
+
+	#region Video
+
+	#endregion
+
+	#region Key bindings
+
+	#endregion
+
+	#region Gameplay
+
+	#endregion
+
+	//TODO: Am I need this? Maybe move it to `general tab` with some other settings
+	#region Language	
+
+	#endregion
+
+	#region Mods
+
+	#endregion
+
 }

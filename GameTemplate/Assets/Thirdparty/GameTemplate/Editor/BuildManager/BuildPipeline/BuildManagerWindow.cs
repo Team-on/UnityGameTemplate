@@ -1,18 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 
 public class BuildManagerWindow : EditorWindow {
-	const string SETTINGS_DEFAULT_PATH = "Assets/Thirdparty/GameTemplate/Editor/BuildManager/BuildSequences.asset";
+	const string SETTINGS_DEFAULT_PATH = "Assets/Thirdparty/GameTemplate/Editor/BuildManager/BuildSequences.asset"; //Need Assets in path, cuz used by AssetDatabase.CreateAsset
 	const string SETTINGS_PATH_KEY = "BuildManagerWindow.SettingsPath";
-	static string settingsPath;
+	const string CHANGELOG_DEFAULT_PATH = "Thirdparty/GameTemplate/Editor/BuildManager/Changelog.json";//Dont need Assets in path, cuz used with Application.dataPath
+	const string CHANGELOG_JSON_PATH_KEY = "BuildManagerWindow.ChangelogJsonPath";
 
+	static string settingsPath;
 	static BuildManagerSettings settings;
 
-	static Vector2 scrollPosAll;
-	static bool zipFoldout;
-	static bool itchFoldout;
+	static string changelogPath;
+	static ChangelogData changelog;
+	static bool changelogFoldout = false;
+	static Vector2 scrollPosChangelog = Vector2.zero;
+
+	static Vector2 scrollPosSequence = Vector2.zero;
+	static bool zipFoldout = false;
+	static bool itchFoldout = false;
 	static InspectorList<BuildSequence> sequencesList;
 	static InspectorList<BuildData> buidsList;
 
@@ -26,29 +31,83 @@ public class BuildManagerWindow : EditorWindow {
 	void OnGUI() {
 		if (settings == null)
 			LoadSettings();
+		if (changelog == null)
+			LoadChangelog();
 
+		DrawGlobalBuildData();
+		DrawChangelogInfo();
+
+		DrawBuildButtons();
+
+		EditorGUILayout.Space(20);
+		scrollPosSequence = EditorGUILayout.BeginScrollView(scrollPosSequence);
+
+		DrawSequenceList();
+		DrawSelectedSequenceData();
+
+		EditorGUILayout.EndScrollView();
+	}
+
+	#region Main Drawers
+	void DrawGlobalBuildData() {
 		PlayerSettings.bundleVersion = EditorGUILayout.TextField("Version", PlayerSettings.bundleVersion);
 		PlayerSettings.Android.bundleVersionCode = EditorGUILayout.IntField("Android bundle version", PlayerSettings.Android.bundleVersionCode);
 		EditorGUILayout.Space(20);
+	}
 
+	void DrawBuildButtons() {
 		if ((settings?.sequences?.Length ?? 0) != 0) {
-			EditorGUILayout.LabelField("Start build sequence");
+			EditorGUILayout.Space(20);
+			Color prevColor = GUI.backgroundColor;
+			GUI.backgroundColor = new Color(0.773f, 0.345098f, 0.345098f);
+
+			EditorGUILayout.LabelField("Start build sequence(they red not becouse error, but becouse build stuck your pc if you accidentaly press it)");
 			foreach (var sequence in settings.sequences) {
 				if (GUILayout.Button($"Build {sequence.editorName}")) {
-					BuildManager.RunBuildSequnce(sequence);
+					BuildManager.RunBuildSequnce(sequence, changelog);
 				}
 			}
+
+			GUI.backgroundColor = prevColor;
 		}
+	}
 
-		EditorGUILayout.Space(20);
-		scrollPosAll = EditorGUILayout.BeginScrollView(scrollPosAll);
+	void DrawChangelogInfo() {
+		bool isChanged = false;
+		string tmpString = "";
 
+		changelogFoldout = EditorGUILayout.BeginFoldoutHeaderGroup(changelogFoldout, "Changelog");
+		if (changelogFoldout) {
+			scrollPosChangelog = EditorGUILayout.BeginScrollView(scrollPosChangelog);
+			++EditorGUI.indentLevel;
+
+			changelog.updateName = DrawStringField("Update name", changelog.updateName);
+
+			--EditorGUI.indentLevel;
+			EditorGUILayout.EndScrollView();
+		}
+		EditorGUILayout.EndFoldoutHeaderGroup();
+
+		if (isChanged)
+			ChangelogData.SaveChangelogToFile(changelogPath, changelog);
+
+		string DrawStringField(string label, string text) {
+			tmpString = EditorGUILayout.TextField(label, text);
+			if (text != tmpString)
+				isChanged = true;
+			return tmpString;
+		}
+	}
+
+	void DrawSequenceList() {
 		settings.sequences = sequencesList.Show();
 		if (sequencesList?.Selected != null) {
 			sequencesList.Selected.editorName = EditorGUILayout.TextField("Sequence name", sequencesList.Selected.editorName);
 			sequencesList.Selected.itchGameLink = EditorGUILayout.TextField("Itch.io link", sequencesList.Selected.itchGameLink);
 		}
+	}
 
+	void DrawSelectedSequenceData() {
 		EditorGUILayout.Space(20);
 		sequencesList.Selected.builds = buidsList.Show();
 		if (buidsList?.Selected != null) {
@@ -88,14 +147,15 @@ public class BuildManagerWindow : EditorWindow {
 				buidsList.Selected.needItchPush = EditorGUILayout.Toggle("Push to itch.io", buidsList.Selected.needItchPush);
 				buidsList.Selected.itchDirPath = EditorGUILayout.TextField("Dir path", buidsList.Selected.itchDirPath);
 				buidsList.Selected.itchChannel = EditorGUILayout.TextField("Channel", buidsList.Selected.itchChannel);
+				buidsList.Selected.itchAddLastChangelogUpdateNameToVerison = EditorGUILayout.Toggle("Add Changelog Update Name To Verison", buidsList.Selected.itchAddLastChangelogUpdateNameToVerison);
 				--EditorGUI.indentLevel;
 			}
 			EditorGUILayout.EndFoldoutHeaderGroup();
 		}
 
 		EditorUtility.SetDirty(settings);
-		EditorGUILayout.EndScrollView();
 	}
+	#endregion
 
 	static void LoadSettings() {
 		settingsPath = PlayerPrefs.GetString(SETTINGS_PATH_KEY, "");
@@ -140,6 +200,42 @@ public class BuildManagerWindow : EditorWindow {
 		buidsList.OnChangeSelectionAction += OnBuildSelectionChanged;
 	}
 
+	static void LoadChangelog() {
+		changelogPath = PlayerPrefs.GetString(CHANGELOG_JSON_PATH_KEY, "");
+		changelog = null;
+
+		//Find path. Try to load settings
+		if (!string.IsNullOrEmpty(changelogPath)) {
+			changelog = ChangelogData.LoadChangelogFromFile(changelogPath);
+			if (changelog == null) {
+				changelogPath = null;
+			}
+		}
+
+		//No path, or cant locate asset at path. Try to find settings in assets.
+		if (string.IsNullOrEmpty(changelogPath)) {
+			string[] guids = AssetDatabase.FindAssets("Changelog.json");
+			if (guids.Length >= 2) {
+				Debug.LogError("[BuildManagerWindow]. 2+ Changelog.json exist. Consider on using only 1 changelog. The first on will be used.");
+			}
+
+			if (guids.Length != 0) {
+				changelogPath = AssetDatabase.GUIDToAssetPath(guids[0]);
+				PlayerPrefs.SetString(CHANGELOG_JSON_PATH_KEY, changelogPath);
+				changelog = ChangelogData.LoadChangelogFromFile(changelogPath);
+			}
+		}
+
+		//Cant find settings. Create new
+		if (changelog == null) {
+			changelog = new ChangelogData();
+			changelogPath = CHANGELOG_DEFAULT_PATH;
+			PlayerPrefs.SetString(CHANGELOG_JSON_PATH_KEY, CHANGELOG_DEFAULT_PATH);
+
+			ChangelogData.SaveChangelogToFile(changelogPath, changelog);
+		}
+	}
+
 	static void OnSequenceSelectionChanged(BuildSequence sequence) {
 		buidsList.Init(sequence.builds, "Builds", FormBuildNameInList);
 	}
@@ -151,4 +247,12 @@ public class BuildManagerWindow : EditorWindow {
 	static string FormBuildNameInList(BuildData build, int i){
 		return BuildManager.ConvertBuildTargetToString(build.target);
 	}
+
+	#region Helpers
+	void GuiLine(int i_height = 1) {
+		Rect rect = EditorGUILayout.GetControlRect(false, i_height);
+		rect.height = i_height;
+		EditorGUI.DrawRect(rect, new Color(0.5f, 0.5f, 0.5f, 1));
+	}
+	#endregion
 }

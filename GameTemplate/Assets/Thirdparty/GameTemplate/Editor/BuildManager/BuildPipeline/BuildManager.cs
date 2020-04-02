@@ -3,8 +3,6 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
@@ -15,7 +13,7 @@ using Debug = UnityEngine.Debug;
 public static class BuildManager {
 	const string butlerRelativePath = @"Thirdparty/GameTemplate/Editor/BuildManager/butler/butler.exe";
 
-	public static void RunBuildSequnce(BuildSequence sequence) {
+	public static void RunBuildSequnce(BuildSequence sequence, ChangelogData changelog) {
 		Debug.Log("Start building all");
 		DateTime startTime = DateTime.Now;
 		BuildTarget targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
@@ -50,10 +48,15 @@ public static class BuildManager {
 			if (!sequence.builds[i].needItchPush)
 				continue;
 
-			if (!string.IsNullOrEmpty(buildsPath[i]))
+			if (!string.IsNullOrEmpty(buildsPath[i])) {
+				if(sequence.builds[i].itchAddLastChangelogUpdateNameToVerison && !string.IsNullOrEmpty(changelog?.updateName)) {
+					sequence.builds[i].itchLastChangelogUpdateName = changelog.updateName;
+				}
 				PushItch(sequence, sequence.builds[i]);
-			else
+			}
+			else {
 				Debug.LogWarning($"[Itch.io push] Can't find build for {GetBuildTargetExecutable(sequence.builds[i].target)}");
+			}
 		}
 	}
 
@@ -177,7 +180,12 @@ public static class BuildManager {
 		args.Append("\" ");
 
 		args.Append($"{sequence.itchGameLink}:{data.itchChannel} ");
-		args.Append($"--userversion {PlayerSettings.bundleVersion} ");
+		if (data.itchAddLastChangelogUpdateNameToVerison && !string.IsNullOrEmpty(data.itchLastChangelogUpdateName)) {
+			args.Append($"--userversion \"{PlayerSettings.bundleVersion} - {data.itchLastChangelogUpdateName}\" ");
+		}
+		else {
+			args.Append($"--userversion \"{PlayerSettings.bundleVersion}\" ");
+		}
 
 		Debug.Log(fileName.ToString() + args.ToString());
 		Process.Start(fileName.ToString(), args.ToString());

@@ -31,6 +31,8 @@ public class BuildData {
 	public bool needItchPush;
 	public string itchChannel;
 	public string itchDirPath;
+	public bool itchAddLastChangelogUpdateNameToVerison;
+	public string itchLastChangelogUpdateName;	//Fill from code
 
 	//TODO: 
 	public bool useGithubActions;
