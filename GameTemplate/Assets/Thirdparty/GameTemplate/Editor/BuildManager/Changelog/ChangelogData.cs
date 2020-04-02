@@ -1,8 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [Serializable]
 public class ChangelogData {
@@ -22,6 +21,8 @@ public class ChangelogData {
 					jsonString = sr.ReadToEnd();
 
 			data = JsonUtility.FromJson<ChangelogData>(jsonString);
+
+			GameManager.InstanceEditor.buildNameString = PlayerSettings.bundleVersion + " - " + data.updateName;
 		}
 		else {
 			data = null;

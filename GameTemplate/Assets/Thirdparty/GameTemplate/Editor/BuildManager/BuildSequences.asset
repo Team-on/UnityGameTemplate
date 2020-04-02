@@ -27,7 +27,7 @@ MonoBehaviour:
       itchChannel: windows-32
       itchDirPath: $NAME_$VERSION_TEST
       itchAddLastChangelogUpdateNameToVerison: 1
-      itchLastChangelogUpdateName: CHANGELO WORKD!11
+      itchLastChangelogUpdateName: TEST CHANGELOG CHANGING RUNTIME
       useGithubActions: 0
       useUnityActions: 0
       needGamejolthPush: 0

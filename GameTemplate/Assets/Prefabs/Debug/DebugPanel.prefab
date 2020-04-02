@@ -556,6 +556,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPS Counter (White)
       objectReference: {fileID: 0}
+    - target: {fileID: 786967402357734150, guid: fc243675728653a4093f82ccb2e59921,
+        type: 3}
+      propertyPath: logWrite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 786967402357734151, guid: fc243675728653a4093f82ccb2e59921,
         type: 3}
       propertyPath: m_LocalPosition.x
