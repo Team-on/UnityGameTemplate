@@ -8,7 +8,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  * AudioManager
  * Build Manager
  * Changelog
- * 
+ * Event bus
 
 ## TODO:
  * Keyboard/gamepad controll in menu

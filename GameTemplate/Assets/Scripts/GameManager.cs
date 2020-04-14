@@ -10,6 +10,9 @@ public class GameManager : Singleton<GameManager> {
 			return mainCamera;
 	}}
 
+	//Global data
+	public string buildNameString;
+
 	//Other singletons
 	public EventManager Events { get; private set; }
 	public AudioManager audioManager;

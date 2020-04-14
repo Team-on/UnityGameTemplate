@@ -14,6 +14,10 @@ public static class BuildManager {
 	const string butlerRelativePath = @"Thirdparty/GameTemplate/Editor/BuildManager/butler/butler.exe";
 
 	public static void RunBuildSequnce(BuildSequence sequence, ChangelogData changelog) {
+		// Start init
+		GameManager.InstanceEditor.buildNameString = $"{PlayerSettings.bundleVersion} - {changelog.LocalizedUpdate}";
+		//End init
+
 		Debug.Log("Start building all");
 		DateTime startTime = DateTime.Now;
 		BuildTarget targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
@@ -50,7 +54,7 @@ public static class BuildManager {
 
 			if (!string.IsNullOrEmpty(buildsPath[i])) {
 				if(sequence.builds[i].itchAddLastChangelogUpdateNameToVerison && !string.IsNullOrEmpty(changelog?.LocalizedUpdate)) {
-					sequence.builds[i].itchLastChangelogUpdateName = $"{PlayerSettings.bundleVersion} - {changelog.LocalizedUpdate}";
+					sequence.builds[i].itchLastChangelogUpdateName = GameManager.InstanceEditor.buildNameString;
 				}
 				PushItch(sequence, sequence.builds[i]);
 			}

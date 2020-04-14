@@ -21,9 +21,9 @@ MonoBehaviour:
       targetGroup: 1
       target: 5
       options: 8
-      needZip: 1
+      needZip: 0
       compressDirPath: $NAME_$VERSION_TEST
-      needItchPush: 1
+      needItchPush: 0
       itchChannel: windows-32
       itchDirPath: $NAME_$VERSION_TEST
       itchAddLastChangelogUpdateNameToVerison: 1
