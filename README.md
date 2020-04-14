@@ -56,6 +56,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://nvjob.itch.io/fps-counter-and-graph  
  https://github.com/ogxd/project-curator  
  https://seansleblanc.itch.io/better-minimal-webgl-template  
+ https://github.com/agens-no/PolyglotUnity  
  
  ## Want to use: 
  https://github.com/TeamSirenix/odin-serializer  

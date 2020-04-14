@@ -62,6 +62,7 @@ public class BuildManagerWindow : EditorWindow {
 			GUI.backgroundColor = new Color(0.773f, 0.345098f, 0.345098f);
 
 			EditorGUILayout.LabelField("Start build sequence(they red not becouse error, but becouse build stuck your pc if you accidentaly press it)");
+			EditorGUILayout.LabelField("Don't forget to manually download new version of polyglot localization if you want to update it");
 			foreach (var sequence in settings.sequences) {
 				if (GUILayout.Button($"Build {sequence.editorName}")) {
 					BuildManager.RunBuildSequnce(sequence, changelog);
