@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.IO;
+using UnityEngine;
+using UnityEditor;
 using TMPro;
 
 public class VersionText : MonoBehaviour {
@@ -10,13 +13,13 @@ public class VersionText : MonoBehaviour {
 			textField = GetComponent<TextMeshProUGUI>();
 
 		if(textField != null) {
-			textField.text = GameManager.InstanceEditor.buildNameString;
+			textField.text = $"{PlayerSettings.bundleVersion} - {ChangelogData.localizedUpdate}";
 		}
 	}
 #endif
 
 	void Start() {
-		textField.text = GameManager.Instance.buildNameString;
+		textField.text = $"{PlayerSettings.bundleVersion} - {ChangelogData.localizedUpdate}";
 		Destroy(this);
 	}
 }

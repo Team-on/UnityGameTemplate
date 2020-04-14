@@ -2,10 +2,14 @@
 using System.IO;
 using UnityEngine;
 using UnityEditor;
+using Polyglot;
 
 [Serializable]
 public class ChangelogData {
-	public string updateName = "";
+	const string updateNamePolyglotKey = "Changelog_";
+
+	public string LocalizedUpdate => localizedUpdate;
+	public static string localizedUpdate => Localization.Get(updateNamePolyglotKey + PlayerSettings.bundleVersion);
 
 
 	#region Serialization
@@ -21,8 +25,6 @@ public class ChangelogData {
 					jsonString = sr.ReadToEnd();
 
 			data = JsonUtility.FromJson<ChangelogData>(jsonString);
-
-			GameManager.InstanceEditor.buildNameString = PlayerSettings.bundleVersion + " - " + data.updateName;
 		}
 		else {
 			data = null;

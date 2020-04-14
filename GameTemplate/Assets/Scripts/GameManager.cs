@@ -14,9 +14,6 @@ public class GameManager : Singleton<GameManager> {
 	public EventManager Events { get; private set; }
 	public AudioManager audioManager;
 
-	//Global data
-	public string buildNameString;
-
 	Camera mainCamera;
 
 	private void Awake() {

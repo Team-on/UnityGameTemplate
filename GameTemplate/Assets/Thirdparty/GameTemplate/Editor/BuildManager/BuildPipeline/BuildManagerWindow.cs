@@ -82,7 +82,7 @@ public class BuildManagerWindow : EditorWindow {
 			scrollPosChangelog = EditorGUILayout.BeginScrollView(scrollPosChangelog);
 			++EditorGUI.indentLevel;
 
-			changelog.updateName = DrawStringField("Update name", changelog.updateName);
+			//changelog.updateName = DrawStringField("Update name", changelog.updateName);
 
 			--EditorGUI.indentLevel;
 			EditorGUILayout.EndScrollView();

@@ -7,6 +7,8 @@ I'd be happy for any contribution to make this template as good as it can be.
  * UI for menu/popups (Main menu, credits, options...)
  * AudioManager
  * Build Manager
+ * Changelog
+ * 
 
 ## TODO:
  * Keyboard/gamepad controll in menu
@@ -36,6 +38,8 @@ I'd be happy for any contribution to make this template as good as it can be.
 	* Open folder with builds after
  * Pool
  * Hightscores(playfab?)
+ * Audo readme
+ * Event bus
  
  ## Used assets/tools:
  TODO: import them in right way, cuz untiy now support git packages.  
