@@ -10,7 +10,7 @@ public class VersionText : MonoBehaviour {
 			textField = GetComponent<TextMeshProUGUI>();
 
 		if(textField != null) {
-			textField.text = GameManager.Instance.buildNameString;
+			textField.text = GameManager.InstanceEditor.buildNameString;
 		}
 	}
 #endif
