@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using yaSingleton;
 
 [CreateAssetMenu(fileName = "Game Manager", menuName = "Singletons/GameManager")]
@@ -18,15 +17,18 @@ public class GameManager : Singleton<GameManager> {
 	//Global data
 	public string buildNameString;
 
-	[NonSerialized] public Camera mainCamera;
+	Camera mainCamera;
+
+	private void Awake() {
+		mainCamera = Camera.main;
+		Input.multiTouchEnabled = false;
+		LeanTween.init(800);
+	}
 
 	protected override void Initialize() {
 		base.Initialize();
 
-		mainCamera = Camera.main;
 		Events = new EventManager();
-		Input.multiTouchEnabled = false;
-		LeanTween.init(800);
 
 		EventManager.OnSceneLoadEnd += OnSceneLoadEnd;
 	}

@@ -10,6 +10,10 @@ public class QuitGame : MonoBehaviour {
 #endif
 
 	public void Quit() {
+		QuitApp();
+	}
+
+	public static void QuitApp() {
 #if UNITY_EDITOR
 		UnityEditor.EditorApplication.isPlaying = false;
 #elif UNITY_WEBGL
