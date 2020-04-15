@@ -61,6 +61,8 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/ogxd/project-curator  
  https://seansleblanc.itch.io/better-minimal-webgl-template  
  https://github.com/agens-no/PolyglotUnity  
+ https://github.com/Konash/arabic-support-unity  
+ 
  
  ## Want to use: 
  https://github.com/TeamSirenix/odin-serializer  
