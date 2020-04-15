@@ -45,11 +45,13 @@ namespace Polyglot
             dropdown.options.Clear();
 
             var languageNames = Localization.Instance.EnglishLanguageNames;
+            var localLanguageNames = Localization.Instance.LocalizedLanguageNames;
 
             for (int index = 0; index < languageNames.Count; index++)
             {
                 var languageName = languageNames[index];
-                dropdown.options.Add(new TMP_Dropdown.OptionData(languageName));
+                //dropdown.options.Add(new TMP_Dropdown.OptionData($"{localLanguageNames[index]} {languageName}"));
+                dropdown.options.Add(new TMP_Dropdown.OptionData($"{languageName}"));
             }
 
             dropdown.value = -1;

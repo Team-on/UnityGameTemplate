@@ -59,6 +59,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9125196094761558635}
   - component: {fileID: 1171508266}
+  - component: {fileID: 1626083333}
   m_Layer: 0
   m_Name: DebugPanel
   m_TagString: Untagged
@@ -91,6 +92,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17b065d7aa9eb51458b7a0a10db28a0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1626083333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9125196094761558632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa6cd863df5cb04a86d2d298aa885db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &9125196094211987683
@@ -624,7 +637,7 @@ PrefabInstance:
     - target: {fileID: 786967402357734151, guid: fc243675728653a4093f82ccb2e59921,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -301
+      value: -300.99902
       objectReference: {fileID: 0}
     - target: {fileID: 786967402357734151, guid: fc243675728653a4093f82ccb2e59921,
         type: 3}
