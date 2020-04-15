@@ -20,12 +20,15 @@ public class GameManager : Singleton<GameManager> {
 	Camera mainCamera;
 
 	private void Awake() {
+		Debug.Log("GameManager.Awake()");
+
 		mainCamera = Camera.main;
 		Input.multiTouchEnabled = false;
 		LeanTween.init(800);
 	}
 
 	protected override void Initialize() {
+		Debug.Log("GameManager.Initialize()");
 		base.Initialize();
 
 		Events = new EventManager();
@@ -34,6 +37,7 @@ public class GameManager : Singleton<GameManager> {
 	}
 
 	protected override void Deinitialize() {
+		Debug.Log("GameManager.Deinitialize()");
 		base.Deinitialize();
 
 		EventManager.OnSceneLoadEnd -= OnSceneLoadEnd;
