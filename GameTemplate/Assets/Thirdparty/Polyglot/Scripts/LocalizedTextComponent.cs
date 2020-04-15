@@ -30,6 +30,7 @@ namespace Polyglot
         [Tooltip("The key to localize with")]
         [SerializeField]
         private string key;
+        [SerializeField] private string afterKeyValue = "";
 
         public string Key
         {
@@ -73,11 +74,11 @@ namespace Polyglot
 #endif
             if (parameters != null && parameters.Count > 0)
             {
-                SetText(text, Localization.GetFormat(key, parameters.ToArray()));
+                SetText(text, Localization.GetFormat(key, parameters.ToArray()) + afterKeyValue);
             }
             else
             {
-                SetText(text, Localization.Get(key));
+                SetText(text, Localization.Get(key) + afterKeyValue);
             }
 
             var direction = Localization.Instance.SelectedLanguageDirection;

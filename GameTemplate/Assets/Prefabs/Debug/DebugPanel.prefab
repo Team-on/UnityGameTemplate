@@ -424,6 +424,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9125196094349761921}
     m_Modifications:
+    - target: {fileID: 842023181, guid: c1aa92cd8198f654b933334ac725dc4f, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 842023181, guid: c1aa92cd8198f654b933334ac725dc4f, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 842023181, guid: c1aa92cd8198f654b933334ac725dc4f, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 842023181, guid: c1aa92cd8198f654b933334ac725dc4f, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
     - target: {fileID: 1330134896427848, guid: c1aa92cd8198f654b933334ac725dc4f, type: 3}
       propertyPath: m_Name
       value: UserReportingPrefab
