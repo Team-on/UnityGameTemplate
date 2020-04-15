@@ -13,4 +13,8 @@ public class EventManager {
 
 	public static event EventController.MethodContainer OnSceneLoadEnd;
 	public void CallOnSceneLoadEnd(EventData ob = null) => OnSceneLoadEnd?.Invoke(ob);
+
+	//Settings
+	public static event EventController.MethodContainer OnScreenResolutionChange;
+	public void CallOnScreenResolutionChange(EventData ob = null) => OnScreenResolutionChange?.Invoke(ob);
 }

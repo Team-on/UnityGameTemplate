@@ -50,7 +50,8 @@ public class SettingsMenu : PopupMenuBase {
 		for(ushort i = 0; i < videoOptionsData.avaliableResolutions.Length; ++i) {
 			if (Screen.currentResolution.height == videoOptionsData.avaliableResolutions[i].height &&
 				Screen.currentResolution.width == videoOptionsData.avaliableResolutions[i].width) {
-				resolutionDropdown.value = i;
+				resolutionDropdown.SetValueWithoutNotify(i);
+				videoOptionsData.resolution = videoOptionsData.avaliableResolutions[i];
 				break;
 			}
 		}
