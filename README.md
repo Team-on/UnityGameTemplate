@@ -62,6 +62,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://seansleblanc.itch.io/better-minimal-webgl-template  
  https://github.com/agens-no/PolyglotUnity  
  https://github.com/Konash/arabic-support-unity  
+ https://assetstore.unity.com/packages/tools/playersprefs-editor-and-utilities-26656  
  
  
  ## Want to use: 
