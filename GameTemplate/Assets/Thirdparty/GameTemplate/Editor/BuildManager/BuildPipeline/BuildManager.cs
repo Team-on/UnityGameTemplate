@@ -25,15 +25,21 @@ public static class BuildManager {
 		BuildTarget targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
 		BuildTargetGroup targetGroupBeforeStart = BuildPipeline.GetBuildTargetGroup(targetBeforeStart);
 		string definesBeforeStart = PlayerSettings.GetScriptingDefineSymbolsForGroup(targetGroupBeforeStart);
+		bool isVRSupported = PlayerSettings.virtualRealitySupported;    //TODO: PlayerSettings.virtualRealitySupported is deprecated. Replace with smth new	
 
 		string[] buildsPath = new string[sequence.builds.Length];
 		for(byte i = 0; i < sequence.builds.Length; ++i) {
 			BuildData data = sequence.builds[i];
+
+			if (PlayerSettings.virtualRealitySupported != data.isVirtualRealitySupported)
+				PlayerSettings.virtualRealitySupported = data.isVirtualRealitySupported;
+
 			buildsPath[i] = BaseBuild(data.targetGroup, data.target, data.options, data.outputRoot + GetPathWithVars(data, data.middlePath), data.scriptingDefinySymbols);
 		}
 
 		EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroupBeforeStart, targetBeforeStart);
 		PlayerSettings.SetScriptingDefineSymbolsForGroup(targetGroupBeforeStart, definesBeforeStart);
+		PlayerSettings.virtualRealitySupported = isVRSupported;
 		Debug.Log($"End building all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
 
 		startTime = DateTime.Now;

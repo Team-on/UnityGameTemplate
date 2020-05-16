@@ -17,16 +17,20 @@ public class BuildSequence {
 public class BuildData {
 	public string outputRoot = "Builds/";
 	public string middlePath = "$NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE";
+
 	public string scriptingDefinySymbols = "UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED";
+
 
 	public BuildTargetGroup targetGroup = BuildTargetGroup.Unknown;
 	public BuildTarget target = BuildTarget.NoTarget;
 	public BuildOptions options = BuildOptions.None;
 
-	public bool needZip;
+	public bool isVirtualRealitySupported = false;
+
+	public bool needZip = false;
 	public string compressDirPath;
 
-	public bool needItchPush;
+	public bool needItchPush = false;
 	public string itchChannel;
 	public string itchDirPath;
 	public bool itchAddLastChangelogUpdateNameToVerison;

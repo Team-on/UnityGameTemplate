@@ -134,6 +134,8 @@ public class BuildManagerWindow : EditorWindow {
 			EditorGUILayout.EndHorizontal();
 			EditorGUILayout.Space(20);
 
+			buidsList.Selected.isVirtualRealitySupported = EditorGUILayout.Toggle("VR Supported", buidsList.Selected.isVirtualRealitySupported);
+
 			zipFoldout = EditorGUILayout.BeginFoldoutHeaderGroup(zipFoldout, "7zip");
 			if (zipFoldout) {
 				++EditorGUI.indentLevel;
