@@ -17,6 +17,7 @@ public class BuildSequence {
 public class BuildData {
 	public string outputRoot = "Builds/";
 	public string middlePath = "$NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE";
+	public string scriptingDefinySymbols = "UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED";
 
 	public BuildTargetGroup targetGroup = BuildTargetGroup.Unknown;
 	public BuildTarget target = BuildTarget.NoTarget;
