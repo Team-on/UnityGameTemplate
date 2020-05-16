@@ -63,7 +63,8 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/agens-no/PolyglotUnity  
  https://github.com/Konash/arabic-support-unity  
  https://assetstore.unity.com/packages/tools/playersprefs-editor-and-utilities-26656  
- 
+ https://github.com/Maligan/unity-subassets-drag-and-drop  
+ https://github.com/s-m-k/Unity-Animation-Hierarchy-Editor  
  
  ## Want to use: 
  https://github.com/TeamSirenix/odin-serializer  

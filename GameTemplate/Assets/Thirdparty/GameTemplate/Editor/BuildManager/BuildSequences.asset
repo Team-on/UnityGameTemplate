@@ -24,11 +24,11 @@ MonoBehaviour:
       options: 8
       needZip: 0
       compressDirPath: $NAME_$VERSION_TEST
-      needItchPush: 0
+      needItchPush: 1
       itchChannel: windows-32
       itchDirPath: $NAME_$VERSION_TEST
       itchAddLastChangelogUpdateNameToVerison: 1
-      itchLastChangelogUpdateName: TEST CHANGELOG CHANGING RUNTIME
+      itchLastChangelogUpdateName: 0.1 - YOUR MAMA TEST CHANGELOG@!
       useGithubActions: 0
       useUnityActions: 0
       needGamejolthPush: 0
