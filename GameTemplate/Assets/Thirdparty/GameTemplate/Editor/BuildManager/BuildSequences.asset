@@ -22,6 +22,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 5
       options: 8
+      isVirtualRealitySupported: 0
       needZip: 0
       compressDirPath: $NAME_$VERSION_TEST
       needItchPush: 1
@@ -43,6 +44,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 5
       options: 0
+      isVirtualRealitySupported: 0
       needZip: 0
       compressDirPath: 
       needItchPush: 0
@@ -61,6 +63,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 19
       options: 0
+      isVirtualRealitySupported: 0
       needZip: 0
       compressDirPath: 
       needItchPush: 0
@@ -79,6 +82,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 24
       options: 0
+      isVirtualRealitySupported: 0
       needZip: 0
       compressDirPath: 
       needItchPush: 0
@@ -97,6 +101,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 2
       options: 0
+      isVirtualRealitySupported: 0
       needZip: 0
       compressDirPath: 
       needItchPush: 0
@@ -115,6 +120,7 @@ MonoBehaviour:
       targetGroup: 13
       target: 20
       options: 8
+      isVirtualRealitySupported: 0
       needZip: 0
       compressDirPath: 
       needItchPush: 0
@@ -133,6 +139,7 @@ MonoBehaviour:
       targetGroup: 7
       target: 13
       options: 8
+      isVirtualRealitySupported: 0
       needZip: 0
       compressDirPath: 
       needItchPush: 0
@@ -154,6 +161,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 5
       options: 0
+      isVirtualRealitySupported: 0
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM
       needItchPush: 0
@@ -172,6 +180,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 19
       options: 0
+      isVirtualRealitySupported: 0
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM
       needItchPush: 0
@@ -190,6 +199,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 24
       options: 0
+      isVirtualRealitySupported: 0
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM
       needItchPush: 0
@@ -208,6 +218,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 2
       options: 0
+      isVirtualRealitySupported: 0
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM
       needItchPush: 0
@@ -226,6 +237,7 @@ MonoBehaviour:
       targetGroup: 13
       target: 20
       options: 8
+      isVirtualRealitySupported: 0
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM
       needItchPush: 0
@@ -244,6 +256,7 @@ MonoBehaviour:
       targetGroup: 7
       target: 13
       options: 8
+      isVirtualRealitySupported: 0
       needZip: 0
       compressDirPath: 
       needItchPush: 0
@@ -265,6 +278,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 5
       options: 0
+      isVirtualRealitySupported: 0
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM
       needItchPush: 1
@@ -283,6 +297,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 19
       options: 0
+      isVirtualRealitySupported: 0
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM
       needItchPush: 1
@@ -301,6 +316,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 24
       options: 0
+      isVirtualRealitySupported: 0
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM
       needItchPush: 1
@@ -319,6 +335,7 @@ MonoBehaviour:
       targetGroup: 1
       target: 2
       options: 0
+      isVirtualRealitySupported: 0
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM
       needItchPush: 1
@@ -337,6 +354,7 @@ MonoBehaviour:
       targetGroup: 13
       target: 20
       options: 8
+      isVirtualRealitySupported: 0
       needZip: 1
       compressDirPath: $NAME_$VERSION_$PLATFORM
       needItchPush: 1
@@ -355,6 +373,7 @@ MonoBehaviour:
       targetGroup: 7
       target: 13
       options: 8
+      isVirtualRealitySupported: 0
       needZip: 0
       compressDirPath: 
       needItchPush: 1

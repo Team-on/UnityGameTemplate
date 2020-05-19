@@ -62,11 +62,21 @@ namespace NaughtyAttributes.Editor
 				Vector2 sliderValue = property.vector2Value;
 				EditorGUI.MinMaxSlider(sliderRect, ref sliderValue.x, ref sliderValue.y, minMaxSliderAttribute.MinValue, minMaxSliderAttribute.MaxValue);
 
-				sliderValue.x = EditorGUI.FloatField(minFloatFieldRect, sliderValue.x);
-				sliderValue.x = Mathf.Clamp(sliderValue.x, minMaxSliderAttribute.MinValue, Mathf.Min(minMaxSliderAttribute.MaxValue, sliderValue.y));
+				if (minMaxSliderAttribute.IsInt) {
+					sliderValue.x = (int)EditorGUI.FloatField(minFloatFieldRect, sliderValue.x);
+					sliderValue.x = (int)Mathf.Clamp(sliderValue.x, minMaxSliderAttribute.MinValue, Mathf.Min(minMaxSliderAttribute.MaxValue, sliderValue.y));
 
-				sliderValue.y = EditorGUI.FloatField(maxFloatFieldRect, sliderValue.y);
-				sliderValue.y = Mathf.Clamp(sliderValue.y, Mathf.Max(minMaxSliderAttribute.MinValue, sliderValue.x), minMaxSliderAttribute.MaxValue);
+					sliderValue.y = (int)EditorGUI.FloatField(maxFloatFieldRect, sliderValue.y);
+					sliderValue.y = (int)Mathf.Clamp(sliderValue.y, Mathf.Max(minMaxSliderAttribute.MinValue, sliderValue.x), minMaxSliderAttribute.MaxValue);
+				}
+				else {
+					sliderValue.x = EditorGUI.FloatField(minFloatFieldRect, sliderValue.x);
+					sliderValue.x = Mathf.Clamp(sliderValue.x, minMaxSliderAttribute.MinValue, Mathf.Min(minMaxSliderAttribute.MaxValue, sliderValue.y));
+
+					sliderValue.y = EditorGUI.FloatField(maxFloatFieldRect, sliderValue.y);
+					sliderValue.y = Mathf.Clamp(sliderValue.y, Mathf.Max(minMaxSliderAttribute.MinValue, sliderValue.x), minMaxSliderAttribute.MaxValue);
+				}
+				
 
 				if (EditorGUI.EndChangeCheck())
 				{

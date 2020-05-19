@@ -7,11 +7,13 @@ namespace NaughtyAttributes
 	{
 		public float MinValue { get; private set; }
 		public float MaxValue { get; private set; }
+		public bool IsInt { get; private set; }
 
-		public MinMaxSliderAttribute(float minValue, float maxValue)
+		public MinMaxSliderAttribute(float minValue, float maxValue, bool isInt)
 		{
 			MinValue = minValue;
 			MaxValue = maxValue;
+			IsInt = isInt;
 		}
 	}
 }
