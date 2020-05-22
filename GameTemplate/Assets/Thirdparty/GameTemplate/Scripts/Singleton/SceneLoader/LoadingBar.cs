@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using NaughtyAttributes;
 
 public class LoadingBar : MonoBehaviour {
 	[SerializeField] List<string> tips;
-
+	[Space]
 	[SerializeField] TextMeshProUGUI tipText;
 	[SerializeField] CanvasGroup canvasGroup;
 	[SerializeField] Image loadingBar;
+	[Space]
+	[SerializeField] [MinMaxSlider(0.0f, 10.0f, false)] Vector2 additionalDelay = new Vector2(1.0f, 2.0f);
 
 	int sceneId;
 	AsyncOperation loader;
@@ -73,7 +76,7 @@ public class LoadingBar : MonoBehaviour {
 	}
 
 	IEnumerator LoadingBarUpdateWithDelay() {
-		float delayMax = Random.Range(0.5f, 1.5f);
+		float delayMax = additionalDelay.GetRandomValueFloat();
 		float delayCurr = 0;
 		loader.allowSceneActivation = false;
 

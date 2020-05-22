@@ -130,7 +130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 649a707bfd09bab49b88cee90bb0bdb0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a57390ef6f79424459aeb60e9fa348e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -389,12 +389,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 649a707bfd09bab49b88cee90bb0bdb0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a57390ef6f79424459aeb60e9fa348e4, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -674,17 +674,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tips:
-  - Fun things is fun
-  - "If you\u2019re having trouble winning in combat, try getting better at the game"
-  - People die if they are killed
-  - Left arm is not a right arm
-  - They'll continue to live until they die
-  - Floating Islands!!!!
-  - "You can\u2019t make RTS in 3 days"
-  - "You can\u2019t make MMORPG in 3 days"
+  - You can set loading tips in [GlobalCanvas] prefab. Or disable them
   tipText: {fileID: 7052802825247106243}
   canvasGroup: {fileID: 7052802825514451058}
   loadingBar: {fileID: 7052802825099716772}
+  additionalDelay: {x: 0.5, y: 1}
 --- !u!225 &7052802825514451058
 CanvasGroup:
   m_ObjectHideFlags: 0

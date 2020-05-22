@@ -9,6 +9,6 @@ public class MainMenu : MenuBase {
 	}
 
 	public void Load() {
-		SceneLoader.Instance.LoadScene("SampleScene2D", true, true);
+		SceneLoader.Instance.LoadScene("SampleScene2D", true, false);
 	}
 }
