@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Rotating : MonoBehaviour {
-	[SerializeField] float rotationSpeed = 180f;
+	[SerializeField] Vector3 rotationSpeed = new Vector3(180, 180, 180);
 
 	private void Awake() {
-		transform.Rotate(0, 0, Random.Range(0f, 360f));
+		transform.Rotate(
+			rotationSpeed.x == 0 ? 0 : Random.Range(0f, 360f),
+			rotationSpeed.y == 0 ? 0 : Random.Range(0f, 360f),
+			rotationSpeed.z == 0 ? 0 : Random.Range(0f, 360f)
+		);
 	}
 
 	void Update() {
-		transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+		transform.Rotate(rotationSpeed * Time.deltaTime);
 	}
 }
