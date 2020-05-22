@@ -9,37 +9,36 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Build Manager
  * Changelog
  * Event bus
-
-## TODO:
- * Keyboard/gamepad controll in menu
- * BuildManager
  * EventManager
  * GameManager
+ * player prefs extended saver
+ * Localization manager(polyglot, custom xml)
+ * Camera shake (in LeanTween)
+ * Unity crashlitics and feedback
+ * Label with version in mainmenu and pause  
+   
+## TODO:
+ * Keyboard/gamepad controll in menu
  * Timebomb
  * Indexed array
  * Input manager
  * ToastMessage
- * Player prefs viewer
- * player prefs extended saver
- * Localization manager(polyglot, custom xml)
+
  * Screenshot/video capture
  * Add icons to custom toolbar
- * Camera shake (in LeanTween)
- * Pause
- * Unity crashlitics and feedback
- * Label with version in mainmenu and pause
+ * Pause in-game 
  * Set scripting backend to il2cpp on release build? (except IOS and linux, unity can't build for it using il2cpp). (Increase windows build size by ~1mb and build time in 3 times(only unfinished main menu build))
  * Better reporting (https://unitytech.github.io/clouddiagnostics/userreporting/UnityCloudDiagnosticsUserReports.html)
  * Build size explorer. Like this https://github.com/aschearer/unitysizeexplorer but in editor
  * NaughtyAttributes for new input system?
  * Obj pooling in AudioManager
+ * Audio manager - 3d sound support
  * Complete all actions for build manager
 	* Release notes like https://assetstore.unity.com/packages/tools/utilities/build-3720
-	* Open folder with builds after
+	* VR build side-by-side with regular
  * Pool
  * Hightscores(playfab?)
- * Audo readme
- * Event bus
+ * Auto add readme
  
  ## Used assets/tools:
  TODO: import them in right way, cuz untiy now support git packages.  
