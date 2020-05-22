@@ -34,5 +34,4 @@ public class EventData {
 		logStr += ")";
 		Debug.Log(logStr);
 	}
-
 }
