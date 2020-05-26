@@ -64,6 +64,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://assetstore.unity.com/packages/tools/playersprefs-editor-and-utilities-26656  
  https://github.com/Maligan/unity-subassets-drag-and-drop  
  https://github.com/s-m-k/Unity-Animation-Hierarchy-Editor  
+ https://github.com/DapperDino/Dapper-Tools  
  
  ## Want to use: 
  https://github.com/TeamSirenix/odin-serializer  

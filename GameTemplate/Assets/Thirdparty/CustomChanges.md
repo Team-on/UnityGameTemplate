@@ -19,5 +19,9 @@ Feel free to move any folder whatever you want, except CustomToolbar. Also I rem
  * Remove unnecessary instructions/examples/tests sort of stuff
  * Add MinMaxSlider(min, max, true) - for int only values
 
- #### [#NVJOB FPS Counter and Graph ]( https://nvjob.itch.io/fps-counter-and-graph)
+#### [#NVJOB FPS Counter and Graph ]( https://nvjob.itch.io/fps-counter-and-graph)
  * Remove unnecessary examples
+
+#### [Dapper Tools](https://github.com/DapperDino/Dapper-Tools)
+ * Left only Vector extensions.
+ * Remove namespaces
