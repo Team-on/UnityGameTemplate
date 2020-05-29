@@ -13,21 +13,43 @@ MonoBehaviour:
   m_Name: BuildSequences
   m_EditorClassIdentifier: 
   sequences:
-  - editorName: Windows 32 only + zip + itch.io
+  - editorName: Windows 32 only + itch.io
     itchGameLink: teamon/gametemplate
     builds:
     - outputRoot: Builds/
-      middlePath: $NAME_$VERSION_TEST/$NAME$EXECUTABLE
+      middlePath: $NAME_$VERSION_TESTWIN/$NAME$EXECUTABLE
       scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
       targetGroup: 1
       target: 5
       options: 8
       isVirtualRealitySupported: 0
       needZip: 0
-      compressDirPath: $NAME_$VERSION_TEST
+      compressDirPath: $NAME_$VERSION_TESTWIN
       needItchPush: 1
-      itchChannel: windows-32
-      itchDirPath: $NAME_$VERSION_TEST
+      itchChannel: windows-32-test
+      itchDirPath: $NAME_$VERSION_TESTWIN
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 0.1 - YOUR MAMA TEST CHANGELOG@!
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+  - editorName: WebGL + itch.io
+    itchGameLink: teamon/gametemplate
+    builds:
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_TESTWEB/$NAME$EXECUTABLE
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 13
+      target: 20
+      options: 8
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: $NAME_$VERSION_TESTWEB
+      needItchPush: 1
+      itchChannel: webgs-test
+      itchDirPath: $NAME_$VERSION_TESTWEB
       itchAddLastChangelogUpdateNameToVerison: 1
       itchLastChangelogUpdateName: 0.1 - YOUR MAMA TEST CHANGELOG@!
       useGithubActions: 0
