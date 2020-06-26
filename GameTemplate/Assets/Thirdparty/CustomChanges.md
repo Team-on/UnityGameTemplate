@@ -25,3 +25,6 @@ Feel free to move any folder whatever you want, except CustomToolbar. Also I rem
 #### [Dapper Tools](https://github.com/DapperDino/Dapper-Tools)
  * Left only Vector extensions.
  * Remove namespaces
+ 
+#### [Pump Editor](https://github.com/rfadeev/pump-editor)
+ * Remove *Project Settings Select* and *Save Project As Template* windows
