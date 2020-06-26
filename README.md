@@ -67,6 +67,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/DapperDino/Dapper-Tools  
  https://github.com/rfadeev/pump-editor  
  https://github.com/PhannGor/unity3d-rainbow-folders  
+ https://github.com/rfadeev/presets-browser  
  
  ## Want to use: 
  https://github.com/TeamSirenix/odin-serializer  
