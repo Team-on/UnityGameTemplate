@@ -438,7 +438,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 842023181, guid: c1aa92cd8198f654b933334ac725dc4f, type: 3}
       propertyPath: m_textAlignment
-      value: 65535
+      value: 514
+      objectReference: {fileID: 0}
+    - target: {fileID: 842023181, guid: c1aa92cd8198f654b933334ac725dc4f, type: 3}
+      propertyPath: m_fontSize
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 842023181, guid: c1aa92cd8198f654b933334ac725dc4f, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 842023181, guid: c1aa92cd8198f654b933334ac725dc4f, type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 842023181, guid: c1aa92cd8198f654b933334ac725dc4f, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 842023181, guid: c1aa92cd8198f654b933334ac725dc4f, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1330134896427848, guid: c1aa92cd8198f654b933334ac725dc4f, type: 3}
       propertyPath: m_Name
