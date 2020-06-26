@@ -65,6 +65,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/Maligan/unity-subassets-drag-and-drop  
  https://github.com/s-m-k/Unity-Animation-Hierarchy-Editor  
  https://github.com/DapperDino/Dapper-Tools  
+ https://github.com/rfadeev/pump-editor  
  
  ## Want to use: 
  https://github.com/TeamSirenix/odin-serializer  
