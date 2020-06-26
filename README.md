@@ -69,6 +69,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/PhannGor/unity3d-rainbow-folders  
  https://github.com/rfadeev/presets-browser  
  https://github.com/rfadeev/unity-forge-extension-methods  
+ https://github.com/rfadeev/unity-forge-property-drawers  
  
  ## Want to use: 
  https://github.com/TeamSirenix/odin-serializer  

@@ -1,0 +1,17 @@
+{
+    "name": "UnityForge.PropertyDrawers.Editor",
+    "references": [
+        "GUID:38fe782b688022a4a98328b1d5900bdb"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
