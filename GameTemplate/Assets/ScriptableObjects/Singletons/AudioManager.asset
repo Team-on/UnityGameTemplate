@@ -19,3 +19,7 @@ MonoBehaviour:
   soundGroup: {fileID: -9056115165908447019, guid: 01360023bba8a95409d35b2a77969f01,
     type: 2}
   lowestDeciblesBeforeMute: -20
+  defaultMasterVolume: 0.75
+  defaultMusicVolume: 1
+  defaultSoundVolume: 1
+  defaultEnabled: 1

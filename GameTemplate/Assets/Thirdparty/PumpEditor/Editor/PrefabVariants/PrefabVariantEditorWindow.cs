@@ -106,6 +106,9 @@ namespace PumpEditor
 
         private void OnGUI()
         {
+            if (treeView == null)
+                return;
+
             DoToolbar();
             DoTreeView();
             DoAssetInfo();
