@@ -18,8 +18,9 @@ public class BuildData {
 	public string outputRoot = "Builds/";
 	public string middlePath = "$NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE";
 
-	public string scriptingDefinySymbols = "UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED";
+	public bool isPassbyBuild = false; //Use it to simulate build and give to after build hooks previously build game
 
+	public string scriptingDefinySymbols = "UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED";
 
 	public BuildTargetGroup targetGroup = BuildTargetGroup.Unknown;
 	public BuildTarget target = BuildTarget.NoTarget;
@@ -28,12 +29,12 @@ public class BuildData {
 	public bool isVirtualRealitySupported = false;
 
 	public bool needZip = false;
-	public string compressDirPath;
+	public string compressDirPath = "$NAME_$VERSION_$PLATFORM";
 
 	public bool needItchPush = false;
-	public string itchChannel;
-	public string itchDirPath;
-	public bool itchAddLastChangelogUpdateNameToVerison;
+	public string itchChannel = "channel";
+	public string itchDirPath = "$NAME_$VERSION_$PLATFORM";
+	public bool itchAddLastChangelogUpdateNameToVerison = false;
 	public string itchLastChangelogUpdateName;	//Fill from code
 
 	//TODO: 

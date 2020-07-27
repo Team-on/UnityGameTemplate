@@ -34,7 +34,7 @@ public static class BuildManager {
 			if (PlayerSettings.virtualRealitySupported != data.isVirtualRealitySupported)
 				PlayerSettings.virtualRealitySupported = data.isVirtualRealitySupported;
 
-			buildsPath[i] = BaseBuild(data.targetGroup, data.target, data.options, data.outputRoot + GetPathWithVars(data, data.middlePath), data.scriptingDefinySymbols);
+			buildsPath[i] = BaseBuild(data.targetGroup, data.target, data.options, data.outputRoot + GetPathWithVars(data, data.middlePath), data.scriptingDefinySymbols, data.isPassbyBuild);
 		}
 
 		EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroupBeforeStart, targetBeforeStart);
@@ -134,7 +134,11 @@ public static class BuildManager {
 	#endregion
 
 	#region Base methods
-	static string BaseBuild(BuildTargetGroup buildTargetGroup, BuildTarget buildTarget, BuildOptions buildOptions, string buildPath, string definesSymbols) {
+	static string BaseBuild(BuildTargetGroup buildTargetGroup, BuildTarget buildTarget, BuildOptions buildOptions, string buildPath, string definesSymbols, bool isPassbyBuild) {
+		if (isPassbyBuild) {
+			return buildPath;
+		}
+
 		if (buildTarget == BuildTarget.Android && PlayerSettings.Android.useCustomKeystore && string.IsNullOrEmpty(PlayerSettings.Android.keyaliasPass)) {
 			PlayerSettings.Android.keyaliasPass = PlayerSettings.Android.keystorePass = "keystore";
 		}

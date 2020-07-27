@@ -114,6 +114,7 @@ public class BuildManagerWindow : EditorWindow {
 		if (buidsList?.Selected != null) {
 			SerializedObject obj = new SerializedObject(settings);
 
+			buidsList.Selected.isPassbyBuild = EditorGUILayout.Toggle("Is Passby build", buidsList.Selected.isPassbyBuild);
 			buidsList.Selected.outputRoot = EditorGUILayout.TextField("Output root", buidsList.Selected.outputRoot);
 			buidsList.Selected.middlePath = EditorGUILayout.TextField("Middle path", buidsList.Selected.middlePath);
 			buidsList.Selected.scriptingDefinySymbols = EditorGUILayout.TextField("Scripting Defines", buidsList.Selected.scriptingDefinySymbols);
