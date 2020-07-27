@@ -77,3 +77,8 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/5argon/OdinHierarchy  
  https://assetstore.unity.com/packages/tools/gui/cyro-build-debugger-65101  
  https://assetstore.unity.com/packages/tools/gui/debuggui-graph-139275  
+ 
+ ## How to add new plugin:
+  * Move it to Thirdparty folder and make sure that it works correctly
+  * Create Assembly deffinition for all Editor folders
+  * Mark that assembly deffinition as editor only
