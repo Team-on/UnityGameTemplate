@@ -35,7 +35,8 @@ I'd be happy for any contribution to make this template as good as it can be.
 	* Push to google drive
  * Obj pooling
  * Hightscores(playfab?)
- * Auto add readme
+ * Auto add readme to build folders
+ * Build with teamcity or unity cloud build
  
  ## Used assets/tools:
  TODO: import them in right way, cuz untiy now support git packages.  
@@ -89,7 +90,7 @@ I'd be happy for any contribution to make this template as good as it can be.
 ## Setting up for your game:
  * Move to *Edit/Project settings/Player* and set *Company name*, *Product name* and *Icon*
  * Move to *Window/Builds(ALT+B)* and set up build sequence. Default already setup good, so you just need to add right *itch.io link*
- * Move to *Window/General/Services(CTRL+0)/Settings* and link project to your project
+ * Move to *Window/General/Services(CTRL+0)/Settings* and link project to your project. Enable *Analytics* and *Cloud Diagnostics*
  * Copy [this](https://docs.google.com/spreadsheets/d/13YCRi6fHNaS_DRApBelilgdM6O833hLiCy68F47KWIU/edit#gid=296134756) translation sheet for polyglot localization and save it on your Google drive. Be sure to make it public
  * Move to *Window/Polyglot Localization/SConfigurate* and add your own *Docs Id* and *Sheet id*
  
