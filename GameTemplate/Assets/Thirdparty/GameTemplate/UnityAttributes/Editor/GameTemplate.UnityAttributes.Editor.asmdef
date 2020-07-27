@@ -1,0 +1,17 @@
+{
+    "name": "GameTemplate.UnityAttributes.Editor",
+    "references": [
+        "GUID:90f5854c59c56594eb4e5e8249ec225f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

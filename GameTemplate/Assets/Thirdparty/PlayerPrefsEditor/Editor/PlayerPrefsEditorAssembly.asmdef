@@ -1,0 +1,17 @@
+{
+    "name": "PlayerPrefsEditorAssembly",
+    "references": [
+        "GUID:40e6a28508d442d43ac07f3a59fb47cb"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
