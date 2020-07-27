@@ -1,32 +1,8 @@
 # Unity Game Template (On active development. Use on your own risk)
 **Game Template** is all necessary stuff taken care for Unity users not to worry about creating most boring and tedious work.  
 I'd be happy for any contribution to make this template as good as it can be.  
-//TODO: use as template this https://github.com/nezvers/Godot-GameTemplate
-   
-## TODO:
- * Keyboard/gamepad controll in menu
- * Indexed array
- * ToastMessage
- * Screenshot/video capture
- * Pause in-game 
- * Set scripting backend to il2cpp on release build? (except IOS and linux, unity can't build for it using il2cpp). (Increase windows build size by ~1mb and build time in 3 times(only unfinished main menu build))
- * Better reporting (https://unitytech.github.io/clouddiagnostics/userreporting/UnityCloudDiagnosticsUserReports.html)
- * Build size explorer. Like this https://github.com/aschearer/unitysizeexplorer but in editor
- * Obj pooling in AudioManager
- * Audio manager - 3d sound support
- * Complete all actions for build manager
-	* Release notes like https://assetstore.unity.com/packages/tools/utilities/build-3720
-	* VR build side-by-side with regular
-	* Push to steam?
-	* Push to google drive
- * Obj pooling
- * Hightscores(playfab?)
- * Auto add readme to build folders
- * Build with teamcity or unity cloud build
- * Achievements
- *  Use il2cpp in master mode
- 
- ## Used assets/tools:
+
+## Used assets/tools:
  Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md  
  https://github.com/Team-on/CustomToolbar  
  http://wiki.unity3d.com/index.php/ArrayPrefs2  
