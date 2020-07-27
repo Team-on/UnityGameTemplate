@@ -23,14 +23,11 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Indexed array
  * Input manager
  * ToastMessage
-
  * Screenshot/video capture
- * Add icons to custom toolbar
  * Pause in-game 
  * Set scripting backend to il2cpp on release build? (except IOS and linux, unity can't build for it using il2cpp). (Increase windows build size by ~1mb and build time in 3 times(only unfinished main menu build))
  * Better reporting (https://unitytech.github.io/clouddiagnostics/userreporting/UnityCloudDiagnosticsUserReports.html)
  * Build size explorer. Like this https://github.com/aschearer/unitysizeexplorer but in editor
- * NaughtyAttributes for new input system?
  * Obj pooling in AudioManager
  * Audio manager - 3d sound support
  * Complete all actions for build manager
