@@ -77,14 +77,6 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/5argon/OdinHierarchy  
  https://assetstore.unity.com/packages/tools/gui/cyro-build-debugger-65101  
  https://assetstore.unity.com/packages/tools/gui/debuggui-graph-139275  
- 
- ## How to add new plugin:
- * Move it to Thirdparty folder and make sure that it works correctly
- * Create Assembly deffinition for all Editor folders
-  * Mark that assembly deffinition as editor only
-  * Create Assembly deffinition for root folder, if project don't compile. (Usually it don't)
-   * Add *Editor assembly* as reference to *root assembly* 
-  * If it still not compile, add as refferences all other needed assemblies. (Can be figured out from using statements) 
    
 ## First launch(for every user):
  * Move to Edit/Preferences/Rainbow Folders and change *Folder Location* to *Assets/Thirdparty/RainbowFolders*
