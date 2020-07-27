@@ -38,6 +38,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Auto add readme to build folders
  * Build with teamcity or unity cloud build
  * Achievements
+ *  Use il2cpp in master mode
  
  ## Used assets/tools:
  TODO: import them in right way, cuz untiy now support git packages.  
@@ -107,6 +108,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Move to *Window/Builds(ALT+B)* and increase *Version* and *Android bundle version*
  * Move to *Window/Builds(ALT+B)/Changelog* and write little *Update name*
  * Move to *Window/Polyglot Localization/SConfigurate* and click *Download* button for both *Master* and *Custom* sheet
+ * Use this checklist https://thegamedev.guru/unity-performance/checklist/
  
 ## Setting up itch.io page:
  * Move to *Window/Builds(ALT+B)* and click *Build Local + Zip + itch.io*. Wait untill all builds get pushed
@@ -115,8 +117,9 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Find *Embed options* and select *Embed in page* *Manually set size*
  * Find *Viewport dimensions* and set *Width* to 960 and *Height* to 540
  
- ## Setting up template for 3 games
- * Move to *Edit/Project settings/Editor* and set *Default Behaviour Mode/Mode* to 2D
+ ## Setting up template for 3D games
+ * Move to *Edit/Project settings/Editor* and set *Default Behaviour Mode/Mode* to 3D
+ * Move to *Edit/Project settings/Player* and set *Color Space* to Gamma. (In 3D it looks better)
  
  ## Warning:
  * By default, *Reload Domain* and *Reload Scene* Disabled, so you need to write code, where all static fields initialize not in static ctor.
