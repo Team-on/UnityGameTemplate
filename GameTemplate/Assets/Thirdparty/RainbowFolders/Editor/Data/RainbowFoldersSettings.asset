@@ -193,3 +193,8 @@ MonoBehaviour:
     IsRecursive: 0
     SmallIcon: {fileID: 2800000, guid: 8d50cf779e5b4f54a831bdefc32b044c, type: 3}
     LargeIcon: {fileID: 2800000, guid: 5c32cf9ad519d0c4aacb16805c45eab3, type: 3}
+  - Type: 1
+    Key: Assets/ScriptableObjects/Input
+    IsRecursive: 0
+    SmallIcon: {fileID: 2800000, guid: 0a498e8f7fbcbef4db91d2d411e3f70f, type: 3}
+    LargeIcon: {fileID: 2800000, guid: b88339035f924f94eab1e64bac79149f, type: 3}
