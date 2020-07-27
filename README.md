@@ -37,6 +37,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Hightscores(playfab?)
  * Auto add readme to build folders
  * Build with teamcity or unity cloud build
+ * Achievements
  
  ## Used assets/tools:
  TODO: import them in right way, cuz untiy now support git packages.  
@@ -86,7 +87,12 @@ I'd be happy for any contribution to make this template as good as it can be.
    
 ## First launch(for every user):
  * Move to Edit/Preferences/Rainbow Folders and change *Folder Location* to *Assets/Thirdparty/RainbowFolders*
- 
+
+## Setting up git LFS:
+* Download https://git-lfs.github.com/
+* git lfs install
+* It's all. .gitattributes already setup to move almost all files with 'big' extension to LFS
+
 ## Setting up for your game:
  * Move to *Edit/Project settings/Player* and set *Company name*, *Product name* and *Icon*
  * Move to *Window/Builds(ALT+B)* and set up build sequence. Default already setup good, so you just need to add right *itch.io link*
