@@ -1,12 +1,10 @@
 # Label repository with C# language
 * linguist-vendored
 *.cs linguist-vendored=false
-
 # Unity
 *.cginc              text
 *.cs                 text diff=csharp
 *.shader             text
-
 # Unity YAML
 *.mat                merge=unityyamlmerge eol=lf
 *.anim               merge=unityyamlmerge eol=lf
@@ -15,42 +13,40 @@
 *.asset              merge=unityyamlmerge eol=lf
 *.meta               merge=unityyamlmerge eol=lf
 *.controller         merge=unityyamlmerge eol=lf
-
 # "physic" for 3D but "physics" for 2D
 *.physicMaterial2D   merge=unityyamlmerge eol=lf
 *.physicMaterial     merge=unityyamlmerge eol=lf
 *.physicsMaterial2D  merge=unityyamlmerge eol=lf
 *.physicsMaterial    merge=unityyamlmerge eol=lf
-
 # Using Git LFS
 # Add diff=lfs merge=lfs to the binary files
-
 # Unity LFS
-*.cubemap            binary
-*.unitypackage       binary
-
+*.cubemap filter=lfs diff=lfs merge=lfs -text
+*.unitypackage filter=lfs diff=lfs merge=lfs -text
+*.terrainlayer filter=lfs diff=lfs merge=lfs -text
 # 3D models
 *.3dm                binary
 *.3ds                binary
-*.blend              binary
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.blender filter=lfs diff=lfs merge=lfs -text
 *.c4d                binary
 *.collada            binary
 *.dae                binary
 *.dxf                binary
 *.FBX                binary
-*.fbx                binary
+*.fbx filter=lfs diff=lfs merge=lfs -text
 *.jas                binary
 *.lws                binary
 *.lxo                binary
 *.ma                 binary
 *.max                binary
 *.mb                 binary
-*.obj                binary
+*.obj filter=lfs diff=lfs merge=lfs -text
 *.ply                binary
 *.skp                binary
 *.stl                binary
 *.ztl                binary
-
+*.doe filter=lfs diff=lfs merge=lfs -text
 # Audio
 *.aif                binary
 *.aiff               binary
@@ -61,23 +57,21 @@
 *.s3m                binary
 *.wav                binary
 *.xm                 binary
-
 # Video
-*.asf                binary
-*.avi                binary
-*.flv                binary
-*.mov                binary
-*.mp4                binary
-*.mpeg               binary
-*.mpg                binary
-*.ogv                binary
-*.wmv                binary
-
+*.asf filter=lfs diff=lfs merge=lfs -text
+*.avi filter=lfs diff=lfs merge=lfs -text
+*.flv filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mpeg filter=lfs diff=lfs merge=lfs -text
+*.mpg filter=lfs diff=lfs merge=lfs -text
+*.ogv filter=lfs diff=lfs merge=lfs -text
+*.wmv filter=lfs diff=lfs merge=lfs -text
 # Images
 *.bmp                binary
-*.exr                binary
-*.gif                binary
-*.hdr                binary
+*.exr filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+*.hdr filter=lfs diff=lfs merge=lfs -text
 *.iff                binary
 *.jpeg               binary
 *.jpg                binary
@@ -85,41 +79,37 @@
 *.png                binary
 *.psd                binary
 *.tga                binary
-*.tif                binary
-*.tiff               binary
-
+*.tif filter=lfs diff=lfs merge=lfs -text
+*.tiff filter=lfs diff=lfs merge=lfs -text
 # Compressed Archive
-*.7z                binary
-*.bz2               binary
-*.gz                binary
-*.rar               binary
-*.tar               binary
-*.zip               binary
-
+*.7z filter=lfs diff=lfs merge=lfs -text
+*.bz2 filter=lfs diff=lfs merge=lfs -text
+*.gz filter=lfs diff=lfs merge=lfs -text
+*.rar filter=lfs diff=lfs merge=lfs -text
+*.tar filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
 # Compiled Dynamic Library
 *.dll               binary
 *.pdb               binary
 *.so                binary
-
 # Fonts
 *.otf               binary
 *.ttf               binary
-
 # Executable/Installer
 *.apk               binary
-*.exe               binary
-
+*.exe filter=lfs diff=lfs merge=lfs -text
 # Documents
-*.pdf               binary
-
+*.pdf filter=lfs diff=lfs merge=lfs -text
 # ETC
 *.a                 binary
 *.rns               binary
 *.reason            binary
-
 # Collapse Unity-generated files on GitHub
 *.asset             linguist-generated
 *.mat               linguist-generated
 *.meta              linguist-generated
 *.prefab            linguist-generated
 *.unity             linguist-generated
+# Not a game data
+*.docx filter=lfs diff=lfs merge=lfs -text
+Screenshots/*.* filter=lfs diff=lfs merge=lfs -text
