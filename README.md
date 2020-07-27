@@ -81,3 +81,27 @@ I'd be happy for any contribution to make this template as good as it can be.
    * Add *Editor assembly* as reference to *root assembly* 
   * If it still not compile, add as refferences all other needed assemblies. (Can be figured out from using statements) 
    
+## First launch(for every user):
+ * Move to Edit/Preferences/Rainbow Folders and change *Folder Location* to *Assets/Thirdparty/RainbowFolders*
+ 
+## Setting up for your game:
+ * Move to *Edit/Project settings/Player* and set *Company name*, *Product name* and *Icon*
+ * Move to *Window/Builds(ALT+B)* and set up build sequence. Default already setup good, so you just need to add right *itch.io link*
+ * Move to *Window/General/Services(CTRL+0)/Settings* and link project to your project
+ * Copy [this](https://docs.google.com/spreadsheets/d/13YCRi6fHNaS_DRApBelilgdM6O833hLiCy68F47KWIU/edit#gid=296134756) translation sheet for polyglot localization and save it on your Google drive. Be sure to make it public
+ * Move to *Window/Polyglot Localization/SConfigurate* and add your own *Docs Id* and *Sheet id*
+ 
+## On every launch:
+ * Select all singletones in *ScriptableObjects/Singletons* and reimport them. Also you must reimport any other singleton derived from Singleton<>. (Probably it's some yaSingleton bug)
+ 
+## Before build:
+ * Move to *Window/Builds(ALT+B)* and increase *Version* and *Android bundle version*
+ * Move to *Window/Builds(ALT+B)/Changelog* and write little *Update name*
+ * Move to *Window/Polyglot Localization/SConfigurate* and click *Download* button for both *Master* and *Custom* sheet
+ 
+## Setting up itch.io page:
+ * Move to *Window/Builds(ALT+B)* and click *Build Local + Zip + itch.io*. Wait untill all builds get pushed
+ * Move to your itch.io page an checkmark all builds with approprivate labels
+ * Set up *Kind of project* as HTML
+ * Find *Embed options* and select *Embed in page* *Manually set size*
+ * Find *Viewport dimensions* and set *Width* to 960 and *Height* to 540
