@@ -19,9 +19,7 @@ I'd be happy for any contribution to make this template as good as it can be.
    
 ## TODO:
  * Keyboard/gamepad controll in menu
- * Timebomb
  * Indexed array
- * Input manager
  * ToastMessage
  * Screenshot/video capture
  * Pause in-game 
