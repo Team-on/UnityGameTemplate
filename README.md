@@ -31,7 +31,9 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Complete all actions for build manager
 	* Release notes like https://assetstore.unity.com/packages/tools/utilities/build-3720
 	* VR build side-by-side with regular
- * Pool
+	* Push to steam?
+	* Push to google drive
+ * Obj pooling
  * Hightscores(playfab?)
  * Auto add readme
  
