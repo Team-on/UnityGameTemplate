@@ -81,4 +81,8 @@ I'd be happy for any contribution to make this template as good as it can be.
  ## How to add new plugin:
   * Move it to Thirdparty folder and make sure that it works correctly
   * Create Assembly deffinition for all Editor folders
-  * Mark that assembly deffinition as editor only
+   * Mark that assembly deffinition as editor only
+   * Create Assembly deffinition for root folder, if project don't compile. (Usually it don't)
+    * Add *Editor assembly* as reference to *root assembly*
+   * If it still not compile, add as refferences all other needed assemblies. (Can be figured out from using statements) 
+   
