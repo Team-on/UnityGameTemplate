@@ -60,9 +60,4 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://assetstore.unity.com/packages/tools/gui/cyro-build-debugger-65101  
  https://assetstore.unity.com/packages/tools/gui/debuggui-graph-139275  
    
- 
- ## Adding new plugin
-  https://github.com/Team-on/UnityGameTemplate/wiki/Adding-new-plugin
- 
- ## Setting up project checklist & Before build checklist
- https://github.com/Team-on/UnityGameTemplate/wiki/Setting-up-project-checklist-&-Before-build-checklist
+Check out [wiki](https://github.com/Team-on/UnityGameTemplate/wiki) for additional information
