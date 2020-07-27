@@ -114,3 +114,6 @@ I'd be happy for any contribution to make this template as good as it can be.
  * Set up *Kind of project* as HTML
  * Find *Embed options* and select *Embed in page* *Manually set size*
  * Find *Viewport dimensions* and set *Width* to 960 and *Height* to 540
+ 
+ ## Warning:
+ * By default, *Reload Domain* and *Reload Scene* Disabled, so you need to write code, where all static fields initialize not in static ctor.
