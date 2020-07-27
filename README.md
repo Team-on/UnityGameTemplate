@@ -2,20 +2,6 @@
 **Game Template** is all necessary stuff taken care for Unity users not to worry about creating most boring and tedious work.  
 I'd be happy for any contribution to make this template as good as it can be.  
 //TODO: use as template this https://github.com/nezvers/Godot-GameTemplate
-
-## TODO docs:
- * UI for menu/popups (Main menu, credits, options...)
- * AudioManager
- * Build Manager
- * Changelog
- * Event bus
- * EventManager
- * GameManager
- * player prefs extended saver
- * Localization manager(polyglot, custom xml)
- * Camera shake (in LeanTween)
- * Unity crashlitics and feedback
- * Label with version in mainmenu and pause  
    
 ## TODO:
  * Keyboard/gamepad controll in menu
@@ -41,7 +27,6 @@ I'd be happy for any contribution to make this template as good as it can be.
  *  Use il2cpp in master mode
  
  ## Used assets/tools:
- TODO: import them in right way, cuz untiy now support git packages.  
  Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md  
  https://github.com/Team-on/CustomToolbar  
  http://wiki.unity3d.com/index.php/ArrayPrefs2  
@@ -71,11 +56,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/rfadeev/unity-forge-extension-methods  
  https://github.com/rfadeev/unity-forge-property-drawers  
 
- 
  ## Want to use: 
- https://github.com/TeamSirenix/odin-serializer  
- https://odininspector.com/	(Actually, I like this asset, but it's paid, so I'm not sure is it good to keep it in template)  
- https://github.com/5argon/OdinHierarchy  
  https://assetstore.unity.com/packages/tools/gui/cyro-build-debugger-65101  
  https://assetstore.unity.com/packages/tools/gui/debuggui-graph-139275  
    
@@ -85,5 +66,3 @@ I'd be happy for any contribution to make this template as good as it can be.
  
  ## Setting up project checklist & Before build checklist
  https://github.com/Team-on/UnityGameTemplate/wiki/Setting-up-project-checklist-&-Before-build-checklist
- 
-
