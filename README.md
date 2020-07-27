@@ -70,6 +70,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/rfadeev/presets-browser  
  https://github.com/rfadeev/unity-forge-extension-methods  
  https://github.com/rfadeev/unity-forge-property-drawers  
+
  
  ## Want to use: 
  https://github.com/TeamSirenix/odin-serializer  
@@ -78,40 +79,11 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://assetstore.unity.com/packages/tools/gui/cyro-build-debugger-65101  
  https://assetstore.unity.com/packages/tools/gui/debuggui-graph-139275  
    
-## First launch(for every user):
- * Move to Edit/Preferences/Rainbow Folders and change *Folder Location* to *Assets/Thirdparty/RainbowFolders*
+ 
+ ## Adding new plugin
+  https://github.com/Team-on/UnityGameTemplate/wiki/Adding-new-plugin
+ 
+ ## Setting up project checklist & Before build checklist
+ https://github.com/Team-on/UnityGameTemplate/wiki/Setting-up-project-checklist-&-Before-build-checklist
+ 
 
-## Setting up git LFS:
-* Download https://git-lfs.github.com/
-* git lfs install
-* It's all. .gitattributes already setup to move almost all files with 'big' extension to LFS
-
-## Setting up for your game:
- * Move to *Edit/Project settings/Player* and set *Company name*, *Product name* and *Icon*
- * Move to *Window/Builds(ALT+B)* and set up build sequence. Default already setup good, so you just need to add right *itch.io link*
- * Move to *Window/General/Services(CTRL+0)/Settings* and link project to your project. Enable *Analytics* and *Cloud Diagnostics*
- * Copy [this](https://docs.google.com/spreadsheets/d/13YCRi6fHNaS_DRApBelilgdM6O833hLiCy68F47KWIU/edit#gid=296134756) translation sheet for polyglot localization and save it on your Google drive. Be sure to make it public
- * Move to *Window/Polyglot Localization/SConfigurate* and add your own *Docs Id* and *Sheet id*
- 
-## On every launch:
- * Select all singletones in *ScriptableObjects/Singletons* and reimport them. Also you must reimport any other singleton derived from Singleton<>. (Probably it's some yaSingleton bug)
- 
-## Before build:
- * Move to *Window/Builds(ALT+B)* and increase *Version* and *Android bundle version*
- * Move to *Window/Builds(ALT+B)/Changelog* and write little *Update name*
- * Move to *Window/Polyglot Localization/SConfigurate* and click *Download* button for both *Master* and *Custom* sheet
- * Use this checklist https://thegamedev.guru/unity-performance/checklist/
- 
-## Setting up itch.io page:
- * Move to *Window/Builds(ALT+B)* and click *Build Local + Zip + itch.io*. Wait untill all builds get pushed
- * Move to your itch.io page an checkmark all builds with approprivate labels
- * Set up *Kind of project* as HTML
- * Find *Embed options* and select *Embed in page* *Manually set size*
- * Find *Viewport dimensions* and set *Width* to 960 and *Height* to 540
- 
- ## Setting up template for 3D games
- * Move to *Edit/Project settings/Editor* and set *Default Behaviour Mode/Mode* to 3D
- * Move to *Edit/Project settings/Player* and set *Color Space* to Gamma. (In 3D it looks better)
- 
- ## Warning:
- * By default, *Reload Domain* and *Reload Scene* Disabled, so you need to write code, where all static fields initialize not in static ctor.
