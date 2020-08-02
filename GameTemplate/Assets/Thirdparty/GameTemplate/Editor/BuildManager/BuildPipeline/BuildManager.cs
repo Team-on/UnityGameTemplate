@@ -16,7 +16,7 @@ public static class BuildManager {
 
 	public static void RunBuildSequnce(BuildSequence sequence, ChangelogData changelog) {
 		// Start init
-		GameManager.InstanceEditor.buildNameString = $"{PlayerSettings.bundleVersion} - {changelog.updateName}";
+		TemplateGameManager.InstanceEditor.buildNameString = $"{PlayerSettings.bundleVersion} - {changelog.updateName}";
 		usedDate = DateTime.Now;
 		//End init
 
@@ -64,7 +64,7 @@ public static class BuildManager {
 
 			if (!string.IsNullOrEmpty(buildsPath[i])) {
 				if(sequence.builds[i].itchAddLastChangelogUpdateNameToVerison && !string.IsNullOrEmpty(changelog?.updateName)) {
-					sequence.builds[i].itchLastChangelogUpdateName = GameManager.InstanceEditor.buildNameString;
+					sequence.builds[i].itchLastChangelogUpdateName = TemplateGameManager.InstanceEditor.buildNameString;
 				}
 				PushItch(sequence, sequence.builds[i]);
 			}

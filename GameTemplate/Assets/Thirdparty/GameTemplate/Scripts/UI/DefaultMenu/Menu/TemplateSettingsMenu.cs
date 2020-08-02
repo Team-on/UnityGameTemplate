@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 
-public class SettingsMenu : PopupMenuBase {
+public class TemplateSettingsMenu : PopupMenuBase {
 	[Header("Audio settings")]
 	[SerializeField] ToggleGroup enableAudioToggles = null;
 	[SerializeField] Toggle enableAudioOnToggle = null;

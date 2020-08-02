@@ -2,7 +2,7 @@
 using yaSingleton;
 
 [CreateAssetMenu(fileName = "Game Manager", menuName = "Singletons/GameManager")]
-public class GameManager : Singleton<GameManager> {
+public class TemplateGameManager : Singleton<TemplateGameManager> {
 	//Properties
 	public Camera Camera { get {
 			if(mainCamera == null) 
@@ -24,7 +24,6 @@ public class GameManager : Singleton<GameManager> {
 
 		mainCamera = Camera.main;
 		Input.multiTouchEnabled = false;
-		LeanTween.init(800);
 	}
 
 	protected override void Initialize() {

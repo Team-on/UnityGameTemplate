@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using Cinemachine;
 
-public class DebugHotkeys : MonoBehaviour {
+public class TemplateDebugHotkeys : MonoBehaviour {
 	CinemachineVirtualCamera cam;
 
 	void Update() {
@@ -14,9 +14,9 @@ public class DebugHotkeys : MonoBehaviour {
 		}
 		else if (Input.mouseScrollDelta.y != 0) {
 			if (cam == null) {
-				cam = GameManager.Instance.Camera.GetComponent<CinemachineVirtualCamera>();
+				cam = TemplateGameManager.Instance.Camera.GetComponent<CinemachineVirtualCamera>();
 				if(cam == null) {
-					cam = GameManager.Instance.Camera.GetComponent<CinemachineBrain>()?.ActiveVirtualCamera as CinemachineVirtualCamera;
+					cam = TemplateGameManager.Instance.Camera.GetComponent<CinemachineBrain>()?.ActiveVirtualCamera as CinemachineVirtualCamera;
 					if (cam == null)
 						cam = FindObjectOfType<CinemachineVirtualCamera>();
 				}

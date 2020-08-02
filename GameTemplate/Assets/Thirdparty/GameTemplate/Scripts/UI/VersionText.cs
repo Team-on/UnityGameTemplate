@@ -12,13 +12,13 @@ public class VersionText : MonoBehaviour {
 			textField = GetComponent<TextMeshProUGUI>();
 
 		if(textField != null) {
-			textField.text = GameManager.InstanceEditor.buildNameString;
+			textField.text = TemplateGameManager.InstanceEditor.buildNameString;
 		}
 	}
 #endif
 
 	void Start() {
-		textField.text = GameManager.Instance.buildNameString;
+		textField.text = TemplateGameManager.Instance.buildNameString;
 		Destroy(this);
 	}
 }
