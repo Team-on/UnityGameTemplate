@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using yaSingleton;
 
-[CreateAssetMenu(fileName = "Game Manager", menuName = "Singletons/GameManager")]
+[CreateAssetMenu(fileName = "Template Game Manager", menuName = "Singletons/TemplateGameManager")]
 public class TemplateGameManager : Singleton<TemplateGameManager> {
 	//Properties
 	public Camera Camera { get {
