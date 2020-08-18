@@ -31,6 +31,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/rfadeev/presets-browser  
  https://github.com/rfadeev/unity-forge-extension-methods  
  https://github.com/rfadeev/unity-forge-property-drawers  
+ https://github.com/needle-tools/compilation-visualizer  
 
  ## Want to use: 
  https://assetstore.unity.com/packages/tools/gui/cyro-build-debugger-65101  
