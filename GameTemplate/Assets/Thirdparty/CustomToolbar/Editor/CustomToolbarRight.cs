@@ -19,7 +19,7 @@ namespace UnityToolbarExtender {
 				}
 			}
 
-			Time.timeScale = EditorGUILayout.Slider("", Time.timeScale, 0f, 2f, GUILayout.Width(150));
+			Time.timeScale = EditorGUILayout.Slider("", Time.timeScale, 0f, 2f, GUILayout.Width(300));
 		}
 	}
 }
