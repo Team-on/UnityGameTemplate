@@ -37,6 +37,15 @@ public class AudioManager : Singleton<AudioManager> {
 	public AudioMixerGroup musicGroup;
 	public AudioMixerGroup soundGroup;
 
+	[Header("3D sound settings")]
+	public bool is3DGame = false;
+	public float maxSoundDistance = 20.0f;
+	public AnimationCurve volumeRolloff;
+	public AnimationCurve spread;
+	
+	[Header("Music settings")]
+	public float crossfadeTime = 5.0f;
+
 	[Header("All mixers settings")]
 	public int lowestDeciblesBeforeMute = -20;
 
@@ -45,6 +54,9 @@ public class AudioManager : Singleton<AudioManager> {
 	public float defaultMusicVolume = 1;
 	public float defaultSoundVolume = 1;
 	public bool defaultEnabled = true;
+
+	AudioClip musicClip;
+	AudioSource musicSource;
 
 	protected override void Initialize() {
 		base.Initialize();
@@ -96,79 +108,102 @@ public class AudioManager : Singleton<AudioManager> {
 		return 0.0f;
 	}
 
-	public AudioMixerGroup GetAudioMixer(AudioChannel channel) {
-		switch (channel) {
-			case AudioChannel.Master:
-				return masterGroup;
-			case AudioChannel.Music:
-				return musicGroup;
-			case AudioChannel.Sound:
-				return soundGroup;
-			default:
-				return null;
+	public void PlayMusic(AudioClip clip, float volume = 1.0f) {
+		if(clip != musicClip || musicSource == null) {
+			AudioSource oldSource = musicSource;
+			musicClip = clip;
+			musicSource = PlayLoop(musicClip, volume, playDelay: crossfadeTime);
+			DontDestroyOnLoad(musicSource.gameObject);
+
+			if (oldSource != null) {
+				LeanTween.cancel(oldSource.gameObject, false);
+				LeanTween.value(oldSource.gameObject, oldSource.volume, 0.0f, crossfadeTime)
+				.setOnUpdate((float v) => {
+					oldSource.volume = v;
+				})
+				.setOnComplete(() => {
+					Destroy(oldSource.gameObject);
+				});
+			}
 		}
 	}
 
-	public AudioSource Play(AudioClip clip, Transform emitter, float volume = 1.0f, float pitch = 1.0f, AudioChannel channel = AudioChannel.Master) {
+	public AudioSource Play3D(AudioClip clip, Transform emitter, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
 		if (!IsEnabled && channel != AudioChannel.Music)
 			return null;
-		AudioSource source = CreatePlaySource(clip, emitter, volume, pitch, channel);
+		AudioSource source = CreatePlaySource3D(clip, emitter, volume, pitch, playDelay, channel);
 		Destroy(source.gameObject, clip.length + 1.0f);
 		return source;
 	}
 
-	public AudioSource Play(AudioClip clip, Vector3 point, float volume = 1.0f, float pitch = 1.0f, AudioChannel channel = AudioChannel.Master) {
+	public AudioSource Play3D(AudioClip clip, Vector3 point, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
 		if (!IsEnabled && channel != AudioChannel.Music)
 			return null;
-		AudioSource source = CreatePlaySource(clip, point, volume, pitch, channel);
+		AudioSource source = CreatePlaySource3D(clip, point, volume, pitch, playDelay, channel);
 		Destroy(source.gameObject, clip.length + 1.0f);
 		return source;
 	}
 
-	public AudioSource Play(AudioClip clip, float volume = 1.0f, float pitch = 1.0f, AudioChannel channel = AudioChannel.Master) {
+	public AudioSource Play(AudioClip clip, Transform emitter, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
 		if (!IsEnabled && channel != AudioChannel.Music)
 			return null;
-		AudioSource source = CreatePlaySource(clip, Vector3.zero, volume, pitch, channel);
+		AudioSource source = CreatePlaySource(clip, emitter, volume, pitch, playDelay, channel);
 		Destroy(source.gameObject, clip.length + 1.0f);
 		return source;
 	}
 
-	public AudioSource PlayLoop(AudioClip clip, Transform emitter, float volume = 1.0f, float pitch = 1.0f, AudioChannel channel = AudioChannel.Master) {
-		AudioSource source = CreatePlaySource(clip, emitter, volume, pitch, channel);
+	public AudioSource Play(AudioClip clip, Vector3 point, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
+		if (!IsEnabled && channel != AudioChannel.Music)
+			return null;
+		AudioSource source = CreatePlaySource(clip, point, volume, pitch, playDelay, channel);
+		Destroy(source.gameObject, clip.length + 1.0f);
+		return source;
+	}
+
+	public AudioSource Play(AudioClip clip, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
+		if (!IsEnabled && channel != AudioChannel.Music)
+			return null;
+		AudioSource source = CreatePlaySource(clip, Vector3.zero, volume, pitch, playDelay, channel);
+		Destroy(source.gameObject, clip.length + 1.0f);
+		return source;
+	}
+
+	public AudioSource PlayLoop(AudioClip clip, Transform emitter, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Music) {
+		AudioSource source = CreatePlaySource(clip, emitter, volume, pitch, playDelay, channel);
 		source.loop = true;
 		return source;
 	}
 
-	public AudioSource PlayLoop(AudioClip clip, Vector3 point, float volume = 1.0f, float pitch = 1.0f, AudioChannel channel = AudioChannel.Master) {
-		AudioSource source = CreatePlaySource(clip, point, volume, pitch, channel);
+	public AudioSource PlayLoop(AudioClip clip, Vector3 point, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Music) {
+		AudioSource source = CreatePlaySource(clip, point, volume, pitch, playDelay, channel);
 		source.loop = true;
 		return source;
 	}
 
-	public AudioSource PlayLoop(AudioClip clip, float volume = 1.0f, float pitch = 1.0f, AudioChannel channel = AudioChannel.Master) {
-		AudioSource source = CreatePlaySource(clip, Vector3.zero, volume, pitch, channel);
+	public AudioSource PlayLoop(AudioClip clip, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Music) {
+		AudioSource source = CreatePlaySource(clip, Vector3.zero, volume, pitch, playDelay, channel);
 		source.loop = true;
 		return source;
 	}
 
-	AudioSource CreatePlaySource(AudioClip clip, Transform emitter, float volume, float pitch, AudioChannel channel) {
+	AudioSource CreatePlaySource(AudioClip clip, Transform emitter, float volume, float pitch, float playDelay, AudioChannel channel) {
 		GameObject go = new GameObject("Audio: " + clip.name);
 		go.transform.position = emitter.position;
 		go.transform.parent = emitter;
 
 		AudioSource source = AddAudioSource(go, clip, volume, pitch, channel);
 
-		source.Play();
+		PlayDelayed(source, playDelay);
 		return source;
 	}
 
-	AudioSource CreatePlaySource(AudioClip clip, Vector3 point, float volume, float pitch, AudioChannel channel) {
+	AudioSource CreatePlaySource(AudioClip clip, Vector3 point, float volume, float pitch, float playDelay, AudioChannel channel) {
 		GameObject go = new GameObject("Audio: " + clip.name);
 		go.transform.position = point;
 
 		AudioSource source = AddAudioSource(go, clip, volume, pitch, channel);
 
-		source.Play();
+		PlayDelayed(source, playDelay);
 		return source;
 	}
 
@@ -182,7 +217,79 @@ public class AudioManager : Singleton<AudioManager> {
 		return source;
 	}
 
+	AudioSource CreatePlaySource3D(AudioClip clip, Transform emitter, float volume, float pitch, float playDelay, AudioChannel channel) {
+		GameObject go = new GameObject("Audio: " + clip.name);
+		go.transform.parent = emitter;
+		if(is3DGame)
+			go.transform.position = emitter.position;
+		else
+			go.transform.position = new Vector3(emitter.position.x, emitter.position.y, TemplateGameManager.Instance.Camera.transform.position.z);
+
+		AudioSource source = AddAudioSource3D(go, clip, volume, pitch, channel);
+
+		PlayDelayed(source, playDelay);
+		return source;
+	}
+
+	AudioSource CreatePlaySource3D(AudioClip clip, Vector3 point, float volume, float pitch, float playDelay, AudioChannel channel) {
+		GameObject go = new GameObject("Audio: " + clip.name);
+		if(is3DGame)
+			go.transform.position = point;
+		else
+			go.transform.position = new Vector3(point.x, point.y, TemplateGameManager.Instance.Camera.transform.position.z);
+
+		AudioSource source = AddAudioSource3D(go, clip, volume, pitch, channel);
+
+		PlayDelayed(source, playDelay);
+		return source;
+	}
+
+	AudioSource AddAudioSource3D(GameObject go, AudioClip clip, float volume, float pitch, AudioChannel channel) {
+		AudioSource source = go.AddComponent<AudioSource>();
+		source.clip = clip;
+		source.pitch = pitch;
+		source.outputAudioMixerGroup = GetAudioMixer(channel);
+		
+		source.minDistance = 0.0f;
+		source.maxDistance = maxSoundDistance;
+		source.spatialBlend = 1.0f;
+
+		source.rolloffMode = AudioRolloffMode.Custom;
+		source.SetCustomCurve(AudioSourceCurveType.CustomRolloff, volumeRolloff);
+		source.SetCustomCurve(AudioSourceCurveType.Spread, spread);
+
+		return source;
+	}
+
 	float GetAdjustedVolume(float volume) {
 		return volume <= 0.0001f ? -80f : Mathf.Log10(volume) * 20;
+	}
+
+	void PlayDelayed(AudioSource source, float delay) {
+		if (delay == 0)
+			source.Play();
+		else {
+			float savedVolume = source.volume;
+			source.volume = 0.0f;
+			source.Play();
+			LeanTween.cancel(source.gameObject, false);
+			LeanTween.value(source.gameObject, source.volume, savedVolume, delay)
+				.setOnUpdate((float v)=> { 
+					source.volume = v;
+				});
+		}
+	}
+
+	AudioMixerGroup GetAudioMixer(AudioChannel channel) {
+		switch (channel) {
+			case AudioChannel.Master:
+				return masterGroup;
+			case AudioChannel.Music:
+				return musicGroup;
+			case AudioChannel.Sound:
+				return soundGroup;
+			default:
+				return null;
+		}
 	}
 }
