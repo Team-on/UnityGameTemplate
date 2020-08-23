@@ -4,26 +4,58 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public static class LeanTweenEx
-{
-	public static LTDescr ChangeCanvasGroupAlpha(CanvasGroup canvasGroup, float alpha, float animTime)
-	{
+public static class LeanTweenEx {
+	public static void InterriptPrev(GameObject go) {
+		LeanTween.cancel(go, false);
+	}
+
+	public static void InterriptPrev(MonoBehaviour mb) {
+		LeanTween.cancel(mb.gameObject, false);
+	}
+
+	public static LTDescr ChangeAlpha(CanvasGroup canvasGroup, float alpha, float animTime) {
 		return LeanTween.value(canvasGroup.gameObject, canvasGroup.alpha, alpha, animTime)
 			.setOnUpdate((float a) => {
 				canvasGroup.alpha = a;
 			});
 	}
-	
-	public static LTDescr ChangeTextAlpha(TextMeshProUGUI text, float alpha, float animTime)
-	{
-		return LeanTween.value(text.gameObject, text.alpha, alpha, animTime)
+
+	public static LTDescr ChangeAlpha(Graphic sr, float alpha, float animTime) {
+		return LeanTween.value(sr.gameObject, sr.color.a, alpha, animTime)
 			.setOnUpdate((float a) => {
-				text.alpha = a;
+				Color c = sr.color;
+				c.a = a;
+				sr.color = c;
 			});
 	}
 
-	public static void FadeImage(Image imageOrig, Sprite newSprite, float time)
-	{
+	public static LTDescr StayWorldPos(GameObject obj, float time, Vector3 localPosReturn) {
+		obj.transform.localPosition = localPosReturn;
+		Vector3 worldPos = obj.transform.position;
+
+		return LeanTween.value(0, 1, time)
+		.setOnUpdate((float t) => {
+			obj.transform.position = worldPos;
+		})
+		.setOnComplete(() => {
+			obj.transform.localPosition = localPosReturn;
+		});
+	}
+
+	public static LTDescr StayWorldPosAndMoveUp(GameObject obj, float time, float yMove, Vector3 localPosReturn) {
+		obj.transform.localPosition = localPosReturn;
+		Vector3 worldPos = obj.transform.position;
+
+		return LeanTween.value(obj, 0, 1, time)
+		.setOnUpdate((float t) => {
+			obj.transform.position = worldPos + Vector3.up * yMove * t;
+		})
+		.setOnComplete(() => {
+			obj.transform.localPosition = localPosReturn;
+		});
+	}
+
+	public static void FadeImage(Image imageOrig, Sprite newSprite, float time) {
 		GameObject fadedImage = new GameObject("fadedImage");
 
 		Image image = fadedImage.AddComponent<Image>();
@@ -44,14 +76,24 @@ public static class LeanTweenEx
 			});
 	}
 
-	public static void InvokeNextFrame(GameObject go, Action action)
-	{
+	public static void InvokeNextFrame(GameObject go, Action action) {
 		go.GetComponent<MonoBehaviour>().StartCoroutine(InvokeNextFrameInner(action));
 	}
 
-	static IEnumerator InvokeNextFrameInner(Action action)
-	{
-		yield return null;
+	public static void InvokeNextFrames(GameObject go, int frames, Action action) {
+		go.GetComponent<MonoBehaviour>().StartCoroutine(InvokeNextFramesInner(action, frames));
+	}
+
+	static IEnumerator InvokeNextFrameInner(Action action) {
+		yield return new WaitForFixedUpdate();
+		yield return new WaitForEndOfFrame();
 		action?.Invoke();
 	}
-}
+
+	static IEnumerator InvokeNextFramesInner(Action action, int frames) {
+		while (frames-- != 0) {
+			yield return new WaitForFixedUpdate();
+			yield return new WaitForEndOfFrame();
+		}
+		action?.Invoke();
+	}
