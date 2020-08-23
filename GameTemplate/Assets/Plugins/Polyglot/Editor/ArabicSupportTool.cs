@@ -11,7 +11,7 @@ public class ArabicSupportTool : EditorWindow
     bool useHinduNumbers = true;
 
     // Add menu item named "Arabic Support Tool" to the Tools menu
-    [MenuItem("Tools/Arabic Support Tool")]
+    [MenuItem("Window/Polyglot Localization/Arabic Support Tool")]
     public static void ShowWindow()
     {
         //Show existing window instance. If one doesn't exist, make one.

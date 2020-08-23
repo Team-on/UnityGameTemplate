@@ -30,7 +30,7 @@ namespace PumpEditor.PresetsBrowser
         private Vector2 scrollPosition;
         private string filterPresetTargetFullTypeName;
 
-        [MenuItem("Window/Pump Editor/Presets Browser")]
+        [MenuItem("Window/Custom/Presets Browser")]
         private static void Init()
         {
             var window = GetWindow<PresetsBrowserWindow>();

@@ -14,7 +14,7 @@ namespace Needle.CompilationVisualizer
 {
     internal class CompilationTimelineWindow : EditorWindow
     {
-        [MenuItem("Window/Compilation Timeline")]
+        [MenuItem("Window/Profiling/Compilation Timeline")]
         static void Init() {
             var win = GetWindow<CompilationTimelineWindow>();
             win.titleContent = new GUIContent("↻ Compilation Timeline");

@@ -8,7 +8,7 @@ namespace Nanolabo
     public class ProjectCuratorWindow : EditorWindow, IHasCustomMenu
     {
 
-        [MenuItem("Window/Project Curator")]
+        [MenuItem("Window/Custom/Project Curator")]
         static void Init()
         {
             GetWindow<ProjectCuratorWindow>("Project Curator");

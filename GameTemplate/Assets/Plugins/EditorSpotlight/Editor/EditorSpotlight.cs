@@ -88,7 +88,7 @@ public class EditorSpotlight : EditorWindow, IHasCustomMenu
      /*************************************************************************************************
      *** Methods
      *************************************************************************************************/
-     [MenuItem("Window/Spotlight &f")]
+     [MenuItem("Window/Custom/Spotlight &f")]
      private static void Init()
      {
           if (instance == null)

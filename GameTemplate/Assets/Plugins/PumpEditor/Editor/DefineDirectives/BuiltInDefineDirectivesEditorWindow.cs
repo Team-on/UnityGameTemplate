@@ -100,7 +100,7 @@ namespace PumpEditor
         private List<DefineInfo> codeCompilationDefinesToDraw;
         private Vector2 scrollPos;
 
-        [MenuItem("Window/Pump Editor/Built-in Define Directives")]
+        [MenuItem("Window/Info/Built-in Define Directives")]
         private static void ShowWindow()
         {
             var window = EditorWindow.GetWindow<BuiltInDefineDirectivesEditorWindow>();

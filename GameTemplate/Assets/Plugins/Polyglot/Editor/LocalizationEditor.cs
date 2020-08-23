@@ -40,7 +40,7 @@ namespace Polyglot
         }
 
 
-        [MenuItem(MenuItemPath + "Configurate", false, 0)]
+        [MenuItem(MenuItemPath + "Configurate", false)]
         public static void Configurate()
         {
             var asset = Resources.Load<Localization>(LocalizationAssetName);
@@ -265,7 +265,7 @@ namespace Polyglot
             EditorGUILayout.EndVertical();
         }
 
-        [MenuItem(MenuItemPath + "Download Polyglot Mastersheet", false, 30)]
+        [MenuItem(MenuItemPath + "Download Polyglot Mastersheet", false)]
         private static void DownloadMasterSheet()
         {
             var doc = Localization.Instance.PolyglotDocument;
@@ -274,14 +274,14 @@ namespace Polyglot
             masterSheet = new LocalizationAsset {TextAsset = doc.TextAsset, Format = doc.Format};
         }
 
-        [MenuItem(MenuItemPath + "Download Custom Sheet", true, 30)]
+        [MenuItem(MenuItemPath + "Download Custom Sheet", true)]
         private static bool ValidateDownloadCustomSheet()
         {
             var doc = Localization.Instance.CustomDocument;
             return !string.IsNullOrEmpty(doc.DocsId) && !string.IsNullOrEmpty(doc.SheetId);
         }
 
-        [MenuItem(MenuItemPath + "Download Custom Sheet", false, 30)]
+        [MenuItem(MenuItemPath + "Download Custom Sheet", false)]
         private static void DownloadCustomSheet()
         {
             var doc = Localization.Instance.CustomDocument;

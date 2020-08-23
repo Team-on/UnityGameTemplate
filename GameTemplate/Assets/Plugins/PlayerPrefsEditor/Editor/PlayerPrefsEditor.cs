@@ -77,7 +77,7 @@ public class PlayerPrefsEditor : EditorWindow
 	string newEntryValueString = "";
 #endregion
 
-    [MenuItem("Window/Player Prefs Editor")]
+    [MenuItem("Window/Custom/Player Prefs Editor")]
     private static void Init()
     {
         // Get existing open window or if none, make a new one:

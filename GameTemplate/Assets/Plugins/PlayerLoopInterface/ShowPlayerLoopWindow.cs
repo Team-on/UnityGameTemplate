@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 
 public class ShowPlayerLoopWindow : EditorWindow
 {
-    [MenuItem("Window/Player Loop")]
+    [MenuItem("Window/Info/Player Loop")]
     static void ShowWindow()
     {
         var wind = GetWindow<ShowPlayerLoopWindow>(false, "Player Loop");

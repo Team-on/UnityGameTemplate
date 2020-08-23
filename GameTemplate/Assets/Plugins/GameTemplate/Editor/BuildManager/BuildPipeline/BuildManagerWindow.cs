@@ -21,7 +21,7 @@ public class BuildManagerWindow : EditorWindow {
 	static InspectorList<BuildSequence> sequencesList;
 	static InspectorList<BuildData> buidsList;
 
-	[MenuItem("Window/Builds &b")]
+	[MenuItem("Window/Custom/Builds &b")]
 	public static void ShowWindow() {
 		EditorWindow.GetWindow(typeof(BuildManagerWindow), false, "Builds", true);
 

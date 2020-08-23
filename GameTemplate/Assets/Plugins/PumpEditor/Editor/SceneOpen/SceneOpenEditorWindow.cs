@@ -21,7 +21,7 @@ namespace PumpEditor
         private int toolbarIndex;
         private Vector2 windowScrollPosition;
 
-        [MenuItem("Window/Pump Editor/Scene Open")]
+        [MenuItem("Window/Custom/Scene Open")]
         private static void Init()
         {
             var window = EditorWindow.GetWindow<SceneOpenEditorWindow>();

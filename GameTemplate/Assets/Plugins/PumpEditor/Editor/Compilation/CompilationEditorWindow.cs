@@ -8,7 +8,7 @@ namespace PumpEditor
 {
     public class CompilationWindow : EditorWindow
     {
-        [MenuItem("Window/Pump Editor/Compilation")]
+        [MenuItem("Window/Custom/Compilation")]
         private static void ShowWindow()
         {
             var window = EditorWindow.GetWindow<CompilationWindow>();

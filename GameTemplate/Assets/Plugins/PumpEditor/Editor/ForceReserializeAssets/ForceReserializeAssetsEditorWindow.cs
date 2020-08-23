@@ -7,7 +7,7 @@ namespace PumpEditor
 {
     public class ForceReserializeAssetsEditorWindow : EditorWindow
     {
-        [MenuItem("Window/Pump Editor/Force Reserialize Assets")]
+        [MenuItem("Window/Custom/Force Reserialize Assets")]
         private static void ShowWindow()
         {
             var window = EditorWindow.GetWindow<ForceReserializeAssetsEditorWindow>();
