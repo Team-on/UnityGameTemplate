@@ -240,7 +240,6 @@ GameObject:
   m_Component:
   - component: {fileID: 786967402357734151}
   - component: {fileID: 786967402357734148}
-  - component: {fileID: 786967402357734149}
   - component: {fileID: 786967402357734150}
   m_Layer: 5
   m_Name: FPS Counter (White)
@@ -258,7 +257,7 @@ RectTransform:
   m_GameObject: {fileID: 786967402357734147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8233149416984534424}
   - {fileID: 1102302624}
@@ -291,28 +290,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &786967402357734149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786967402357734147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
 --- !u!114 &786967402357734150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +305,7 @@ MonoBehaviour:
   timeUpdate: 1
   highestPossibleFPS: 300
   graphColor: {r: 1, g: 1, b: 1, a: 0.14901961}
-  logWrite: 1
+  logWrite: 0
   HelpURL: nvjob.github.io/unity/nvjob-fps-counter-and-graph
   ReportAProblem: nvjob.github.io/support
   Patrons: nvjob.github.io/patrons

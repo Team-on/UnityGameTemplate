@@ -160,6 +160,9 @@ namespace IngameDebugConsole
 		// Recycled list view to handle the log items efficiently
 		[SerializeField]
 		private DebugLogRecycledListView recycledListView;
+
+		[SerializeField]
+		private GameObject additionalDebug;
 #pragma warning restore 0649
 
 		// Number of entries filtered by their types
