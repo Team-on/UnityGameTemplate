@@ -1,0 +1,553 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf73a4e20e61f9143863e020e3cfa443, type: 3}
+  m_Name: BuildSequences
+  m_EditorClassIdentifier: 
+  sequences:
+  - editorName: Windows 32 only + itch.io
+    itchGameLink: teamon/gametemplate
+    builds:
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_TESTWIN/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 5
+      options: 8
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: $NAME_$VERSION_TESTWIN
+      needItchPush: 1
+      itchChannel: windows-32-test
+      itchDirPath: $NAME_$VERSION_TESTWIN
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 0.1 - YOUR MAMA TEST CHANGELOG@!
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+  - editorName: WebGL + itch.io
+    itchGameLink: teamon/gametemplate
+    builds:
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_TESTWEB/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 13
+      target: 20
+      options: 8
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: $NAME_$VERSION_TESTWEB
+      needItchPush: 1
+      itchChannel: webgs-test
+      itchDirPath: $NAME_$VERSION_TESTWEB
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 0.1 - YOUR MAMA TEST CHANGELOG@!
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+  - editorName: Local
+    itchGameLink: 
+    builds:
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 5
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 19
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 24
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 2
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 13
+      target: 20
+      options: 8
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 7
+      target: 13
+      options: 8
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+  - editorName: Local + Zip
+    itchGameLink: 
+    builds:
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 5
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 19
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 24
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 2
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 13
+      target: 20
+      options: 8
+      isVirtualRealitySupported: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 7
+      target: 13
+      options: 8
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 0
+      itchChannel: 
+      itchDirPath: 
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+  - editorName: Local + Zip + itch.io
+    itchGameLink: teamon/gametemplate
+    builds:
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 5
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 1
+      itchChannel: windows-32
+      itchDirPath: $NAME_$VERSION_$PLATFORM
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 19
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 1
+      itchChannel: windows-64
+      itchDirPath: $NAME_$VERSION_$PLATFORM
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 24
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 1
+      itchChannel: linux-universal
+      itchDirPath: $NAME_$VERSION_$PLATFORM
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 2
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 1
+      itchChannel: osx-universal
+      itchDirPath: $NAME_$VERSION_$PLATFORM
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 13
+      target: 20
+      options: 8
+      isVirtualRealitySupported: 0
+      needZip: 1
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 1
+      itchChannel: webgl
+      itchDirPath: $NAME_$VERSION_$PLATFORM
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 7
+      target: 13
+      options: 8
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 1
+      itchChannel: android
+      itchDirPath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+  - editorName: Push to itch.io(Game must be builded previously)
+    itchGameLink: teamon/gametemplate
+    builds:
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 1
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 5
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 1
+      itchChannel: windows-32
+      itchDirPath: $NAME_$VERSION_$PLATFORM
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 0.1 - Test changelog
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 1
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 19
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 1
+      itchChannel: windows-64
+      itchDirPath: $NAME_$VERSION_$PLATFORM
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 0.1 - Test changelog
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 1
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 24
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 1
+      itchChannel: linux-universal
+      itchDirPath: $NAME_$VERSION_$PLATFORM
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 0.1 - Test changelog
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 1
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 1
+      target: 2
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 1
+      itchChannel: osx-universal
+      itchDirPath: $NAME_$VERSION_$PLATFORM
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 0.1 - Test changelog
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/
+      isPassbyBuild: 1
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 13
+      target: 20
+      options: 8
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 1
+      itchChannel: webgl
+      itchDirPath: $NAME_$VERSION_$PLATFORM
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 0.1 - Test changelog
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
+      isPassbyBuild: 1
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 7
+      target: 13
+      options: 8
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: 
+      needItchPush: 1
+      itchChannel: android
+      itchDirPath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
+      itchAddLastChangelogUpdateNameToVerison: 1
+      itchLastChangelogUpdateName: 0.1 - Test changelog
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0

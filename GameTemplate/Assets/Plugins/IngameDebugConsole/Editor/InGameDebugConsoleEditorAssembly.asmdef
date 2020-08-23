@@ -1,0 +1,17 @@
+{
+    "name": "InGameDebugConsoleEditorAssembly",
+    "references": [
+        "GUID:4016a4e52144318449a4cd59830f8b1d"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

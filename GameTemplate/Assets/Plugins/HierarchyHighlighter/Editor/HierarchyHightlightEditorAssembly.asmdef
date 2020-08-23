@@ -1,0 +1,17 @@
+{
+    "name": "HierarchyHightlightEditorAssembly",
+    "references": [
+        "GUID:3ccfd45eeb39a0c40b8a3a8af84c3f84"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

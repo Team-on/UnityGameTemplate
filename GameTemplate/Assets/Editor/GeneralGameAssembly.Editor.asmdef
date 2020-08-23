@@ -1,0 +1,17 @@
+{
+    "name": "GeneralGameAssembly.Editor",
+    "references": [
+        "GUID:2344d9f0f3a64df42a9b692dd4b69ca7"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,17 @@
+{
+    "name": "PluiginsGeneralEditorAssembly",
+    "references": [
+        "GUID:439188613b2e6b8439a44ccbedfef580"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
