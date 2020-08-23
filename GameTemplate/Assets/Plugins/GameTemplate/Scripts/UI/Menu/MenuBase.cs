@@ -20,7 +20,7 @@ public abstract class MenuBase : MonoBehaviour {
 		if (isForce) 
 			canvasGroup.alpha = 1.0f;
 		else 
-			LeanTweenEx.ChangeCanvasGroupAlpha(canvasGroup, 1.0f, animTime);
+			LeanTweenEx.ChangeAlpha(canvasGroup, 1.0f, animTime);
 	}
 
 	internal virtual void Hide(bool isForce) {
@@ -29,7 +29,7 @@ public abstract class MenuBase : MonoBehaviour {
 			gameObject.SetActive(false);
 		}
 		else {
-			LeanTweenEx.ChangeCanvasGroupAlpha(canvasGroup, 0.0f, animTime)
+			LeanTweenEx.ChangeAlpha(canvasGroup, 0.0f, animTime)
 			.setOnComplete(() => {
 				gameObject.SetActive(false);
 			});
