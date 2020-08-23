@@ -1,21 +1,21 @@
 ﻿using System;
-using System.Reflection;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using System.IO;
 using UnityEngine;
 using UnityEditor;
+using Polyglot;
 
 public class ScreenShooterWindow : EditorWindow {
-	private static object SizeHolder { get { return GetType("GameViewSizes").FetchProperty("instance").FetchProperty("currentGroup"); } }
-	private static EditorWindow GameView { get { return GetWindow(GetType("GameView")); } }
+	const string SAVE_DATA_PATH = "Plugins/GameTemplate/Editor/ScreenShooter/SaveData.json";
+	static object SizeHolder { get { return GetType("GameViewSizes").FetchProperty("instance").FetchProperty("currentGroup"); } }
+	static EditorWindow GameView { get { return GetWindow(GetType("GameView")); } }
 
+	ScreenshooterSaveData data;
+	Queue<ScreenshootData> queuedScreenshots = new Queue<ScreenshootData>();
 
-	private Vector2 scrollPos;
-
-	private readonly Queue<ScreenshootData> queuedScreenshots = new Queue<ScreenshootData>();
+	Vector2 scrollPos;
 
 	int totalStages = 0;
 	int currentStage = 0;
@@ -23,13 +23,10 @@ public class ScreenShooterWindow : EditorWindow {
 	int originalIndex = 0;
 	int newIndex = 0;
 	int resolutionIndex = 0;
-	bool isNeedSelectResolution = true;
+	Language usedLanguage;
 
 	bool isPaused = false;
 	float prevTimescale = 1.0f;
-
-	const string SAVE_DATA_PATH = "Plugins/GameTemplate/Editor/ScreenShooter/SaveData.json";
-	ScreenshooterSaveData data;
 
 	[MenuItem("Window/Custom/Screen Shooter &s")]
 	public static void ShowWindow() {
@@ -60,7 +57,7 @@ public class ScreenShooterWindow : EditorWindow {
 			EditorGUILayout.LabelField("Multiplier", GUILayout.Width(70));
 			curr.resolutionMultiplier = EditorGUILayout.FloatField(curr.resolutionMultiplier, GUILayout.Width(50));
 
-			if(curr.targetCamera == TargetCamera.GameView) {
+			if (curr.targetCamera == TargetCamera.GameView) {
 				GUI.enabled = true;
 				EditorGUILayout.LabelField("UI", GUILayout.Width(20));
 				curr.captureOverlayUI = EditorGUILayout.Toggle(curr.captureOverlayUI, GUILayout.Width(15));
@@ -70,7 +67,7 @@ public class ScreenShooterWindow : EditorWindow {
 				EditorGUILayout.LabelField("UI", GUILayout.Width(20));
 				curr.captureOverlayUI = EditorGUILayout.Toggle(false, GUILayout.Width(15));
 			}
-			
+
 
 			GUI.enabled = true;
 			if (GUILayout.Button("+", GUILayout.Width(25f))) {
@@ -109,16 +106,21 @@ public class ScreenShooterWindow : EditorWindow {
 		EditorGUILayout.Space();
 		GUI.enabled = queuedScreenshots.Count == 0;
 		if (GUILayout.Button("Capture Screenshots Series")) {
-			for (int i = 0; i < data.screenshoots.Count; i++) {
-				if (data.screenshoots[i].isEnabled)
-					CaptureScreenshot(data.screenshoots[i]);
+			usedLanguage = Localization.Instance.SelectedLanguage;
+
+			foreach (var lang in Localization.Instance.SupportedLanguages) {
+				for (int i = 0; i < data.screenshoots.Count; i++) {
+					if (data.screenshoots[i].isEnabled)
+						CaptureScreenshot(data.screenshoots[i], lang);
+				}
 			}
+
 
 			EditorApplication.update -= CaptureQueuedScreenshots;
 			isTakeScreenshot = false;
 			originalIndex = -1;
 			currentStage = 0;
-			totalStages = queuedScreenshots.Count;
+			totalStages = queuedScreenshots.Count * 2;
 			EditorApplication.update += CaptureQueuedScreenshots;
 		}
 
@@ -130,14 +132,19 @@ public class ScreenShooterWindow : EditorWindow {
 		EditorGUILayout.EndScrollView();
 	}
 
-	private void CaptureScreenshot(ScreenshootData data) {
+	private void CaptureScreenshot(ScreenshootData data, Language language) {
 		int width = Mathf.RoundToInt(data.resolution.x * data.resolutionMultiplier);
 		int height = Mathf.RoundToInt(data.resolution.y * data.resolutionMultiplier);
 
-		if (width <= 0 || height <= 0)
+		if (width <= 0 || height <= 0) {
 			Debug.LogWarning("Skipped resolution: " + data.resolution);
-		else
+		}
+		else {
+			data = data.Clone();
+			data.lang = language;
 			queuedScreenshots.Enqueue(data);
+
+		}
 	}
 
 	private void CaptureQueuedScreenshots() {
@@ -148,26 +155,21 @@ public class ScreenShooterWindow : EditorWindow {
 
 		int width = Mathf.RoundToInt(data.resolution.x * data.resolutionMultiplier);
 		int height = Mathf.RoundToInt(data.resolution.y * data.resolutionMultiplier);
-		EditorUtility.DisplayProgressBar("Making screenshots", $"{data.targetCamera} {width}x{height}", currentStage / totalStages);
+		EditorUtility.DisplayProgressBar("Making screenshots", $"{data.targetCamera} {width}x{height} {data.lang}", currentStage / (float)totalStages);
 		++currentStage;
 
 		if (!isTakeScreenshot) {
 			isTakeScreenshot = true;
 
-			foreach (var lang in Polyglot.Localization.Instance.SupportedLanguages) {
-				Debug.Log(lang);
-				//Polyglot.Localization.Instance.SelectedLanguage;
-			}
+			if (originalIndex == -1)
+				originalIndex = (int)GameView.FetchProperty("selectedSizeIndex");
 
-			if (isNeedSelectResolution) {
-				if(originalIndex == -1)
-					originalIndex = (int)GameView.FetchProperty("selectedSizeIndex");
+			object customSize = GetFixedResolution(width, height);
+			SizeHolder.CallMethod("AddCustomSize", customSize);
+			newIndex = (int)SizeHolder.CallMethod("IndexOf", customSize) + (int)SizeHolder.CallMethod("GetBuiltinCount");
+			resolutionIndex = newIndex;
 
-				object customSize = GetFixedResolution(width, height);
-				SizeHolder.CallMethod("AddCustomSize", customSize);
-				newIndex = (int)SizeHolder.CallMethod("IndexOf", customSize) + (int)SizeHolder.CallMethod("GetBuiltinCount");
-				resolutionIndex = newIndex;
-			}
+			Localization.Instance.SelectedLanguage = data.lang;
 
 			GameView.CallMethod("SizeSelectionCallback", resolutionIndex, null);
 			GameView.Repaint();
@@ -175,19 +177,20 @@ public class ScreenShooterWindow : EditorWindow {
 		else {
 			isTakeScreenshot = false;
 
-			if (!data.captureOverlayUI || data.targetCamera == TargetCamera.SceneView) {
+			if (!data.captureOverlayUI || data.targetCamera == TargetCamera.SceneView) 
 				CaptureScreenshotWithoutUI(data);
-			}
-			else {
+			else 
 				CaptureScreenshotWithUI(data);
-			}
 
 			SizeHolder.CallMethod("RemoveCustomSize", newIndex);
-			resolutionIndex = originalIndex;
 
 			queuedScreenshots.Dequeue();
 			if (queuedScreenshots.Count == 0) {
+				resolutionIndex = originalIndex;
 				GameView.CallMethod("SizeSelectionCallback", resolutionIndex, null);
+
+				Localization.Instance.SelectedLanguage = usedLanguage;
+
 				Repaint();
 				EditorApplication.update -= CaptureQueuedScreenshots;
 
@@ -218,7 +221,7 @@ public class ScreenShooterWindow : EditorWindow {
 			screenshot.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0, false);
 			screenshot.Apply(false, false);
 
-			File.WriteAllBytes(GetUniqueFilePath(renderTex.width, renderTex.height, data.targetCamera == TargetCamera.SceneView), screenshot.EncodeToJPG(100));
+			File.WriteAllBytes(GetUniqueFilePath(renderTex.width, renderTex.height, data.targetCamera == TargetCamera.SceneView, data.lang.ToString()), screenshot.EncodeToJPG(100));
 		}
 		finally {
 			camera.targetTexture = temp2;
@@ -263,7 +266,7 @@ public class ScreenShooterWindow : EditorWindow {
 
 			screenshot.Apply(false, false);
 
-			File.WriteAllBytes(GetUniqueFilePath(width, height, data.targetCamera == TargetCamera.SceneView), screenshot.EncodeToJPG(100));
+			File.WriteAllBytes(GetUniqueFilePath(width, height, data.targetCamera == TargetCamera.SceneView, data.lang.ToString()), screenshot.EncodeToJPG(100));
 		}
 		finally {
 			RenderTexture.active = temp;
@@ -273,8 +276,8 @@ public class ScreenShooterWindow : EditorWindow {
 		}
 	}
 
-	private string GetUniqueFilePath(int width, int height, bool isSceneView) {
-		string filename = string.Format("{3}_{4}_{0}x{1}_single_{2}", width, height, DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss"), PlayerSettings.productName.Replace(" ", "_"), isSceneView ? "Scene" : "Game");
+	private string GetUniqueFilePath(int width, int height, bool isSceneView, string lang) {
+		string filename = string.Format("{3}_{4}_{0}x{1}_{5}_{2}", width, height, DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss"), PlayerSettings.productName.Replace(" ", "_"), isSceneView ? "Scene" : "Game", lang);
 
 		int fileIndex = 0;
 		string path;
@@ -352,7 +355,7 @@ public class ScreenShooterWindow : EditorWindow {
 
 		Vector2Int screenSize = new Vector2Int(1920, 1080);
 
-		var screenshotName = GetUniqueFilePath(screenSize.x, screenSize.y, false);
+		var screenshotName = GetUniqueFilePath(screenSize.x, screenSize.y, false, "Single");
 		string path = Path.Combine(data.outputFolder, screenshotName);
 		ScreenCapture.CaptureScreenshot(path);
 
@@ -388,4 +391,10 @@ public class ScreenshootData {
 	public Vector2 resolution = new Vector2(1920, 1080);
 	public float resolutionMultiplier = 1;
 	public bool captureOverlayUI = true;
+
+	public Polyglot.Language lang;  //Filled in script
+
+	public ScreenshootData Clone() {
+		return (ScreenshootData)MemberwiseClone();
+	}
 }
