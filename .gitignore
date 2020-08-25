@@ -55,6 +55,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Build analytics logs
+GameTemplate/Assets/BuildReports/
+GameTemplate/Assets/BuildReports.meta
+
 # Screenshots & recoring files
 GameTemplate/Recordings/
 GameTemplate/Screenshots/

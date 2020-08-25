@@ -2,6 +2,7 @@
   "dependencies": {
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
+    "com.unity.build-report-inspector": "0.2.2-preview",
     "com.unity.cinemachine": "2.5.0",
     "com.unity.inputsystem": "1.0.0",
     "com.unity.postprocessing": "2.3.0",
