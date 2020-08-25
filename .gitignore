@@ -55,5 +55,12 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Screenshots & recoring files
+GameTemplate/Recordings/
+GameTemplate/Screenshots/
+
+# NVIIA fps log files
 /*/fpslog/
 /*/ProjectSettings/ProjectCuratorSettings.json
+
+
