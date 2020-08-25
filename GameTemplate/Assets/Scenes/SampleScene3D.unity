@@ -441,11 +441,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9060585900434111418, guid: 99809cf5b63d79645a627fd7946b1e8b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -204.00024
-      objectReference: {fileID: 0}
     - target: {fileID: 9060657683517382885, guid: 99809cf5b63d79645a627fd7946b1e8b,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -475,11 +470,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9125196094192244249, guid: 99809cf5b63d79645a627fd7946b1e8b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 9125196094192402109, guid: 99809cf5b63d79645a627fd7946b1e8b,
         type: 3}
@@ -641,36 +631,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9125196094192462083, guid: 99809cf5b63d79645a627fd7946b1e8b,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9125196094567912683, guid: 99809cf5b63d79645a627fd7946b1e8b,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9125196094567912683, guid: 99809cf5b63d79645a627fd7946b1e8b,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9125196094567912683, guid: 99809cf5b63d79645a627fd7946b1e8b,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9125196094567912683, guid: 99809cf5b63d79645a627fd7946b1e8b,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9125196094567912683, guid: 99809cf5b63d79645a627fd7946b1e8b,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9125196094761558632, guid: 99809cf5b63d79645a627fd7946b1e8b,
         type: 3}
       propertyPath: m_Name
@@ -731,8 +691,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1626083333, guid: 99809cf5b63d79645a627fd7946b1e8b, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99809cf5b63d79645a627fd7946b1e8b, type: 3}
 --- !u!1 &1428828195
 GameObject:
@@ -860,13 +819,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1428828197}
-    characterCount: 0
+    characterCount: 7
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0

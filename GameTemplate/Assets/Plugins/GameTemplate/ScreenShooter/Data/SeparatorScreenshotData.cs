@@ -1,3 +1,3 @@
-﻿class SeparatorScreenshotData : ScreenshotData {
+﻿public class SeparatorScreenshotData : ScreenshotData {
 
 }
