@@ -382,6 +382,10 @@ public class ScreenshootData {
 	}
 }
 
+class SeparatorScreenshootData : ScreenshootData {
+
+}
+
 public static class ScreenShooterConfigList {
 	public static UnityEditorInternal.ReorderableList Create(List<ScreenshootData> configsList, GenericMenu.MenuFunction2 menuItemHandler) {
 		var reorderableList = new UnityEditorInternal.ReorderableList(configsList, typeof(ScreenshootData), true, false, true, true);
@@ -391,11 +395,11 @@ public static class ScreenShooterConfigList {
 			const float enabledWidth = 15f;
 			const float cameraWidth = 100f;
 			const float textWidth = 10f;
-			const float sizeWidth = 100f;
+			const float sizeWidth = 50f;
 			const float multWidth = 30f;
 			const float uiWidth = 15f;
 			const float space = 10f;
-			const float minNameWidth = 200f;
+			const float minNameWidth = 100f;
 
 			const float singleWidth = 10;
 
@@ -465,18 +469,59 @@ public static class ScreenShooterConfigList {
 			menu.AddSeparator("");
 
 			foreach (var config in PredefinedConfigs.Android) {
-				var label = "Android/" + config.name + " (" + config.resolution.x + "x" + config.resolution.y + ")";
-				menu.AddItem(new GUIContent(label), false, menuItemHandler, config);
+				if (config is SeparatorScreenshootData) {
+					menu.AddSeparator("Android/");
+				}
+				else {
+					var label = "Android/" + config.name + " (" + config.resolution.x + "x" + config.resolution.y + ") (Portrait)";
+					menu.AddItem(new GUIContent(label), false, menuItemHandler, config);
+				}
+			}
+			menu.AddSeparator("Android/");
+			menu.AddSeparator("Android/");
+			foreach (var config in PredefinedConfigs.Android) {
+				if (config is SeparatorScreenshootData) {
+					menu.AddSeparator("Android/");
+				}
+				else {
+					ScreenshootData altData = config;
+					altData.resolution = new Vector2(config.resolution.y, config.resolution.x);
+					var label = "Android/" + altData.name + " (" + altData.resolution.x + "x" + altData.resolution.y + ") (Landscape)";
+					menu.AddItem(new GUIContent(label), false, menuItemHandler, altData);
+				}
 			}
 
 			foreach (var config in PredefinedConfigs.iOS) {
-				var label = "iOS/" + config.name + " (" + config.resolution.x + "x" + config.resolution.y + ")";
-				menu.AddItem(new GUIContent(label), false, menuItemHandler, config);
+				if (config is SeparatorScreenshootData) {
+					menu.AddSeparator("iOS/");
+				}
+				else {
+					var label = "iOS/" + config.name + " (" + config.resolution.x + "x" + config.resolution.y + ") (Portrait)";
+					menu.AddItem(new GUIContent(label), false, menuItemHandler, config);
+				}
+			}
+			menu.AddSeparator("iOS/");
+			menu.AddSeparator("iOS/");
+			foreach (var config in PredefinedConfigs.iOS) {
+				if (config is SeparatorScreenshootData) {
+					menu.AddSeparator("iOS/");
+				}
+				else {
+					ScreenshootData altData = config;
+					altData.resolution = new Vector2(config.resolution.y, config.resolution.x);
+					var label = "iOS/" + altData.name + " (" + altData.resolution.x + "x" + altData.resolution.y + ") (Landscape)";
+					menu.AddItem(new GUIContent(label), false, menuItemHandler, altData);
+				}
 			}
 
 			foreach (var config in PredefinedConfigs.Standalone) {
-				var label = "Standalone/" + config.name + " (" + config.resolution.x + "x" + config.resolution.y + ")";
-				menu.AddItem(new GUIContent(label), false, menuItemHandler, config);
+				if (config is SeparatorScreenshootData) {
+					menu.AddSeparator("Standalone/");
+				}
+				else {
+					var label = "Standalone/" + config.name + " (" + config.resolution.x + "x" + config.resolution.y + ")";
+					menu.AddItem(new GUIContent(label), false, menuItemHandler, config);
+				}
 			}
 
 			menu.ShowAsContext();
@@ -489,47 +534,42 @@ public static class ScreenShooterConfigList {
 public class PredefinedConfigs {
 	public static ScreenshootData[] Android =
 	{
-			new ScreenshootData("Nexus 4 Portrait", 768, 1280),
-			new ScreenshootData("Nexus 4 Landscape", 1280, 768),
-
-			new ScreenshootData("Nexus 5 Portrait", 1080, 1920),
-			new ScreenshootData("Nexus 5 Landscape", 1920, 1080),
-
-			new ScreenshootData("Nexus 6 Portrait", 1440, 2560),
-			new ScreenshootData("Nexus 6 Landscape", 2560, 1440),
-
-			new ScreenshootData("Nexus 7 Portrait", 800, 1280),
-			new ScreenshootData("Nexus 7 Landscape", 1280, 800),
-
-			new ScreenshootData("Nexus 7 (2013) Portrait", 1200, 1920),
-			new ScreenshootData("Nexus 7 (2013) Landscape", 1920, 1200),
-
-			new ScreenshootData("Nexus 10 Portrait", 1600, 2560),
-			new ScreenshootData("Nexus 10 Landscape", 2560, 1600),
+			new ScreenshootData("Nexus 1", 480, 800),
+			new ScreenshootData("Nexus S", 480, 800),
+			new ScreenshootData("Nexus Galaxy", 768, 1280),
+			new ScreenshootData("Nexus 4", 768, 1280),
+			new ScreenshootData("Nexus 5", 1080, 1920),
+			new ScreenshootData("Nexus 5X", 1080, 1920),
+			new ScreenshootData("Nexus 6", 1440, 2560),
+			new ScreenshootData("Nexus 6P", 1440, 2560),
+			new ScreenshootData("Nexus 7", 800, 1280),
+			new ScreenshootData("Nexus 7 (2013)", 1200, 1920),
+			new ScreenshootData("Nexus 9", 1536, 2048),
+			new ScreenshootData("Nexus 10", 1600, 2560),
 		};
 
 	public static ScreenshootData[] iOS =
 	{
-			new ScreenshootData("iPhone 3.5-Inch Portrait", 640, 960),
-			new ScreenshootData("iPhone 3.5-Inch Landscape", 960, 640),
+			new ScreenshootData("iPhone SE", 640, 1136),
+			new ScreenshootData("iPhone 6", 750, 1334),
+			new ScreenshootData("iPhone 6 Plus", 1080, 1920),
+			new ScreenshootData("iPhone 6s", 750, 1334),
+			new ScreenshootData("iPhone 6s Plus", 1080, 1920),
+			new ScreenshootData("iPhone 7", 750, 1334),
+			new ScreenshootData("iPhone 7 Plus", 1080, 1920),
+			new ScreenshootData("iPhone 8", 750, 1334),
+			new ScreenshootData("iPhone 8 Plus", 1080, 1920),
+			new ScreenshootData("iPhone,", 1125, 2436),
+			new SeparatorScreenshootData(),
 
-			new ScreenshootData("iPhone 4-Inch Portrait", 640, 1136),
-			new ScreenshootData("iPhone 4-Inch Landscape", 1136, 640),
+			new ScreenshootData("iPad Pro (9.7-inch)", 1536, 2048),
+			new ScreenshootData("iPad Pro 10.5-inch", 2732, 1668),
+			new ScreenshootData("iPad Pro (12.9-inch)", 2048 , 2732),
+			new ScreenshootData("iPad Pro 12.9-inch (2nd generation)", 2048 , 2732),
+			new SeparatorScreenshootData(),
 
-			new ScreenshootData("iPhone 4.7-Inch Portrait", 750, 1334),
-			new ScreenshootData("iPhone 4.7-Inch Landscape", 1334, 750),
-
-			new ScreenshootData("iPhone 5.5-Inch Portrait", 1242, 2208),
-			new ScreenshootData("iPhone 5.5-Inch Landscape", 2208, 1242),
-
-			new ScreenshootData("iPad Portrait", 768, 1024),
-			new ScreenshootData("iPad Landscape", 1024, 768),
-
-			new ScreenshootData("iPad Hi-Res Portrait", 1536, 2048),
-			new ScreenshootData("iPad Hi-Res Landscape", 2048, 1536),
-
-			new ScreenshootData("iPad Pro Portrait", 2048, 2732),
-			new ScreenshootData("iPad Pro Landscape", 2732, 2048)
+			new ScreenshootData("iPad Air 2", 1536, 2048),
+			new ScreenshootData("iPad Mini 4", 1536, 2048),
 		};
 
 	public static ScreenshootData[] Standalone =
@@ -539,11 +579,23 @@ public class PredefinedConfigs {
 			new ScreenshootData("WXGA", 1280, 800),
 			new ScreenshootData("WXGA+", 1440, 900),
 			new ScreenshootData("WSXGA+", 1680, 1050),
+			new SeparatorScreenshootData(),
+
 			new ScreenshootData("HD", 1366, 768),
 			new ScreenshootData("HD+", 1600, 900),
 			new ScreenshootData("Full HD", 1920, 1080),
+			new SeparatorScreenshootData(),
+
+			new ScreenshootData("2K UHD", 2048, 1080),
 			new ScreenshootData("Quad HD", 2560, 1440),
-			new ScreenshootData("4K UHD", 3840, 2160)
+			new ScreenshootData("3K UHD", 3072, 1620),
+			new ScreenshootData("4K UHD", 3840, 2160),
+			new ScreenshootData("4K UHD", 4096, 2160),
+			new ScreenshootData("5K UHD", 5120, 2700),
+			new ScreenshootData("6K UHD", 6144, 3240),
+			new ScreenshootData("7K UHD", 7168, 3780),
+			new ScreenshootData("8K UHD", 7680, 4320),
+			new ScreenshootData("8K UHD", 8192, 4320),
 		};
 }
 
