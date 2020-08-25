@@ -17,6 +17,7 @@ public static class BuildManager {
 	public static void RunBuildSequnce(BuildSequence sequence, ChangelogData changelog) {
 		// Start init
 		TemplateGameManager.InstanceEditor.buildNameString = $"{PlayerSettings.bundleVersion} - {changelog.updateName}";
+		TemplateGameManager.InstanceEditor.productName = PlayerSettings.productName;
 		usedDate = DateTime.Now;
 		//End init
 

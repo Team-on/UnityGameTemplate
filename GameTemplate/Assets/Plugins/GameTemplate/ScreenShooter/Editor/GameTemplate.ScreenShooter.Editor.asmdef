@@ -1,0 +1,19 @@
+{
+    "name": "GameTemplate.ScreenShooter.Editor",
+    "references": [
+        "GUID:9c75c8c13a71184468ee7742d0e6aba0",
+        "GUID:46cc2325ddc967847a6e9ca3f6ebd47f",
+        "GUID:432b8b1a65d435f458d6969ef99d85e2"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

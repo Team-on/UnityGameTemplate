@@ -12,6 +12,7 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 
 	//Global data
 	public string buildNameString;
+	public string productName;
 
 	//Other singletons
 	public EventManager Events { get; private set; }

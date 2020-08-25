@@ -28,13 +28,25 @@
         {
             "isEnabled": true,
             "name": "4K UHD",
-            "targetCamera": 0,
+            "targetCamera": 1,
             "resolution": {
                 "x": 3840.0,
                 "y": 2160.0
             },
             "resolutionMultiplier": 1.0,
-            "captureOverlayUI": true,
+            "captureOverlayUI": false,
+            "lang": 0
+        },
+        {
+            "isEnabled": false,
+            "name": "4K UHD",
+            "targetCamera": 0,
+            "resolution": {
+                "x": 4096.0,
+                "y": 2160.0
+            },
+            "resolutionMultiplier": 1.0,
+            "captureOverlayUI": false,
             "lang": 0
         }
     ]
