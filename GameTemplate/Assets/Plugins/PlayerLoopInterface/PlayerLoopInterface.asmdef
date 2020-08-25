@@ -1,11 +1,9 @@
 {
-    "name": "GameTemplate.ScreenShooter",
-    "references": [
-        "GUID:46cc2325ddc967847a6e9ca3f6ebd47f",
-        "GUID:432b8b1a65d435f458d6969ef99d85e2",
-        "GUID:900335979416f53469b06aabef8b32d8"
+    "name": "PlayerLoopInterface",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
     ],
-    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

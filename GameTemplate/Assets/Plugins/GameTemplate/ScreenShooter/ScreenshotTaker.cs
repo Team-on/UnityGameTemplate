@@ -52,17 +52,17 @@ public static class ScreenshotTaker {
 	}
 
 	public static string GetUniqueFilePath(int width, int height, bool isSceneView, string lang, string folder) {
-		string filename = string.Format("{3}{4}_{0}x{1}_{5}_{2}", 
+		string filename = string.Format("{3}{4}_{0}x{1}{5}_{2}", 
 			width,
 			height, 
 			DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss"),
 #if UNITY_EDITOR
-		PlayerSettings.productName.Replace(" ", "_"),
+			PlayerSettings.productName.Replace(" ", "_"),
 #else
-		TemplateGameManager.Instance.productName.Replace(" ", "_"),
+			TemplateGameManager.Instance.productName.Replace(" ", "_"),
 #endif
-		isSceneView ? "_Scene" : "", 
-		lang
+			isSceneView ? "_Scene" : "",
+			isSceneView ? "" : $"_{lang}"
 		);
 
 		int fileIndex = 0;
