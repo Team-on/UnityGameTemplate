@@ -68,6 +68,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  crossfadeTime: 5
   lowestDeciblesBeforeMute: -20
   defaultMasterVolume: 0.75
   defaultMusicVolume: 1

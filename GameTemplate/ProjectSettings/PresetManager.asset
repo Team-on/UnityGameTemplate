@@ -7,15 +7,6 @@ PresetManager:
   m_DefaultPresets:
   - first:
       m_NativeTypeID: 114
-      m_ManagedTypePPtr: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5,
-        type: 3}
-      m_ManagedTypeFallback: 
-    second:
-    - m_Preset: {fileID: 2655988077585873504, guid: 0d83ca9324cb2464b99c2aa77b6e9f72,
-        type: 2}
-      m_Filter: 
-  - first:
-      m_NativeTypeID: 114
       m_ManagedTypePPtr: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76,
         type: 3}
       m_ManagedTypeFallback: 
@@ -34,11 +25,11 @@ PresetManager:
       m_Filter: 
   - first:
       m_NativeTypeID: 114
-      m_ManagedTypePPtr: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff,
+      m_ManagedTypePPtr: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4,
         type: 3}
       m_ManagedTypeFallback: 
     second:
-    - m_Preset: {fileID: 2655988077585873504, guid: ec984d5fba17128468e0e6a3c90291ba,
+    - m_Preset: {fileID: 2655988077585873504, guid: 287cb9f2314fb954184d720850460a3c,
         type: 2}
       m_Filter: 
   - first:
@@ -47,6 +38,15 @@ PresetManager:
       m_ManagedTypeFallback: 
     second:
     - m_Preset: {fileID: 2655988077585873504, guid: e8d4e6a732683ca45b30ebfd7e4dfadc,
+        type: 2}
+      m_Filter: 
+  - first:
+      m_NativeTypeID: 114
+      m_ManagedTypePPtr: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff,
+        type: 3}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: ec984d5fba17128468e0e6a3c90291ba,
         type: 2}
       m_Filter: 
   - first:
@@ -59,10 +59,10 @@ PresetManager:
       m_Filter: 
   - first:
       m_NativeTypeID: 114
-      m_ManagedTypePPtr: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4,
+      m_ManagedTypePPtr: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5,
         type: 3}
       m_ManagedTypeFallback: 
     second:
-    - m_Preset: {fileID: 2655988077585873504, guid: 287cb9f2314fb954184d720850460a3c,
+    - m_Preset: {fileID: 2655988077585873504, guid: 0d83ca9324cb2464b99c2aa77b6e9f72,
         type: 2}
       m_Filter: 
