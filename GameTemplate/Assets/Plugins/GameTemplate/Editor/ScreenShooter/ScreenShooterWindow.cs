@@ -12,6 +12,8 @@ public class ScreenShooterWindow : EditorWindow {
 	static object SizeHolder { get { return GetType("GameViewSizes").FetchProperty("instance").FetchProperty("currentGroup"); } }
 	static EditorWindow GameView { get { return GetWindow(GetType("GameView")); } }
 
+	UnityEditorInternal.ReorderableList _list;
+
 	ScreenshooterSaveData data;
 	Queue<ScreenshootData> queuedScreenshots = new Queue<ScreenshootData>();
 
@@ -35,6 +37,8 @@ public class ScreenShooterWindow : EditorWindow {
 
 	private void Awake() {
 		LoadSettings();
+
+		_list = _list ?? ScreenShooterConfigList.Create(data.screenshoots, MenuItemHandler);
 	}
 
 	private void OnDestroy() {
@@ -44,45 +48,7 @@ public class ScreenShooterWindow : EditorWindow {
 	private void OnGUI() {
 		scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
 
-		for (int i = 0; i < data.screenshoots.Count; i++) {
-			GUILayout.BeginHorizontal();
-			ScreenshootData curr = data.screenshoots[i];
-
-			GUI.enabled = true;
-			curr.isEnabled = EditorGUILayout.Toggle(GUIContent.none, curr.isEnabled, GUILayout.Width(25f));
-
-			GUI.enabled = curr.isEnabled;
-			curr.targetCamera = (TargetCamera)EditorGUILayout.EnumPopup(curr.targetCamera, GUILayout.Width(150));
-			curr.resolution = EditorGUILayout.Vector2Field(GUIContent.none, curr.resolution, GUILayout.Width(200));
-			EditorGUILayout.LabelField("Multiplier", GUILayout.Width(70));
-			curr.resolutionMultiplier = EditorGUILayout.FloatField(curr.resolutionMultiplier, GUILayout.Width(50));
-
-			if (curr.targetCamera == TargetCamera.GameView) {
-				GUI.enabled = true;
-				EditorGUILayout.LabelField("UI", GUILayout.Width(20));
-				curr.captureOverlayUI = EditorGUILayout.Toggle(curr.captureOverlayUI, GUILayout.Width(15));
-			}
-			else {
-				GUI.enabled = false;
-				EditorGUILayout.LabelField("UI", GUILayout.Width(20));
-				curr.captureOverlayUI = EditorGUILayout.Toggle(false, GUILayout.Width(15));
-			}
-
-
-			GUI.enabled = true;
-			if (GUILayout.Button("+", GUILayout.Width(25f))) {
-				data.screenshoots.Insert(i + 1, new ScreenshootData());
-			}
-
-			GUI.enabled = data.screenshoots.Count != 1;
-			if (GUILayout.Button("-", GUILayout.Width(25f))) {
-				data.screenshoots.RemoveAt(i);
-				--i;
-			}
-
-			GUILayout.EndHorizontal();
-		}
-
+		_list.DoLayoutList();
 
 		GUI.enabled = true;
 		EditorGUILayout.Space();
@@ -132,6 +98,10 @@ public class ScreenShooterWindow : EditorWindow {
 		EditorGUILayout.EndScrollView();
 	}
 
+	private void MenuItemHandler(object target) {
+		data.screenshoots.Add(target as ScreenshootData);
+	}
+
 	private void CaptureScreenshot(ScreenshootData data, Language language) {
 		int width = Mathf.RoundToInt(data.resolution.x * data.resolutionMultiplier);
 		int height = Mathf.RoundToInt(data.resolution.y * data.resolutionMultiplier);
@@ -177,9 +147,9 @@ public class ScreenShooterWindow : EditorWindow {
 		else {
 			isTakeScreenshot = false;
 
-			if (!data.captureOverlayUI || data.targetCamera == TargetCamera.SceneView) 
+			if (!data.captureOverlayUI || data.targetCamera == TargetCamera.SceneView)
 				CaptureScreenshotWithoutUI(data);
-			else 
+			else
 				CaptureScreenshotWithUI(data);
 
 			SizeHolder.CallMethod("RemoveCustomSize", newIndex);
@@ -387,6 +357,7 @@ public class ScreenshooterSaveData {
 [Serializable]
 public class ScreenshootData {
 	public bool isEnabled = true;
+	public string name = "Name";
 	public TargetCamera targetCamera = TargetCamera.GameView;
 	public Vector2 resolution = new Vector2(1920, 1080);
 	public float resolutionMultiplier = 1;
@@ -394,7 +365,185 @@ public class ScreenshootData {
 
 	public Polyglot.Language lang;  //Filled in script
 
+	public ScreenshootData() {
+
+	}
+
+	public ScreenshootData(string name, Vector2 resolution) {
+		this.name = name;
+		this.resolution = resolution;
+	}
+
+	public ScreenshootData(string name, int x, int y) : this(name, new Vector2(x, y)) {
+	}
+
 	public ScreenshootData Clone() {
 		return (ScreenshootData)MemberwiseClone();
 	}
 }
+
+public static class ScreenShooterConfigList {
+	public static UnityEditorInternal.ReorderableList Create(List<ScreenshootData> configsList, GenericMenu.MenuFunction2 menuItemHandler) {
+		var reorderableList = new UnityEditorInternal.ReorderableList(configsList, typeof(ScreenshootData), true, false, true, true);
+
+		reorderableList.elementHeight = EditorGUIUtility.singleLineHeight + 4;
+		reorderableList.drawElementCallback = (position, index, isActive, isFocused) => {
+			const float enabledWidth = 15f;
+			const float cameraWidth = 100f;
+			const float textWidth = 10f;
+			const float sizeWidth = 100f;
+			const float multWidth = 30f;
+			const float uiWidth = 15f;
+			const float space = 10f;
+			const float minNameWidth = 200f;
+
+			const float singleWidth = 10;
+
+
+			var config = configsList[index];
+			var nameWidth = position.width - space * 6 - enabledWidth - cameraWidth - textWidth - sizeWidth * 2 - multWidth - uiWidth - singleWidth * 21;
+			if (nameWidth < minNameWidth)
+				nameWidth = minNameWidth;
+
+			position.y += 2;
+			position.height -= 4;
+
+			position.x += space;
+			position.width = enabledWidth;
+			config.isEnabled = EditorGUI.Toggle(position, config.isEnabled);
+
+			position.x += position.width + space;
+			position.width = cameraWidth;
+			config.targetCamera = (TargetCamera)EditorGUI.EnumPopup(position, config.targetCamera);
+
+			position.x += position.width + space;
+			position.width = nameWidth;
+			config.name = EditorGUI.TextField(position, config.name);
+
+			position.x += position.width + space;
+			position.width = singleWidth * 4;
+			EditorGUI.LabelField(position, "Size");
+
+			position.x += position.width;
+			position.width = sizeWidth;
+			config.resolution.x = EditorGUI.IntField(position, (int)config.resolution.x);
+
+			position.x += position.width;
+			position.width = textWidth;
+			EditorGUI.LabelField(position, "x");
+
+			position.x += position.width;
+			position.width = sizeWidth;
+			config.resolution.y = EditorGUI.IntField(position, (int)config.resolution.y);
+
+			position.x += position.width + space;
+			position.width = singleWidth * 9;
+			EditorGUI.LabelField(position, "Size Multiplier");
+
+			position.x += position.width;
+			position.width = multWidth;
+			config.resolutionMultiplier = EditorGUI.FloatField(position, config.resolutionMultiplier);
+
+			position.x += position.width + space;
+			position.width = singleWidth * 2;
+			EditorGUI.LabelField(position, "UI");
+
+			position.x += position.width;
+			position.width = uiWidth;
+			if (config.targetCamera == TargetCamera.GameView) {
+				config.captureOverlayUI = EditorGUI.Toggle(position, config.captureOverlayUI);
+			}
+			else {
+				config.captureOverlayUI = EditorGUI.Toggle(position, false);
+			}
+		};
+
+		reorderableList.onAddDropdownCallback = (buttonRect, list) => {
+			var menu = new GenericMenu();
+
+			menu.AddItem(new GUIContent("Custom"), false, menuItemHandler, new ScreenshootData("Custom", 1920, 1080));
+			menu.AddSeparator("");
+
+			foreach (var config in PredefinedConfigs.Android) {
+				var label = "Android/" + config.name + " (" + config.resolution.x + "x" + config.resolution.y + ")";
+				menu.AddItem(new GUIContent(label), false, menuItemHandler, config);
+			}
+
+			foreach (var config in PredefinedConfigs.iOS) {
+				var label = "iOS/" + config.name + " (" + config.resolution.x + "x" + config.resolution.y + ")";
+				menu.AddItem(new GUIContent(label), false, menuItemHandler, config);
+			}
+
+			foreach (var config in PredefinedConfigs.Standalone) {
+				var label = "Standalone/" + config.name + " (" + config.resolution.x + "x" + config.resolution.y + ")";
+				menu.AddItem(new GUIContent(label), false, menuItemHandler, config);
+			}
+
+			menu.ShowAsContext();
+		};
+
+		return reorderableList;
+	}
+}
+
+public class PredefinedConfigs {
+	public static ScreenshootData[] Android =
+	{
+			new ScreenshootData("Nexus 4 Portrait", 768, 1280),
+			new ScreenshootData("Nexus 4 Landscape", 1280, 768),
+
+			new ScreenshootData("Nexus 5 Portrait", 1080, 1920),
+			new ScreenshootData("Nexus 5 Landscape", 1920, 1080),
+
+			new ScreenshootData("Nexus 6 Portrait", 1440, 2560),
+			new ScreenshootData("Nexus 6 Landscape", 2560, 1440),
+
+			new ScreenshootData("Nexus 7 Portrait", 800, 1280),
+			new ScreenshootData("Nexus 7 Landscape", 1280, 800),
+
+			new ScreenshootData("Nexus 7 (2013) Portrait", 1200, 1920),
+			new ScreenshootData("Nexus 7 (2013) Landscape", 1920, 1200),
+
+			new ScreenshootData("Nexus 10 Portrait", 1600, 2560),
+			new ScreenshootData("Nexus 10 Landscape", 2560, 1600),
+		};
+
+	public static ScreenshootData[] iOS =
+	{
+			new ScreenshootData("iPhone 3.5-Inch Portrait", 640, 960),
+			new ScreenshootData("iPhone 3.5-Inch Landscape", 960, 640),
+
+			new ScreenshootData("iPhone 4-Inch Portrait", 640, 1136),
+			new ScreenshootData("iPhone 4-Inch Landscape", 1136, 640),
+
+			new ScreenshootData("iPhone 4.7-Inch Portrait", 750, 1334),
+			new ScreenshootData("iPhone 4.7-Inch Landscape", 1334, 750),
+
+			new ScreenshootData("iPhone 5.5-Inch Portrait", 1242, 2208),
+			new ScreenshootData("iPhone 5.5-Inch Landscape", 2208, 1242),
+
+			new ScreenshootData("iPad Portrait", 768, 1024),
+			new ScreenshootData("iPad Landscape", 1024, 768),
+
+			new ScreenshootData("iPad Hi-Res Portrait", 1536, 2048),
+			new ScreenshootData("iPad Hi-Res Landscape", 2048, 1536),
+
+			new ScreenshootData("iPad Pro Portrait", 2048, 2732),
+			new ScreenshootData("iPad Pro Landscape", 2732, 2048)
+		};
+
+	public static ScreenshootData[] Standalone =
+	{
+			new ScreenshootData("XGA", 1024, 768),
+			new ScreenshootData("SXGA", 1280, 1024),
+			new ScreenshootData("WXGA", 1280, 800),
+			new ScreenshootData("WXGA+", 1440, 900),
+			new ScreenshootData("WSXGA+", 1680, 1050),
+			new ScreenshootData("HD", 1366, 768),
+			new ScreenshootData("HD+", 1600, 900),
+			new ScreenshootData("Full HD", 1920, 1080),
+			new ScreenshootData("Quad HD", 2560, 1440),
+			new ScreenshootData("4K UHD", 3840, 2160)
+		};
+}
+
