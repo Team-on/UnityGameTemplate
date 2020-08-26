@@ -132,7 +132,7 @@ public static class ScreenshotTakerEditor {
 			screenshot.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0, false);
 			screenshot.Apply(false, false);
 
-			File.WriteAllBytes(ScreenshotTaker.GetUniqueFilePath(renderTex.width, renderTex.height, data.targetCamera == ScreenshooterTargetCamera.SceneView, data.lang.ToString(), usedOutputFolder), screenshot.EncodeToJPG(100));
+			File.WriteAllBytes(ScreenshotTaker.GetUniqueFilePath(renderTex.width, renderTex.height, data.targetCamera == ScreenshooterTargetCamera.SceneView, data.lang.ToString(), usedOutputFolder, "jpeg"), screenshot.EncodeToJPG(100));
 		}
 		finally {
 			camera.targetTexture = temp2;
@@ -177,7 +177,7 @@ public static class ScreenshotTakerEditor {
 
 			screenshot.Apply(false, false);
 
-			File.WriteAllBytes(ScreenshotTaker.GetUniqueFilePath(width, height, data.targetCamera == ScreenshooterTargetCamera.SceneView, data.lang.ToString(), usedOutputFolder), screenshot.EncodeToJPG(100));
+			File.WriteAllBytes(ScreenshotTaker.GetUniqueFilePath(width, height, data.targetCamera == ScreenshooterTargetCamera.SceneView, data.lang.ToString(), usedOutputFolder, "jpeg"), screenshot.EncodeToJPG(100));
 		}
 		finally {
 			RenderTexture.active = temp;

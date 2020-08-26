@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using yaSingleton;
+using NaughtyAttributes;
 
 [CreateAssetMenu(fileName = "Template Game Manager", menuName = "Singletons/TemplateGameManager")]
 public class TemplateGameManager : Singleton<TemplateGameManager> {
@@ -11,12 +13,13 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 	}}
 
 	//Global data
-	public string buildNameString;
-	public string productName;
+	[ReadOnly] public string buildNameString;
+	[ReadOnly] public string productName;
 
 	//Other singletons
 	public EventManager Events { get; private set; }
 	public AudioManager audioManager;
+	public SceneLoader sceneLoader;
 
 	Camera mainCamera;
 

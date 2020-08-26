@@ -124,7 +124,7 @@ namespace RockVR.Video
             {
                 // Encode the texture and save it to disk
                 byte[] bytes = frameTexture.EncodeToPNG();
-                string path = PathConfig.SaveFolder + StringUtils.GetPngFileName(null);
+                string path = StringUtils.GetPngFileName(null);
                 System.IO.File.WriteAllBytes(path, bytes);
             }
             catch (System.Exception e)

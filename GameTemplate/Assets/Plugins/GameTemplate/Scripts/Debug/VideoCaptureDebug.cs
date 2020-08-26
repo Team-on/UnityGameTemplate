@@ -109,8 +109,8 @@ public class VideoCaptureDebug : MonoBehaviour {
 
 			Debug.Log($"End saving video. {savePath}");
 		}
-		else if (Input.GetKeyDown(openVideoFolderKey) && videoCaptureCtrl != null) {
-			string dir = Directory.GetParent(savePath.Replace(@"/", @"\")).FullName;
+		else if (Input.GetKeyDown(openVideoFolderKey)) {
+			string dir = PathConfig.SaveFolder;
 
 			var file = Directory.EnumerateFiles(dir).FirstOrDefault();
 			if (!string.IsNullOrEmpty(file))

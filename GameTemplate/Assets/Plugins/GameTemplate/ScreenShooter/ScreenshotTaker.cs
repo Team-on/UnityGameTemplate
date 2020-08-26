@@ -25,7 +25,7 @@ public static class ScreenshotTaker {
 
 		Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
 
-		var screenshotName = GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), outputFolder);
+		var screenshotName = GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), outputFolder, "jpeg");
 		string path = Path.Combine(outputFolder, screenshotName);
 		ScreenCapture.CaptureScreenshot(path);
 
@@ -51,7 +51,7 @@ public static class ScreenshotTaker {
 		}
 	}
 
-	public static string GetUniqueFilePath(int width, int height, bool isSceneView, string lang, string folder) {
+	public static string GetUniqueFilePath(int width, int height, bool isSceneView, string lang, string folder, string extension) {
 		string filename = string.Format("{3}{4}_{0}x{1}{5}_{2}", 
 			width,
 			height, 
@@ -64,7 +64,7 @@ public static class ScreenshotTaker {
 		int fileIndex = 0;
 		string path;
 		do {
-			path = Path.Combine(folder, string.Format(filename + "_{0}.jpeg", ++fileIndex));
+			path = Path.Combine(folder, string.Format(filename + $"_{0}.{extension}", ++fileIndex));
 		} while (File.Exists(path));
 
 		return path;

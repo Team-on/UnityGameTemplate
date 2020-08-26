@@ -59,7 +59,7 @@ namespace RockVR.Video
             // Init audio save destination.
             if (filePath == null || filePath == string.Empty)
             {
-                filePath = PathConfig.SaveFolder + StringUtils.GetWavFileName(StringUtils.GetRandomString(5));
+                filePath = StringUtils.GetWavFileName(PathConfig.SaveFolder);
             }
             libAPI = AudioCaptureLib_Get(
                 AudioSettings.outputSampleRate,

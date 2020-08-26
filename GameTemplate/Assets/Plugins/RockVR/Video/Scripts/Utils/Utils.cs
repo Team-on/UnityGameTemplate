@@ -1,46 +1,40 @@
 ﻿using System;
 using System.Linq;
+using UnityEngine;
+using Polyglot;
 
 namespace RockVR.Video
 {
     public class StringUtils
     {
-        public static string GetTimeString()
+        public static string GetMp4FileName(string rootFolder)
         {
-            return DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+            Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
+            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "mp4");
         }
 
-        public static string GetRandomString(int length)
+        public static string GetH264FileName(string rootFolder)
         {
-            System.Random random = new System.Random();
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
+            Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
+            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "h264");
         }
 
-        public static string GetMp4FileName(string name)
+        public static string GetWavFileName(string rootFolder)
         {
-            return GetTimeString() + (name == null ? "" : "-") + name + ".mp4";
+            Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
+            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "wav");
         }
 
-        public static string GetH264FileName(string name)
+        public static string GetPngFileName(string rootFolder)
         {
-            return GetTimeString() + (name == null ? "" : "-") + name + ".h264";
+            Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
+            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "png");
         }
 
-        public static string GetWavFileName(string name)
+        public static string GetJpgFileName(string rootFolder)
         {
-            return GetTimeString() + (name == null ? "" : "-") + name + ".wav";
-        }
-
-        public static string GetPngFileName(string name)
-        {
-            return GetTimeString() + (name == null ? "" : "-") + name + ".png";
-        }
-
-        public static string GetJpgFileName(string name)
-        {
-            return GetTimeString() + (name == null ? "" : "-") + name + ".jpg";
+            Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
+            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "jpg");
         }
 
         public static bool IsRtmpAddress(string str)

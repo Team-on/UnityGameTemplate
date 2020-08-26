@@ -64,6 +64,9 @@ namespace RockVR.Video
         /// Whether set up Time.maximumDeltaTime to avoiding nasty stuttering.
         /// </summary>
         private bool isOfflineRender;
+
+        private string usedMuxingPath;
+
         /// <summary>
         /// Initialize the attributes of the capture session and start capture.
         /// </summary>
@@ -233,6 +236,7 @@ namespace RockVR.Video
             // Start merging thread when we have videos captured.
             if (IsCaptureAudio())
             {
+                usedMuxingPath = StringUtils.GetMp4FileName(PathConfig.SaveFolder);
                 videoMergeThread = new Thread(VideoMergeThreadFunction);
                 videoMergeThread.Priority = System.Threading.ThreadPriority.Lowest;
                 videoMergeThread.IsBackground = true;
@@ -260,6 +264,7 @@ namespace RockVR.Video
                     continue;
                 }
                 VideoMuxing muxing = new VideoMuxing(videoCapture, audioCapture);
+                muxing.SetPath(usedMuxingPath);
                 if (!muxing.Muxing())
                 {
                     if (eventDelegate.OnError != null)
