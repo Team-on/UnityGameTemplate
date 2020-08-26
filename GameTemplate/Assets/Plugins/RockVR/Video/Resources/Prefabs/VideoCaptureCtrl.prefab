@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4733650192631026}
   - component: {fileID: 114812251737396918}
-  - component: {fileID: 114312946483669176}
   - component: {fileID: 328256145740287484}
   - component: {fileID: 114926983062296974}
   - component: {fileID: 82522558528889510}
@@ -53,18 +52,6 @@ MonoBehaviour:
   quitAfterCapture: 0
   _videoCaptures: []
   _audioCapture: {fileID: 0}
---- !u!114 &114312946483669176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685607626120786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08c95a3c35833400582e55ac76900c33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!328 &328256145740287484
 VideoPlayer:
   m_ObjectHideFlags: 0
