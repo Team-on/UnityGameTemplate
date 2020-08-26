@@ -56,11 +56,7 @@ public static class ScreenshotTaker {
 			width,
 			height, 
 			DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss"),
-#if UNITY_EDITOR
-			PlayerSettings.productName.Replace(" ", "_"),
-#else
-			TemplateGameManager.Instance.productName.Replace(" ", "_"),
-#endif
+			Application.productName.Replace(" ", "_"),
 			isSceneView ? "_Scene" : "",
 			isSceneView ? "" : $"_{lang}"
 		);
@@ -78,11 +74,7 @@ public static class ScreenshotTaker {
 		return Path.Combine(
 			Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
 			"ScreenshotsUnity",
-#if UNITY_EDITOR
-			PlayerSettings.productName.Replace(" ", "_")
-#else
-			TemplateGameManager.Instance.productName.Replace(" ", "_")
-#endif
+			Application.productName.Replace(" ", "_")
 		);
 	}
 }
