@@ -1,4 +1,4 @@
-Feel free to move any folder whatever you want, except CustomToolbar. Also I remove all Examples and Docs from assets.
+Some assets use hardcoded path, so be sure to have a backup before moving assets to other folder. Same for renaming and deleting.
 
 #### [CustomToolbar](https://github.com/Team-on/CustomToolbar) 
  * Remove PlayerPrefs control buttons 
@@ -28,3 +28,10 @@ Feel free to move any folder whatever you want, except CustomToolbar. Also I rem
  
 #### [Pump Editor](https://github.com/rfadeev/pump-editor)
  * Remove *Project Settings Select* and *Save Project As Template* windows
+ 
+ #### [RockVR.Video](https://assetstore.unity.com/packages/tools/video/video-capture-75653)
+ * Change default path to be similar to screenshots
+ * Remove demo
+ 
+ This list contains only changes that I remember to add here) So there are some possible undocumented changes. Also for almost all assets I add .asmdef files and remove examples.
+ 
