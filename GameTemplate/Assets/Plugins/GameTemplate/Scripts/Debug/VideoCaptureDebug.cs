@@ -8,14 +8,9 @@ using TMPro;
 using RockVR.Video;
 
 public class VideoCaptureDebug : MonoBehaviour {
-	string savePath => useCustomSavePath ? overrideSavePath : vc.filePath;
-
+	string savePath => vc.filePath;
 
 	[Header("Data")]
-	[Space]
-	[SerializeField] bool useCustomSavePath;
-	[EnableIf("useCustomSavePath")]
-	[SerializeField] string overrideSavePath = "C:\\Users\\LenovoLegionAdmin\\Documents\\ScreenshotsUnity\\";
 	[Space]
 	[SerializeField] VideoCaptureBase.FrameSizeType frameSize = VideoCaptureBase.FrameSizeType._1920x1080;
 	[SerializeField] bool isOfflineRenderer = true;
@@ -54,8 +49,8 @@ public class VideoCaptureDebug : MonoBehaviour {
 		if (Input.GetKeyDown(startVideoKey) && (videoCaptureCtrl.status == VideoCaptureCtrlBase.StatusType.NOT_START || videoCaptureCtrl.status == VideoCaptureCtrlBase.StatusType.FINISH)) {
 			if(vc == null){
 				vc = TemplateGameManager.Instance.Camera.gameObject.AddComponent<VideoCapture>();
-				vc.customPath = useCustomSavePath;
-				vc.customPathFolder = overrideSavePath;
+				vc.customPath = false;
+				vc.customPathFolder = "";
 
 				vc.isDedicated = false;
 
@@ -114,12 +109,14 @@ public class VideoCaptureDebug : MonoBehaviour {
 
 			Debug.Log($"End saving video. {savePath}");
 		}
-		else if (Input.GetKeyDown(openVideoFolderKey) && (useCustomSavePath || videoCaptureCtrl != null)) {
-			var file = Directory.EnumerateFiles(savePath).FirstOrDefault();
+		else if (Input.GetKeyDown(openVideoFolderKey) && videoCaptureCtrl != null) {
+			string dir = Directory.GetParent(savePath.Replace(@"/", @"\")).FullName;
+
+			var file = Directory.EnumerateFiles(dir).FirstOrDefault();
 			if (!string.IsNullOrEmpty(file))
-				ShowExplorer(Path.Combine(savePath, file));
+				ShowExplorer(Path.Combine(dir, file));
 			else
-				ShowExplorer(savePath);
+				ShowExplorer(dir);
 		}
 	}
 
