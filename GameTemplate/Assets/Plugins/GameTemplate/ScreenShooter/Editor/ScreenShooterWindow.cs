@@ -34,7 +34,7 @@ public class ScreenShooterWindow : EditorWindow {
 		EditorGUILayout.Space();
 		EditorGUILayout.Space();
 		if (data.outputFolder == "-----")
-			data.outputFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ScreenshotsUnity", PlayerSettings.productName);
+			data.outputFolder = ScreenshotTaker.GetDefaultScreenshotPath();
 		data.outputFolder = PathField("Save to:", data.outputFolder);
 
 

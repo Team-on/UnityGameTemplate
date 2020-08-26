@@ -73,4 +73,16 @@ public static class ScreenshotTaker {
 
 		return path;
 	}
+
+	public static string GetDefaultScreenshotPath() {
+		return Path.Combine(
+			Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+			"ScreenshotsUnity",
+#if UNITY_EDITOR
+			PlayerSettings.productName.Replace(" ", "_")
+#else
+			TemplateGameManager.Instance.productName.Replace(" ", "_")
+#endif
+		);
+	}
 }

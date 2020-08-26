@@ -1,6 +1,14 @@
 {
     "name": "PluginsGeneralAssembly",
-    "references": [],
+    "references": [
+        "GUID:432b8b1a65d435f458d6969ef99d85e2",
+        "GUID:9c75c8c13a71184468ee7742d0e6aba0",
+        "GUID:ae812f69a4e1ac149be22210b081ef2c",
+        "GUID:cf9c56e4912dd05409a09a767e7a428a",
+        "GUID:46cc2325ddc967847a6e9ca3f6ebd47f",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:900335979416f53469b06aabef8b32d8"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
