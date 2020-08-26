@@ -1,9 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using UnityEngine;
 using NaughtyAttributes;
-using UnityEditor;
 
 public class ScreenshotCaptureDebug : MonoBehaviour {
 	string savePath => useCustomSavePath ? overrideSavePath : ScreenshotTaker.GetDefaultScreenshotPath();

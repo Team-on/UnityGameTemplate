@@ -97,10 +97,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useCustomSavePath: 0
   overrideSavePath: C:\Users\LenovoLegionAdmin\Documents\ScreenshotsUnity\
-  StartVideo: 282
-  PauseVideo: 283
-  StopVideo: 284
-  OpenVideoFolder: 285
+  frameSize: 4
+  isOfflineRenderer: 1
+  encodeQuality: 2
+  antiAliasing: 3
+  targetFramerate: 4
+  startVideoKey: 282
+  pauseVideoKey: 283
+  stopVideoKey: 284
+  openVideoFolderKey: 285
+  videoCaptureCtrl: {fileID: 8258720778741578552}
 --- !u!114 &8258720778741578552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,24 +231,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: IngameDebugConsole
       objectReference: {fileID: 0}
-    - target: {fileID: 11414302, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22400762, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.00012207031
-      objectReference: {fileID: 0}
     - target: {fileID: 22426080, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22426080, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22426080, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
-      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22428984, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}

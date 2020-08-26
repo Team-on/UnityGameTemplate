@@ -1,0 +1,15 @@
+{
+    "name": "RockVR.Video",
+    "references": [
+        "GUID:2b09bc1f1e834a944aaa553db17ff768"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

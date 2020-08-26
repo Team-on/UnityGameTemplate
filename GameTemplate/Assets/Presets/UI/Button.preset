@@ -9,7 +9,7 @@ Preset:
   m_Name: Button
   m_TargetType:
     m_NativeTypeID: 114
-    m_ManagedTypePPtr: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff,
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76,
       type: 3}
     m_ManagedTypeFallback: 
   m_Properties:
@@ -26,162 +26,46 @@ Preset:
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_Navigation.m_Mode
+    propertyPath: m_UiScaleMode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ReferencePixelsPerUnit
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ScaleFactor
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ReferenceResolution.x
+    value: 1920
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ReferenceResolution.y
+    value: 1080
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ScreenMatchMode
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_Navigation.m_SelectOnUp
-    value: 
+    propertyPath: m_MatchWidthOrHeight
+    value: 0.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_Navigation.m_SelectOnDown
-    value: 
+    propertyPath: m_PhysicalUnit
+    value: 3
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_Navigation.m_SelectOnLeft
-    value: 
+    propertyPath: m_FallbackScreenDPI
+    value: 96
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_Navigation.m_SelectOnRight
-    value: 
+    propertyPath: m_DefaultSpriteDPI
+    value: 96
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_Transition
+    propertyPath: m_DynamicPixelsPerUnit
     value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_NormalColor.r
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_NormalColor.g
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_NormalColor.b
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_NormalColor.a
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_HighlightedColor.r
-    value: 0.9607843
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_HighlightedColor.g
-    value: 0.9607843
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_HighlightedColor.b
-    value: 0.9607843
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_HighlightedColor.a
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_PressedColor.r
-    value: 0.78431374
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_PressedColor.g
-    value: 0.78431374
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_PressedColor.b
-    value: 0.78431374
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_PressedColor.a
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_SelectedColor.r
-    value: 0.9607843
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_SelectedColor.g
-    value: 0.9607843
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_SelectedColor.b
-    value: 0.9607843
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_SelectedColor.a
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_DisabledColor.r
-    value: 0.78431374
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_DisabledColor.g
-    value: 0.78431374
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_DisabledColor.b
-    value: 0.78431374
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_DisabledColor.a
-    value: 0.5019608
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_ColorMultiplier
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Colors.m_FadeDuration
-    value: 0.1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_SpriteState.m_HighlightedSprite
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_SpriteState.m_PressedSprite
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_SpriteState.m_SelectedSprite
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_SpriteState.m_DisabledSprite
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_AnimationTriggers.m_NormalTrigger
-    value: Normal
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_AnimationTriggers.m_HighlightedTrigger
-    value: Highlighted
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_AnimationTriggers.m_PressedTrigger
-    value: Pressed
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_AnimationTriggers.m_SelectedTrigger
-    value: Selected
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_AnimationTriggers.m_DisabledTrigger
-    value: Disabled
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Interactable
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_TargetGraphic
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-    value: 0
     objectReference: {fileID: 0}
