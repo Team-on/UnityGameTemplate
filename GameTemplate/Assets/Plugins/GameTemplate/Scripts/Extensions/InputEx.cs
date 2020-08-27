@@ -26,4 +26,8 @@ public static class InputEx {
 			(Gamepad.current?.leftTrigger?.wasPressedThisFrame ?? false) ||
 			(Gamepad.current?.rightTrigger?.wasPressedThisFrame ?? false);
 	}
+
+	public static bool IsUseGamepad(InputDevice device) {
+		return device is Gamepad;
+	}
 }
