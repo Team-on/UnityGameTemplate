@@ -6,10 +6,10 @@ Preset:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Button
+  m_Name: Toggle
   m_TargetType:
     m_NativeTypeID: 114
-    m_ManagedTypePPtr: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff,
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2,
       type: 3}
     m_ManagedTypeFallback: 
   m_Properties:
@@ -182,6 +182,22 @@ Preset:
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+    propertyPath: toggleTransition
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: graphic
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Group
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
     value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_IsOn
+    value: 1
     objectReference: {fileID: 0}
