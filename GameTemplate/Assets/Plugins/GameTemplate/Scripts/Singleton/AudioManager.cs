@@ -45,7 +45,8 @@ public class AudioManager : Singleton<AudioManager> {
 	public AnimationCurve spread;
 	
 	[Header("Music settings")]
-	public float crossfadeTime = 5.0f;
+	public float crossfadeTime = 2.0f;
+	public float muteTime = 0.25f;
 
 	[Header("All mixers settings")]
 	public int lowestDeciblesBeforeMute = -20;
@@ -76,7 +77,6 @@ public class AudioManager : Singleton<AudioManager> {
 			});
 		}
 	}
-
 
 	//--------------------------------------------------------------------------------------
 	// General
@@ -115,7 +115,7 @@ public class AudioManager : Singleton<AudioManager> {
 	}
 
 	//--------------------------------------------------------------------------------------
-	//Music
+	//Music 2D
 	public void PlayMusic(AudioClip clip, float volume = 1.0f) {
 		if (currMusicClip != clip) {
 			AudioSource oldSource = currMusicClip != null ? musicAudioSources[currMusicClip] : null;
@@ -139,7 +139,47 @@ public class AudioManager : Singleton<AudioManager> {
 		}
 	}
 
-	public void MuteMusic(float time = 0.5f) {
+	public AudioSource PlayLoop(AudioClip clip, Transform emitter, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Music) {
+		AudioSource source = CreatePlaySource(clip, emitter, volume, pitch, playDelay, channel);
+		source.loop = true;
+		return source;
+	}
+
+	public AudioSource PlayLoop(AudioClip clip, Vector3 point, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Music) {
+		AudioSource source = CreatePlaySource(clip, point, volume, pitch, playDelay, channel);
+		source.loop = true;
+		return source;
+	}
+
+	public AudioSource PlayLoop(AudioClip clip, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Music) {
+		AudioSource source = CreatePlaySource(clip, Vector3.zero, volume, pitch, playDelay, channel);
+		source.loop = true;
+		return source;
+	}
+	   
+
+	//--------------------------------------------------------------------------------------
+	//Music 3D
+	public AudioSource PlayLoop3D(AudioClip clip, Transform emitter, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Music) {
+		AudioSource source = CreatePlaySource3D(clip, emitter, volume, pitch, playDelay, channel);
+		source.loop = true;
+		return source;
+	}
+
+	public AudioSource PlayLoop3D(AudioClip clip, Vector3 point, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Music) {
+		AudioSource source = CreatePlaySource3D(clip, point, volume, pitch, playDelay, channel);
+		source.loop = true;
+		return source;
+	}
+
+
+	//--------------------------------------------------------------------------------------
+	//Mute, resume and delete music
+	public void MuteMusic() {
+		MuteMusic(muteTime);
+	}
+
+	public void MuteMusic(float time) {
 		if (currMusicClip == null)
 			return;
 
@@ -174,22 +214,13 @@ public class AudioManager : Singleton<AudioManager> {
 		}
 	}
 
-	public AudioSource PlayLoop(AudioClip clip, Transform emitter, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Music) {
-		AudioSource source = CreatePlaySource(clip, emitter, volume, pitch, playDelay, channel);
-		source.loop = true;
-		return source;
+	public void MuteMusicAndDelete() {
+		MuteMusicAndDelete(muteTime);
 	}
 
-	public AudioSource PlayLoop(AudioClip clip, Vector3 point, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Music) {
-		AudioSource source = CreatePlaySource(clip, point, volume, pitch, playDelay, channel);
-		source.loop = true;
-		return source;
-	}
-
-	public AudioSource PlayLoop(AudioClip clip, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Music) {
-		AudioSource source = CreatePlaySource(clip, Vector3.zero, volume, pitch, playDelay, channel);
-		source.loop = true;
-		return source;
+	public void MuteMusicAndDelete(float time) {
+		MuteMusic(time);
+		DeleteAllPlayedMusic(time + 0.1f);
 	}
 
 
