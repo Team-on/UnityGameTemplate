@@ -10,6 +10,8 @@ using yaSingleton;
 public class AudioManager : Singleton<AudioManager> {
 	public enum AudioChannel : byte { Master, Music, Sound, LastChannel }
 
+	const int lowestDecibles = -80;
+
 	const string SAVE_KEY_MASTER = "AudioManager.MasterVolume";
 	const string SAVE_KEY_MUSIC = "AudioManager.MusicVolume";
 	const string SAVE_KEY_SOUND = "AudioManager.SoundVolume";
@@ -27,7 +29,7 @@ public class AudioManager : Singleton<AudioManager> {
 			if (value)
 				masterMixer.SetFloat("MasterVolume", GetAdjustedVolume(PlayerPrefs.GetFloat(SAVE_KEY_MASTER, defaultMasterVolume)));
 			else
-				masterMixer.SetFloat("MasterVolume", GetAdjustedVolume(-80.0f));
+				masterMixer.SetFloat("MasterVolume", GetAdjustedVolume(0.0f));
 		}
 	}
 	bool isEnabled;
@@ -48,9 +50,6 @@ public class AudioManager : Singleton<AudioManager> {
 	public float crossfadeTime = 2.0f;
 	public float muteTime = 0.25f;
 
-	[Header("All mixers settings")]
-	public int lowestDeciblesBeforeMute = -20;
-
 	[Header("Default settings")]
 	public float defaultMasterVolume = 0.75f;
 	public float defaultMusicVolume = 1;
@@ -65,17 +64,14 @@ public class AudioManager : Singleton<AudioManager> {
 	protected override void Initialize() {
 		base.Initialize();
 
-		SceneManager.sceneLoaded += InitAfterLoad;
+		IsEnabled = PlayerPrefsX.GetBool(SAVE_KEY_ENABLED, defaultEnabled);
+		SetVolume(AudioChannel.Master, PlayerPrefs.GetFloat(SAVE_KEY_MASTER, defaultMasterVolume));
+		SetVolume(AudioChannel.Music, PlayerPrefs.GetFloat(SAVE_KEY_MUSIC, defaultMusicVolume));
+		SetVolume(AudioChannel.Sound, PlayerPrefs.GetFloat(SAVE_KEY_SOUND, defaultSoundVolume));
 
-		void InitAfterLoad(Scene c, LoadSceneMode mode) {
-			SceneManager.sceneLoaded -= InitAfterLoad;
-			LeanTween.delayedCall(0.1f, () => {
-				IsEnabled = PlayerPrefsX.GetBool(SAVE_KEY_ENABLED, defaultEnabled);
-				SetVolume(AudioChannel.Master, PlayerPrefs.GetFloat(SAVE_KEY_MASTER, defaultMasterVolume));
-				SetVolume(AudioChannel.Music, PlayerPrefs.GetFloat(SAVE_KEY_MUSIC, defaultMusicVolume));
-				SetVolume(AudioChannel.Sound, PlayerPrefs.GetFloat(SAVE_KEY_SOUND, defaultSoundVolume));
-			});
-		}
+		musicAudioSources = new Dictionary<AudioClip, AudioSource>();
+		lastMusicClip = currMusicClip = null;
+		lastMusicVolume = 0.0f;
 	}
 
 	//--------------------------------------------------------------------------------------
@@ -348,7 +344,7 @@ public class AudioManager : Singleton<AudioManager> {
 	//--------------------------------------------------------------------------------------
 	//Inner helpers 
 	float GetAdjustedVolume(float volume) {
-		return volume <= 0.0001f ? -80f : Mathf.Log10(volume) * 20;
+		return volume <= 0.0001f ? lowestDecibles : Mathf.Log10(volume) * 20;
 	}
 
 	void PlayDelayed(AudioSource source, float delay) {
