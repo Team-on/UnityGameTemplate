@@ -28,6 +28,6 @@ public class ScaleUpDown : MonoBehaviour {
 			}
 		}
 
-		gameObject.transform.localScale = Vector3.one * Mathf.SmoothStep(0.66f, 1.0f, currTime / maxTime);
+		gameObject.transform.localScale = Vector3.one * Mathf.SmoothStep(minScale, maxScale, currTime / maxTime);
 	}
 }
