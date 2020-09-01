@@ -128,6 +128,7 @@ public class EditorSpotlight : EditorWindow, IHasCustomMenu
                          selectedIndex++;
                          break;
 
+                    case KeyCode.KeypadEnter:
                     case KeyCode.Return:
                          current.Use();
                          OpenSelectedAssetAndClose();
