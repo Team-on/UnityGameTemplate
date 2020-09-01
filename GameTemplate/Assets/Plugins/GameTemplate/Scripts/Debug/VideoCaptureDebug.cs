@@ -47,7 +47,7 @@ public class VideoCaptureDebug : MonoBehaviour {
 
 	void Update() {
 		if (Input.GetKeyDown(startVideoKey) && (videoCaptureCtrl.status == VideoCaptureCtrlBase.StatusType.NOT_START || videoCaptureCtrl.status == VideoCaptureCtrlBase.StatusType.FINISH)) {
-			if(vc == null){
+			if (vc == null){
 				vc = TemplateGameManager.Instance.Camera.gameObject.AddComponent<VideoCapture>();
 				vc.customPath = false;
 				vc.customPathFolder = "";
@@ -68,6 +68,9 @@ public class VideoCaptureDebug : MonoBehaviour {
 				videoCaptureCtrl.audioCapture = ac;
 			}
 
+			LeanTween.cancel(gameObject, false);
+			recordingText.alpha = 1;
+			recordingImg.color = recordingImg.color.SetA(1);
 			recordingImg.gameObject.SetActive(true);
 			recordingText.gameObject.SetActive(true);
 			recordingText.text = "Recoring";
@@ -91,7 +94,7 @@ public class VideoCaptureDebug : MonoBehaviour {
 		else if (Input.GetKeyDown(stopVideoKey) && videoCaptureCtrl != null && (videoCaptureCtrl.status == VideoCaptureCtrlBase.StatusType.STARTED || videoCaptureCtrl.status == VideoCaptureCtrlBase.StatusType.PAUSED)) {
 			recordingImg.gameObject.SetActive(false);
 			recordingText.gameObject.SetActive(true);
-			recordingText.text = "Stopped";
+			recordingText.text = "Stopped. (Save in progress)";
 
 			videoCaptureCtrl.StopCapture();
 		}
@@ -100,11 +103,18 @@ public class VideoCaptureDebug : MonoBehaviour {
 
 			recordingImg.gameObject.SetActive(false);
 			recordingText.gameObject.SetActive(true);
-			recordingText.text = "Completed";
+			recordingText.text = $"Completed. (Press {openVideoFolderKey} to open)";
 
-			LeanTween.delayedCall(gameObject, 5.0f, () => {
-				recordingImg.gameObject.SetActive(false);
-				recordingText.gameObject.SetActive(false);
+			LeanTween.delayedCall(gameObject, 2.0f, () => {
+				LeanTween.value(gameObject, recordingText.alpha, 0.0f, 3.0f)
+				.setOnUpdate((float a) => {
+					recordingText.alpha = a;
+					recordingImg.color = recordingImg.color.SetA(a);
+				})
+				.setOnComplete(()=> {
+					recordingImg.gameObject.SetActive(false);
+					recordingText.gameObject.SetActive(false);
+				});
 			});
 
 			Debug.Log($"End saving video. {savePath}");

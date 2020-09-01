@@ -16,6 +16,9 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 	[ReadOnly] public string buildNameString;
 	[ReadOnly] public string productName;
 
+	//Debug UI
+	[ReadOnly] public UIPopupGroup debugPopups;
+
 	//Other singletons
 	public EventManager Events { get; private set; }
 	public AudioManager audioManager;

@@ -19,7 +19,9 @@ public class ScreenshotCaptureDebug : MonoBehaviour {
 
 	void Update() {
 		if (Input.GetKeyDown(screenshotKey)) {
-			ScreenshotTaker.TakeScreenshot(savePath);
+			string path = ScreenshotTaker.TakeScreenshot(savePath);
+			//ScreenshotTaker.TakeScreenshotTexture2D();
+			TemplateGameManager.Instance.debugPopups.ShowPopup($"Capture screenshot to {path}\nPress {openScreenshotFolderKey} to open folder with it");
 		}
 		else if (Input.GetKeyDown(openScreenshotFolderKey)) {
 			var file = Directory.EnumerateFiles(savePath).FirstOrDefault();
@@ -30,6 +32,8 @@ public class ScreenshotCaptureDebug : MonoBehaviour {
 		}
 	}
 
+	//TODO: move to sole utils class
+	// https://stackoverflow.com/questions/2315561/correct-way-in-net-to-switch-the-focus-to-another-application
 	void ShowExplorer(string itemPath) {
 		itemPath = itemPath.Replace(@"/", @"\");   // explorer doesn't like front slashes
 		System.Diagnostics.Process.Start("explorer.exe", "/select," + itemPath);

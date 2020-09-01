@@ -19,7 +19,7 @@ public static class ScreenshotTaker {
 		prevTimescale = 1.0f;
 	}
 
-	public static void TakeScreenshot(string outputFolder) {
+	public static string TakeScreenshot(string outputFolder) {
 		if (!Directory.Exists(outputFolder))
 			Directory.CreateDirectory(outputFolder);
 
@@ -30,6 +30,11 @@ public static class ScreenshotTaker {
 		ScreenCapture.CaptureScreenshot(path);
 
 		Debug.Log("Save single screenshoot:" + path);
+		return path;
+	}
+
+	public static Texture2D TakeScreenshotTexture2D() {
+		return ScreenCapture.CaptureScreenshotAsTexture();
 	}
 
 	public static async Task WaitOneFrame() {
@@ -64,7 +69,7 @@ public static class ScreenshotTaker {
 		int fileIndex = 0;
 		string path;
 		do {
-			path = Path.Combine(folder, string.Format(filename + $"_{0}.{extension}", ++fileIndex));
+			path = Path.Combine(folder, $"{filename}_{++fileIndex}.{extension}");
 		} while (File.Exists(path));
 
 		return path;
