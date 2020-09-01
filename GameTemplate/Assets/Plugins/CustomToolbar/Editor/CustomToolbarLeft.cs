@@ -3,21 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor.SceneManagement;
 
-namespace UnityToolbarExtender {
-	static class ToolbarStyles {
-		public static readonly GUIStyle commandButtonStyle;
-
-		static ToolbarStyles() {
-			commandButtonStyle = new GUIStyle("Command") {
-				fontSize = 16,
-				alignment = TextAnchor.MiddleCenter,
-				imagePosition = ImagePosition.ImageAbove,
-				fontStyle = FontStyle.Bold
-			};
-		}
-	}
-
-	[InitializeOnLoad]
+namespace UnityToolbarExtender
+{
+    [InitializeOnLoad]
 	public class CustomToolbarLeft {
 		private static bool _deleteKeys = false;
 

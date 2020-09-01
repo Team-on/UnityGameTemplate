@@ -4,38 +4,43 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace UnityToolbarExtender {
+namespace UnityToolbarExtender
+{
 	[InitializeOnLoad]
-	public static class ToolbarExtender {
+	public static class ToolbarExtender
+	{
 		static int m_toolCount;
 		static GUIStyle m_commandStyle = null;
 
 		public static readonly List<Action> LeftToolbarGUI = new List<Action>();
 		public static readonly List<Action> RightToolbarGUI = new List<Action>();
 
-		static ToolbarExtender() {
+		static ToolbarExtender()
+		{
 			Type toolbarType = typeof(Editor).Assembly.GetType("UnityEditor.Toolbar");
 			FieldInfo toolIcons = toolbarType.GetField("s_ShownToolIcons",
 				BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-			var array = (Array)toolIcons.GetValue(null);
+			var array = ( Array ) toolIcons.GetValue( null );
 			m_toolCount = array != null ? array.Length : 6;
 
 			ToolbarCallback.OnToolbarGUI -= OnGUI;
 			ToolbarCallback.OnToolbarGUI += OnGUI;
 		}
 
-		static void OnGUI() {
+		static void OnGUI()
+		{
 			// Create two containers, left and right
 			// Screen is whole toolbar
 
-			if (m_commandStyle == null) {
+			if (m_commandStyle == null)
+			{
 				m_commandStyle = new GUIStyle("CommandLeft");
 			}
 
 			var screenWidth = EditorGUIUtility.currentViewWidth;
 
 			// Following calculations match code reflected from Toolbar.OldOnGUI()
-			float playButtonsPosition = (screenWidth - 140) / 2;
+			float playButtonsPosition = (screenWidth - 180) / 2;
 
 			Rect leftRect = new Rect(0, 0, screenWidth, Screen.height);
 			leftRect.xMin += 10; // Spacing left
@@ -45,7 +50,7 @@ namespace UnityToolbarExtender {
 			leftRect.xMax = playButtonsPosition;
 
 			Rect rightRect = new Rect(0, 0, screenWidth, Screen.height);
-			rightRect.xMin = playButtonsPosition;
+			rightRect.xMin = playButtonsPosition + 50;
 			rightRect.xMin += m_commandStyle.fixedWidth * 3; // Play buttons
 			rightRect.xMax = screenWidth;
 			rightRect.xMax -= 10; // Spacing right
@@ -71,10 +76,12 @@ namespace UnityToolbarExtender {
 			rightRect.y = 5;
 			rightRect.height = 24;
 
-			if (leftRect.width > 0) {
+			if (leftRect.width > 0)
+			{
 				GUILayout.BeginArea(leftRect);
 				GUILayout.BeginHorizontal();
-				foreach (var handler in LeftToolbarGUI) {
+				foreach (var handler in LeftToolbarGUI)
+				{
 					handler();
 				}
 
@@ -82,10 +89,12 @@ namespace UnityToolbarExtender {
 				GUILayout.EndArea();
 			}
 
-			if (rightRect.width > 0) {
+			if (rightRect.width > 0)
+			{
 				GUILayout.BeginArea(rightRect);
 				GUILayout.BeginHorizontal();
-				foreach (var handler in RightToolbarGUI) {
+				foreach (var handler in RightToolbarGUI)
+				{
 					handler();
 				}
 

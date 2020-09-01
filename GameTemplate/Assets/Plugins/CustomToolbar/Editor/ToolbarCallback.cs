@@ -9,8 +9,10 @@ using UnityEngine.UIElements;
 using UnityEngine.Experimental.UIElements;
 #endif
 
-namespace UnityToolbarExtender {
-	public static class ToolbarCallback {
+namespace UnityToolbarExtender
+{
+	public static class ToolbarCallback
+	{
 		static Type m_toolbarType = typeof(Editor).Assembly.GetType("UnityEditor.Toolbar");
 		static Type m_guiViewType = typeof(Editor).Assembly.GetType("UnityEditor.GUIView");
 		static PropertyInfo m_viewVisualTree = m_guiViewType.GetProperty("visualTree",
@@ -24,26 +26,30 @@ namespace UnityToolbarExtender {
 		/// </summary>
 		public static Action OnToolbarGUI;
 
-		static ToolbarCallback() {
+		static ToolbarCallback()
+		{
 			EditorApplication.update -= OnUpdate;
 			EditorApplication.update += OnUpdate;
 		}
 
-		static void OnUpdate() {
+		static void OnUpdate()
+		{
 			// Relying on the fact that toolbar is ScriptableObject and gets deleted when layout changes
-			if (m_currentToolbar == null) {
+			if (m_currentToolbar == null)
+			{
 				// Find toolbar
 				var toolbars = Resources.FindObjectsOfTypeAll(m_toolbarType);
-				m_currentToolbar = toolbars.Length > 0 ? (ScriptableObject)toolbars[0] : null;
-				if (m_currentToolbar != null) {
+				m_currentToolbar = toolbars.Length > 0 ? (ScriptableObject) toolbars[0] : null;
+				if (m_currentToolbar != null)
+				{
 					// Get it's visual tree
-					var visualTree = (VisualElement)m_viewVisualTree.GetValue(m_currentToolbar, null);
+					var visualTree = (VisualElement) m_viewVisualTree.GetValue(m_currentToolbar, null);
 
 					// Get first child which 'happens' to be toolbar IMGUIContainer
-					var container = (IMGUIContainer)visualTree[0];
+					var container = (IMGUIContainer) visualTree[0];
 
 					// (Re)attach handler
-					var handler = (Action)m_imguiContainerOnGui.GetValue(container);
+					var handler = (Action) m_imguiContainerOnGui.GetValue(container);
 					handler -= OnGUI;
 					handler += OnGUI;
 					m_imguiContainerOnGui.SetValue(container, handler);
@@ -51,7 +57,8 @@ namespace UnityToolbarExtender {
 			}
 		}
 
-		static void OnGUI() {
+		static void OnGUI()
+		{
 			var handler = OnToolbarGUI;
 			if (handler != null) handler();
 		}
