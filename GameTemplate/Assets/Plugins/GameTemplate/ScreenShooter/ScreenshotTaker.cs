@@ -25,7 +25,7 @@ public static class ScreenshotTaker {
 
 		Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
 
-		var screenshotName = GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), outputFolder, "jpeg");
+		var screenshotName = GetUniqueFilePath(screenSize.x, screenSize.y, false, true, Localization.Instance.SelectedLanguage.ToString(), outputFolder, "jpeg");
 		string path = Path.Combine(outputFolder, screenshotName);
 		ScreenCapture.CaptureScreenshot(path);
 
@@ -56,14 +56,15 @@ public static class ScreenshotTaker {
 		}
 	}
 
-	public static string GetUniqueFilePath(int width, int height, bool isSceneView, string lang, string folder, string extension) {
-		string filename = string.Format("{3}{4}_{0}x{1}{5}_{2}", 
+	public static string GetUniqueFilePath(int width, int height, bool isSceneView, bool isUI, string lang, string folder, string extension) {
+		string filename = string.Format("{3}{4}_{0}x{1}{5}{6}_{2}", 
 			width,
 			height, 
 			DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss"),
 			Application.productName.Replace(" ", "_"),
 			isSceneView ? "_Scene" : "",
-			isSceneView ? "" : $"_{lang}"
+			isSceneView || !isUI ? "" : $"_{lang}",
+			isUI ? "" : $"_noUI"
 		);
 
 		int fileIndex = 0;

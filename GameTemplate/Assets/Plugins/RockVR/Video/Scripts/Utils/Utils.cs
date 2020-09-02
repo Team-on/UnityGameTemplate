@@ -10,31 +10,31 @@ namespace RockVR.Video
         public static string GetMp4FileName(string rootFolder)
         {
             Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
-            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "mp4");
+            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, true, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "mp4");
         }
 
         public static string GetH264FileName(string rootFolder)
         {
             Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
-            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "h264");
+            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, true, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "h264");
         }
 
         public static string GetWavFileName(string rootFolder)
         {
             Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
-            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "wav");
+            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, true, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "wav");
         }
 
         public static string GetPngFileName(string rootFolder)
         {
             Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
-            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "png");
+            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, true, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "png");
         }
 
         public static string GetJpgFileName(string rootFolder)
         {
             Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
-            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "jpg");
+            return ScreenshotTaker.GetUniqueFilePath(screenSize.x, screenSize.y, false, true, Localization.Instance.SelectedLanguage.ToString(), rootFolder, "jpg");
         }
 
         public static bool IsRtmpAddress(string str)
