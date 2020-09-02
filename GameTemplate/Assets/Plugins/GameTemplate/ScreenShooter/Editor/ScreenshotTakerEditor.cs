@@ -28,12 +28,14 @@ public static class ScreenshotTakerEditor {
 
 		for (int i = 0; i < data.Count; i++) {
 			if (data[i].isEnabled) {
-				foreach (var lang in Localization.Instance.SupportedLanguages) {
-					CaptureScreenshot(data[i], lang);
+				if (data[i].captureOverlayUI) {
+					foreach (var lang in Localization.Instance.SupportedLanguages) {
+						CaptureScreenshot(data[i], lang);
+					}
 				}
-			}
-			else {
-				CaptureScreenshot(data[i], usedLanguage);
+				else {
+					CaptureScreenshot(data[i], usedLanguage);
+				}
 			}
 		}
 
@@ -89,9 +91,9 @@ public static class ScreenshotTakerEditor {
 		else {
 			isTakeScreenshot = false;
 
-			//if (!data.captureOverlayUI || data.targetCamera == ScreenshooterTargetCamera.SceneView)
-			//	CaptureScreenshotWithoutUI(data);
-			//else
+			if (!data.captureOverlayUI || data.targetCamera == ScreenshooterTargetCamera.SceneView)
+				CaptureScreenshotWithoutUI(data);
+			else
 				CaptureScreenshotWithUI(data);
 
 			SizeHolder.CallMethod("RemoveCustomSize", newIndex);
