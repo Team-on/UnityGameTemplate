@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
-public static class ReflectionExtensions {
+
+public static class ReflectionEx {
 	public static object FetchField(this Type type, string field) {
 		return type.GetFieldRecursive(field, true).GetValue(null);
 	}

@@ -1,10 +1,83 @@
 ﻿using UnityEngine;
 
 public static class TransformEx {
-    public static Transform DestroyAllChildrens(this Transform transform) {
-        foreach (Transform child in transform) {
+	/// <summary>
+	/// Rotates the transform so the forward vector points from target's current position.
+	/// </summary>
+	/// <param name="target">Object to point away from.</param>
+	public static void LookFrom(this Transform transform, Transform target) {
+		transform.LookFrom(target.position);
+	}
+
+	/// <summary>
+	/// Rotates the transform so the forward vector points from target's current position.
+	/// </summary>
+	/// <param name="target">Object to point away from.</param>
+	/// <param name="worldUp">Vector specifying the upward direction.</param>
+	public static void LookFrom(this Transform transform, Transform target, Vector3 worldUp) {
+		transform.LookFrom(target.position, worldUp);
+	}
+
+	/// <summary>
+	/// Rotates the transform so the forward vector points from worldPosition.
+	/// </summary>
+	/// <param name="worldPosition">Point to look at.</param>
+	public static void LookFrom(this Transform transform, Vector3 worldPosition) {
+		transform.rotation = Quaternion.LookRotation(transform.position - worldPosition);
+	}
+
+	/// <summary>
+	/// Rotates the transform so the forward vector points from worldPosition.
+	/// </summary>
+	/// <param name="worldPosition">Point to look at.</param>
+	/// <param name="worldUp">Vector specifying the upward direction.</param>
+	public static void LookFrom(this Transform transform, Vector3 worldPosition, Vector3 worldUp) {
+		transform.rotation = Quaternion.LookRotation(transform.position - worldPosition, worldUp);
+	}
+
+	public static void SetX(this Transform transform, float value) {
+		transform.position = transform.position.SetX(value);
+	}
+
+	public static void SetY(this Transform transform, float value) {
+		transform.position = transform.position.SetY(value);
+	}
+
+	public static void SetZ(this Transform transform, float value) {
+		transform.position = transform.position.SetZ(value);
+	}
+
+	public static void SetLocalX(this Transform transform, float value) {
+		transform.localPosition = transform.localPosition.SetX(value);
+	}
+
+	public static void SetLocalY(this Transform transform, float value) {
+		transform.localPosition = transform.localPosition.SetY(value);
+	}
+
+	public static void SetLocalZ(this Transform transform, float value) {
+		transform.localPosition = transform.localPosition.SetZ(value);
+	}
+
+	public static void AddChild(this Transform transform, GameObject childGameObject) {
+		childGameObject.transform.SetParent(transform, false);
+	}
+
+	public static void AddChild(this Transform transform, GameObject childGameObject, bool worldPositionStays) {
+		childGameObject.transform.SetParent(transform, worldPositionStays);
+	}
+
+	public static void AddChild(this Transform transform, Transform childTransform) {
+		childTransform.SetParent(transform, false);
+	}
+
+	public static void AddChild(this Transform transform, Transform childTransform, bool worldPositionStays) {
+		childTransform.SetParent(transform, worldPositionStays);
+	}
+
+	public static Transform DestroyAllChildrens(this Transform transform) {
+        foreach (Transform child in transform)
             GameObject.Destroy(child.gameObject);
-        }
 
         transform.DetachChildren();
 

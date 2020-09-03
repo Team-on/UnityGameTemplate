@@ -1,29 +1,29 @@
 ﻿using UnityEngine;
 
- public static class Physics2DExtensions {
-     public static void AddForce (this Rigidbody2D rigidbody2D, Vector2 force, ForceMode2D mode = ForceMode2D.Force) {
+ public static class Physics2DEx {
+     public static void AddForce (this Rigidbody2D rigidbody2D, Vector2 force, ForceMode2DEx mode = ForceMode2DEx.Force) {
          switch (mode) {
-         case ForceMode2D.Force:
+         case ForceMode2DEx.Force:
              rigidbody2D.AddForce (force);
              break;
-         case ForceMode2D.Impulse:
+         case ForceMode2DEx.Impulse:
              rigidbody2D.AddForce (force / Time.fixedDeltaTime);
              break;
-         case ForceMode2D.Acceleration:
+         case ForceMode2DEx.Acceleration:
              rigidbody2D.AddForce (force * rigidbody2D.mass);
              break;
-         case ForceMode2D.VelocityChange:
+         case ForceMode2DEx.VelocityChange:
              rigidbody2D.AddForce (force * rigidbody2D.mass / Time.fixedDeltaTime);
              break;
          }
      }
      
-     public static void AddForce (this Rigidbody2D rigidbody2D, float x, float y, ForceMode2D mode = ForceMode2D.Force) {
+     public static void AddForce (this Rigidbody2D rigidbody2D, float x, float y, ForceMode2DEx mode = ForceMode2DEx.Force) {
          rigidbody2D.AddForce (new Vector2 (x, y), mode);
      }
  }
 
-public enum ForceMode2D : byte {
+public enum ForceMode2DEx : byte {
     Force,
     Impulse,
     Acceleration,

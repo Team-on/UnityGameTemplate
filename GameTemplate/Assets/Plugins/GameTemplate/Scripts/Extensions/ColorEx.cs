@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public static class ColorUtils {
+public static class ColorEx {
 	public static Color SetR(this Color color, float value) {
 		return new Color(value, color.g, color.b, color.a);
 	}

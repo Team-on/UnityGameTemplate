@@ -1,45 +1,64 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public enum AnchorPreset {
-	TopLeft,
-	TopCenter,
-	TopRight,
+public static class RectTransformEx {
+	public static void SetAnchoredPositionX(this RectTransform rectTransform, float value) {
+		rectTransform.anchoredPosition = rectTransform.anchoredPosition.SetX(value);
+	}
 
-	MiddleLeft,
-	MiddleCenter,
-	MiddleRight,
+	public static void SetAnchoredPositionY(this RectTransform rectTransform, float value) {
+		rectTransform.anchoredPosition = rectTransform.anchoredPosition.SetY(value);
+	}
 
-	BottomLeft,
-	BottomCenter,
-	BottomRight,
+	public static void SetAnchorMaxX(this RectTransform rectTransform, float value) {
+		rectTransform.anchorMax = rectTransform.anchorMax.SetX(value);
+	}
 
-	HorStretchTop,
-	HorStretchMiddle,
-	HorStretchBottom,
+	public static void SetAnchorMaxY(this RectTransform rectTransform, float value) {
+		rectTransform.anchorMax = rectTransform.anchorMax.SetY(value);
+	}
 
-	VertStretchLeft,
-	VertStretchCenter,
-	VertStretchRight,
+	public static void SetAnchorMinX(this RectTransform rectTransform, float value) {
+		rectTransform.anchorMin = rectTransform.anchorMin.SetX(value);
+	}
 
-	StretchAll,
-}
+	public static void SetAnchorMinY(this RectTransform rectTransform, float value) {
+		rectTransform.anchorMin = rectTransform.anchorMin.SetY(value);
+	}
 
-public enum PivotPreset {
-	TopLeft,
-	TopCenter,
-	TopRight,
+	public static void SetOffsetMaxX(this RectTransform rectTransform, float value) {
+		rectTransform.offsetMax = rectTransform.offsetMax.SetX(value);
+	}
 
-	MiddleLeft,
-	MiddleCenter,
-	MiddleRight,
+	public static void SetOffsetMaxY(this RectTransform rectTransform, float value) {
+		rectTransform.offsetMax = rectTransform.offsetMax.SetY(value);
+	}
 
-	BottomLeft,
-	BottomCenter,
-	BottomRight,
-}
+	public static void SetOffsetMinX(this RectTransform rectTransform, float value) {
+		rectTransform.offsetMin = rectTransform.offsetMin.SetX(value);
+	}
 
-// Inspired by http://answers.unity3d.com/questions/1225118/solution-set-ui-recttransform-anchor-presets-from.html
-public static partial class RectTransformExtensions {
+	public static void SetOffsetMinY(this RectTransform rectTransform, float value) {
+		rectTransform.offsetMin = rectTransform.offsetMin.SetY(value);
+	}
+
+	public static void SetPivotX(this RectTransform rectTransform, float value) {
+		rectTransform.pivot = rectTransform.pivot.SetX(value);
+	}
+
+	public static void SetPivotY(this RectTransform rectTransform, float value) {
+		rectTransform.pivot = rectTransform.pivot.SetY(value);
+	}
+
+	public static void SetSizeDeltaX(this RectTransform rectTransform, float value) {
+		rectTransform.sizeDelta = rectTransform.sizeDelta.SetX( value);
+	}
+
+	public static void SetSizeDeltaY(this RectTransform rectTransform, float value) {
+		rectTransform.sizeDelta = rectTransform.sizeDelta.SetY(value);
+	}
+
 	public static void SetAnchor(this RectTransform rectTransform, AnchorPreset anchorPreset) {
 		rectTransform.SetAnchor(anchorPreset, 0, 0);
 	}
@@ -177,4 +196,43 @@ public static partial class RectTransformExtensions {
 				break;
 		}
 	}
+}
+
+
+public enum AnchorPreset {
+	TopLeft,
+	TopCenter,
+	TopRight,
+
+	MiddleLeft,
+	MiddleCenter,
+	MiddleRight,
+
+	BottomLeft,
+	BottomCenter,
+	BottomRight,
+
+	HorStretchTop,
+	HorStretchMiddle,
+	HorStretchBottom,
+
+	VertStretchLeft,
+	VertStretchCenter,
+	VertStretchRight,
+
+	StretchAll,
+}
+
+public enum PivotPreset {
+	TopLeft,
+	TopCenter,
+	TopRight,
+
+	MiddleLeft,
+	MiddleCenter,
+	MiddleRight,
+
+	BottomLeft,
+	BottomCenter,
+	BottomRight,
 }

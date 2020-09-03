@@ -7,14 +7,6 @@ static class RandomEx {
 		return number <= percent;
 	}
 
-	public static int GetRandomValue(this Vector2 vec) {
-		return UnityEngine.Random.Range((int)vec.x, (int)(vec.y + 1));
-	}
-
-	public static float GetRandomValueFloat(this Vector2 vec) {
-		return UnityEngine.Random.Range(vec.x, vec.y);
-	}
-
 	public static void Shuffle<T>(this List<T> array) {
 		int n = array.Count;
 		while (n > 1) {
