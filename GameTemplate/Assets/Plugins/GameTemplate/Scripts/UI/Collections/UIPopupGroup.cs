@@ -22,7 +22,6 @@ public class UIPopupGroup : MonoBehaviour {
 
 	float startYPos;
 	Coroutine hideCoroutine;
-	int showedPopups;
 	int currPopup;
 
 	List<float> openTimes;
@@ -46,15 +45,14 @@ public class UIPopupGroup : MonoBehaviour {
 		popupText.transform.localEulerAngles = Vector3.zero;
 
 		popupText.SetText(text);
-		popupText.PlayShowAnimation();
-		++showedPopups;
+		openTimes[openTimes.Count - 1] += popupText.PlayShowAnimation();
 
 		if (hideCoroutine == null)
 			hideCoroutine = StartCoroutine(HideCoroutine());
 	}
 
 	IEnumerator HideCoroutine() {
-		while (currPopup < showedPopups) {
+		while (currPopup < openTimes.Count) {
 			while (openTimes[currPopup] >= Time.realtimeSinceStartup) {
 				yield return null;
 			}
@@ -78,7 +76,7 @@ public class UIPopupGroup : MonoBehaviour {
 		gridTransform.anchoredPosition = gridTransform.anchoredPosition.SetY(startYPos);
 
 		openTimes.Clear();
-		currPopup = showedPopups = 0;
+		currPopup = 0;
 		hideCoroutine = null;
 	}
 }

@@ -368,6 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8054849694599608908}
   - component: {fileID: 4534731263818235778}
+  - component: {fileID: 5093400636026061935}
   m_Layer: 0
   m_Name: PopupGroup
   m_TagString: Untagged
@@ -393,7 +394,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -10, y: -5}
-  m_SizeDelta: {x: 477, y: 548}
+  m_SizeDelta: {x: 477, y: 1041.1359}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &4534731263818235778
 MonoBehaviour:
@@ -407,11 +408,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d3d602487c8584fb4c8e656b2464b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slideTime: 0.5
+  defaultShowTime: 2
   rt: {fileID: 8054849694599608908}
   gridTransform: {fileID: 5828805674018415633}
   grid: {fileID: 2451644434705268717}
   popupPrefab: {fileID: 7723066682151496033, guid: 3ebd4fbd11d0ca043b6234bda1366aec,
     type: 3}
+--- !u!114 &5093400636026061935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5193632783693778734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6360580795392906326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,7 +1206,7 @@ PrefabInstance:
     - target: {fileID: 224000011255372986, guid: 67117722a812a2e46ab8cb8eafbf5f5e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -32
+      value: -32.00006
       objectReference: {fileID: 0}
     - target: {fileID: 224856348943071238, guid: 67117722a812a2e46ab8cb8eafbf5f5e,
         type: 3}
