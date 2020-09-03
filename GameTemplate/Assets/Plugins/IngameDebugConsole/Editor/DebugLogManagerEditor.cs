@@ -8,7 +8,6 @@ namespace IngameDebugConsole
 		private SerializedProperty singleton;
 		private SerializedProperty minimumHeight;
 		private SerializedProperty enablePopup;
-		private SerializedProperty showPopupAfterError;
 		private SerializedProperty startInPopupMode;
 		private SerializedProperty startMinimized;
 		private SerializedProperty toggleWithKey;
@@ -23,7 +22,6 @@ namespace IngameDebugConsole
 			singleton = serializedObject.FindProperty( "singleton" );
 			minimumHeight = serializedObject.FindProperty( "minimumHeight" );
 			enablePopup = serializedObject.FindProperty( "enablePopup" );
-			showPopupAfterError = serializedObject.FindProperty("showPopupAfterError");
 			startInPopupMode = serializedObject.FindProperty( "startInPopupMode" );
 			startMinimized = serializedObject.FindProperty( "startMinimized" );
 			toggleWithKey = serializedObject.FindProperty( "toggleWithKey" );
@@ -49,7 +47,6 @@ namespace IngameDebugConsole
 			else 
 			{
 				DrawSubProperty( startMinimized );
-				DrawSubProperty( showPopupAfterError );
 			}
 
 			EditorGUILayout.PropertyField( toggleWithKey );

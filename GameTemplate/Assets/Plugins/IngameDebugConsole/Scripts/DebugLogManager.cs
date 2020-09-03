@@ -49,10 +49,6 @@ namespace IngameDebugConsole
 
 		[SerializeField]
 		[HideInInspector]
-		private bool showPopupAfterError = true;
-
-		[SerializeField]
-		[HideInInspector]
 		private bool startInPopupMode = true;
 
 		[SerializeField]
