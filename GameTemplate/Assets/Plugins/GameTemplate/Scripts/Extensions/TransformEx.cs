@@ -64,7 +64,7 @@ public static class TransformEx {
 	}
 
 	public static void ChangeY(this Transform transform, float value) {
-		transform.position = transform.position.SetY(transform.position.t + value);
+		transform.position = transform.position.SetY(transform.position.y + value);
 	}
 
 	public static void ChangeZ(this Transform transform, float value) {
