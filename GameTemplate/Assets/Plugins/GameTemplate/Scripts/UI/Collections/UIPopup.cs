@@ -15,7 +15,7 @@ public class UIPopup : MonoBehaviour {
 
 	[Header("Child refs")]
 	[Space]
-	[SerializeField] TextMeshProUGUI textField;
+	[SerializeField] protected TextMeshProUGUI textField;
 
 	Vector3 startTextFieldLocalScale;
 

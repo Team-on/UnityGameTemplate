@@ -19,6 +19,7 @@ public class UIPopupGroup : MonoBehaviour {
 	[Header("Assets refs")]
 	[Space]
 	[SerializeField] GameObject popupPrefab = null;
+	[SerializeField] GameObject popupWithRawImagePrefab = null;
 
 	float startYPos;
 	Coroutine hideCoroutine;
@@ -38,6 +39,10 @@ public class UIPopupGroup : MonoBehaviour {
 		ShowPopup(text, defaultShowTime);
 	}
 
+	public void ShowPopup(string text, Texture2D texture) {
+		ShowPopup(text, texture, defaultShowTime);
+	}
+
 	public void ShowPopup(string text, float time) {
 		openTimes.Add(Time.realtimeSinceStartup + time);
 
@@ -45,6 +50,21 @@ public class UIPopupGroup : MonoBehaviour {
 		popupText.transform.localEulerAngles = Vector3.zero;
 
 		popupText.SetText(text);
+		openTimes[openTimes.Count - 1] += popupText.PlayShowAnimation();
+
+		if (hideCoroutine == null)
+			hideCoroutine = StartCoroutine(HideCoroutine());
+	}
+
+	public void ShowPopup(string text, Texture2D texture, float time) {
+
+		UIPopupWithRawImage popupText = Instantiate(popupWithRawImagePrefab, transform.position, Quaternion.Euler(Vector2.zero), gridTransform).GetComponent<UIPopupWithRawImage>();
+		popupText.transform.localEulerAngles = Vector3.zero;
+
+		popupText.SetText(text);
+		popupText.SetRawImage(texture);
+
+		openTimes.Add(Time.realtimeSinceStartup + time);
 		openTimes[openTimes.Count - 1] += popupText.PlayShowAnimation();
 
 		if (hideCoroutine == null)

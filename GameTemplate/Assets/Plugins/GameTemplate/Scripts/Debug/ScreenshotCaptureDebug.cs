@@ -2,6 +2,7 @@
 using System.Linq;
 using UnityEngine;
 using NaughtyAttributes;
+using System.Collections;
 
 public class ScreenshotCaptureDebug : MonoBehaviour {
 	string savePath => useCustomSavePath ? overrideSavePath : ScreenshotTaker.GetDefaultScreenshotPath();
@@ -19,9 +20,7 @@ public class ScreenshotCaptureDebug : MonoBehaviour {
 
 	void Update() {
 		if (Input.GetKeyDown(screenshotKey)) {
-			string path = ScreenshotTaker.TakeScreenshot(savePath);
-			//ScreenshotTaker.TakeScreenshotTexture2D();
-			TemplateGameManager.Instance.debugPopups.ShowPopup($"Capture screenshot to {path}\nPress {openScreenshotFolderKey} to open folder with it");
+			StartCoroutine(DoScreenshot());
 		}
 		else if (Input.GetKeyDown(openScreenshotFolderKey)) {
 			var file = Directory.EnumerateFiles(savePath).FirstOrDefault();
@@ -37,5 +36,14 @@ public class ScreenshotCaptureDebug : MonoBehaviour {
 	void ShowExplorer(string itemPath) {
 		itemPath = itemPath.Replace(@"/", @"\");   // explorer doesn't like front slashes
 		System.Diagnostics.Process.Start("explorer.exe", "/select," + itemPath);
+	}
+
+	IEnumerator DoScreenshot() {
+		yield return new WaitForEndOfFrame();
+
+		string path = ScreenshotTaker.TakeScreenshot(savePath);
+		Texture2D texture = ScreenshotTaker.TakeScreenshotTexture2D();
+
+		TemplateGameManager.Instance.debugPopups.ShowPopup($"Capture screenshot to {path}\nPress {openScreenshotFolderKey} to open folder with it", texture);
 	}
 }

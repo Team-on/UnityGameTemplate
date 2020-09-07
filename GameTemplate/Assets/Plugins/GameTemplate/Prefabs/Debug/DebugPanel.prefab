@@ -415,6 +415,8 @@ MonoBehaviour:
   grid: {fileID: 2451644434705268717}
   popupPrefab: {fileID: 7723066682151496033, guid: 3ebd4fbd11d0ca043b6234bda1366aec,
     type: 3}
+  popupWithRawImagePrefab: {fileID: 7723066682151496033, guid: 039e1c5754d577b4193b41c649ee7f95,
+    type: 3}
 --- !u!114 &5093400636026061935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,11 +983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11414302, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22400762, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00012207031
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 22426080, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1206,7 +1208,7 @@ PrefabInstance:
     - target: {fileID: 224000011255372986, guid: 67117722a812a2e46ab8cb8eafbf5f5e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -32.00006
+      value: -32.000122
       objectReference: {fileID: 0}
     - target: {fileID: 224856348943071238, guid: 67117722a812a2e46ab8cb8eafbf5f5e,
         type: 3}
