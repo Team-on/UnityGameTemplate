@@ -59,6 +59,30 @@ public static class TransformEx {
 		transform.localPosition = transform.localPosition.SetZ(value);
 	}
 
+	public static void ChangeX(this Transform transform, float value) {
+		transform.position = transform.position.SetX(transform.position.x + value);
+	}
+
+	public static void ChangeY(this Transform transform, float value) {
+		transform.position = transform.position.SetY(transform.position.t + value);
+	}
+
+	public static void ChangeZ(this Transform transform, float value) {
+		transform.position = transform.position.SetZ(transform.position.z + value);
+	}
+
+	public static void ChangeLocalX(this Transform transform, float value) {
+		transform.localPosition = transform.localPosition.SetX(transform.localPosition.x + value);
+	}
+
+	public static void ChangeLocalY(this Transform transform, float value) {
+		transform.localPosition = transform.localPosition.SetY(transform.localPosition.y + value);
+	}
+
+	public static void ChangeLocalZ(this Transform transform, float value) {
+		transform.localPosition = transform.localPosition.SetZ(transform.localPosition.z + value);
+	}
+
 	public static void AddChild(this Transform transform, GameObject childGameObject) {
 		childGameObject.transform.SetParent(transform, false);
 	}

@@ -24,4 +24,20 @@ public static class Vector3Ex {
 	public static Vector3 SetZ(this Vector2 v, float z) {
 		return new Vector3(v.x, v.y, z);
 	}
+
+	public static Vector3 ChangeX(this Vector3 v, float x) {
+		return new Vector3(v.x + x, v.y, v.z);
+	}
+
+	public static Vector3 ChangeY(this Vector3 v, float y) {
+		return new Vector3(v.x, v.y + y, v.z);
+	}
+
+	public static Vector3 ChangeZ(this Vector3 v, float z) {
+		return new Vector3(v.x, v.y, v.z + z);
+	}
+
+	public static Vector3 ChangeZ(this Vector2 v, float z) {
+		return new Vector3(v.x, v.y, z);
+	}
 }

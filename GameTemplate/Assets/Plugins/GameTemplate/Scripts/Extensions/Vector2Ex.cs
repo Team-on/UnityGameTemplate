@@ -16,4 +16,12 @@ public static class Vector2Ex {
 	public static Vector2 SetY(this Vector2 v, float y) {
 		return new Vector2(v.x, y);
 	}
+
+	public static Vector2 ChangeX(this Vector2 v, float x) {
+		return new Vector2(v.x + x, v.y);
+	}
+
+	public static Vector2 ChangeY(this Vector2 v, float y) {
+		return new Vector2(v.x, v.y + y);
+	}
 }

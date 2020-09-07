@@ -59,6 +59,14 @@ public static class RectTransformEx {
 		rectTransform.sizeDelta = rectTransform.sizeDelta.SetY(value);
 	}
 
+	public static void ChangeSizeDeltaX(this RectTransform rectTransform, float valueBy) {
+		rectTransform.sizeDelta = rectTransform.sizeDelta.SetX(rectTransform.sizeDelta.x + valueBy);
+	}
+
+	public static void ChangeSizeDeltaY(this RectTransform rectTransform, float valueBy) {
+		rectTransform.sizeDelta = rectTransform.sizeDelta.SetY(rectTransform.sizeDelta.y + valueBy);
+	}
+
 	public static void SetAnchor(this RectTransform rectTransform, AnchorPreset anchorPreset) {
 		rectTransform.SetAnchor(anchorPreset, 0, 0);
 	}
