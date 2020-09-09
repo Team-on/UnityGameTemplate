@@ -36,6 +36,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/Baste-RainGames/PlayerLoopInterface  
  https://gist.github.com/yasirkula/fba5c7b5280aa90cdb66a68c4005b52d  
  https://assetstore.unity.com/packages/tools/video/video-capture-75653  
+ https://github.com/ArtemFesunenko/screenshooter  
  
 
  ## Want to use: 
