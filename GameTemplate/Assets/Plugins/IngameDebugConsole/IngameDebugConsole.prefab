@@ -796,7 +796,6 @@ MonoBehaviour:
   singleton: 0
   minimumHeight: 80
   enablePopup: 0
-  showPopupAfterError: 1
   startInPopupMode: 1
   startMinimized: 1
   toggleWithKey: 1
