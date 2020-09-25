@@ -37,6 +37,9 @@ public class PopupMenuBase : MenuBase {
 		isShowed = true;
 		gameObject.SetActive(true);
 
+		SelectButton();
+		lastSelectedButton = firstButton.gameObject;
+
 		if (isForce) {
 			CallBefore?.Invoke();
 			popupTransform.position = openPos.position;
@@ -55,6 +58,8 @@ public class PopupMenuBase : MenuBase {
 		if (!isShowed)
 			return;
 		isShowed = false;
+
+		SaveLastButton();
 
 		if (isForce) {
 			CallBefore?.Invoke();

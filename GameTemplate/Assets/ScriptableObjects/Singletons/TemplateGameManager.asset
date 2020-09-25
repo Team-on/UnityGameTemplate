@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildNameString: 
   productName: 
+  uiinput: {fileID: 0}
+  eventSystem: {fileID: 0}
+  inputSystem: {fileID: 0}
   debugPopups: {fileID: 0}
   audioManager: {fileID: 11400000, guid: 1e50efc8570298c4997dbe1167707e66, type: 2}
   sceneLoader: {fileID: 11400000, guid: b4da153d93a196a43993d743823e9a34, type: 2}

@@ -50,6 +50,7 @@ public class SceneLoader : Singleton<SceneLoader> {
 	}
 
 	public void LoadScene(int id, bool needUI, bool uiNeedDelay) {
+		TemplateGameManager.Instance.uiinput.SetFirstButton(null);
 		loader = SceneManager.LoadSceneAsync(id, LoadSceneMode.Single);
 
 		EventData eventData = new EventData("OnSceneLoadStart");

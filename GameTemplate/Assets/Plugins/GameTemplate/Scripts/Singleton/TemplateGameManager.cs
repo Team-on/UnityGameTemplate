@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 using yaSingleton;
+using Cinemachine;
 using NaughtyAttributes;
 
 [CreateAssetMenu(fileName = "Template Game Manager", menuName = "Singletons/TemplateGameManager")]
@@ -11,10 +14,22 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 				mainCamera = Camera.main;
 			return mainCamera;
 	}}
+	public CinemachineVirtualCamera VirtualCamera {
+		get {
+			if (virtualCamera == null)
+				virtualCamera = Camera.GetComponent<CinemachineVirtualCamera>();
+			return virtualCamera;
+		}
+	}
 
 	//Global data
 	[ReadOnly] public string buildNameString;
 	[ReadOnly] public string productName;
+
+	//UI
+	[ReadOnly] public UIInput uiinput;
+	[ReadOnly] public EventSystem eventSystem;
+	[ReadOnly] public InputSystemUIInputModule inputSystem;
 
 	//Debug UI
 	[ReadOnly] public UIPopupGroup debugPopups;
@@ -25,13 +40,7 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 	public SceneLoader sceneLoader;
 
 	Camera mainCamera;
-
-	private void Awake() {
-		Debug.Log("GameManager.Awake()");
-
-		mainCamera = Camera.main;
-		Input.multiTouchEnabled = false;
-	}
+	CinemachineVirtualCamera virtualCamera;
 
 	protected override void Initialize() {
 		Debug.Log("GameManager.Initialize()");
