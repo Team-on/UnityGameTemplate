@@ -64,6 +64,9 @@ MonoBehaviour:
   components:
   - Transform
   - RectTransform
+  - CanvasRenderer
+  - HierarchyHighlighter
+  - MeshFilter
   componentLimited: 0
   componentSize: 14
   componentSpacing: 2
