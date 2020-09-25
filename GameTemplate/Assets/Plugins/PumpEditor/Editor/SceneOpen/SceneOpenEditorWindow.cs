@@ -21,7 +21,7 @@ namespace PumpEditor
         private int toolbarIndex;
         private Vector2 windowScrollPosition;
 
-        [MenuItem("Window/Custom/Scene Open")]
+        [MenuItem("Window/Custom/Scenes/Advanced window")]
         private static void Init()
         {
             var window = EditorWindow.GetWindow<SceneOpenEditorWindow>();
@@ -78,7 +78,7 @@ namespace PumpEditor
             EditorGUILayout.EndVertical();
         }
 
-        private void ScenesInProjectGUI()
+        protected void ScenesInProjectGUI()
         {
             EditorGUILayout.LabelField("Scenes In Project", EditorStyles.boldLabel);
             windowScrollPosition = EditorGUILayout.BeginScrollView(windowScrollPosition);
@@ -93,7 +93,7 @@ namespace PumpEditor
             EditorGUILayout.EndScrollView();
         }
 
-        private void ScenesInBuildSettingsGUI()
+        protected void ScenesInBuildSettingsGUI()
         {
             EditorGUILayout.LabelField("Scenes In Build Settings", EditorStyles.boldLabel);
             windowScrollPosition = EditorGUILayout.BeginScrollView(windowScrollPosition);
