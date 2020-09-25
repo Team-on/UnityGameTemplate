@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 public class #SCRIPTNAME# : MonoBehaviour {
