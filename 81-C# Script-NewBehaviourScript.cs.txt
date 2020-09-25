@@ -1,0 +1,18 @@
+using System;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using Random = UnityEngine.Random;
+
+public class #SCRIPTNAME# : MonoBehaviour {
+  void Start() {
+    #NOTRIM#
+  }
+
+  void Update() {
+    #NOTRIM#
+  }
+}
