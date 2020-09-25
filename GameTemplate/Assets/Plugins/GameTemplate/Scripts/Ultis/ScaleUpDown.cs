@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
+﻿using UnityEngine;
 
 public class ScaleUpDown : MonoBehaviour {
 	[Header("Params")]
@@ -11,6 +8,13 @@ public class ScaleUpDown : MonoBehaviour {
 
 	float currTime;
 	bool isIncreaseScale = false;
+
+	private void Awake() {
+		isIncreaseScale = Random.Range(0, 2) == 1;
+		currTime = Random.Range(0, maxTime);
+
+		gameObject.transform.localScale = Vector3.one * Mathf.SmoothStep(minScale, maxScale, currTime / maxTime);
+	}
 
 	void Update() {
 		if (isIncreaseScale) {
