@@ -21,4 +21,35 @@ public static class ComponentEx {
 		}
 		return val;
 	}
+
+    //public static Component CopyComponent(this Component original, GameObject destination) {
+    //    System.Type type = original.GetType();
+    //    Component copy = destination.AddComponent(type);
+    //    // Copied fields can be restricted with BindingFlags
+    //    System.Reflection.FieldInfo[] fields = type.GetFields();
+    //    foreach (System.Reflection.FieldInfo field in fields) {
+    //        field.SetValue(copy, field.GetValue(original));
+    //    }
+    //    return copy;
+    //}
+
+    public static T CopyComponent<T>(this T original, GameObject destination) where T : Component {
+        System.Type type = original.GetType();
+        var dst = destination.GetComponent(type) as T;
+        if (!dst)
+            dst = destination.AddComponent(type) as T;
+        var fields = type.GetFields();
+        foreach (var field in fields) {
+            if (field.IsStatic)
+                continue;
+            field.SetValue(dst, field.GetValue(original));
+        }
+        var props = type.GetProperties();
+        foreach (var prop in props) {
+            if (!prop.CanRead || !prop.CanWrite || prop.Name == "name" || prop.Name == "usedByComposite" || prop.Name == "density")
+                continue;
+            prop.SetValue(dst, prop.GetValue(original, null), null);
+        }
+        return dst;
+    }
 }
