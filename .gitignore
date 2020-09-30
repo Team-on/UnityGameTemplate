@@ -56,16 +56,16 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Build analytics logs
-GameTemplate/Assets/BuildReports/
-GameTemplate/Assets/BuildReports.meta
+/*/Assets/BuildReports/
+/*/Assets/BuildReports.meta
 
 # Screenshots & recoring files
-GameTemplate/Recordings/
-GameTemplate/Screenshots/
+/*/Recordings/
+/*/Screenshots/
 
 # NVIIA fps log files
 /*/fpslog/
 /*/ProjectSettings/ProjectCuratorSettings.json
 
 
-GameTemplate/VideoCaptureLib_Log.txt
+/*/VideoCaptureLib_Log.txt
