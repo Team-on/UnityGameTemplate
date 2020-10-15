@@ -20,6 +20,10 @@ namespace ProjectWindowDetail.Details
 		{
 			var texture = asset as Texture;
 
+			if (!texture) {
+				return "";
+			}
+
 			var wu = Mathf.Clamp((int)texture.wrapModeU, 0, 3);
 			var wv = Mathf.Clamp((int)texture.wrapModeV, 0, 3);
 
