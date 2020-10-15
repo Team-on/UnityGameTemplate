@@ -137,6 +137,7 @@ namespace PrefabAssetUtility.Editor
             }
             catch (Exception e)
             {
+                Debug.LogError(e.Message);
             }
         }
 
