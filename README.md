@@ -40,6 +40,7 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://assetstore.unity.com/packages/tools/utilities/empty-at-zero-creator-97576#description  
  https://assetstore.unity.com/packages/tools/utilities/hierarchy-2-166483  
  https://github.com/innogames/ProjectWindowDetails  
+ https://github.com/MileyHollenberg/PrefabAssetUtility  
  
 
  ## Want to use: 
