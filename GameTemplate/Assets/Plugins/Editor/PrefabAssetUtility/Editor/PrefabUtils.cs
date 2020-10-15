@@ -180,25 +180,25 @@ namespace PrefabAssetUtility.Editor
                 using (StreamReader reader = new StreamReader(_basePath + PREFAB_TO_GUID_PATH))
                 {
                     _prefabToGUID =
-                        JsonUtility.DeserializeObject<Dictionary<string, HashSet<string>>>(reader.ReadToEnd());
+                        JsonUtility.FromJson<Dictionary<string, HashSet<string>>>(reader.ReadToEnd());
                 }
 
                 using (StreamReader reader = new StreamReader(_basePath + GUID_TO_PREFAB_PATH))
                 {
                     _GUIDToPrefab =
-                        JsonConvert.DeserializeObject<Dictionary<string, HashSet<string>>>(reader.ReadToEnd());
+                        JsonUtility.FromJson<Dictionary<string, HashSet<string>>>(reader.ReadToEnd());
                 }
 
                 using (StreamReader reader = new StreamReader(_basePath + PREFAB_TO_COMPONENT_PATH))
                 {
                     _prefabToComponent =
-                        JsonConvert.DeserializeObject<Dictionary<string, HashSet<string>>>(reader.ReadToEnd());
+                         JsonUtility.FromJson<Dictionary<string, HashSet<string>>>(reader.ReadToEnd());
                 }
 
                 using (StreamReader reader = new StreamReader(_basePath + COMPONENT_TO_PREFAB_PATH))
                 {
                     _componentToPrefab =
-                        JsonConvert.DeserializeObject<Dictionary<string, HashSet<string>>>(reader.ReadToEnd());
+                         JsonUtility.FromJson<Dictionary<string, HashSet<string>>>(reader.ReadToEnd());
                 }
             }
             else
@@ -212,25 +212,25 @@ namespace PrefabAssetUtility.Editor
             File.Delete(_basePath + PREFAB_TO_GUID_PATH);
             using (StreamWriter writer = new StreamWriter(Path.Combine(_basePath, PREFAB_TO_GUID_PATH)))
             {
-                writer.Write(JsonConvert.SerializeObject(_prefabToGUID));
+                writer.Write(JsonUtility.ToJson(_prefabToGUID));
             }
 
             File.Delete(_basePath + GUID_TO_PREFAB_PATH);
             using (StreamWriter writer = new StreamWriter(Path.Combine(_basePath, GUID_TO_PREFAB_PATH)))
             {
-                writer.Write(JsonConvert.SerializeObject(_GUIDToPrefab));
+                writer.Write(JsonUtility.ToJson(_GUIDToPrefab));
             }
 
             File.Delete(_basePath + PREFAB_TO_COMPONENT_PATH);
             using (StreamWriter writer = new StreamWriter(Path.Combine(_basePath, PREFAB_TO_COMPONENT_PATH)))
             {
-                writer.Write(JsonConvert.SerializeObject(_prefabToComponent));
+                writer.Write(JsonUtility.ToJson(_prefabToComponent));
             }
 
             File.Delete(_basePath + COMPONENT_TO_PREFAB_PATH);
             using (StreamWriter writer = new StreamWriter(Path.Combine(_basePath, COMPONENT_TO_PREFAB_PATH)))
             {
-                writer.Write(JsonConvert.SerializeObject(_componentToPrefab));
+                writer.Write(JsonUtility.ToJson(_componentToPrefab));
             }
         }
 
