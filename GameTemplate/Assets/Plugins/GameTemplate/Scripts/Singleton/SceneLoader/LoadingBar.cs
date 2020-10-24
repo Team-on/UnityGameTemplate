@@ -58,6 +58,8 @@ public class LoadingBar : MonoBehaviour {
 	}
 
 	void OnSceneLoadEnd(EventData data) {
+		if (data == null)
+			return;
 		if(loadingBarRoutine != null)
 			StopCoroutine(loadingBarRoutine);
 		DisableCanvasGroup();

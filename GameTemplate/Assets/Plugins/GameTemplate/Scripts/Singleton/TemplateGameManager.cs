@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
@@ -49,6 +50,15 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 		Events = new EventManager();
 
 		EventManager.OnSceneLoadEnd += OnSceneLoadEnd;
+
+		StartCoroutine(DelayedSetup());
+
+		IEnumerator DelayedSetup() {
+			yield return null;
+			yield return null;
+			Events.CallOnOnApplicationStart();
+			Events.CallOnSceneLoadEnd(null);
+		}
 	}
 
 	protected override void Deinitialize() {
@@ -56,6 +66,7 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 		base.Deinitialize();
 
 		EventManager.OnSceneLoadEnd -= OnSceneLoadEnd;
+		Events.CallOnOnApplicationExit();
 	}
 
 	void OnSceneLoadEnd(EventData data) {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -64,14 +65,20 @@ public class AudioManager : Singleton<AudioManager> {
 	protected override void Initialize() {
 		base.Initialize();
 
-		IsEnabled = PlayerPrefsX.GetBool(SAVE_KEY_ENABLED, defaultEnabled);
-		SetVolume(AudioChannel.Master, PlayerPrefs.GetFloat(SAVE_KEY_MASTER, defaultMasterVolume));
-		SetVolume(AudioChannel.Music, PlayerPrefs.GetFloat(SAVE_KEY_MUSIC, defaultMusicVolume));
-		SetVolume(AudioChannel.Sound, PlayerPrefs.GetFloat(SAVE_KEY_SOUND, defaultSoundVolume));
-
 		musicAudioSources = new Dictionary<AudioClip, AudioSource>();
 		lastMusicClip = currMusicClip = null;
 		lastMusicVolume = 0.0f;
+
+		StartCoroutine(DelayedSetup());
+
+		IEnumerator DelayedSetup() {
+			yield return null;
+			yield return null;
+			IsEnabled = PlayerPrefsX.GetBool(SAVE_KEY_ENABLED, defaultEnabled);
+			SetVolume(AudioChannel.Master, PlayerPrefs.GetFloat(SAVE_KEY_MASTER, defaultMasterVolume));
+			SetVolume(AudioChannel.Music, PlayerPrefs.GetFloat(SAVE_KEY_MUSIC, defaultMusicVolume));
+			SetVolume(AudioChannel.Sound, PlayerPrefs.GetFloat(SAVE_KEY_SOUND, defaultSoundVolume));
+		}
 	}
 
 	//--------------------------------------------------------------------------------------
