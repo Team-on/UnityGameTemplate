@@ -1,0 +1,44 @@
+{
+    "detailsData": [
+        {
+            "name": "Animation Key Count",
+            "visible": true
+        },
+        {
+            "name": "Animation Length",
+            "visible": true
+        },
+        {
+            "name": "Asset Type",
+            "visible": true
+        },
+        {
+            "name": "File Size",
+            "visible": true
+        },
+        {
+            "name": "File Suffix",
+            "visible": true
+        },
+        {
+            "name": "Guid",
+            "visible": false
+        },
+        {
+            "name": "Path",
+            "visible": false
+        },
+        {
+            "name": "Texture Format",
+            "visible": true
+        },
+        {
+            "name": "Texture Size",
+            "visible": true
+        },
+        {
+            "name": "Texture Wrap Mode",
+            "visible": true
+        }
+    ]
+}

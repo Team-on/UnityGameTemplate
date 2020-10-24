@@ -13,18 +13,7 @@ namespace ProjectWindowDetail.Details
 		public string Name = "Base";
 		public TextAlignment Alignment = TextAlignment.Left;
 
-		public bool Visible
-		{
-			get
-			{
-				return EditorPrefs.GetBool(string.Concat(ShowPrefsKey, Name));
-			}
-
-			set
-			{
-				EditorPrefs.SetBool(string.Concat(ShowPrefsKey, Name), value);
-			}
-		}
+		public bool Visible { get; set; }
 
 		public abstract string GetLabel(string guid, string assetPath, Object asset);
 	}
