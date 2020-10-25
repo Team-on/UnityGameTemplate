@@ -34,7 +34,7 @@ namespace ProjectWindowDetail
 			foreach (var type in GetAllDetailTypes()) {
 				ProjectWindowDetailBase lastValue = (ProjectWindowDetailBase)Activator.CreateInstance(type);
 				_details.Add(lastValue);
-				detailsData.SetValueOrCreateNew(lastValue.Name, lastValue.Visible);
+				lastValue.Visible = detailsData.GetVisible(lastValue.Name);
 			}
 		}
 
