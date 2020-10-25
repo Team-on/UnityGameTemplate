@@ -1,0 +1,16 @@
+{
+    "name": "Gemserk.SelectionHistory.Editor",
+    "references": [
+        "Gemserk.SelectionHistory"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

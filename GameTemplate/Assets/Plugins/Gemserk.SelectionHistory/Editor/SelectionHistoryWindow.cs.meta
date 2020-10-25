@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 36b064cf1d8ffd74d875ee42f2cbb67e
+timeCreated: 1487030350
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - windowSkin: {fileID: 11400000, guid: f96d5d3e03269c548832137c56255276, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
