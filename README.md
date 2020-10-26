@@ -41,8 +41,9 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://assetstore.unity.com/packages/tools/utilities/hierarchy-2-166483  
  https://github.com/Team-on/ProjectWindowDetails  
  https://github.com/MileyHollenberg/PrefabAssetUtility  
- https://github.com/acoppes/unity-history-window  
- 
+ https://github.com/Team-on/unity-history-window  
+ https://github.com/Team-on/UnityScreenShooter  
+ https://github.com/Team-on/UnityBuildManager  
 
  ## Want to use: 
  https://assetstore.unity.com/packages/tools/gui/cyro-build-debugger-65101  
