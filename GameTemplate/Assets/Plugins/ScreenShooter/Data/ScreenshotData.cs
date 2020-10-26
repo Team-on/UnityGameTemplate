@@ -10,7 +10,9 @@ public class ScreenshotData {
 	public float resolutionMultiplier = 1;
 	public bool captureOverlayUI = true;
 
+#if POLYGLOT
 	public Polyglot.Language lang;  //Filled in script
+#endif
 
 	public ScreenshotData() {
 

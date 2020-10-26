@@ -5,7 +5,9 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+#if POLYGLOT
 using Polyglot;
+#endif
 
 public static class ScreenshotTaker {
 	public static bool IsPaused => isPaused;
@@ -25,7 +27,14 @@ public static class ScreenshotTaker {
 
 		Vector2Int screenSize = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
 
-		var screenshotName = GetUniqueFilePath(screenSize.x, screenSize.y, false, true, Localization.Instance.SelectedLanguage.ToString(), outputFolder, "jpeg");
+		string screenshotName;
+
+#if POLYGLOT
+		screenshotName = GetUniqueFilePath(screenSize.x, screenSize.y, false, true, Localization.Instance.SelectedLanguage.ToString(), outputFolder, "jpeg");
+#else
+		screenshotName = GetUniqueFilePath(screenSize.x, screenSize.y, false, true, String.Empty, outputFolder, "jpeg");
+#endif
+
 		string path = Path.Combine(outputFolder, screenshotName);
 		ScreenCapture.CaptureScreenshot(path);
 
@@ -63,7 +72,7 @@ public static class ScreenshotTaker {
 			DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss"),
 			Application.productName.Replace(" ", "_"),
 			isSceneView ? "_Scene" : "",
-			isSceneView || !isUI ? "" : $"_{lang}",
+			isSceneView || !isUI || string.IsNullOrEmpty(lang) ? "" : $"_{lang}",
 			isUI ? "" : $"_noUI"
 		);
 

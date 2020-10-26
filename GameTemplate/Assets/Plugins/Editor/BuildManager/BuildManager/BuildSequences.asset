@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf73a4e20e61f9143863e020e3cfa443, type: 3}
+  m_Name: BuildSequences
+  m_EditorClassIdentifier: 
+  sequences:
+  - editorName: 2
+    itchGameLink: teamon/game-link
+    builds:
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 0
+      target: -2
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      itchChannel: channel
+      itchDirPath: $NAME_$VERSION_$PLATFORM
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0
+  - editorName: 1
+    itchGameLink: teamon/game-link
+    builds:
+    - outputRoot: Builds/
+      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+      isPassbyBuild: 0
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
+      targetGroup: 0
+      target: -2
+      options: 0
+      isVirtualRealitySupported: 0
+      needZip: 0
+      compressDirPath: $NAME_$VERSION_$PLATFORM
+      needItchPush: 0
+      itchChannel: channel
+      itchDirPath: $NAME_$VERSION_$PLATFORM
+      itchAddLastChangelogUpdateNameToVerison: 0
+      itchLastChangelogUpdateName: 
+      useGithubActions: 0
+      useUnityActions: 0
+      needGamejolthPush: 0
+      needSteamPush: 0
+      needGoogleDricePush: 0

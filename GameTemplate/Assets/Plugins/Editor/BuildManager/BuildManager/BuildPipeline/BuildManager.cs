@@ -16,8 +16,11 @@ public static class BuildManager {
 
 	public static void RunBuildSequnce(BuildSequence sequence, ChangelogData changelog) {
 		// Start init
-		TemplateGameManager.InstanceEditor.buildNameString = $"{PlayerSettings.bundleVersion} - {changelog.updateName}";
+		string buildNameString = $"{PlayerSettings.bundleVersion} - {changelog.updateName}";
+#if GAME_TEMPLATE
+		TemplateGameManager.InstanceEditor.buildNameString = buildNameString;
 		TemplateGameManager.InstanceEditor.productName = PlayerSettings.productName;
+#endif
 		usedDate = DateTime.Now;
 		//End init
 
@@ -29,7 +32,7 @@ public static class BuildManager {
 		bool isVRSupported = PlayerSettings.virtualRealitySupported;    //TODO: PlayerSettings.virtualRealitySupported is deprecated. Replace with smth new	
 
 		string[] buildsPath = new string[sequence.builds.Length];
-		for(byte i = 0; i < sequence.builds.Length; ++i) {
+		for (byte i = 0; i < sequence.builds.Length; ++i) {
 			BuildData data = sequence.builds[i];
 
 			if (PlayerSettings.virtualRealitySupported != data.isVirtualRealitySupported)
@@ -50,9 +53,9 @@ public static class BuildManager {
 			if (!sequence.builds[i].needZip)
 				continue;
 
-			if (!string.IsNullOrEmpty(buildsPath[i])) 
+			if (!string.IsNullOrEmpty(buildsPath[i]))
 				BaseCompress(sequence.builds[i].outputRoot + GetPathWithVars(sequence.builds[i], sequence.builds[i].compressDirPath));
-			else 
+			else
 				Debug.LogWarning($"[Compressing] Can't find build for {GetBuildTargetExecutable(sequence.builds[i].target)}");
 		}
 
@@ -64,8 +67,8 @@ public static class BuildManager {
 				continue;
 
 			if (!string.IsNullOrEmpty(buildsPath[i])) {
-				if(sequence.builds[i].itchAddLastChangelogUpdateNameToVerison && !string.IsNullOrEmpty(changelog?.updateName)) {
-					sequence.builds[i].itchLastChangelogUpdateName = TemplateGameManager.InstanceEditor.buildNameString;
+				if (sequence.builds[i].itchAddLastChangelogUpdateNameToVerison && !string.IsNullOrEmpty(changelog?.updateName)) {
+					sequence.builds[i].itchLastChangelogUpdateName = buildNameString;
 				}
 				PushItch(sequence, sequence.builds[i]);
 			}
@@ -75,7 +78,7 @@ public static class BuildManager {
 		}
 	}
 
-	#region Convert to strings
+#region Convert to strings
 	public static string GetPathWithVars(BuildData data, string s) {
 		s = s.Replace("$NAME", GetProductName());
 		s = s.Replace("$PLATFORM", ConvertBuildTargetToString(data.target));
@@ -132,9 +135,9 @@ public static class BuildManager {
 		}
 		return "";
 	}
-	#endregion
+#endregion
 
-	#region Base methods
+#region Base methods
 	static string BaseBuild(BuildTargetGroup buildTargetGroup, BuildTarget buildTarget, BuildOptions buildOptions, string buildPath, string definesSymbols, bool isPassbyBuild) {
 		if (isPassbyBuild) {
 			return buildPath;
@@ -216,5 +219,5 @@ public static class BuildManager {
 		Debug.Log(fileName.ToString() + args.ToString());
 		Process.Start(fileName.ToString(), args.ToString());
 	}
-	#endregion
+#endregion
 }

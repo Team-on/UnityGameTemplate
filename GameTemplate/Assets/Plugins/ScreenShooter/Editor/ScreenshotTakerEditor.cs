@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEditor;
+#if POLYGLOT
 using Polyglot;
+#endif
 
 public static class ScreenshotTakerEditor {
 	public static bool isScreenshotQueueEmpty => queuedScreenshots.Count == 0;
@@ -19,13 +21,18 @@ public static class ScreenshotTakerEditor {
 	static int originalIndex = 0;
 	static int newIndex = 0;
 	static int resolutionIndex = 0;
+#if POLYGLOT
 	static Language usedLanguage = Language.English;
+#endif
 	static string usedOutputFolder = "";
 
 	public static void CaptureScreenshootQueueAllLanguages(List<ScreenshotData> data, string outputFolder) {
+#if POLYGLOT
 		usedLanguage = Localization.Instance.SelectedLanguage;
+#endif
 		usedOutputFolder = outputFolder;
 
+#if POLYGLOT
 		for (int i = 0; i < data.Count; i++) {
 			if (data[i].isEnabled) {
 				if (data[i].captureOverlayUI) {
@@ -38,6 +45,13 @@ public static class ScreenshotTakerEditor {
 				}
 			}
 		}
+#else
+		for (int i = 0; i < data.Count; i++) {
+			if (data[i].isEnabled) {
+				CaptureScreenshot(data[i]);
+			}
+		}
+#endif
 
 		EditorApplication.update -= CaptureQueuedScreenshots;
 		isTakeScreenshot = false;
@@ -47,7 +61,11 @@ public static class ScreenshotTakerEditor {
 		EditorApplication.update += CaptureQueuedScreenshots;
 	}
 
-	private static void CaptureScreenshot(ScreenshotData data, Language language) {
+	private static void CaptureScreenshot(ScreenshotData data
+#if POLYGLOT
+		,Language language
+#endif
+	) {
 		int width = Mathf.RoundToInt(data.resolution.x * data.resolutionMultiplier);
 		int height = Mathf.RoundToInt(data.resolution.y * data.resolutionMultiplier);
 
@@ -56,7 +74,9 @@ public static class ScreenshotTakerEditor {
 		}
 		else {
 			data = data.Clone();
+#if POLYGLOT
 			data.lang = language;
+#endif
 			queuedScreenshots.Enqueue(data);
 		}
 	}
@@ -69,7 +89,11 @@ public static class ScreenshotTakerEditor {
 
 		int width = Mathf.RoundToInt(data.resolution.x * data.resolutionMultiplier);
 		int height = Mathf.RoundToInt(data.resolution.y * data.resolutionMultiplier);
+#if POLYGLOT
 		EditorUtility.DisplayProgressBar("Making screenshots", $"{data.targetCamera} {width}x{height} {data.lang}", currentStage / (float)totalStages);
+#else
+		EditorUtility.DisplayProgressBar("Making screenshots", $"{data.targetCamera} {width}x{height}", currentStage / (float)totalStages);
+#endif
 		++currentStage;
 
 		if (!isTakeScreenshot) {
@@ -83,7 +107,9 @@ public static class ScreenshotTakerEditor {
 			newIndex = (int)SizeHolder.CallMethod("IndexOf", customSize) + (int)SizeHolder.CallMethod("GetBuiltinCount");
 			resolutionIndex = newIndex;
 
+#if POLYGLOT
 			Localization.Instance.SelectedLanguage = data.lang;
+#endif
 
 			GameView.CallMethod("SizeSelectionCallback", resolutionIndex, null);
 			GameView.Repaint();
@@ -103,7 +129,9 @@ public static class ScreenshotTakerEditor {
 				resolutionIndex = originalIndex;
 				GameView.CallMethod("SizeSelectionCallback", resolutionIndex, null);
 
+#if POLYGLOT
 				Localization.Instance.SelectedLanguage = usedLanguage;
+#endif
 
 				EditorApplication.update -= CaptureQueuedScreenshots;
 
@@ -134,7 +162,11 @@ public static class ScreenshotTakerEditor {
 			screenshot.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0, false);
 			screenshot.Apply(false, false);
 
+#if POLYGLOT
 			File.WriteAllBytes(ScreenshotTaker.GetUniqueFilePath(renderTex.width, renderTex.height, data.targetCamera == ScreenshooterTargetCamera.SceneView, false, data.lang.ToString(), usedOutputFolder, "jpeg"), screenshot.EncodeToJPG(100));
+#else
+			File.WriteAllBytes(ScreenshotTaker.GetUniqueFilePath(renderTex.width, renderTex.height, data.targetCamera == ScreenshooterTargetCamera.SceneView, false, "", usedOutputFolder, "jpeg"), screenshot.EncodeToJPG(100));
+#endif
 		}
 		finally {
 			camera.targetTexture = temp2;
@@ -179,7 +211,11 @@ public static class ScreenshotTakerEditor {
 
 			screenshot.Apply(false, false);
 
+#if POLYGLOT
 			File.WriteAllBytes(ScreenshotTaker.GetUniqueFilePath(width, height, data.targetCamera == ScreenshooterTargetCamera.SceneView, true, data.lang.ToString(), usedOutputFolder, "jpeg"), screenshot.EncodeToJPG(100));
+#else
+			File.WriteAllBytes(ScreenshotTaker.GetUniqueFilePath(width, height, data.targetCamera == ScreenshooterTargetCamera.SceneView, true, "", usedOutputFolder, "jpeg"), screenshot.EncodeToJPG(100));
+#endif
 		}
 		finally {
 			RenderTexture.active = temp;
