@@ -5,31 +5,31 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 
 namespace PumpEditor {
-	public class SceneOpenAllEditorWindow : EditorWindow {
+	public class SceneOpenBuildEditorWindow : EditorWindow {
         private Vector2 windowScrollPosition;
        
-        [MenuItem("Window/Custom/Scenes/All list")]
+        [MenuItem("Window/Custom/Scenes/Build list")]
         private static void Init() {
-            var window = EditorWindow.GetWindow<SceneOpenAllEditorWindow>();
-            var icon = EditorGUIUtility.Load("buildsettings.editor.small") as Texture2D;
-            window.titleContent = new GUIContent("Scenes all", icon);
-            window.Show();
+            var window = EditorWindow.GetWindow(typeof(SceneOpenBuildEditorWindow), false, "Scenes build", true);
+            window.titleContent = new GUIContent("Scenes build", EditorGUIUtility.Load("buildsettings.editor.small") as Texture2D);
         }
 
         private void OnGUI() {
             EditorGUILayout.BeginVertical();
-            ScenesInProjectGUI();
+            ScenesInBuildSettingsGUI();
             EditorGUILayout.EndVertical();
         }
 
-        protected void ScenesInProjectGUI() {
-            EditorGUILayout.LabelField("Scenes In Project", EditorStyles.boldLabel);
+        protected void ScenesInBuildSettingsGUI() {
+            EditorGUILayout.LabelField("Scenes In Build Settings", EditorStyles.boldLabel);
             windowScrollPosition = EditorGUILayout.BeginScrollView(windowScrollPosition);
 
-            var sceneAssetGuids = AssetDatabase.FindAssets("t:scene");
-            var scenePaths = sceneAssetGuids.Select(sceneAssetGuid => {
-                return AssetDatabase.GUIDToAssetPath(sceneAssetGuid);
-            });
+            // Though Unity documentations states that EditorBuildSettingsScene
+            // path property returns file path as listed in build settings window,
+            // this is not true. In build settings scene path is listed without
+            // Assets folder at path start and without .unity extension. But path
+            // property returns full project path like Assets/Scenes/MyScene.unity
+            var scenePaths = EditorBuildSettings.scenes.Select(s => s.path);
             OpenSceneButtonsGUI(scenePaths);
 
             EditorGUILayout.EndScrollView();

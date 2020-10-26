@@ -24,10 +24,8 @@ namespace PumpEditor
         [MenuItem("Window/Custom/Scenes/Advanced window")]
         private static void Init()
         {
-            var window = EditorWindow.GetWindow<SceneOpenEditorWindow>();
-            var icon = EditorGUIUtility.Load("buildsettings.editor.small") as Texture2D;
-            window.titleContent = new GUIContent("Scenes", icon);
-            window.Show();
+            var window = EditorWindow.GetWindow(typeof(SceneOpenEditorWindow), false, "Scenes", true);
+            window.titleContent = new GUIContent("Scenes", EditorGUIUtility.Load("buildsettings.editor.small") as Texture2D);
         }
 
         private static void OpenSceneButtonsGUI(IEnumerable<string> scenePaths)

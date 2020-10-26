@@ -5,33 +5,29 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 
 namespace PumpEditor {
-	public class SceneOpenBuildEditorWindow : EditorWindow {
+	public class SceneOpenAllEditorWindow : EditorWindow {
         private Vector2 windowScrollPosition;
        
-        [MenuItem("Window/Custom/Scenes/Build list")]
+        [MenuItem("Window/Custom/Scenes/All list")]
         private static void Init() {
-            var window = EditorWindow.GetWindow<SceneOpenBuildEditorWindow>();
-            var icon = EditorGUIUtility.Load("buildsettings.editor.small") as Texture2D;
-            window.titleContent = new GUIContent("Scenes build", icon);
-            window.Show();
+            var window = EditorWindow.GetWindow(typeof(SceneOpenAllEditorWindow), false, "Scenes all", true);
+            window.titleContent = new GUIContent("Scenes all", EditorGUIUtility.Load("buildsettings.editor.small") as Texture2D);
         }
 
         private void OnGUI() {
             EditorGUILayout.BeginVertical();
-            ScenesInBuildSettingsGUI();
+            ScenesInProjectGUI();
             EditorGUILayout.EndVertical();
         }
 
-        protected void ScenesInBuildSettingsGUI() {
-            EditorGUILayout.LabelField("Scenes In Build Settings", EditorStyles.boldLabel);
+        protected void ScenesInProjectGUI() {
+            EditorGUILayout.LabelField("Scenes In Project", EditorStyles.boldLabel);
             windowScrollPosition = EditorGUILayout.BeginScrollView(windowScrollPosition);
 
-            // Though Unity documentations states that EditorBuildSettingsScene
-            // path property returns file path as listed in build settings window,
-            // this is not true. In build settings scene path is listed without
-            // Assets folder at path start and without .unity extension. But path
-            // property returns full project path like Assets/Scenes/MyScene.unity
-            var scenePaths = EditorBuildSettings.scenes.Select(s => s.path);
+            var sceneAssetGuids = AssetDatabase.FindAssets("t:scene");
+            var scenePaths = sceneAssetGuids.Select(sceneAssetGuid => {
+                return AssetDatabase.GUIDToAssetPath(sceneAssetGuid);
+            });
             OpenSceneButtonsGUI(scenePaths);
 
             EditorGUILayout.EndScrollView();
