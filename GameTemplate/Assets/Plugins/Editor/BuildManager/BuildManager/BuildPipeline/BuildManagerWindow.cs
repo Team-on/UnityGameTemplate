@@ -2,15 +2,12 @@
 using UnityEditor;
 
 public class BuildManagerWindow : EditorWindow {
-	const string SETTINGS_DEFAULT_PATH = "Assets/Plugins/GameTemplate/Editor/BuildManager/BuildSequences.asset"; //Need Assets in path, cuz used by AssetDatabase.CreateAsset
+	const string SETTINGS_DEFAULT_PATH = "Assets/Plugins/Editor/BuildManager/BuildManagerг/BuildSequences.asset"; //Need Assets in path, cuz used by AssetDatabase.CreateAsset
 	const string SETTINGS_PATH_KEY = "BuildManagerWindow.SettingsPath";
-	const string CHANGELOG_DEFAULT_PATH = "Plugins/GameTemplate/Editor/BuildManager/Changelog.json";//Dont need Assets in path, cuz used with Application.dataPath
-	const string CHANGELOG_JSON_PATH_KEY = "BuildManagerWindow.ChangelogJsonPath";
 
 	static string settingsPath;
 	static BuildManagerSettings settings;
 
-	static string changelogPath;
 	static ChangelogData changelog;
 	static bool changelogFoldout = false;
 	static Vector2 scrollPosChangelog = Vector2.zero;
@@ -90,7 +87,7 @@ public class BuildManagerWindow : EditorWindow {
 		EditorGUILayout.EndFoldoutHeaderGroup();
 
 		if (isChanged)
-			ChangelogData.SaveChangelogToFile(changelogPath, changelog);
+			ChangelogData.SaveChangelog(changelog);
 
 		string DrawStringField(string label, string text) {
 			tmpString = EditorGUILayout.TextField(label, text);
@@ -206,39 +203,7 @@ public class BuildManagerWindow : EditorWindow {
 	}
 
 	static void LoadChangelog() {
-		changelogPath = PlayerPrefs.GetString(CHANGELOG_JSON_PATH_KEY, "");
-		changelog = null;
-
-		//Find path. Try to load settings
-		if (!string.IsNullOrEmpty(changelogPath)) {
-			changelog = ChangelogData.LoadChangelogFromFile(changelogPath);
-			if (changelog == null) {
-				changelogPath = null;
-			}
-		}
-
-		//No path, or cant locate asset at path. Try to find settings in assets.
-		if (string.IsNullOrEmpty(changelogPath)) {
-			string[] guids = AssetDatabase.FindAssets("Changelog.json");
-			if (guids.Length >= 2) {
-				Debug.LogError("[BuildManagerWindow]. 2+ Changelog.json exist. Consider on using only 1 changelog. The first on will be used.");
-			}
-
-			if (guids.Length != 0) {
-				changelogPath = AssetDatabase.GUIDToAssetPath(guids[0]);
-				PlayerPrefs.SetString(CHANGELOG_JSON_PATH_KEY, changelogPath);
-				changelog = ChangelogData.LoadChangelogFromFile(changelogPath);
-			}
-		}
-
-		//Cant find settings. Create new
-		if (changelog == null) {
-			changelog = new ChangelogData();
-			changelogPath = CHANGELOG_DEFAULT_PATH;
-			PlayerPrefs.SetString(CHANGELOG_JSON_PATH_KEY, CHANGELOG_DEFAULT_PATH);
-
-			ChangelogData.SaveChangelogToFile(changelogPath, changelog);
-		}
+		changelog = ChangelogData.LoadChangelog();
 	}
 
 	static void OnSequenceSelectionChanged(BuildSequence sequence) {
