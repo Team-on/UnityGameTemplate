@@ -15,6 +15,7 @@ namespace Gemserk
 	}
 
 	public class SelectionHistoryWindow : EditorWindow {
+		const float buttonsWidth = 120f;
 
 		public static readonly string HistorySizePrefKey = "Gemserk.SelectionHistory.HistorySize";
 		public static readonly string HistoryAutomaticRemoveDeletedPrefKey = "Gemserk.SelectionHistory.AutomaticRemoveDeleted";
@@ -195,7 +196,8 @@ namespace Gemserk
 	    void DrawElement(Object obj, int i, Color originalColor)
 	    {
 	        var buttonStyle = windowSkin.GetStyle("SelectionButton");
-            var nonSelectedColor = originalColor;
+			buttonStyle.fixedWidth = position.width - buttonsWidth;
+			var nonSelectedColor = originalColor;
 
             if (!EditorUtility.IsPersistent(obj))
             {

@@ -38,7 +38,7 @@
         },
         {
             "name": "Texture Wrap Mode",
-            "visible": true
+            "visible": false
         }
     ]
 }

@@ -117,10 +117,15 @@ namespace ProjectWindowDetail
 					continue;
 				}
 
-				rect.width = detail.ColumnWidth;
-				rect.x -= detail.ColumnWidth + SpaceBetweenColumns;
-				GUI.Label(rect, new GUIContent(detail.GetLabel(guid, assetPath, asset), detail.Name),
-					GetStyle(detail.Alignment));
+				string label = detail.GetLabel(guid, assetPath, asset);
+
+				if(!string.IsNullOrEmpty(detail.GetLabel(guid, assetPath, asset)))
+				{
+					rect.width = detail.ColumnWidth;
+					rect.x -= detail.ColumnWidth + SpaceBetweenColumns;
+					GUI.Label(rect, new GUIContent(label, detail.Name),
+						GetStyle(detail.Alignment));
+				}
 			}
 		}
 

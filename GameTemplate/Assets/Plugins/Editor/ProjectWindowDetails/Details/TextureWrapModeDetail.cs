@@ -21,7 +21,7 @@ namespace ProjectWindowDetail.Details
 			var texture = asset as Texture;
 
 			if (!texture) {
-				return "";
+				return string.Empty;
 			}
 
 			var wu = Mathf.Clamp((int)texture.wrapModeU, 0, 3);
