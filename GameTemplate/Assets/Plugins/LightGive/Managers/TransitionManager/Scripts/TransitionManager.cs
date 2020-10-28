@@ -230,6 +230,12 @@ public class TransitionManager : SingletonMonoBehaviour<TransitionManager>
 
 	private IEnumerator TransitionAction(UnityAction _act, float _transtime, EffectType _effectType, Color _effectColor)
 	{
+		yield return TransitionActionIn(_act, _transtime, _effectType, _effectColor);
+		yield return TransitionActionOut(_transtime, _effectType, _effectColor);
+	}
+
+	private IEnumerator TransitionActionIn(UnityAction _act, float _transtime, EffectType _effectType, Color _effectColor)
+	{
 		if (m_isTransition)
 			yield break;
 
@@ -252,10 +258,13 @@ public class TransitionManager : SingletonMonoBehaviour<TransitionManager>
 			yield return null;
 		}
 
-		_act.Invoke();
+		_act?.Invoke();
+	}
 
-		t = Time.time;
-		lp = 0.0f;
+	private IEnumerator TransitionActionOut(float _transtime, EffectType _effectType, Color _effectColor)
+	{
+		float t = Time.time;
+		float lp = 0.0f;
 
 		m_animCurve = FlipCurve(m_animCurve);
 
@@ -680,5 +689,24 @@ public class TransitionManager : SingletonMonoBehaviour<TransitionManager>
 	public void StartTransitonEffect(float _duration, EffectType _effectType, Color _effectColor, UnityAction _act)
 	{
 		StartCoroutine(TransitionAction(_act, _duration, _effectType, _effectColor));
+	}
+
+	/// <summary>
+	/// Starts the default transiton effect.
+	/// </summary>
+	/// <param name="_act">Method to execute when screen is covered</param>
+	public void StartTransitonEffect(UnityAction _act) 
+	{
+		StartCoroutine(TransitionAction(_act, m_defaultTransDuration, m_defaultEffectType, defaultEffectColor));
+	}
+
+	public void StartTransitonEffectIn(UnityAction _act) 
+	{
+		StartCoroutine(TransitionActionIn(_act, m_defaultTransDuration, m_defaultEffectType, defaultEffectColor));
+	}
+
+	public void StartTransitonEffectOut() 
+	{
+		StartCoroutine(TransitionActionOut(m_defaultTransDuration, m_defaultEffectType, defaultEffectColor));
 	}
 }
