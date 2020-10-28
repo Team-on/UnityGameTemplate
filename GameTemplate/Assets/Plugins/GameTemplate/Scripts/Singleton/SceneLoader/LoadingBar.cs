@@ -2,21 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using TMPro;
 using NaughtyAttributes;
 
 public class LoadingBar : MonoBehaviour {
+	[Header("Tips")]
+	[Space]
+	string tipBeggining = "TIP:";
 	[SerializeField] List<string> tips;
+
+	[Header("Timings")]
+	[Space]
+	[SerializeField] [MinMaxSlider(0.0f, 10.0f, false)] Vector2 additionalDelay = new Vector2(1.0f, 2.0f);
+
+	[Header("Refs")]
 	[Space]
 	[SerializeField] TextMeshProUGUI tipText;
 	[SerializeField] CanvasGroup canvasGroup;
 	[SerializeField] Image loadingBar;
+	[SerializeField] Image background;
 	[Space]
-	[SerializeField] [MinMaxSlider(0.0f, 10.0f, false)] Vector2 additionalDelay = new Vector2(1.0f, 2.0f);
+	[SerializeField] TextMeshProUGUI pressAnyKeyText;
+	[SerializeField] AlphaUpDown pressAnyKeyTextAlphaLerp;
+	[SerializeField] ScaleUpDown pressAnyKeyTextSizeLerp;
+
 
 	int sceneId;
 	AsyncOperation loader;
 	Coroutine loadingBarRoutine;
+	
+	bool isLoadingEnd;
 
 	void Awake() {
 		DisableCanvasGroup();
@@ -25,9 +41,19 @@ public class LoadingBar : MonoBehaviour {
 		EventManager.OnSceneLoadEnd += OnSceneLoadEnd;
 	}
 
+	private void Start() {
+		background.color = TransitionManager.Instance.defaultEffectColor;
+		enabled = false;
+	}
+
 	void OnDestroy() {
 		EventManager.OnSceneLoadStart -= OnSceneLoadStart;
 		EventManager.OnSceneLoadEnd -= OnSceneLoadEnd;
+	}
+
+	private void Update() {
+		if (isLoadingEnd && InputEx.IsAnyKeyPressedThisFrame()) 
+			OnAnyKeyPress();
 	}
 
 	void OnSceneLoadStart(EventData data) {
@@ -40,20 +66,21 @@ public class LoadingBar : MonoBehaviour {
 		if (!needUI)
 			return;
 
+		isLoadingEnd = false;
 		sceneId = (int)(data.Data?["id"] ?? -1);
 		loader = data.Data?["loader"] as AsyncOperation;
 
-		if(sceneId == -1 || loader == null) {
+		if (sceneId == -1 || loader == null) {
 			Debug.LogError("LoadingBar data does not contains all necessary arguments");
 			return;
 		}
 
+		enabled = true;
 		bool needDelay = (bool)data?["uiNeedDelay"];
 
 		loadingBarRoutine = StartCoroutine(needDelay ? LoadingBarUpdateWithDelay() : LoadingBarUpdate());
 
-		tipText.text = "TIP: " + tips.Random();
-
+		tipText.text = tipBeggining + " " + tips.Random();
 		EnableCanvasGroup();
 	}
 
@@ -62,11 +89,16 @@ public class LoadingBar : MonoBehaviour {
 			return;
 		if(loadingBarRoutine != null)
 			StopCoroutine(loadingBarRoutine);
-		DisableCanvasGroup();
 
-		sceneId = -1;
-		loader = null;
-		loadingBarRoutine = null;
+		
+		LeanTweenEx.ChangeAlpha(pressAnyKeyText, 1.0f, 0.5f).setIgnoreTimeScale(true)
+		.setOnComplete(()=> {
+			pressAnyKeyTextAlphaLerp.enabled = true;
+			pressAnyKeyTextSizeLerp.enabled = true;
+		});
+		loadingBar.fillAmount = 1.0f;
+
+		isLoadingEnd = true;
 	}
 
 	IEnumerator LoadingBarUpdate() {
@@ -94,14 +126,43 @@ public class LoadingBar : MonoBehaviour {
 	}
 
 	void DisableCanvasGroup() {
-		canvasGroup.alpha = 0.0f;
 		canvasGroup.interactable = false;
 		canvasGroup.blocksRaycasts = false;
+		canvasGroup.alpha = 0.0f;
+
+		pressAnyKeyText.color = pressAnyKeyText.color.SetA(0.0f);
+		pressAnyKeyTextAlphaLerp.enabled = false;
+		pressAnyKeyTextSizeLerp.enabled = false;
 	}
 
 	void EnableCanvasGroup() {
-		canvasGroup.alpha = 1.0f;
 		canvasGroup.interactable = true;
 		canvasGroup.blocksRaycasts = true;
+		canvasGroup.alpha = 1.0f;
+
+		pressAnyKeyText.color = pressAnyKeyText.color.SetA(0.0f);
+		pressAnyKeyTextAlphaLerp.enabled = false;
+		pressAnyKeyTextSizeLerp.enabled = false;
+	}
+
+	void OnAnyKeyPress() {
+		isLoadingEnd = false;
+
+		LeanTweenEx.ChangeAlpha(pressAnyKeyText, 0.0f, 0.2f).setIgnoreTimeScale(true);
+
+		StartCoroutine(OnKeyPressRoutine());
+
+		IEnumerator OnKeyPressRoutine() {
+			loader.allowSceneActivation = true;
+			yield return null;
+
+			DisableCanvasGroup();
+			yield return null;
+
+			sceneId = -1;
+			loader = null;
+			loadingBarRoutine = null;
+			enabled = false;
+		}
 	}
 }

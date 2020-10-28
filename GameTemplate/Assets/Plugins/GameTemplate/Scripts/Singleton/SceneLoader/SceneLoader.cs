@@ -51,21 +51,28 @@ public class SceneLoader : Singleton<SceneLoader> {
 
 	public void LoadScene(int id, bool needUI, bool uiNeedDelay) {
 		TemplateGameManager.Instance.uiinput.SetFirstButton(null);
-		loader = SceneManager.LoadSceneAsync(id, LoadSceneMode.Single);
 
-		EventData eventData = new EventData("OnSceneLoadStart");
-		eventData.Data.Add("id", id);
-		eventData.Data.Add("loader", loader);
-		eventData.Data.Add("needUI", needUI);
-		if(needUI)
-			eventData.Data.Add("uiNeedDelay", uiNeedDelay);
-		TemplateGameManager.Instance.Events.CallOnSceneLoadStart(eventData);
+		TransitionManager.Instance.StartTransitonEffectIn(StartLoad);
 
-		loader.completed += (a) => {
-			EventData eventData_ = new EventData("OnSceneLoadStart");
-			eventData_.Data.Add("id", id);
-			eventData_.Data.Add("loader", loader);
-			TemplateGameManager.Instance.Events.CallOnSceneLoadEnd(eventData_);
-		};
+		void StartLoad() {
+			loader = SceneManager.LoadSceneAsync(id, LoadSceneMode.Single);
+
+			EventData eventData = new EventData("OnSceneLoadStart");
+			eventData.Data.Add("id", id);
+			eventData.Data.Add("loader", loader);
+			eventData.Data.Add("needUI", needUI);
+			if (needUI)
+				eventData.Data.Add("uiNeedDelay", uiNeedDelay);
+			TemplateGameManager.Instance.Events.CallOnSceneLoadStart(eventData);
+
+			loader.completed += (a) => {
+				EventData eventData_ = new EventData("OnSceneLoadStart");
+				eventData_.Data.Add("id", id);
+				eventData_.Data.Add("loader", loader);
+				TemplateGameManager.Instance.Events.CallOnSceneLoadEnd(eventData_);
+				TransitionManager.Instance.ChangeDefaultEffectTypeToOpposite();
+				TransitionManager.Instance.StartTransitonEffectOut();
+			};
+		}
 	}
 }

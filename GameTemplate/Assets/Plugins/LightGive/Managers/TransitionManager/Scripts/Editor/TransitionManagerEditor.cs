@@ -164,6 +164,10 @@ namespace LightGive
 			//	}
 			}
 			serializedObject.ApplyModifiedProperties();
+
+			EditorGUILayout.Space();
+			EditorGUILayout.Space();
+			base.OnInspectorGUI();
 		}
 
 		void SetMaterialParamAll()
