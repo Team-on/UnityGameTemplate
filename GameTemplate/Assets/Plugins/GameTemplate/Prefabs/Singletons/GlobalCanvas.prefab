@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.12941177, g: 0.12941177, b: 0.12941177, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -792,16 +792,6 @@ PrefabInstance:
     - target: {fileID: 1014063438133584, guid: 6c809c8c07559404f91943282277eee2, type: 3}
       propertyPath: m_Name
       value: TransitionManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 114199745479478546, guid: 6c809c8c07559404f91943282277eee2,
-        type: 3}
-      propertyPath: m_ruleTex
-      value: 
-      objectReference: {fileID: 2800000, guid: 8211d11f20f21418891f6d9f7aba10b0, type: 3}
-    - target: {fileID: 114199745479478546, guid: 6c809c8c07559404f91943282277eee2,
-        type: 3}
-      propertyPath: m_isInvert
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3869755286993628372, guid: 6c809c8c07559404f91943282277eee2,
         type: 3}

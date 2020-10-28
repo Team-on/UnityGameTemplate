@@ -52,7 +52,6 @@ public class SceneLoader : Singleton<SceneLoader> {
 	public void LoadScene(int id, bool needUI, bool uiNeedDelay) {
 		TemplateGameManager.Instance.uiinput.SetFirstButton(null);
 
-		
 		TransitionManager.Instance.StartTransitonEffectIn(StartLoad);
 
 		void StartLoad() {
@@ -71,6 +70,7 @@ public class SceneLoader : Singleton<SceneLoader> {
 				eventData_.Data.Add("id", id);
 				eventData_.Data.Add("loader", loader);
 				TemplateGameManager.Instance.Events.CallOnSceneLoadEnd(eventData_);
+				TransitionManager.Instance.ChangeDefaultEffectTypeToOpposite();
 				TransitionManager.Instance.StartTransitonEffectOut();
 			};
 		}

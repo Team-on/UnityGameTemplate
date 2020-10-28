@@ -444,6 +444,7 @@ public class TransitionManager : SingletonMonoBehaviour<TransitionManager>
 				m_transImage.fillOrigin = (int)Image.Origin360.Bottom;
 				break;
 		}
+		m_transImage.fillClockwise = true;
 
 		switch (_effectType)
 		{
@@ -455,7 +456,7 @@ public class TransitionManager : SingletonMonoBehaviour<TransitionManager>
 				m_transRawImage.color = _effectColor;
 				break;
 			default:
-				m_transImage.fillAmount = 0.0f;
+				m_transImage.fillAmount = 0.0f ;
 				m_transImage.color = _effectColor;
 				break;
 		}
@@ -468,7 +469,109 @@ public class TransitionManager : SingletonMonoBehaviour<TransitionManager>
 		{
 			m_transImage.gameObject.SetActive(true);
 		}
+	}
 
+	void SceneTransitionInitInverted(Color _effectColor, EffectType _effectType) {
+		switch (_effectType) {
+			case EffectType.Fade:
+				m_transImage.fillAmount = 1.0f;
+				break;
+
+			case EffectType.Custom:
+				Material mat = new Material(m_transShader);
+				m_transRawImage.material = mat;
+				m_transRawImage.material.SetTexture(ShaderParamTextureGradation, m_ruleTex);
+				m_transRawImage.material.SetFloat(ShaderParamFloatInvert, m_isInvert ? 0.0f : 1.0f);
+				break;
+
+			case EffectType.Horizontal_Right:
+				m_transImage.fillMethod = Image.FillMethod.Horizontal;
+				m_transImage.fillOrigin = (int)Image.OriginHorizontal.Left;
+				break;
+			case EffectType.Horizontal_Left:
+				m_transImage.fillMethod = Image.FillMethod.Horizontal;
+				m_transImage.fillOrigin = (int)Image.OriginHorizontal.Right;
+				break;
+			case EffectType.Vertical_Top:
+				m_transImage.fillMethod = Image.FillMethod.Vertical;
+				m_transImage.fillOrigin = (int)Image.OriginVertical.Bottom;
+				break;
+			case EffectType.Vertical_Bottom:
+				m_transImage.fillMethod = Image.FillMethod.Vertical;
+				m_transImage.fillOrigin = (int)Image.OriginVertical.Top;
+				break;
+			case EffectType.Radial90_TopRight:
+				m_transImage.fillMethod = Image.FillMethod.Radial90;
+				m_transImage.fillOrigin = (int)Image.Origin90.TopRight;
+				break;
+			case EffectType.Radial90_TopLeft:
+				m_transImage.fillMethod = Image.FillMethod.Radial90;
+				m_transImage.fillOrigin = (int)Image.Origin90.TopLeft;
+				break;
+			case EffectType.Radial90_BottomRight:
+				m_transImage.fillMethod = Image.FillMethod.Radial90;
+				m_transImage.fillOrigin = (int)Image.Origin90.BottomRight;
+				break;
+			case EffectType.Radial90_BottomLeft:
+				m_transImage.fillMethod = Image.FillMethod.Radial90;
+				m_transImage.fillOrigin = (int)Image.Origin90.BottomLeft;
+				break;
+			case EffectType.Radial180_Right:
+				m_transImage.fillMethod = Image.FillMethod.Radial180;
+				m_transImage.fillOrigin = (int)Image.Origin180.Right;
+				break;
+			case EffectType.Radial180_Left:
+				m_transImage.fillMethod = Image.FillMethod.Radial180;
+				m_transImage.fillOrigin = (int)Image.Origin180.Left;
+				break;
+			case EffectType.Radial180_Top:
+				m_transImage.fillMethod = Image.FillMethod.Radial180;
+				m_transImage.fillOrigin = (int)Image.Origin180.Top;
+				break;
+			case EffectType.Radial180_Bottom:
+				m_transImage.fillMethod = Image.FillMethod.Radial180;
+				m_transImage.fillOrigin = (int)Image.Origin180.Bottom;
+				break;
+			case EffectType.Radial360_Right:
+				m_transImage.fillMethod = Image.FillMethod.Radial360;
+				m_transImage.fillOrigin = (int)Image.Origin360.Right;
+				break;
+			case EffectType.Radial360_Left:
+				m_transImage.fillMethod = Image.FillMethod.Radial360;
+				m_transImage.fillOrigin = (int)Image.Origin360.Left;
+				break;
+			case EffectType.Radial360_Top:
+				m_transImage.fillMethod = Image.FillMethod.Radial360;
+				m_transImage.fillOrigin = (int)Image.Origin360.Top;
+				break;
+			case EffectType.Radial360_Bottom:
+				m_transImage.fillMethod = Image.FillMethod.Radial360;
+				m_transImage.fillOrigin = (int)Image.Origin360.Bottom;
+				break;
+		}
+
+		m_transImage.fillClockwise = false;
+
+		switch (_effectType) {
+			case EffectType.Fade:
+				m_transImage.fillAmount = 1.0f;
+				m_transImage.color = new Color(_effectColor.r, _effectColor.g, _effectColor.b, 0.0f);
+				break;
+			case EffectType.Custom:
+				m_transRawImage.color = _effectColor;
+				break;
+			default:
+				m_transImage.fillAmount = 1.0f;
+				m_transImage.color = _effectColor;
+				break;
+		}
+
+		if (_effectType == EffectType.Custom) {
+			m_transRawImage.gameObject.SetActive(true);
+		}
+		else {
+			m_transImage.gameObject.SetActive(true);
+		}
 	}
 
 	void SceneTransitionEnd(EffectType _effectType)
@@ -679,6 +782,7 @@ public class TransitionManager : SingletonMonoBehaviour<TransitionManager>
 
 	#endregion
 
+	#region Transition Effect only
 	/// <summary>
 	/// Starts the transiton effect.
 	/// </summary>
@@ -708,5 +812,10 @@ public class TransitionManager : SingletonMonoBehaviour<TransitionManager>
 	public void StartTransitonEffectOut() 
 	{
 		StartCoroutine(TransitionActionOut(m_defaultTransDuration, m_defaultEffectType, defaultEffectColor));
+	}
+	#endregion
+
+	public void ChangeDefaultEffectTypeToOpposite() {
+		SceneTransitionInitInverted(m_defaultEffectColor, m_defaultEffectType);
 	}
 }
