@@ -2,48 +2,28 @@
     "outputFolder": "C:\\Users\\timon\\Documents\\ScreenshotsUnity\\ScreenShooter",
     "screenshoots": [
         {
-            "isEnabled": false,
-            "name": "Name",
+            "isEnabled": true,
+            "name": "Full HD",
             "targetCamera": 0,
             "resolution": {
                 "x": 1920.0,
                 "y": 1080.0
             },
             "resolutionMultiplier": 1.0,
-            "captureOverlayUI": true
-        },
-        {
-            "isEnabled": true,
-            "name": "HD",
-            "targetCamera": 0,
-            "resolution": {
-                "x": 1366.0,
-                "y": 768.0
-            },
-            "resolutionMultiplier": 1.0,
-            "captureOverlayUI": false
-        },
-        {
-            "isEnabled": true,
-            "name": "HD+",
-            "targetCamera": 0,
-            "resolution": {
-                "x": 1600.0,
-                "y": 900.0
-            },
-            "resolutionMultiplier": 1.0,
-            "captureOverlayUI": true
+            "captureOverlayUI": false,
+            "lang": 0
         },
         {
             "isEnabled": true,
             "name": "Full HD",
-            "targetCamera": 1,
+            "targetCamera": 0,
             "resolution": {
                 "x": 1920.0,
                 "y": 1080.0
             },
             "resolutionMultiplier": 1.0,
-            "captureOverlayUI": false
+            "captureOverlayUI": true,
+            "lang": 0
         }
     ]
 }

@@ -13,38 +13,15 @@ MonoBehaviour:
   m_Name: BuildSequences
   m_EditorClassIdentifier: 
   sequences:
-  - editorName: 2
+  - editorName: Test
     itchGameLink: teamon/game-link
     builds:
     - outputRoot: Builds/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
       isPassbyBuild: 0
-      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
-      targetGroup: 0
-      target: -2
-      options: 0
-      isVirtualRealitySupported: 0
-      needZip: 0
-      compressDirPath: $NAME_$VERSION_$PLATFORM
-      needItchPush: 0
-      itchChannel: channel
-      itchDirPath: $NAME_$VERSION_$PLATFORM
-      itchAddLastChangelogUpdateNameToVerison: 0
-      itchLastChangelogUpdateName: 
-      useGithubActions: 0
-      useUnityActions: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDricePush: 0
-  - editorName: 1
-    itchGameLink: teamon/game-link
-    builds:
-    - outputRoot: Builds/
-      middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
-      isPassbyBuild: 0
-      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED
-      targetGroup: 0
-      target: -2
+      scriptingDefinySymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED;POLYGLOT;GAME_TEMPLATE
+      targetGroup: 1
+      target: 5
       options: 0
       isVirtualRealitySupported: 0
       needZip: 0

@@ -18,9 +18,11 @@ public class ScreenshooterSaveData {
 
 	public static void SaveSettings(ScreenshooterSaveData data) {
 		if (!PlayerPrefs.HasKey(SAVE_FILE_EDITORPREFS)) {
+#if UNITY_EDITOR
 			string[] allPath = AssetDatabase.FindAssets(SAVE_FILE_NOREZ);
 			if (allPath.Length != 0)
 				PlayerPrefs.SetString(SAVE_FILE_EDITORPREFS, AssetDatabase.GUIDToAssetPath(allPath[0]).Replace("Assets/", ""));
+#endif
 		}
 
 		string savePath = Path.Combine(Application.dataPath, PlayerPrefs.GetString(SAVE_FILE_EDITORPREFS, SAVE_FILE_EDITORPREFS_DEFAULT));
@@ -37,9 +39,11 @@ public class ScreenshooterSaveData {
 
 	public static ScreenshooterSaveData LoadSettings() {
 		if (!PlayerPrefs.HasKey(SAVE_FILE_EDITORPREFS)) {
+#if UNITY_EDITOR
 			string[] allPath = AssetDatabase.FindAssets(SAVE_FILE_NOREZ);
 			if (allPath.Length != 0)
 				PlayerPrefs.SetString(SAVE_FILE_EDITORPREFS, AssetDatabase.GUIDToAssetPath(allPath[0]).Replace("Assets/", ""));
+#endif
 		}
 
 		string savePath = Path.Combine(Application.dataPath, PlayerPrefs.GetString(SAVE_FILE_EDITORPREFS, SAVE_FILE_EDITORPREFS_DEFAULT));
