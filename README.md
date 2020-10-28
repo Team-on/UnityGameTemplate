@@ -44,6 +44,8 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/Team-on/unity-history-window  
  https://github.com/Team-on/UnityScreenShooter  
  https://github.com/Team-on/UnityBuildManager  
+ https://github.com/LightGive/SystemCalc  
+ https://github.com/LightGive/TransitionManager  
 
  ## Want to use: 
  https://assetstore.unity.com/packages/tools/gui/cyro-build-debugger-65101  
