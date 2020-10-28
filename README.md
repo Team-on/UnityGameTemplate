@@ -47,6 +47,9 @@ I'd be happy for any contribution to make this template as good as it can be.
  https://github.com/LightGive/SystemCalc  
  https://github.com/LightGive/TransitionManager  
  https://github.com/setchi/FancyScrollView  
+ https://github.com/slavniyteo/one-line  
+ https://github.com/slavniyteo/rect-ex  
+ 
 
  ## Want to use: 
  https://assetstore.unity.com/packages/tools/gui/cyro-build-debugger-65101  

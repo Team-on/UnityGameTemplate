@@ -1,0 +1,17 @@
+{
+    "name": "st.one-line.Editor",
+    "references": [
+        "st.rect-ex.Runtime",
+        "st.one-line.Runtime"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

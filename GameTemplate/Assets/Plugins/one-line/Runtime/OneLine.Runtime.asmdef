@@ -1,0 +1,14 @@
+{
+    "name": "st.one-line.Runtime",
+    "references": [
+        "st.rect-ex.Runtime"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
