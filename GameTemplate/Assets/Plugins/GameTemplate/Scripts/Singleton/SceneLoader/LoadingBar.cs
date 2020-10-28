@@ -11,6 +11,7 @@ public class LoadingBar : MonoBehaviour {
 	[SerializeField] TextMeshProUGUI tipText;
 	[SerializeField] CanvasGroup canvasGroup;
 	[SerializeField] Image loadingBar;
+	[SerializeField] Image background;
 	[Space]
 	[SerializeField] [MinMaxSlider(0.0f, 10.0f, false)] Vector2 additionalDelay = new Vector2(1.0f, 2.0f);
 
@@ -23,6 +24,10 @@ public class LoadingBar : MonoBehaviour {
 
 		EventManager.OnSceneLoadStart += OnSceneLoadStart;
 		EventManager.OnSceneLoadEnd += OnSceneLoadEnd;
+	}
+
+	private void Start() {
+		background.color = TransitionManager.Instance.defaultEffectColor;
 	}
 
 	void OnDestroy() {

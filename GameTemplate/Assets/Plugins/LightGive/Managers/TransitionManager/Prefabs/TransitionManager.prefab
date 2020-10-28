@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDontDestroy: 0
+  loadingBarParent: {fileID: 0}
   m_defaultFlashDuration: 0.1
   m_defaultFlashWhiteDuration: 0.05
   m_defaultFlashColor: {r: 1, g: 1, b: 1, a: 1}

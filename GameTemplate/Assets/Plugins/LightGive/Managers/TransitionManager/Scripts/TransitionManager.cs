@@ -42,6 +42,9 @@ public class TransitionManager : SingletonMonoBehaviour<TransitionManager>
 	public const string ShaderParamFloatCutoff = "_Cutoff";
 	public const string ShaderParamColor = "_Color";
 
+	//Loading bar integration
+	[SerializeField] RectTransform loadingBarParent;
+
 	//Flash
 	[SerializeField]
 	private float m_defaultFlashDuration = 0.1f;

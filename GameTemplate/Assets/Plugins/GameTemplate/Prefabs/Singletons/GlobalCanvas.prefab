@@ -769,6 +769,7 @@ MonoBehaviour:
   tipText: {fileID: 7052802825247106243}
   canvasGroup: {fileID: 7052802825514451058}
   loadingBar: {fileID: 7052802825099716772}
+  background: {fileID: 7052802825019363833}
   additionalDelay: {x: 0.5, y: 1}
 --- !u!225 &7052802825514451058
 CanvasGroup:
@@ -793,6 +794,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TransitionManager
       objectReference: {fileID: 0}
+    - target: {fileID: 114199745479478546, guid: 6c809c8c07559404f91943282277eee2,
+        type: 3}
+      propertyPath: loadingBarParent
+      value: 
+      objectReference: {fileID: 7052802825514451059}
     - target: {fileID: 3869755286993628372, guid: 6c809c8c07559404f91943282277eee2,
         type: 3}
       propertyPath: m_LocalPosition.x
