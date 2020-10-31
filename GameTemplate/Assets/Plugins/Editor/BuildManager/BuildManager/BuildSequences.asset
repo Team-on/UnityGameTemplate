@@ -308,7 +308,7 @@ MonoBehaviour:
       itchChannel: windows-32
       itchDirPath: $NAME_$VERSION_$PLATFORM
       itchAddLastChangelogUpdateNameToVerison: 1
-      itchLastChangelogUpdateName: 
+      itchLastChangelogUpdateName: 0.1 - Set changelog header in build window(ALT+B)
       useGithubActions: 0
       useUnityActions: 0
       needGamejolthPush: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
       itchChannel: windows-64
       itchDirPath: $NAME_$VERSION_$PLATFORM
       itchAddLastChangelogUpdateNameToVerison: 1
-      itchLastChangelogUpdateName: 
+      itchLastChangelogUpdateName: 0.1 - Set changelog header in build window(ALT+B)
       useGithubActions: 0
       useUnityActions: 0
       needGamejolthPush: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
       itchChannel: linux-universal
       itchDirPath: $NAME_$VERSION_$PLATFORM
       itchAddLastChangelogUpdateNameToVerison: 1
-      itchLastChangelogUpdateName: 
+      itchLastChangelogUpdateName: 0.1 - Set changelog header in build window(ALT+B)
       useGithubActions: 0
       useUnityActions: 0
       needGamejolthPush: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
       itchChannel: osx-universal
       itchDirPath: $NAME_$VERSION_$PLATFORM
       itchAddLastChangelogUpdateNameToVerison: 1
-      itchLastChangelogUpdateName: 
+      itchLastChangelogUpdateName: 0.1 - Set changelog header in build window(ALT+B)
       useGithubActions: 0
       useUnityActions: 0
       needGamejolthPush: 0
@@ -396,7 +396,7 @@ MonoBehaviour:
       itchChannel: webgl
       itchDirPath: $NAME_$VERSION_$PLATFORM
       itchAddLastChangelogUpdateNameToVerison: 1
-      itchLastChangelogUpdateName: 
+      itchLastChangelogUpdateName: 0.1 - Set changelog header in build window(ALT+B)
       useGithubActions: 0
       useUnityActions: 0
       needGamejolthPush: 0
@@ -418,7 +418,7 @@ MonoBehaviour:
       itchChannel: android
       itchDirPath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       itchAddLastChangelogUpdateNameToVerison: 1
-      itchLastChangelogUpdateName: 
+      itchLastChangelogUpdateName: 0.1 - Set changelog header in build window(ALT+B)
       useGithubActions: 0
       useUnityActions: 0
       needGamejolthPush: 0
@@ -566,7 +566,7 @@ MonoBehaviour:
     itchGameLink: teamon/BuildManager
     scriptingDefineSymbolsOverride: 
     builds:
-    - isEnabled: 0
+    - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
       isPassbyBuild: 0
@@ -588,7 +588,7 @@ MonoBehaviour:
       needGamejolthPush: 0
       needSteamPush: 0
       needGoogleDrivePush: 0
-    - isEnabled: 0
+    - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
       isPassbyBuild: 0
@@ -654,7 +654,7 @@ MonoBehaviour:
       needGamejolthPush: 0
       needSteamPush: 0
       needGoogleDrivePush: 0
-    - isEnabled: 0
+    - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/
       isPassbyBuild: 0
@@ -676,7 +676,7 @@ MonoBehaviour:
       needGamejolthPush: 0
       needSteamPush: 0
       needGoogleDrivePush: 0
-    - isEnabled: 0
+    - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
       isPassbyBuild: 0
@@ -719,7 +719,7 @@ MonoBehaviour:
       itchChannel: windows-32
       itchDirPath: $NAME_$VERSION_$PLATFORM
       itchAddLastChangelogUpdateNameToVerison: 1
-      itchLastChangelogUpdateName: 
+      itchLastChangelogUpdateName: 0.1 - Set changelog header in build window(ALT+B)
       useGithubActions: 0
       useUnityActions: 0
       needGamejolthPush: 0
