@@ -50,12 +50,34 @@ public static class BuildManager {
 				data.isPassbyBuild,
 				data.isReleaseBuild
 			);
+
+			
 		}
 
 		EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroupBeforeStart, targetBeforeStart);
 		PlayerSettings.SetScriptingDefineSymbolsForGroup(targetGroupBeforeStart, definesBeforeStart);
 		PlayerSettings.virtualRealitySupported = isVRSupported;
 		Debug.Log($"End building all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
+
+		for (byte i = 0; i < sequence.builds.Count; ++i) {
+			if (!sequence.builds[i].needZip || !sequence.builds[i].isEnabled)
+				continue;
+
+			if (sequence.builds[i].target == BuildTarget.Android) {
+				Debug.Log("Skip android build to .zip, because .apk files already compressed");
+				continue;
+			}
+
+			if (!string.IsNullOrEmpty(buildsPath[i])) {
+				if (sequence.builds[i].isReleaseBuild) {  //Destroy IL2CPP junk after build
+					string buildRootPath = Path.GetDirectoryName(buildsPath[i]);
+					string[] dirs = Directory.GetDirectories(buildRootPath);
+					var il2cppDirs = dirs.Where(s => s.Contains("BackUpThisFolder_ButDontShipItWithYourGame"));
+					foreach (var dir in il2cppDirs)
+						Directory.Delete(dir, true);
+				}
+			}
+		}
 
 		startTime = DateTime.Now;
 		Debug.Log($"Start compressing all");
@@ -232,14 +254,6 @@ public static class BuildManager {
 		BuildSummary summary = report.summary;
 
 		if (summary.result == BuildResult.Succeeded) {
-			if (isReleaseBuild) {  //Destroy IL2CPP junk after build
-				string buildRootPath = Path.GetDirectoryName(summary.outputPath);
-				string[] dirs = Directory.GetDirectories(buildRootPath);
-				var il2cppDirs = dirs.Where(s => s.Contains("BackUpThisFolder_ButDontShipItWithYourGame"));
-				foreach (var dir in il2cppDirs)
-					Directory.Delete(dir, true);
-			}
-
 			Debug.Log($"{summary.platform} succeeded.  \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576} Mb");
 		}
 		else if (summary.result == BuildResult.Failed) {
