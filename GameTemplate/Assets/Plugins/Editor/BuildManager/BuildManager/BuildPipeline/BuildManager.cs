@@ -14,7 +14,7 @@ public static class BuildManager {
 	const string butlerRelativePath = @"Plugins/GameTemplate/Editor/BuildManager/butler/butler.exe";
 	static DateTime usedDate;
 
-	public static void RunBuildSequnce(BuildSequence sequence, ChangelogData changelog) {
+	public static void RunBuildSequnce(BuildManagerSettings settings, BuildSequence sequence, ChangelogData changelog) {
 		// Start init
 		string buildNameString = $"{PlayerSettings.bundleVersion} - {changelog.updateName}";
 #if GAME_TEMPLATE
@@ -31,14 +31,25 @@ public static class BuildManager {
 		string definesBeforeStart = PlayerSettings.GetScriptingDefineSymbolsForGroup(targetGroupBeforeStart);
 		bool isVRSupported = PlayerSettings.virtualRealitySupported;    //TODO: PlayerSettings.virtualRealitySupported is deprecated. Replace with smth new	
 
-		string[] buildsPath = new string[sequence.builds.Length];
-		for (byte i = 0; i < sequence.builds.Length; ++i) {
+		string[] buildsPath = new string[sequence.builds.Count];
+		for (byte i = 0; i < sequence.builds.Count; ++i) {
 			BuildData data = sequence.builds[i];
+
+			if (!data.isEnabled)
+				continue;
 
 			if (PlayerSettings.virtualRealitySupported != data.isVirtualRealitySupported)
 				PlayerSettings.virtualRealitySupported = data.isVirtualRealitySupported;
 
-			buildsPath[i] = BaseBuild(data.targetGroup, data.target, data.options, data.outputRoot + GetPathWithVars(data, data.middlePath), data.scriptingDefinySymbols, data.isPassbyBuild);
+			buildsPath[i] = BaseBuild(
+				data.targetGroup,
+				data.target,
+				data.options,
+				data.outputRoot + GetPathWithVars(data, data.middlePath),
+				string.Concat(settings.scriptingDefineSymbols, ";", sequence.scriptingDefineSymbolsOverride, ";", data.scriptingDefineSymbolsOverride),
+				data.isPassbyBuild,
+				data.isReleaseBuild
+			);
 		}
 
 		EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroupBeforeStart, targetBeforeStart);
@@ -49,9 +60,14 @@ public static class BuildManager {
 		startTime = DateTime.Now;
 		Debug.Log($"Start compressing all");
 
-		for (byte i = 0; i < sequence.builds.Length; ++i) {
-			if (!sequence.builds[i].needZip)
+		for (byte i = 0; i < sequence.builds.Count; ++i) {
+			if (!sequence.builds[i].needZip || !sequence.builds[i].isEnabled)
 				continue;
+
+			if(sequence.builds[i].target == BuildTarget.Android) {
+				Debug.Log("Skip android build to .zip, because .apk files already compressed");
+				continue;
+			}
 
 			if (!string.IsNullOrEmpty(buildsPath[i]))
 				BaseCompress(sequence.builds[i].outputRoot + GetPathWithVars(sequence.builds[i], sequence.builds[i].compressDirPath));
@@ -62,8 +78,8 @@ public static class BuildManager {
 		Debug.Log($"End compressing all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
 
 
-		for (byte i = 0; i < sequence.builds.Length; ++i) {
-			if (!sequence.builds[i].needItchPush)
+		for (byte i = 0; i < sequence.builds.Count; ++i) {
+			if (!sequence.builds[i].needItchPush || !sequence.builds[i].isEnabled)
 				continue;
 
 			if (!string.IsNullOrEmpty(buildsPath[i])) {
@@ -76,6 +92,8 @@ public static class BuildManager {
 				Debug.LogWarning($"[Itch.io push] Can't find build for {GetBuildTargetExecutable(sequence.builds[i].target)}");
 			}
 		}
+
+		ShowExplorer(sequence.builds[sequence.builds.Count - 1].outputRoot);
 	}
 
 #region Convert to strings
@@ -138,7 +156,7 @@ public static class BuildManager {
 #endregion
 
 #region Base methods
-	static string BaseBuild(BuildTargetGroup buildTargetGroup, BuildTarget buildTarget, BuildOptions buildOptions, string buildPath, string definesSymbols, bool isPassbyBuild) {
+	static string BaseBuild(BuildTargetGroup buildTargetGroup, BuildTarget buildTarget, BuildOptions buildOptions, string buildPath, string definesSymbols, bool isPassbyBuild, bool isReleaseBuild) {
 		if (isPassbyBuild) {
 			return buildPath;
 		}
@@ -147,8 +165,59 @@ public static class BuildManager {
 			PlayerSettings.Android.keyaliasPass = PlayerSettings.Android.keystorePass = "keystore";
 		}
 
-		BuildTarget targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
-		BuildTargetGroup targetGroupBeforeStart = BuildPipeline.GetBuildTargetGroup(targetBeforeStart);
+		if (isReleaseBuild) {
+			switch (buildTargetGroup) {
+				case BuildTargetGroup.Standalone:
+					buildOptions |= BuildOptions.CompressWithLz4;
+
+					if(buildTarget == BuildTarget.StandaloneWindows || buildTarget == BuildTarget.StandaloneWindows64)
+						PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.IL2CPP);
+					else
+						PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.Mono2x);
+					PlayerSettings.SetIl2CppCompilerConfiguration(buildTargetGroup, Il2CppCompilerConfiguration.Master);
+					break;
+				case BuildTargetGroup.Android:
+					buildOptions |= BuildOptions.CompressWithLz4;
+
+					PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.IL2CPP);
+					PlayerSettings.SetIl2CppCompilerConfiguration(buildTargetGroup, Il2CppCompilerConfiguration.Master);
+
+					PlayerSettings.Android.targetArchitectures = AndroidArchitecture.All;
+					break;
+				case BuildTargetGroup.WebGL:
+					PlayerSettings.SetIl2CppCompilerConfiguration(buildTargetGroup, Il2CppCompilerConfiguration.Master);
+					break;
+				default:
+					Debug.LogWarning($"{buildTargetGroup} is unsupported for release builds. No optimizations applied");
+					break;
+			}
+		}
+		else {
+			switch (buildTargetGroup) {
+				case BuildTargetGroup.Standalone:
+					buildOptions ^= BuildOptions.CompressWithLz4;
+					buildOptions ^= BuildOptions.CompressWithLz4HC;
+
+					PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.Mono2x);
+					PlayerSettings.SetIl2CppCompilerConfiguration(buildTargetGroup, Il2CppCompilerConfiguration.Debug);
+					break;
+				case BuildTargetGroup.Android:
+					buildOptions ^= BuildOptions.CompressWithLz4;
+					buildOptions ^= BuildOptions.CompressWithLz4HC;
+
+					PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.Mono2x);
+					PlayerSettings.SetIl2CppCompilerConfiguration(buildTargetGroup, Il2CppCompilerConfiguration.Debug);
+
+					PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7;
+					break;
+				case BuildTargetGroup.WebGL:
+					PlayerSettings.SetIl2CppCompilerConfiguration(buildTargetGroup, Il2CppCompilerConfiguration.Debug);
+					break;
+				default:
+					Debug.LogWarning($"{buildTargetGroup} is unsupported for debug builds. No optimizations applied");
+					break;
+			}
+		}
 
 		BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions {
 			scenes = EditorBuildSettings.scenes.Where(s => s.enabled).Select(s => s.path).ToArray(),
@@ -163,6 +232,14 @@ public static class BuildManager {
 		BuildSummary summary = report.summary;
 
 		if (summary.result == BuildResult.Succeeded) {
+			if (isReleaseBuild) {  //Destroy IL2CPP junk after build
+				string buildRootPath = Path.GetDirectoryName(summary.outputPath);
+				string[] dirs = Directory.GetDirectories(buildRootPath);
+				var il2cppDirs = dirs.Where(s => s.Contains("BackUpThisFolder_ButDontShipItWithYourGame"));
+				foreach (var dir in il2cppDirs)
+					Directory.Delete(dir, true);
+			}
+
 			Debug.Log($"{summary.platform} succeeded.  \t Time: {string.Format("{0:mm\\:ss}", summary.totalTime)}  \t Size: {summary.totalSize / 1048576} Mb");
 		}
 		else if (summary.result == BuildResult.Failed) {
@@ -219,5 +296,10 @@ public static class BuildManager {
 		Debug.Log(fileName.ToString() + args.ToString());
 		Process.Start(fileName.ToString(), args.ToString());
 	}
-#endregion
+	#endregion
+
+	static void ShowExplorer(string itemPath) {
+		itemPath = itemPath.Replace(@"/", @"\");   // explorer doesn't like front slashes
+		System.Diagnostics.Process.Start("explorer.exe", "/select," + itemPath);
+	}
 }
