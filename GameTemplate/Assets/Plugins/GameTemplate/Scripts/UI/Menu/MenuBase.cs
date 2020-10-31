@@ -18,9 +18,6 @@ public abstract class MenuBase : MonoBehaviour {
 
 	protected virtual void Awake() {
 		canvasGroup = GetComponent<CanvasGroup>();
-	}
-
-	void Start() {
 		selectables = GetComponentsInChildren<Selectable>(true);
 	}
 
