@@ -11,7 +11,7 @@ using Ionic.Zip;
 using Debug = UnityEngine.Debug;
 
 public static class BuildManager {
-	const string butlerRelativePath = @"Plugins/GameTemplate/Editor/BuildManager/butler/butler.exe";
+	const string butlerRelativePath = @"Plugins/Editor/BuildManager/BuildManager/butler/butler.exe";
 	static DateTime usedDate;
 
 	public static void RunBuildSequnce(BuildManagerSettings settings, BuildSequence sequence, ChangelogData changelog) {
