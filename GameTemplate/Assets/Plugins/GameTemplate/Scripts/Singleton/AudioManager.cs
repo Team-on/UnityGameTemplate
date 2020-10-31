@@ -51,6 +51,9 @@ public class AudioManager : Singleton<AudioManager> {
 	public float crossfadeTime = 2.0f;
 	public float muteTime = 0.25f;
 
+	[Header("Misc settings")]
+	public float minTimeBetweenSfx = 0.1f;
+
 	[Header("Default settings")]
 	public float defaultMasterVolume = 0.75f;
 	public float defaultMusicVolume = 1;
@@ -62,9 +65,12 @@ public class AudioManager : Singleton<AudioManager> {
 	AudioClip lastMusicClip;
 	float lastMusicVolume;
 
+	private Dictionary<AudioClip, float> audioPlayedTracker;
+
 	protected override void Initialize() {
 		base.Initialize();
 
+		audioPlayedTracker = new Dictionary<AudioClip, float>();
 		musicAudioSources = new Dictionary<AudioClip, AudioSource>();
 		lastMusicClip = currMusicClip = null;
 		lastMusicVolume = 0.0f;
@@ -230,7 +236,7 @@ public class AudioManager : Singleton<AudioManager> {
 	//--------------------------------------------------------------------------------------
 	//2D sound
 	public AudioSource Play(AudioClip clip, Transform emitter, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
-		if (!IsEnabled && channel != AudioChannel.Music)
+		if ((!IsEnabled && channel != AudioChannel.Music) || (GetSinceLastPlayed(clip) > minTimeBetweenSfx))
 			return null;
 		AudioSource source = CreatePlaySource(clip, emitter, volume, pitch, playDelay, channel);
 		Destroy(source.gameObject, clip.length + 1.0f);
@@ -238,7 +244,7 @@ public class AudioManager : Singleton<AudioManager> {
 	}
 
 	public AudioSource Play(AudioClip clip, Vector3 point, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
-		if (!IsEnabled && channel != AudioChannel.Music)
+		if ((!IsEnabled && channel != AudioChannel.Music) || (GetSinceLastPlayed(clip) > minTimeBetweenSfx))
 			return null;
 		AudioSource source = CreatePlaySource(clip, point, volume, pitch, playDelay, channel);
 		Destroy(source.gameObject, clip.length + 1.0f);
@@ -246,7 +252,7 @@ public class AudioManager : Singleton<AudioManager> {
 	}
 
 	public AudioSource Play(AudioClip clip, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
-		if (!IsEnabled && channel != AudioChannel.Music)
+		if ((!IsEnabled && channel != AudioChannel.Music) || (GetSinceLastPlayed(clip) < minTimeBetweenSfx))
 			return null;
 		AudioSource source = CreatePlaySource(clip, Vector3.zero, volume, pitch, playDelay, channel);
 		Destroy(source.gameObject, clip.length + 1.0f);
@@ -281,6 +287,8 @@ public class AudioManager : Singleton<AudioManager> {
 		source.pitch = pitch;
 		source.outputAudioMixerGroup = GetAudioMixer(channel);
 
+		SetLastPlayedTime(clip);
+
 		return source;
 	}
 
@@ -288,7 +296,7 @@ public class AudioManager : Singleton<AudioManager> {
 	//--------------------------------------------------------------------------------------
 	//3D sound
 	public AudioSource Play3D(AudioClip clip, Transform emitter, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
-		if (!IsEnabled && channel != AudioChannel.Music)
+		if ((!IsEnabled && channel != AudioChannel.Music) || (GetSinceLastPlayed(clip) < minTimeBetweenSfx))
 			return null;
 		AudioSource source = CreatePlaySource3D(clip, emitter, volume, pitch, playDelay, channel);
 		Destroy(source.gameObject, clip.length + 1.0f);
@@ -296,7 +304,7 @@ public class AudioManager : Singleton<AudioManager> {
 	}
 
 	public AudioSource Play3D(AudioClip clip, Vector3 point, float volume = 1.0f, float pitch = 1.0f, float playDelay = 0.0f, AudioChannel channel = AudioChannel.Sound) {
-		if (!IsEnabled && channel != AudioChannel.Music)
+		if ((!IsEnabled && channel != AudioChannel.Music) || (GetSinceLastPlayed(clip) < minTimeBetweenSfx))
 			return null;
 		AudioSource source = CreatePlaySource3D(clip, point, volume, pitch, playDelay, channel);
 		Destroy(source.gameObject, clip.length + 1.0f);
@@ -343,6 +351,8 @@ public class AudioManager : Singleton<AudioManager> {
 		source.rolloffMode = AudioRolloffMode.Custom;
 		source.SetCustomCurve(AudioSourceCurveType.CustomRolloff, volumeRolloff);
 		source.SetCustomCurve(AudioSourceCurveType.Spread, spread);
+
+		SetLastPlayedTime(clip);
 
 		return source;
 	}
@@ -391,10 +401,24 @@ public class AudioManager : Singleton<AudioManager> {
 			}
 			else {
 				LeanTween.value(source.gameObject, source.volume, volume, time)
+				.setIgnoreTimeScale(true)
 				.setOnUpdate((float v) => {
 					source.volume = v;
 				});
 			}
 		}
+	}
+
+	float GetSinceLastPlayed(AudioClip clip) {
+		if (audioPlayedTracker.TryGetValue(clip, out var lastPlayedTime))
+			return (Time.unscaledTime - lastPlayedTime);
+		return float.MaxValue;
+	}
+
+	void SetLastPlayedTime(AudioClip clip) {
+		if (audioPlayedTracker.TryGetValue(clip, out var lastPlayedTime)) 
+			audioPlayedTracker[clip] = Time.unscaledTime;
+		else 
+			audioPlayedTracker.Add(clip, Time.unscaledTime);
 	}
 }
