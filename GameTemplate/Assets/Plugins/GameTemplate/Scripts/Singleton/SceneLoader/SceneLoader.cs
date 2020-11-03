@@ -71,7 +71,8 @@ public class SceneLoader : Singleton<SceneLoader> {
 				eventData_.Data.Add("loader", loader);
 				TemplateGameManager.Instance.Events.CallOnSceneLoadEnd(eventData_);
 				TransitionManager.Instance.ChangeDefaultEffectTypeToOpposite();
-				TransitionManager.Instance.StartTransitonEffectOut();
+				if(!needUI)
+					TransitionManager.Instance.StartTransitonEffectOut();
 			};
 		}
 	}

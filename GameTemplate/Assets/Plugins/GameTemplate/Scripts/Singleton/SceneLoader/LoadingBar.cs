@@ -89,7 +89,6 @@ public class LoadingBar : MonoBehaviour {
 			return;
 		if(loadingBarRoutine != null)
 			StopCoroutine(loadingBarRoutine);
-
 		
 		LeanTweenEx.ChangeAlpha(pressAnyKeyText, 1.0f, 0.5f).setIgnoreTimeScale(true)
 		.setOnComplete(()=> {
@@ -158,6 +157,8 @@ public class LoadingBar : MonoBehaviour {
 
 			DisableCanvasGroup();
 			yield return null;
+
+			TransitionManager.Instance.StartTransitonEffectOut();
 
 			sceneId = -1;
 			loader = null;
