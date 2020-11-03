@@ -1,9 +1,8 @@
-# Unity Game Template (On active development. Use on your own risk)
-**Game Template** is all necessary stuff taken care for Unity users not to worry about creating most boring and tedious work.  
-I'd be happy for any contribution to make this template as good as it can be.  
-
+# Unity Game Template
+**Game Template** is all necessary stuff taken care for Unity users not to worry about creating most boring and tedious work. I'd be happy for any contribution to make this template as good as it can be.
+Mainly includes usedfull custom windows, extensions methods, popular assets and basic UI
 ## Used assets/tools:
-( Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md)
+Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md. These are not all changes to assets, because sometimes I forgot to update this file.
 
 ### Editor windows:
 #### New windows:
