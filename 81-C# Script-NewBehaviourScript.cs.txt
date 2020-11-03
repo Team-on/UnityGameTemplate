@@ -9,11 +9,11 @@ using NaughtyAttributes;
 using Random = UnityEngine.Random;
 
 public class #SCRIPTNAME# : MonoBehaviour {
-  void Start() {
-    #NOTRIM#
-  }
+	void Start() {
+	#NOTRIM#
+	}
 
-  void Update() {
-    #NOTRIM#
-  }
+	void Update() {
+		#NOTRIM#
+	}
 }
