@@ -5,6 +5,8 @@
     "com.unity.build-report-inspector": "0.2.2-preview",
     "com.unity.cinemachine": "2.5.0",
     "com.unity.inputsystem": "1.1.0-preview.1",
+    "com.unity.memoryprofiler": "0.2.6-preview.1",
+    "com.unity.performance.profile-analyzer": "1.0.3",
     "com.unity.postprocessing": "2.3.0",
     "com.unity.textmeshpro": "2.0.1",
     "com.unity.timeline": "1.2.17",
