@@ -6,7 +6,6 @@ Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md. T
 
 ### Editor windows:
 #### New windows:
- * [Editor Spotlight](https://github.com/Team-on/unity-editor-spotlight)
  * [Project Curator](https://github.com/ogxd/project-curator)
  * [PlayersPrefs Editor and Utilities](https://assetstore.unity.com/packages/tools/playersprefs-editor-and-utilities-26656)
  * [SubAsset Drag And Drop](https://github.com/Maligan/unity-subassets-drag-and-drop)
