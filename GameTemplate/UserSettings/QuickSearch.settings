@@ -16,7 +16,7 @@ filters = {
 	asset = true
 }
 scopes = {
-	"last_search.AB59B443" = "texturemaker"
+	"last_search.AB59B443" = "reserial"
 }
 providers = {
 	asset = {
