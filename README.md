@@ -17,6 +17,8 @@ Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md. T
  * [Screen shooter](https://github.com/Team-on/UnityScreenShooter)
  * [Build Manager](https://github.com/Team-on/UnityBuildManager)
  * [Pump Editor](https://github.com/rfadeev/pump-editor)
+ * [Texture Maker](https://github.com/M-Fatah/texture_maker)
+ 
 #### Existing windows extensions:
  * [Custom Toolbar](https://github.com/Team-on/CustomToolbar)
  * [Hierarchy Highlighter](https://github.com/2irate2migrate/HierarchyHighlighter)
