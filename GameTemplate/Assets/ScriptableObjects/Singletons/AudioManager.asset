@@ -70,6 +70,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   crossfadeTime: 2
   muteTime: 0.25
+  minTimeBetweenSfx: 0.1
   defaultMasterVolume: 0.75
   defaultMusicVolume: 1
   defaultSoundVolume: 1

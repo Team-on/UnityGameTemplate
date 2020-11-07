@@ -16,7 +16,7 @@ filters = {
 	asset = true
 }
 scopes = {
-	"last_search.AB59B443" = "test"
+	"last_search.AB59B443" = "texturemaker"
 }
 providers = {
 	asset = {
@@ -29,14 +29,39 @@ providers = {
 		priority = 100
 		defaultAction = null
 	}
+	scene = {
+		active = true
+		priority = 50
+		defaultAction = null
+	}
 	object = {
 		active = true
 		priority = 55
 		defaultAction = null
 	}
-	scene = {
+	settings = {
 		active = true
-		priority = 50
+		priority = 100
+		defaultAction = null
+	}
+	menu = {
+		active = true
+		priority = 80
+		defaultAction = null
+	}
+	calculator = {
+		active = true
+		priority = 10
+		defaultAction = null
+	}
+	res = {
+		active = true
+		priority = 100
+		defaultAction = null
+	}
+	help = {
+		active = true
+		priority = -1
 		defaultAction = null
 	}
 	packages = {
@@ -49,34 +74,9 @@ providers = {
 		priority = 210
 		defaultAction = null
 	}
-	menu = {
-		active = true
-		priority = 80
-		defaultAction = null
-	}
-	settings = {
-		active = true
-		priority = 100
-		defaultAction = null
-	}
-	help = {
-		active = true
-		priority = -1
-		defaultAction = null
-	}
-	calculator = {
-		active = true
-		priority = 10
-		defaultAction = null
-	}
 	static_methods = {
 		active = true
 		priority = 85
-		defaultAction = null
-	}
-	res = {
-		active = true
-		priority = 100
 		defaultAction = null
 	}
 }

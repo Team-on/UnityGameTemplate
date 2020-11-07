@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19297eb15034c464993a85251aad48be, type: 3}
   m_Name: TemplateGameManager
   m_EditorClassIdentifier: 
-  buildNameString: 
-  productName: 
+  buildNameString: 0.1 - Set changelog header in build window(ALT+B)
+  productName: GameTemplate
   uiinput: {fileID: 0}
   eventSystem: {fileID: 0}
   inputSystem: {fileID: 0}
