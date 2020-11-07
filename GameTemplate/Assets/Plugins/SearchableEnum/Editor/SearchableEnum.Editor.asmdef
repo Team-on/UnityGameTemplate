@@ -1,0 +1,17 @@
+{
+    "name": "SearchableEnum.Editor",
+    "references": [
+        "GUID:3780be22e9781d54699b310c834b6d19"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

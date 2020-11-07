@@ -49,6 +49,7 @@ Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md. T
   * [NaughtyAttributes](https://github.com/dbrizov/NaughtyAttributes/)
   * [Forge Property Drawers](https://github.com/rfadeev/unity-forge-property-drawers)
   * [One line](https://github.com/slavniyteo/one-line)
+  * [Searchable Enum](https://github.com/roboryantron/UnityEditorJunkie)
   
 ### WebGL:
   * [Better Minimal WebGL Template](https://seansleblanc.itch.io/better-minimal-webgl-template)
