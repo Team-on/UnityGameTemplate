@@ -24,6 +24,7 @@ Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md. T
  * [Empty At Zero Creator](https://assetstore.unity.com/packages/tools/utilities/empty-at-zero-creator-97576)
  * [Hierarchy 2](https://assetstore.unity.com/packages/tools/utilities/hierarchy-2-166483)
  * [Project Window Details](https://github.com/Team-on/ProjectWindowDetails)
+ * [PrefabPainter2D ](https://gist.github.com/SiarheiPilat/5f4ce26297492341c5d2d40a0e3902cf)
  
  ### Tweening:
   * [LeanTween](https://assetstore.unity.com/packages/tools/animation/leantween-3595)
