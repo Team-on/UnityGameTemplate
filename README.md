@@ -57,7 +57,8 @@ Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md. T
   * [System Calc](https://github.com/LightGive/SystemCalc)
   * [yaSingleton](https://github.com/jedybg/yaSingleton)
   * [Rect Extensions](https://github.com/slavniyteo/rect-ex)
-  * [Transition Manager](https://github.com/LightGive/TransitionManager  )
+  * [Transition Manager](https://github.com/LightGive/TransitionManager)
+  * [NewObjectBottomOfHierarchy.cs](https://gist.github.com/SiarheiPilat/4ed2c47a8d0882f266d676afd4b4fa48)
   
  ### Other:
  * [DotNetZip](https://archive.codeplex.com/?p=DotNetZip)
