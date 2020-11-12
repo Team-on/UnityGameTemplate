@@ -66,6 +66,7 @@ Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md. T
   * [Transition Manager](https://github.com/LightGive/TransitionManager)
   * [NewObjectBottomOfHierarchy.cs](https://gist.github.com/SiarheiPilat/4ed2c47a8d0882f266d676afd4b4fa48)
   * [UnityConstantsGenerator](https://github.com/nickgravelyn/UnityToolbag/blob/master/UnityConstants/Editor/UnityConstantsGenerator.cs)
+  * [UIParticleSystem ](https://gitlab.com/Dimonik333/uiparticlesystem)
   
  ### Other:
  * [DotNetZip](https://archive.codeplex.com/?p=DotNetZip)
