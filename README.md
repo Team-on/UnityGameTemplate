@@ -1,8 +1,8 @@
 # Unity Game Template
-**Game Template** is all necessary stuff taken care for Unity users not to worry about creating most boring and tedious work. I'd be happy for any contribution to make this template as good as it can be.
+**Game Template** is all necessary stuff taken care for Unity users not to worry about creating most boring and tedious work. I'd be happy for any contribution to make this template as good as it can be.  
 Mainly includes usedfull custom windows, extensions methods, popular assets and basic UI
 ## Used assets/tools:
-Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md. These are not all changes to assets, because sometimes I forgot to update this file.
+Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. These are not all changes to assets, because sometimes I forgot to update this file.
 
 ### Editor windows:
 #### New windows:
@@ -28,7 +28,8 @@ Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md. T
  * [Hierarchy 2](https://assetstore.unity.com/packages/tools/utilities/hierarchy-2-166483)
  * [Project Window Details](https://github.com/Team-on/ProjectWindowDetails)
  * [PrefabPainter2D ](https://gist.github.com/SiarheiPilat/5f4ce26297492341c5d2d40a0e3902cf)
- * [Scene Asset SelectorScene Asset Selector](https://github.com/baba-s/UniSceneAssetSelector)
+ * [Scene Asset Selector](https://github.com/baba-s/UniSceneAssetSelector)
+ * [NewObjectBottomOfHierarchy.cs](https://gist.github.com/SiarheiPilat/4ed2c47a8d0882f266d676afd4b4fa48)
  
  ### Tweening:
   * [LeanTween](https://assetstore.unity.com/packages/tools/animation/leantween-3595)
@@ -64,12 +65,11 @@ Some assets was reworked, see changelog in Assets\Thirdparty\CustomChanges.md. T
   * [yaSingleton](https://github.com/jedybg/yaSingleton)
   * [Rect Extensions](https://github.com/slavniyteo/rect-ex)
   * [Transition Manager](https://github.com/LightGive/TransitionManager)
-  * [NewObjectBottomOfHierarchy.cs](https://gist.github.com/SiarheiPilat/4ed2c47a8d0882f266d676afd4b4fa48)
   * [UnityConstantsGenerator](https://github.com/nickgravelyn/UnityToolbag/blob/master/UnityConstants/Editor/UnityConstantsGenerator.cs)
   * [UIParticleSystem ](https://gitlab.com/Dimonik333/uiparticlesystem)
   
- ### Other:
- * [DotNetZip](https://archive.codeplex.com/?p=DotNetZip)
- * [butler](https://itch.io/docs/butler/)
+ ### Other plugins/executables:
+ * [DotNetZip](https://archive.codeplex.com/?p=DotNetZip) - used to compress builds to .zip
+ * [butler](https://itch.io/docs/butler/) - used to push build to itch.io
    
 Check out [wiki](https://github.com/Team-on/UnityGameTemplate/wiki) for additional information
