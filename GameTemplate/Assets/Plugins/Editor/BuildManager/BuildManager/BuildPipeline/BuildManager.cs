@@ -51,7 +51,7 @@ public static class BuildManager {
 				data.isReleaseBuild
 			);
 
-			
+
 		}
 
 		EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroupBeforeStart, targetBeforeStart);
@@ -86,7 +86,7 @@ public static class BuildManager {
 			if (!sequence.builds[i].needZip || !sequence.builds[i].isEnabled)
 				continue;
 
-			if(sequence.builds[i].target == BuildTarget.Android) {
+			if (sequence.builds[i].target == BuildTarget.Android) {
 				Debug.Log("Skip android build to .zip, because .apk files already compressed");
 				continue;
 			}
@@ -118,7 +118,7 @@ public static class BuildManager {
 		ShowExplorer(sequence.builds[sequence.builds.Count - 1].outputRoot);
 	}
 
-#region Convert to strings
+	#region Convert to strings
 	public static string GetPathWithVars(BuildData data, string s) {
 		s = s.Replace("$NAME", GetProductName());
 		s = s.Replace("$PLATFORM", ConvertBuildTargetToString(data.target));
@@ -175,9 +175,9 @@ public static class BuildManager {
 		}
 		return "";
 	}
-#endregion
+	#endregion
 
-#region Base methods
+	#region Base methods
 	static string BaseBuild(BuildTargetGroup buildTargetGroup, BuildTarget buildTarget, BuildOptions buildOptions, string buildPath, string definesSymbols, bool isPassbyBuild, bool isReleaseBuild) {
 		if (isPassbyBuild) {
 			return buildPath;
@@ -192,7 +192,7 @@ public static class BuildManager {
 				case BuildTargetGroup.Standalone:
 					buildOptions |= BuildOptions.CompressWithLz4;
 
-					if(buildTarget == BuildTarget.StandaloneWindows || buildTarget == BuildTarget.StandaloneWindows64)
+					if (buildTarget == BuildTarget.StandaloneWindows || buildTarget == BuildTarget.StandaloneWindows64 || buildTarget == BuildTarget.StandaloneLinux64)
 						PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.IL2CPP);
 					else
 						PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.Mono2x);
