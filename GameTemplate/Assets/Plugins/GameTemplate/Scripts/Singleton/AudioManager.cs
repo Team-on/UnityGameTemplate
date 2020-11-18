@@ -61,11 +61,11 @@ public class AudioManager : Singleton<AudioManager> {
 	public bool defaultEnabled = true;
 
 	Dictionary<AudioClip, AudioSource> musicAudioSources;
+	Dictionary<AudioClip, float> audioPlayedTracker;
+
 	AudioClip currMusicClip;
 	AudioClip lastMusicClip;
 	float lastMusicVolume;
-
-	private Dictionary<AudioClip, float> audioPlayedTracker;
 
 	protected override void Initialize() {
 		base.Initialize();
