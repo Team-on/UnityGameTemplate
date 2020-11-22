@@ -690,10 +690,10 @@ PlayerSettings:
   platformArchitecture: {}
   scriptingBackend:
     Android: 1
-    Standalone: 1
+    Standalone: 0
   il2cppCompilerConfiguration:
     Android: 2
-    Standalone: 2
+    Standalone: 0
     WebGL: 2
   managedStrippingLevel:
     Android: 2

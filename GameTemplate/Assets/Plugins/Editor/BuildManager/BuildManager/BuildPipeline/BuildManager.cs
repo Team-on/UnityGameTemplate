@@ -14,9 +14,12 @@ public static class BuildManager {
 	const string butlerRelativePath = @"Plugins/Editor/BuildManager/BuildManager/butler/butler.exe";
 	static DateTime usedDate;
 
+	static string buildNameString;
+	static string[] buildsPath;
+
 	public static void RunBuildSequnce(BuildManagerSettings settings, BuildSequence sequence, ChangelogData changelog) {
 		// Start init
-		string buildNameString = $"{PlayerSettings.bundleVersion} - {changelog.updateName}";
+		buildNameString = $"{PlayerSettings.bundleVersion} - {changelog.updateName}";
 #if GAME_TEMPLATE
 		TemplateGameManager.InstanceEditor.buildNameString = buildNameString;
 		TemplateGameManager.InstanceEditor.productName = PlayerSettings.productName;
@@ -26,12 +29,26 @@ public static class BuildManager {
 
 		Debug.Log("Start building all");
 		DateTime startTime = DateTime.Now;
+		
+		Build(settings, sequence);
+		PostBuild(sequence);
+		Compress(sequence);
+		ItchioPush(sequence, changelog);
+
+		Debug.Log($"End building all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
+
+#if UNITY_EDITOR_WIN
+		ShowExplorer(sequence.builds[sequence.builds.Count - 1].outputRoot);
+#endif
+	}
+
+	static void Build(BuildManagerSettings settings, BuildSequence sequence) {
 		BuildTarget targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
 		BuildTargetGroup targetGroupBeforeStart = BuildPipeline.GetBuildTargetGroup(targetBeforeStart);
 		string definesBeforeStart = PlayerSettings.GetScriptingDefineSymbolsForGroup(targetGroupBeforeStart);
 		bool isVRSupported = PlayerSettings.virtualRealitySupported;    //TODO: PlayerSettings.virtualRealitySupported is deprecated. Replace with smth new	
 
-		string[] buildsPath = new string[sequence.builds.Count];
+		buildsPath = new string[sequence.builds.Count];
 		for (byte i = 0; i < sequence.builds.Count; ++i) {
 			BuildData data = sequence.builds[i];
 
@@ -51,22 +68,18 @@ public static class BuildManager {
 				data.isReleaseBuild
 			);
 
-			
+
 		}
 
 		EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroupBeforeStart, targetBeforeStart);
 		PlayerSettings.SetScriptingDefineSymbolsForGroup(targetGroupBeforeStart, definesBeforeStart);
 		PlayerSettings.virtualRealitySupported = isVRSupported;
-		Debug.Log($"End building all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
+	}
 
+	static void PostBuild(BuildSequence sequence) {
 		for (byte i = 0; i < sequence.builds.Count; ++i) {
-			if (!sequence.builds[i].needZip || !sequence.builds[i].isEnabled)
+			if (!sequence.builds[i].isEnabled)
 				continue;
-
-			if (sequence.builds[i].target == BuildTarget.Android) {
-				Debug.Log("Skip android build to .zip, because .apk files already compressed");
-				continue;
-			}
 
 			if (!string.IsNullOrEmpty(buildsPath[i])) {
 				if (sequence.builds[i].isReleaseBuild) {  //Destroy IL2CPP junk after build
@@ -76,17 +89,33 @@ public static class BuildManager {
 					foreach (var dir in il2cppDirs)
 						Directory.Delete(dir, true);
 				}
+
+#if UNITY_EDITOR_WIN
+				//https://forum.unity.com/threads/mac-unity-build-from-a-pc-not-opening-on-mac.947727/
+				//Use git bash to execute this command
+				if (sequence.builds[i].target == BuildTarget.StandaloneOSX) {
+					Debug.Log($"chmod -R 777 {sequence.builds[i].outputRoot + GetPathWithVars(sequence.builds[i], sequence.builds[i].middlePath)}.app");
+
+					Process process = new Process() {
+						StartInfo = new ProcessStartInfo {
+							WindowStyle = ProcessWindowStyle.Hidden,
+							FileName = "cmd.exe",
+							Arguments = $"start \"\" \" %PROGRAMFILES%\\Git\\bin\\sh.exe\" --chmod -R 777 {sequence.builds[i].outputRoot + GetPathWithVars(sequence.builds[i], sequence.builds[i].middlePath)}.app",
+						},
+					};
+					process.Start();
+				}
+#endif
 			}
 		}
+	}
 
-		startTime = DateTime.Now;
-		Debug.Log($"Start compressing all");
-
+	static void Compress(BuildSequence sequence) {
 		for (byte i = 0; i < sequence.builds.Count; ++i) {
 			if (!sequence.builds[i].needZip || !sequence.builds[i].isEnabled)
 				continue;
 
-			if(sequence.builds[i].target == BuildTarget.Android) {
+			if (sequence.builds[i].target == BuildTarget.Android) {
 				Debug.Log("Skip android build to .zip, because .apk files already compressed");
 				continue;
 			}
@@ -96,10 +125,9 @@ public static class BuildManager {
 			else
 				Debug.LogWarning($"[Compressing] Can't find build for {GetBuildTargetExecutable(sequence.builds[i].target)}");
 		}
+	}
 
-		Debug.Log($"End compressing all. Elapsed time: {string.Format("{0:mm\\:ss}", DateTime.Now - startTime)}");
-
-
+	static void ItchioPush(BuildSequence sequence, ChangelogData changelog) {
 		for (byte i = 0; i < sequence.builds.Count; ++i) {
 			if (!sequence.builds[i].needItchPush || !sequence.builds[i].isEnabled)
 				continue;
@@ -114,11 +142,9 @@ public static class BuildManager {
 				Debug.LogWarning($"[Itch.io push] Can't find build for {GetBuildTargetExecutable(sequence.builds[i].target)}");
 			}
 		}
-
-		ShowExplorer(sequence.builds[sequence.builds.Count - 1].outputRoot);
 	}
 
-#region Convert to strings
+	#region Convert to strings
 	public static string GetPathWithVars(BuildData data, string s) {
 		s = s.Replace("$NAME", GetProductName());
 		s = s.Replace("$PLATFORM", ConvertBuildTargetToString(data.target));
@@ -175,9 +201,9 @@ public static class BuildManager {
 		}
 		return "";
 	}
-#endregion
+	#endregion
 
-#region Base methods
+	#region Base methods
 	static string BaseBuild(BuildTargetGroup buildTargetGroup, BuildTarget buildTarget, BuildOptions buildOptions, string buildPath, string definesSymbols, bool isPassbyBuild, bool isReleaseBuild) {
 		if (isPassbyBuild) {
 			return buildPath;
@@ -192,7 +218,7 @@ public static class BuildManager {
 				case BuildTargetGroup.Standalone:
 					buildOptions |= BuildOptions.CompressWithLz4;
 
-					if(buildTarget == BuildTarget.StandaloneWindows || buildTarget == BuildTarget.StandaloneWindows64)
+					if (buildTarget == BuildTarget.StandaloneWindows || buildTarget == BuildTarget.StandaloneWindows64)
 						PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.IL2CPP);
 					else
 						PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.Mono2x);
@@ -314,6 +340,6 @@ public static class BuildManager {
 
 	static void ShowExplorer(string itemPath) {
 		itemPath = itemPath.Replace(@"/", @"\");   // explorer doesn't like front slashes
-		System.Diagnostics.Process.Start("explorer.exe", "/select," + itemPath);
+		Process.Start("explorer.exe", "/select," + itemPath);
 	}
 }
