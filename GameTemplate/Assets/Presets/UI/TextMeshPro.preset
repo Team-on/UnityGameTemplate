@@ -190,16 +190,20 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_StyleSheet
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TextStyleHashCode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_overrideHtmlColors
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_faceColor.rgba
     value: 4294967295
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_outlineColor.rgba
-    value: 4278190080
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_fontSize
@@ -228,6 +232,14 @@ Preset:
   - target: {fileID: 0}
     propertyPath: m_fontStyle
     value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_HorizontalAlignment
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_VerticalAlignment
+    value: 256
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_textAlignment
@@ -270,20 +282,12 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_firstOverflowCharacterIndex
-    value: -1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
     propertyPath: m_linkedTextComponent
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_isLinkedTextComponent
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_isTextTruncated
-    value: 0
+    propertyPath: parentLinkedComponent
+    value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_enableKerning
@@ -314,14 +318,6 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_ignoreRectMaskCulling
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_ignoreCulling
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
     propertyPath: m_horizontalMapping
     value: 0
     objectReference: {fileID: 0}
@@ -338,12 +334,12 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_VertexBufferAutoSizeReduction
-    value: 1
+    propertyPath: m_IsTextObjectScaleStatic
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_firstVisibleCharacter
-    value: 0
+    propertyPath: m_VertexBufferAutoSizeReduction
+    value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_useMaxVisibleDescender
@@ -370,52 +366,12 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_textInfo.textComponent
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_textInfo.characterCount
-    value: 11
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_textInfo.spriteCount
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_textInfo.spaceCount
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_textInfo.wordCount
-    value: 2
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_textInfo.linkCount
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_textInfo.lineCount
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_textInfo.pageCount
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_textInfo.materialCount
-    value: 1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
     propertyPath: m_isUsingLegacyAnimationComponent
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_isVolumetricText
     value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_spriteAnimator
-    value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_hasFontAssetChanged
@@ -426,42 +382,18 @@ Preset:
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_subTextObjects.Array.size
-    value: 8
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_subTextObjects.Array.data[0]
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_subTextObjects.Array.data[1]
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_subTextObjects.Array.data[2]
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_subTextObjects.Array.data[3]
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_subTextObjects.Array.data[4]
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_subTextObjects.Array.data[5]
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_subTextObjects.Array.data[6]
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_subTextObjects.Array.data[7]
-    value: 
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
     propertyPath: m_maskType
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _SortingLayer
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _SortingLayerID
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _SortingOrder
     value: 0
     objectReference: {fileID: 0}

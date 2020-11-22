@@ -202,6 +202,10 @@ Preset:
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_LayoutGroup
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_ScrollSensitivity
     value: 1
     objectReference: {fileID: 0}

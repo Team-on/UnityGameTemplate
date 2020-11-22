@@ -15,7 +15,7 @@ MonoBehaviour:
   sequences:
   - isEnabled: 1
     editorName: Testing
-    itchGameLink: teamon/BuildManager
+    itchGameLink: teamon/GameTemplate
     scriptingDefineSymbolsOverride: 
     builds:
     - isEnabled: 1
@@ -152,7 +152,7 @@ MonoBehaviour:
       needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Testing + zip
-    itchGameLink: teamon/BuildManager
+    itchGameLink: teamon/GameTemplate
     scriptingDefineSymbolsOverride: 
     builds:
     - isEnabled: 1
@@ -289,7 +289,7 @@ MonoBehaviour:
       needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Passby local release
-    itchGameLink: teamon/BuildManager
+    itchGameLink: teamon/GameTemplate
     scriptingDefineSymbolsOverride: 
     builds:
     - isEnabled: 1
@@ -426,7 +426,7 @@ MonoBehaviour:
       needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Release
-    itchGameLink: teamon/BuildManager
+    itchGameLink: teamon/GameTemplate
     scriptingDefineSymbolsOverride: 
     builds:
     - isEnabled: 1
@@ -563,7 +563,7 @@ MonoBehaviour:
       needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Release + zip
-    itchGameLink: teamon/BuildManager
+    itchGameLink: teamon/GameTemplate
     scriptingDefineSymbolsOverride: 
     builds:
     - isEnabled: 1
@@ -700,7 +700,7 @@ MonoBehaviour:
       needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Release full
-    itchGameLink: teamon/BuildManager
+    itchGameLink: teamon/GameTemplate
     scriptingDefineSymbolsOverride: 
     builds:
     - isEnabled: 1
@@ -837,7 +837,7 @@ MonoBehaviour:
       needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Testing win only
-    itchGameLink: teamon/BuildManager
+    itchGameLink: teamon/GameTemplate
     scriptingDefineSymbolsOverride: 
     builds:
     - isEnabled: 1

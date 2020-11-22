@@ -194,6 +194,10 @@ Preset:
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_Placeholder
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_ItemText
     value: 
     objectReference: {fileID: 0}
@@ -236,4 +240,8 @@ Preset:
   - target: {fileID: 0}
     propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
     value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_AlphaFadeSpeed
+    value: 0.15
     objectReference: {fileID: 0}

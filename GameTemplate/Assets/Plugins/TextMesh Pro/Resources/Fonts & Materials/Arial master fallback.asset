@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hashCode: -1137161241
   material: {fileID: 5337504327915629285}
-  materialHashCode: -1231909748
+  materialHashCode: -1210552857
   m_Version: 1.1.0
   m_SourceFontFileGUID: 1af33167b4988514aa1c799e121b8430
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 1af33167b4988514aa1c799e121b8430,
@@ -6602,6 +6602,8 @@ MonoBehaviour:
   m_AtlasTextures:
   - {fileID: 968883910466216931}
   m_AtlasTextureIndex: 0
+  m_IsMultiAtlasTexturesEnabled: 0
+  m_ClearDynamicDataOnBuild: 0
   m_UsedGlyphRects:
   - m_X: 0
     m_Y: 0
