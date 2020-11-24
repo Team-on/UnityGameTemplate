@@ -7,13 +7,13 @@
              rigidbody2D.AddForce (force);
              break;
          case ForceMode2DEx.Impulse:
-             rigidbody2D.AddForce (force / Time.fixedDeltaTime);
+             rigidbody2D.AddForce (force / Time.deltaTime);
              break;
          case ForceMode2DEx.Acceleration:
              rigidbody2D.AddForce (force * rigidbody2D.mass);
              break;
          case ForceMode2DEx.VelocityChange:
-             rigidbody2D.AddForce (force * rigidbody2D.mass / Time.fixedDeltaTime);
+             rigidbody2D.AddForce (force * rigidbody2D.mass / Time.deltaTime);
              break;
          }
      }
@@ -24,13 +24,13 @@
                 rigidbody2D.AddRelativeForce(force);
                 break;
             case ForceMode2DEx.Impulse:
-                rigidbody2D.AddRelativeForce(force / Time.fixedDeltaTime);
+                rigidbody2D.AddRelativeForce(force / Time.deltaTime);
                 break;
             case ForceMode2DEx.Acceleration:
                 rigidbody2D.AddRelativeForce(force * rigidbody2D.mass);
                 break;
             case ForceMode2DEx.VelocityChange:
-                rigidbody2D.AddRelativeForce(force * rigidbody2D.mass / Time.fixedDeltaTime);
+                rigidbody2D.AddRelativeForce(force * rigidbody2D.mass / Time.deltaTime);
                 break;
         }
     }
