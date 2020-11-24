@@ -73,3 +73,49 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 		mainCamera = Camera.main;
 	}
 }
+
+#if UNITY_EDITOR
+
+[UnityEditor.InitializeOnLoad]
+class SingletoneImporter {
+	static UnityEngine.Object[] assets = null;
+	static UnityEngine.Object selectedBefore = null;
+	static int i = 0;
+	static bool isSubscribeBefore = false;
+
+	static SingletoneImporter() {
+		if (!isSubscribeBefore && UnityEditor.EditorApplication.timeSinceStartup < 30f) {
+			isSubscribeBefore = true;
+			UnityEditor.EditorApplication.update += Update;
+		}
+	}
+
+	static void Update() {
+		ImportSingletons();
+	}
+
+	static void ImportSingletons() {
+		if(assets == null) {
+			Debug.Log("Init singletons");
+			
+			string[] guids = UnityEditor.AssetDatabase.FindAssets("t:scriptableobject", new[] { "Assets/ScriptableObjects/Singletons" });
+			assets = new UnityEngine.Object[guids.Length];
+
+			for(int i = 0; i < assets.Length; ++i) {
+				assets[i] = UnityEditor.AssetDatabase.LoadMainAssetAtPath(UnityEditor.AssetDatabase.GUIDToAssetPath(guids[i]));
+			}
+
+			selectedBefore = UnityEditor.Selection.activeObject;
+		}
+
+		if(i == assets.Length) {
+			UnityEditor.EditorApplication.update -= Update;
+			UnityEditor.Selection.activeObject = selectedBefore;
+		}
+		else {
+			UnityEditor.Selection.activeObject = assets[i++];
+		}
+	}
+}
+
+#endif
