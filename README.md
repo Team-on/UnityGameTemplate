@@ -66,7 +66,9 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
   * [Rect Extensions](https://github.com/slavniyteo/rect-ex)
   * [Transition Manager](https://github.com/LightGive/TransitionManager)
   * [UnityConstantsGenerator](https://github.com/nickgravelyn/UnityToolbag/blob/master/UnityConstants/Editor/UnityConstantsGenerator.cs)
-  * [UIParticleSystem ](https://gitlab.com/Dimonik333/uiparticlesystem)
+  * [UIParticleSystem](https://gitlab.com/Dimonik333/uiparticlesystem)
+  * [Unity Forge Anim Callbacks](https://github.com/rfadeev/unity-forge-anim-callbacks)
+  * [Auto attach component via attributes](https://github.com/Nrjwolf/unity-auto-attach-component-attributes)
   
  ### Other plugins/executables:
  * [DotNetZip](https://archive.codeplex.com/?p=DotNetZip) - used to compress builds to .zip
