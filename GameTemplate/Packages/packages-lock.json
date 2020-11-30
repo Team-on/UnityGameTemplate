@@ -1,5 +1,84 @@
 {
   "dependencies": {
+    "com.baba-s.uni-scene-asset-selector": {
+      "version": "https://github.com/baba-s/UniSceneAssetSelector.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b1b47c769c6cb3e0abff24d6185be8fdaa0608ee"
+    },
+    "com.baste.playerloopinterface": {
+      "version": "https://github.com/Baste-RainGames/PlayerLoopInterface.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "deed8ab15d2fa1571de010333dbb93f24afb2f8e"
+    },
+    "com.dbrizov.naughtyattributes": {
+      "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6610c4be31942e323a3be910ac567ec528c78d0b"
+    },
+    "com.needle.compilation-visualizer": {
+      "version": "https://github.com/needle-tools/compilation-visualizer.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "921c62ed4e2ca34422bb2789c45a2bfbfec9271d"
+    },
+    "com.ogxd.project-curator": {
+      "version": "https://github.com/ogxd/project-curator.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5b808087070e9d327cf25488c7d8d785b40581b5"
+    },
+    "com.rfadeev.pumpeditor": {
+      "version": "https://github.com/rfadeev/pump-editor.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+      "hash": "4a62d2b3f8c9353bbad2726b310b391f8083acd7"
+    },
+    "com.rfadeev.pumpeditor.presetsbrowser": {
+      "version": "https://github.com/rfadeev/presets-browser.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ff29107cc301a5c1c7646cf16f199f2cc4f8375b"
+    },
+    "com.rfadeev.unityforge.animcallbacks": {
+      "version": "https://github.com/rfadeev/unity-forge-anim-callbacks.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "54ac3515ab2558edb50768c86e428ce188c6a199"
+    },
+    "com.rfadeev.unityforge.propertydrawers": {
+      "version": "https://github.com/rfadeev/unity-forge-property-drawers.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "1f0da3d5026fbe478585adb0cccc75f5e2dcf7fe"
+    },
+    "com.sabresaurus.playerprefseditor": {
+      "version": "https://github.com/sabresaurus/PlayerPrefsEditor.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5aa52c76f0a3da4b00c1fad8a9dcb7f76b4bbf23"
+    },
+    "com.smkplus.custom-toolbar": {
+      "version": "https://github.com/smkplus/CustomToolbar.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e21e67e86db7d74aaa986b3a8a7cd2497adb5c28"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
@@ -49,6 +128,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "2.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.performance.profile-analyzer": {
       "version": "1.0.3",
       "depth": 0,
@@ -92,6 +178,52 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.yasirkula.ingamedebugconsole": {
+      "version": "https://github.com/yasirkula/UnityIngameDebugConsole.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c047097bc3db64ac67749abd378305a06b02d924"
+    },
+    "io.megamiley.prefab-asset-utility": {
+      "version": "https://github.com/MileyHollenberg/PrefabAssetUtility.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "2.0.0"
+      },
+      "hash": "8c57b0ec4ce9463a34f61052ca7c2957e549ff4d"
+    },
+    "jp.setchi.fancyscrollview": {
+      "version": "https://github.com/setchi/FancyScrollView.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e5d10d3e5961848f93be43c2911344750b509a88"
+    },
+    "nrjwolf.games.attachattributes": {
+      "version": "https://github.com/Nrjwolf/unity-auto-attach-component-attributes.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e7cf3dd7390a58e3671ee70854bdd36e93095f4c"
+    },
+    "st.one-line": {
+      "version": "https://github.com/slavniyteo/one-line.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "st.rect-ex": "0.2.1"
+      },
+      "hash": "321188262e4cb7bfd8a5bf14611fd3dbeb37a98c"
+    },
+    "st.rect-ex": {
+      "version": "https://github.com/slavniyteo/rect-ex.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c8c32b33ce250aa927de7f6c79ae7c0b6eab36cb"
     },
     "com.unity.modules.androidjni": {
       "version": "1.0.0",

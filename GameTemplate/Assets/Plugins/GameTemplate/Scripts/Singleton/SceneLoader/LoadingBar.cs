@@ -14,7 +14,7 @@ public class LoadingBar : MonoBehaviour {
 
 	[Header("Timings")]
 	[Space]
-	[SerializeField] [MinMaxSlider(0.0f, 10.0f, false)] Vector2 additionalDelay = new Vector2(1.0f, 2.0f);
+	[SerializeField] [MinMaxSlider(0.0f, 10.0f)] Vector2 additionalDelay = new Vector2(1.0f, 2.0f);
 
 	[Header("Refs")]
 	[Space]

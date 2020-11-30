@@ -11,7 +11,7 @@ namespace Utils {
 
 		[Header("Drop forces")]
 		[Space]
-		[SerializeField] [MinMaxSlider(0, 10, false)] Vector2 dropForce = new Vector2(1, 3);
+		[SerializeField] [MinMaxSlider(0, 10)] Vector2 dropForce = new Vector2(1, 3);
 
 		[Header("This refs")]
 		[Space]
