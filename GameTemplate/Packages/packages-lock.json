@@ -79,6 +79,13 @@
       "dependencies": {},
       "hash": "e21e67e86db7d74aaa986b3a8a7cd2497adb5c28"
     },
+    "com.teamon.rainbowfolders": {
+      "version": "https://github.com/Team-on/unity3d-rainbow-folders.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d7b49f2c761b08ac7426ec692f96a5b4b747e9d7"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
@@ -108,6 +115,13 @@
     "com.unity.editorcoroutines": {
       "version": "1.0.0",
       "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ide.visualstudio": {
+      "version": "2.0.3",
+      "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -150,7 +164,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "2.1.3",
+      "version": "3.0.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -329,6 +343,18 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.uielementsnative": "1.0.0"
+      }
+    },
+    "com.unity.modules.uielementsnative": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
       }
