@@ -32,3 +32,4 @@ Preset:
     propertyPath: m_IgnoreParentGroups
     value: 0
     objectReference: {fileID: 0}
+  m_ExcludedProperties: []

@@ -69,3 +69,4 @@ Preset:
     propertyPath: m_DynamicPixelsPerUnit
     value: 1
     objectReference: {fileID: 0}
+  m_ExcludedProperties: []

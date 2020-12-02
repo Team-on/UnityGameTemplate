@@ -50,6 +50,22 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_RaycastPadding.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RaycastPadding.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RaycastPadding.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RaycastPadding.w
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_Maskable
     value: 1
     objectReference: {fileID: 0}
@@ -397,3 +413,4 @@ Preset:
     propertyPath: m_maskOffset.w
     value: 0
     objectReference: {fileID: 0}
+  m_ExcludedProperties: []

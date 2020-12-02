@@ -205,3 +205,4 @@ Preset:
     propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
     value: 0
     objectReference: {fileID: 0}
+  m_ExcludedProperties: []

@@ -64,3 +64,4 @@ Preset:
     propertyPath: m_TargetDisplay
     value: 0
     objectReference: {fileID: 0}
+  m_ExcludedProperties: []

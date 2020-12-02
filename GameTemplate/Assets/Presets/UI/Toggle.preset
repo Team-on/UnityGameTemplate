@@ -201,3 +201,4 @@ Preset:
     propertyPath: m_IsOn
     value: 1
     objectReference: {fileID: 0}
+  m_ExcludedProperties: []

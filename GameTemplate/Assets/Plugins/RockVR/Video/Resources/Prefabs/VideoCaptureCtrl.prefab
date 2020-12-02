@@ -84,6 +84,7 @@ VideoPlayer:
   m_Looping: 0
   m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!114 &114926983062296974
 MonoBehaviour:
   m_ObjectHideFlags: 0

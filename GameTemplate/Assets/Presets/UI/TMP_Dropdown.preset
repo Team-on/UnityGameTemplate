@@ -245,3 +245,4 @@ Preset:
     propertyPath: m_AlphaFadeSpeed
     value: 0.15
     objectReference: {fileID: 0}
+  m_ExcludedProperties: []
