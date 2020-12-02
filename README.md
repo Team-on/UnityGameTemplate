@@ -15,8 +15,8 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  * [Compilation Visualizer](https://github.com/needle-tools/compilation-visualizer) - package manager
  * [Player Loop Window](https://gist.github.com/karljj1/978d76de9c93b20bd9761825ccf08fdf)
  * [Selection History Window](https://github.com/Team-on/unity-history-window)
- * [Screen shooter](https://github.com/Team-on/UnityScreenShooter)
- * [Build Manager](https://github.com/Team-on/UnityBuildManager)
+ * [Screen shooter](https://github.com/Team-on/UnityScreenShooter) - package manager
+ * [Build Manager](https://github.com/Team-on/UnityBuildManager) - package manager
  * [Pump Editor](https://github.com/rfadeev/pump-editor) - package manager
  * [Texture Maker](https://github.com/M-Fatah/texture_maker)
  
@@ -26,7 +26,7 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  * [Rainbow Folders](https://github.com/Team-on/unity3d-rainbow-folders) - package manager
  * [Empty At Zero Creator](https://assetstore.unity.com/packages/tools/utilities/empty-at-zero-creator-97576)
  * [Hierarchy 2](https://assetstore.unity.com/packages/tools/utilities/hierarchy-2-166483)
- * [Project Window Details](https://github.com/Team-on/ProjectWindowDetails)
+ * [Project Window Details](https://github.com/Team-on/ProjectWindowDetails) - package manager
  * [PrefabPainter2D ](https://gist.github.com/SiarheiPilat/5f4ce26297492341c5d2d40a0e3902cf)
  * [Scene Asset Selector](https://github.com/baba-s/UniSceneAssetSelector) - package manager
  * [NewObjectBottomOfHierarchy.cs](https://gist.github.com/SiarheiPilat/4ed2c47a8d0882f266d676afd4b4fa48)
