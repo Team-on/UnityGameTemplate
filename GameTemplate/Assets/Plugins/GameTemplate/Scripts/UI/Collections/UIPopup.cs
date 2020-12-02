@@ -15,46 +15,57 @@ public class UIPopup : MonoBehaviour {
 
 	[Header("Child refs")]
 	[Space]
-	[SerializeField] protected TextMeshProUGUI textField;
+	[SerializeField] protected TextMeshProUGUI[] textFields;
 
 	Vector3 startTextFieldLocalScale;
 
 	private void Awake() {
-		startTextFieldLocalScale = textField.transform.localScale;
+		startTextFieldLocalScale = textFields[0].transform.localScale;
 	}
 
 	public void SetText(string text) {
-		textField.text = text;
+		textFields[0].text = text;
 	}
 
 	public float PlayShowAnimation() {
 		transform.localScale = startScale;
-		textField.transform.localScale = new Vector3(startTextFieldLocalScale.x / startScale.x, startTextFieldLocalScale.y / startScale.y, startTextFieldLocalScale.z);
+		textFields[0].transform.localScale = new Vector3(startTextFieldLocalScale.x / startScale.x, startTextFieldLocalScale.y / startScale.y, startTextFieldLocalScale.z);
 
 		LeanTween.value(gameObject, startScale, endScale, showTime)
 		.setOnUpdate((Vector3 size) => {
 			transform.localScale = size;
-			textField.transform.localScale = new Vector3(startTextFieldLocalScale.x / size.x, startTextFieldLocalScale.y / size.y, startTextFieldLocalScale.z);
+			textFields[0].transform.localScale = new Vector3(startTextFieldLocalScale.x / size.x, startTextFieldLocalScale.y / size.y, startTextFieldLocalScale.z);
 		});
 
 		StartCoroutine(ShowTextCharacters());
 
-		return showTime + textField.text.Length / lettersPerSecond;
+		return showTime + textFields[0].text.Length / lettersPerSecond;
 	}
 
 	IEnumerator ShowTextCharacters() {
-		int len = textField.text.Length;
+		int len = textFields[0].text.Length;
 		float showTime = len / lettersPerSecond;
 		float currTime = 0.0f;
 
-		textField.maxVisibleCharacters = 0;
+		int i = 0;
+		for(; i < textFields.Length; ++i)
+			textFields[i].maxVisibleCharacters = 0;
 
 		yield return null;
 
+		i = 0;
+		int overflowChars = 0;
 		while (currTime <= showTime) {
 			currTime += Time.deltaTime;
 
-			textField.maxVisibleCharacters = Mathf.RoundToInt(Mathf.Lerp(0, len, currTime / showTime));
+			textFields[i].maxVisibleCharacters = Mathf.RoundToInt(Mathf.Lerp(0, len, currTime / showTime));
+
+			if(textFields[i].firstOverflowCharacterIndex != -1 && textFields[i].firstOverflowCharacterIndex <= textFields[i].maxVisibleCharacters) {
+				overflowChars = textFields[i].firstOverflowCharacterIndex - 1;
+				textFields[i].maxVisibleCharacters = 99999;
+				++i;
+			}
+
 			yield return null;
 		}
 	}

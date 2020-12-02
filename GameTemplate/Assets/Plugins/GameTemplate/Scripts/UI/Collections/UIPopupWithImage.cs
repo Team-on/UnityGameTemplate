@@ -14,7 +14,7 @@ public class UIPopupWithImage : UIPopup {
 
 		img.sprite = spr;
 		img.rectTransform.SetSizeDeltaX(newX);
-		textField.rectTransform.ChangeSizeDeltaX(oldX - newX);
-		textField.rectTransform.ChangeX((newX - oldX) / 2);
+		textFields[0].rectTransform.ChangeSizeDeltaX(oldX - newX);
+		textFields[0].rectTransform.ChangeX((newX - oldX) / 2);
 	}
 }

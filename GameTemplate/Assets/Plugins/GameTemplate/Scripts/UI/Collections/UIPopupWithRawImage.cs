@@ -14,7 +14,7 @@ public class UIPopupWithRawImage : UIPopup {
 
 		rawImage.texture = texture2D;
 		rawImage.rectTransform.SetSizeDeltaX(newX);
-		textField.rectTransform.ChangeSizeDeltaX(oldX - newX);
-		textField.rectTransform.ChangeX((newX - oldX));
+		textFields[0].rectTransform.ChangeSizeDeltaX(oldX - newX);
+		textFields[0].rectTransform.ChangeX((newX - oldX));
 	}
 }

@@ -14,7 +14,7 @@ public class UIPopupGroup : MonoBehaviour {
 	[Header("Child refs")]
 	[Space]
 	[SerializeField] RectTransform gridTransform = null;
-	[SerializeField] GridLayoutGroup grid = null;
+	[SerializeField] VerticalLayoutGroup layoutGroup = null;
 
 	[Header("Assets refs")]
 	[Space]
@@ -79,8 +79,16 @@ public class UIPopupGroup : MonoBehaviour {
 
 			++currPopup;
 
+			float height = 0;
+
+			for (int i = 0; i < layoutGroup.transform.childCount; ++i) {
+				if (i > currPopup)
+					break;
+				height += (layoutGroup.transform.GetChild(i) as RectTransform).sizeDelta.y;
+			}
+
 			LeanTween.cancel(gameObject);
-			LeanTween.value(gameObject, gridTransform.anchoredPosition.y, grid.cellSize.y * (currPopup) + grid.spacing.y * (currPopup - 1) - rt.anchoredPosition.y, slideTime)
+			LeanTween.value(gameObject, gridTransform.anchoredPosition.y, height + layoutGroup.spacing * (currPopup) - rt.anchoredPosition.y, slideTime)
 				.setOnUpdate((float y) => {
 					Vector2 newPos = gridTransform.anchoredPosition;
 					newPos.y = y;
@@ -92,7 +100,7 @@ public class UIPopupGroup : MonoBehaviour {
 
 		LeanTween.cancel(gameObject);
 
-		grid.transform.DestroyAllChildrens();
+		layoutGroup.transform.DestroyAllChildrens();
 		gridTransform.anchoredPosition = gridTransform.anchoredPosition.SetY(startYPos);
 
 		openTimes.Clear();
