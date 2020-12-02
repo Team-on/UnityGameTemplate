@@ -26,7 +26,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "921c62ed4e2ca34422bb2789c45a2bfbfec9271d"
+      "hash": "869114bba8a89f0bf472aeb50d755449b0328360"
     },
     "com.ogxd.project-curator": {
       "version": "https://github.com/ogxd/project-curator.git#master",
@@ -77,14 +77,35 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "e21e67e86db7d74aaa986b3a8a7cd2497adb5c28"
+      "hash": "eb2f8de585df5299e25b98ccf34920bdb08730f7"
+    },
+    "com.teamon.buildmanager": {
+      "version": "https://github.com/Team-on/UnityBuildManager.git#main",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "483047f14baf8a5293e84c1aec15de61b8e8cc4c"
+    },
+    "com.teamon.projectwindowdetails": {
+      "version": "https://github.com/Team-on/ProjectWindowDetails.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "16d8b5d58ff47e032b8f48fba1a142b5f8dee009"
     },
     "com.teamon.rainbowfolders": {
       "version": "https://github.com/Team-on/unity3d-rainbow-folders.git#master",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d7b49f2c761b08ac7426ec692f96a5b4b747e9d7"
+      "hash": "3e1f3ad2b31161de6e311a96cb03a1445d329511"
+    },
+    "com.teamon.screenshooter": {
+      "version": "https://github.com/Team-on/UnityScreenShooter.git#main",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "32881716eea14bd8ba29bd1e3fd1378c9f2df39a"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
