@@ -74,7 +74,7 @@ namespace RockVR.Common
             if (_instance == null)
             {
                 _instance = this as T;
-                DontDestroyOnLoad(gameObject);
+                //DontDestroyOnLoad(gameObject);
             }
             else if (_instance != this)
             {

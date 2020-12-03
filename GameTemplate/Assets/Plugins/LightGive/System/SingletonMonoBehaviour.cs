@@ -25,8 +25,9 @@ namespace LightGive
 
 		protected virtual void Awake()
 		{
-			if (CheckInstance() && isDontDestroy)
-				DontDestroyOnLoad(this.gameObject);
+			if (CheckInstance() && isDontDestroy) {
+				//DontDestroyOnLoad(this.gameObject);
+			}
 		}
 
 		protected bool CheckInstance()
