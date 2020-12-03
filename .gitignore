@@ -70,3 +70,5 @@ crashlytics-build.properties
 
 /*/VideoCaptureLib_Log.txt
 */Assets/Samples/*
+**/Assets/Editor/Butler/
+**/Assets/Editor/Butler.meta
