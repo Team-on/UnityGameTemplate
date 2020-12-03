@@ -35,7 +35,7 @@ namespace TextureMaker
         [SerializeField] private TextureModule textureModule = new TextureModule();
         [SerializeField] private ToolsModule toolsModule = new ToolsModule();
 
-        [MenuItem("Tools/Texture Maker _F1")]
+        [MenuItem("Tools/Texture Maker")]
         private static void Init()
         {            
             // Generate a random icon on startup.

@@ -112,11 +112,11 @@ public class FPSCounter : MonoBehaviour
 
         //-------------- 
 
-        if (Input.GetKeyDown(KeyCode.F1)) // Hide Counter
-        {
-            counter.SetActive(!counter.activeSelf);
-            graph.SetActive(!graph.activeSelf);
-        }
+        //if (Input.GetKeyDown(KeyCode.F1)) // Hide Counter
+        //{
+        //    counter.SetActive(!counter.activeSelf);
+        //    graph.SetActive(!graph.activeSelf);
+        //}
 
         //--------------
     }
