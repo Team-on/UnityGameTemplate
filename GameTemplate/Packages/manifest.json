@@ -5,6 +5,7 @@
     "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
     "com.needle.compilation-visualizer": "https://github.com/needle-tools/compilation-visualizer.git#master",
     "com.ogxd.project-curator": "https://github.com/ogxd/project-curator.git#master",
+    "com.quantumcalzone.unitygitpackageupdater": "https://github.com/QuantumCalzone/UnityGitPackageUpdater.git#upm",
     "com.rfadeev.pumpeditor": "https://github.com/rfadeev/pump-editor.git#master",
     "com.rfadeev.pumpeditor.presetsbrowser": "https://github.com/rfadeev/presets-browser.git#master",
     "com.rfadeev.unityforge.animcallbacks": "https://github.com/rfadeev/unity-forge-anim-callbacks.git#upm",

@@ -35,6 +35,13 @@
       "dependencies": {},
       "hash": "5b808087070e9d327cf25488c7d8d785b40581b5"
     },
+    "com.quantumcalzone.unitygitpackageupdater": {
+      "version": "https://github.com/QuantumCalzone/UnityGitPackageUpdater.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "7ab6d1ca8a62615f2f616fcb10ab26ec1da073ed"
+    },
     "com.rfadeev.pumpeditor": {
       "version": "https://github.com/rfadeev/pump-editor.git#master",
       "depth": 0,

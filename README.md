@@ -19,6 +19,7 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  * [Build Manager](https://github.com/Team-on/UnityBuildManager) - package manager
  * [Pump Editor](https://github.com/rfadeev/pump-editor) - package manager
  * [Texture Maker](https://github.com/M-Fatah/texture_maker)
+ * [Git Package Updater](https://github.com/QuantumCalzone/UnityGitPackageUpdater) - package manager
  
 #### Existing windows extensions:
  * [Custom Toolbar](https://github.com/Team-on/CustomToolbar) - package manager
