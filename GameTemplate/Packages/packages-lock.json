@@ -26,7 +26,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "869114bba8a89f0bf472aeb50d755449b0328360"
+      "hash": "7b6e56526787b404c7962d5e2fcaa9b97a27dc56"
     },
     "com.ogxd.project-curator": {
       "version": "https://github.com/ogxd/project-curator.git#master",
@@ -40,7 +40,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "7ab6d1ca8a62615f2f616fcb10ab26ec1da073ed"
+      "hash": "193d45d1f4ec6cf1299411f3385f7d192afb8e7e"
     },
     "com.rfadeev.pumpeditor": {
       "version": "https://github.com/rfadeev/pump-editor.git#master",
@@ -226,7 +226,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c047097bc3db64ac67749abd378305a06b02d924"
+      "hash": "3aae0ab0ed999b962042dcfa938282fbeaaa9efc"
     },
     "io.megamiley.prefab-asset-utility": {
       "version": "https://github.com/MileyHollenberg/PrefabAssetUtility.git#master",
