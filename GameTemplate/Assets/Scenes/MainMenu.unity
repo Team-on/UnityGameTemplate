@@ -1915,7 +1915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animTime: 0.2
   firstButton: {fileID: 377604951}
-  sceneToLoad: SampleScene2D
+  sceneIdToLoad: 1
 --- !u!114 &1210314598 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8051729537293726433, guid: 8a9033cdc3e856b4a8e79309ff4e554c,

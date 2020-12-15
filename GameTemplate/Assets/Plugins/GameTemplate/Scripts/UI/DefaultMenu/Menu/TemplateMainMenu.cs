@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TemplateMainMenu : MenuBase {
-	[SerializeField] string sceneToLoad = "SampleScene2D";
+	[SerializeField] int sceneIdToLoad = 1;
 
 	public void Play() {
-		SceneLoader.Instance.LoadScene(sceneToLoad, true, true);
+		SceneLoader.Instance.LoadScene(sceneIdToLoad, true, true);
 
 	}
 
 	public void Load() {
-		SceneLoader.Instance.LoadScene(sceneToLoad, true, true);
+		SceneLoader.Instance.LoadScene(sceneIdToLoad, true, true);
 	}
 }
