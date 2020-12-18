@@ -19,7 +19,7 @@ public class AnimationHierarchyEditor : EditorWindow {
 
 	private Vector2 scrollPos = Vector2.zero;
 	
-	[MenuItem("Window/Custom/Animation Hierarchy Editor")]
+	[MenuItem("Window/Animation Hierarchy Editor")]
 	static void ShowWindow() {
 		EditorWindow.GetWindow<AnimationHierarchyEditor>();
 	}

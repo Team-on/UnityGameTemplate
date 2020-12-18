@@ -91,7 +91,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "0dbdd5b53428da38c17f9f7d08d2cf6d54b2bc55"
+      "hash": "4c68548aebb95f4f1da1cb2c9a6ceade76992cb5"
     },
     "com.teamon.projectwindowdetails": {
       "version": "https://github.com/Team-on/ProjectWindowDetails.git#master",
@@ -112,7 +112,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "32881716eea14bd8ba29bd1e3fd1378c9f2df39a"
+      "hash": "d9a80528c9469e66f8034573f827bd94c7b844ae"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
@@ -235,7 +235,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "3aae0ab0ed999b962042dcfa938282fbeaaa9efc"
+      "hash": "b8e066e1889f031697a547141134c67346457aa7"
     },
     "io.megamiley.prefab-asset-utility": {
       "version": "https://github.com/MileyHollenberg/PrefabAssetUtility.git#master",

@@ -33,7 +33,7 @@ namespace Gemserk
 	    private static Color hierarchyElementColor = new Color(0.7f, 1.0f, 0.7f);
 	    private static Color selectedElementColor = new Color(0.2f, 170.0f / 255.0f, 1.0f, 1.0f);
 
-        [MenuItem ("Window/Custom/Gemserk/Selection History %#h")]
+        [MenuItem ("Window/Gemserk/Selection History %#h")]
 		static void Init () {
 			// Get existing open window or if none, make a new one:
 			var window = EditorWindow.GetWindow<SelectionHistoryWindow> ();
@@ -179,14 +179,14 @@ namespace Gemserk
 			}
 		}
 			
-		[MenuItem("Window/Custom/Gemserk/Previous selection %#,")]
+		[MenuItem("Window/Gemserk/Previous selection %#,")]
 		public static void PreviousSelection()
 		{
 			selectionHistory.Previous ();
 			Selection.activeObject = selectionHistory.GetSelection ();
 		}
 
-		[MenuItem("Window/Custom/Gemserk/Next selection %#.")]
+		[MenuItem("Window/Gemserk/Next selection %#.")]
 		public static void Nextelection()
 		{
 			selectionHistory.Next();
