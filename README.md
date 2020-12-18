@@ -38,7 +38,6 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  ### Debug:
   * [NVJOB FPS Counter and Graph](https://nvjob.itch.io/fps-counter-and-graph)
   * [In-game Debug Console](https://github.com/yasirkula/UnityIngameDebugConsole) - package manager
-  * [Video Capture](https://assetstore.unity.com/packages/tools/video/video-capture-75653) - Increase build size by 80 MB!
   
  ### Localization:
   * [PolyglotUnity](https://github.com/agens-no/PolyglotUnity)

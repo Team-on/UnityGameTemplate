@@ -72,3 +72,4 @@ crashlytics-build.properties
 */Assets/Samples/*
 **/Assets/Editor/Butler/
 **/Assets/Editor/Butler.meta
+*/.vsconfig
