@@ -30,6 +30,10 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_Navigation.m_WrapAround
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_Navigation.m_SelectOnUp
     value: 
     objectReference: {fileID: 0}
