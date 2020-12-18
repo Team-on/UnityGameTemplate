@@ -31,11 +31,10 @@ MonoBehaviour:
   m_autoSizeTextContainer: 0
   m_IsTextObjectScaleStatic: 0
   m_fallbackFontAssets:
-  - {fileID: 11400000, guid: 05fbffba592fa9f4197d596fc84e6510, type: 2}
-  - {fileID: 11400000, guid: b1edcca1949201a4ca87c6fb49c45598, type: 2}
-  - {fileID: 11400000, guid: 546f3f84480e31c4aa34350b5b661462, type: 2}
+  - {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_matchMaterialPreset: 1
-  m_defaultSpriteAsset: {fileID: 0}
+  m_defaultSpriteAsset: {fileID: 11400000, guid: c41005c129ba4d66911b75229fd70b45,
+    type: 2}
   m_defaultSpriteAssetPath: Sprite Assets/
   m_enableEmojiSupport: 1
   m_MissingCharacterSpriteUnicode: 0
