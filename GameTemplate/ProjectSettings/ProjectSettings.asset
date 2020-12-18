@@ -430,7 +430,8 @@ PlayerSettings:
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
   m_TemplateCustomTags:
-    BACKGROUND: '#363636'
+    BACKGROUND: '#363636s'
+    OPTIMIZE_FOR_PIXEL_ART: false
     SCALE_TO_FIT: true
   mobileMTRendering:
     Android: 1
@@ -695,7 +696,7 @@ PlayerSettings:
     Standalone: 0
   il2cppCompilerConfiguration:
     Android: 2
-    Standalone: 0
+    Standalone: 2
     WebGL: 2
   managedStrippingLevel:
     Android: 2
