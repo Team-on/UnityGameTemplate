@@ -84,7 +84,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "883b7b3bb1e2637dafef644cf0507539fc70655f"
+      "hash": "fd0c5c0e033ae3210950828f336d5eea215cdbb5"
     },
     "com.teamon.buildmanager": {
       "version": "https://github.com/Team-on/UnityBuildManager.git#main",
