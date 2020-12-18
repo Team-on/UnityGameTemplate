@@ -432,6 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 1349533509}
     m_SelectOnDown: {fileID: 377604951}
     m_SelectOnLeft: {fileID: 0}
@@ -664,6 +665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 344635649}
     m_SelectOnDown: {fileID: 1138335921}
     m_SelectOnLeft: {fileID: 0}
@@ -809,6 +811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 1138335921}
     m_SelectOnDown: {fileID: 1350987905}
     m_SelectOnLeft: {fileID: 0}
@@ -1558,6 +1561,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1113870165
 Canvas:
   m_ObjectHideFlags: 0
@@ -1757,6 +1761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 377604951}
     m_SelectOnDown: {fileID: 580921483}
     m_SelectOnLeft: {fileID: 0}
@@ -1982,6 +1987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 1350987905}
     m_SelectOnDown: {fileID: 344635649}
     m_SelectOnLeft: {fileID: 0}
@@ -2127,6 +2133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 580921483}
     m_SelectOnDown: {fileID: 1349533509}
     m_SelectOnLeft: {fileID: 0}
