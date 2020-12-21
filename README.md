@@ -5,6 +5,7 @@ Mainly includes usedfull custom windows, extensions methods, popular assets and 
 Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. These are not all changes to assets, because sometimes I forgot to update this file.
 
 ### Editor windows:
+
 #### New windows:
  * [Editor Spotlight](https://github.com/Team-on/unity-editor-spotlight)
  * [Project Curator](https://github.com/ogxd/project-curator) - package manager
@@ -34,10 +35,10 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  * [NewObjectBottomOfHierarchy.cs](https://gist.github.com/SiarheiPilat/4ed2c47a8d0882f266d676afd4b4fa48)
  * [SceneKeeper](https://github.com/brunomikoski/SceneKeeper) - package manager
  
- ### Tweening:
+### Tweening:
   * [LeanTween](https://assetstore.unity.com/packages/tools/animation/leantween-3595)
   
- ### Debug:
+### Debug:
   * [graphy](https://github.com/Tayx94/graphy) - package manager
   * [In-game Debug Console](https://github.com/yasirkula/UnityIngameDebugConsole) - package manager
   * [Unity-SlnGen](https://github.com/jhett12321/Unity-Slngen) - package manager
@@ -46,10 +47,10 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
   * [PolyglotUnity](https://github.com/agens-no/PolyglotUnity)
   * [Arabic Letters Support For Unity](https://github.com/Konash/arabic-support-unity )
   
- ### Assets:
-  * [UI Tools for Unity](https://assetstore.unity.com/packages/tools/gui/ui-tools-for-unity-124299)
+### UI:
   * [Simple UI Elements](https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276)
-  * [Fancy Scroll View](https://github.com/setchi/FancyScrollView) - package manager
+  * [UIEffect](https://github.com/mob-sakai/UIEffect) - package manager
+  * [unity-ui-extensions](https://github.com/JohannesDeml/unity-ui-extensions) - package manager
   
 ### Inspector attributes:
   * [NaughtyAttributes](https://github.com/dbrizov/NaughtyAttributes/) - package manager

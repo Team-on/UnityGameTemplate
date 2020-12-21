@@ -28,6 +28,13 @@
       "dependencies": {},
       "hash": "dec455f2e01d44a216d1ed60f342823b136ebd98"
     },
+    "com.coffee.ui-effect": {
+      "version": "https://github.com/mob-sakai/UIEffect.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b43e40508b167d143330d8b9eff0d5c9965cdf3c"
+    },
     "com.coffee.ui-particle": {
       "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
       "depth": 0,
@@ -265,6 +272,13 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.unity.uiextensions": {
+      "version": "https://github.com/JohannesDeml/unity-ui-extensions.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "93fda056a0590b1fba2ce3c0bb24b83be72da6e6"
+    },
     "com.yasirkula.ingamedebugconsole": {
       "version": "https://github.com/yasirkula/UnityIngameDebugConsole.git#master",
       "depth": 0,
@@ -280,13 +294,6 @@
         "com.unity.nuget.newtonsoft-json": "2.0.0"
       },
       "hash": "8c57b0ec4ce9463a34f61052ca7c2957e549ff4d"
-    },
-    "jp.setchi.fancyscrollview": {
-      "version": "https://github.com/setchi/FancyScrollView.git#upm",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "e5d10d3e5961848f93be43c2911344750b509a88"
     },
     "nrjwolf.games.attachattributes": {
       "version": "https://github.com/Nrjwolf/unity-auto-attach-component-attributes.git#master",
