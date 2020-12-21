@@ -21,6 +21,13 @@
       "dependencies": {},
       "hash": "6610c4be31942e323a3be910ac567ec528c78d0b"
     },
+    "com.gemserk.selectionhistory": {
+      "version": "https://github.com/acoppes/unity-history-window.git#1.0.4",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "af37e700fcea76fa0bd5cf816e2493bdd04a9515"
+    },
     "com.needle.compilation-visualizer": {
       "version": "https://github.com/needle-tools/compilation-visualizer.git#master",
       "depth": 0,

@@ -14,7 +14,7 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  * [Presets browser](https://github.com/rfadeev/presets-browser) - package manager
  * [Compilation Visualizer](https://github.com/needle-tools/compilation-visualizer) - package manager
  * [Player Loop Window](https://gist.github.com/karljj1/978d76de9c93b20bd9761825ccf08fdf)
- * [Selection History Window](https://github.com/Team-on/unity-history-window)
+ * [Selection History Window](https://github.com/Team-on/unity-history-window)- package manager
  * [Screen shooter](https://github.com/Team-on/UnityScreenShooter) - package manager
  * [Build Manager](https://github.com/Team-on/UnityBuildManager) - package manager
  * [Pump Editor](https://github.com/rfadeev/pump-editor) - package manager
