@@ -14,6 +14,13 @@
       "dependencies": {},
       "hash": "deed8ab15d2fa1571de010333dbb93f24afb2f8e"
     },
+    "com.brunomikoski.scenekeeper": {
+      "version": "https://github.com/brunomikoski/SceneKeeper.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "dec455f2e01d44a216d1ed60f342823b136ebd98"
+    },
     "com.dbrizov.naughtyattributes": {
       "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
       "depth": 0,

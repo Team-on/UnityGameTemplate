@@ -2,6 +2,7 @@
   "dependencies": {
     "com.baba-s.uni-scene-asset-selector": "https://github.com/baba-s/UniSceneAssetSelector.git#master",
     "com.baste.playerloopinterface": "https://github.com/Baste-RainGames/PlayerLoopInterface.git#master",
+    "com.brunomikoski.scenekeeper": "https://github.com/brunomikoski/SceneKeeper.git",
     "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
     "com.gemserk.selectionhistory": "https://github.com/acoppes/unity-history-window.git#1.0.4",
     "com.needle.compilation-visualizer": "https://github.com/needle-tools/compilation-visualizer.git#master",

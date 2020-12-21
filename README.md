@@ -26,7 +26,7 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  * [Hierarchy Highlighter](https://github.com/2irate2migrate/HierarchyHighlighter)
  * [Rainbow Folders](https://github.com/Team-on/unity3d-rainbow-folders) - package manager
  * [Empty At Zero Creator](https://assetstore.unity.com/packages/tools/utilities/empty-at-zero-creator-97576)
- * [Hierarchy 2](https://assetstore.unity.com/packages/tools/utilities/hierarchy-2-166483)
+ * [Hierarchy 2](https://github.com/truongnguyentungduy/hierarchy-2)
  * [Project Window Details](https://github.com/Team-on/ProjectWindowDetails) - package manager
  * [PrefabPainter2D ](https://gist.github.com/SiarheiPilat/5f4ce26297492341c5d2d40a0e3902cf)
  * [Scene Asset Selector](https://github.com/baba-s/UniSceneAssetSelector) - package manager
