@@ -2,6 +2,7 @@
   "dependencies": {
     "com.baba-s.uni-scene-asset-selector": "https://github.com/baba-s/UniSceneAssetSelector.git#master",
     "com.baste.playerloopinterface": "https://github.com/Baste-RainGames/PlayerLoopInterface.git#master",
+    "com.blackfeatherproductions.slngen": "https://github.com/jhett12321/Unity-Slngen.git",
     "com.brunomikoski.scenekeeper": "https://github.com/brunomikoski/SceneKeeper.git",
     "com.coffee.ui-particle": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
     "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",

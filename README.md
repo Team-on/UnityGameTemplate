@@ -39,6 +39,7 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  ### Debug:
   * [graphy](https://github.com/Tayx94/graphy) - package manager
   * [In-game Debug Console](https://github.com/yasirkula/UnityIngameDebugConsole) - package manager
+  * [Unity-SlnGen](https://github.com/jhett12321/Unity-Slngen) - package manager
   
  ### Localization:
   * [PolyglotUnity](https://github.com/agens-no/PolyglotUnity)

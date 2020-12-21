@@ -14,6 +14,13 @@
       "dependencies": {},
       "hash": "deed8ab15d2fa1571de010333dbb93f24afb2f8e"
     },
+    "com.blackfeatherproductions.slngen": {
+      "version": "https://github.com/jhett12321/Unity-Slngen.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f1887f35e5d9949db2541253376033480985b93e"
+    },
     "com.brunomikoski.scenekeeper": {
       "version": "https://github.com/brunomikoski/SceneKeeper.git",
       "depth": 0,
