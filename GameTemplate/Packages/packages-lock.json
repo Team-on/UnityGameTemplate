@@ -21,6 +21,13 @@
       "dependencies": {},
       "hash": "dec455f2e01d44a216d1ed60f342823b136ebd98"
     },
+    "com.coffee.ui-particle": {
+      "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "429ff2dd09264fd091ed3005c7a4c247f118c7ae"
+    },
     "com.dbrizov.naughtyattributes": {
       "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
       "depth": 0,
@@ -99,6 +106,13 @@
       "source": "git",
       "dependencies": {},
       "hash": "fd0c5c0e033ae3210950828f336d5eea215cdbb5"
+    },
+    "com.tayx.graphy": {
+      "version": "https://github.com/Tayx94/graphy.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "7c7ba62a8e9b4956b0f4fc45d29f05e1e4023d52"
     },
     "com.teamon.buildmanager": {
       "version": "https://github.com/Team-on/UnityBuildManager.git#main",

@@ -31,12 +31,13 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  * [PrefabPainter2D ](https://gist.github.com/SiarheiPilat/5f4ce26297492341c5d2d40a0e3902cf)
  * [Scene Asset Selector](https://github.com/baba-s/UniSceneAssetSelector) - package manager
  * [NewObjectBottomOfHierarchy.cs](https://gist.github.com/SiarheiPilat/4ed2c47a8d0882f266d676afd4b4fa48)
+ * [SceneKeeper](https://github.com/brunomikoski/SceneKeeper) - package manager
  
  ### Tweening:
   * [LeanTween](https://assetstore.unity.com/packages/tools/animation/leantween-3595)
   
  ### Debug:
-  * [NVJOB FPS Counter and Graph](https://nvjob.itch.io/fps-counter-and-graph)
+  * [graphy](https://github.com/Tayx94/graphy) - package manager
   * [In-game Debug Console](https://github.com/yasirkula/UnityIngameDebugConsole) - package manager
   
  ### Localization:
@@ -66,7 +67,7 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
   * [Rect Extensions](https://github.com/slavniyteo/rect-ex) - package manager
   * [Transition Manager](https://github.com/LightGive/TransitionManager)
   * [UnityConstantsGenerator](https://github.com/nickgravelyn/UnityToolbag/blob/master/UnityConstants/Editor/UnityConstantsGenerator.cs)
-  * [UIParticleSystem](https://gitlab.com/Dimonik333/uiparticlesystem)
+  * [ParticleEffectForUGUI](https://github.com/mob-sakai/ParticleEffectForUGUI) - package manager
   * [Unity Forge Anim Callbacks](https://github.com/rfadeev/unity-forge-anim-callbacks) - package manager
   * [Auto attach component via attributes](https://github.com/Nrjwolf/unity-auto-attach-component-attributes) - package manager
   
