@@ -10,6 +10,7 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  * [Project Curator](https://github.com/ogxd/project-curator) - package manager
  * [PlayersPrefs Editor and Utilities](https://github.com/sabresaurus/PlayerPrefsEditor) - package manager
  * [SubAsset Drag And Drop](https://github.com/Maligan/unity-subassets-drag-and-drop)
+ * [SubAssetEditor](https://github.com/mob-sakai/SubAssetEditor)
  * [Animation Hierarchy Editor](https://github.com/s-m-k/Unity-Animation-Hierarchy-Editor)
  * [Presets browser](https://github.com/rfadeev/presets-browser) - package manager
  * [Compilation Visualizer](https://github.com/needle-tools/compilation-visualizer) - package manager
@@ -28,7 +29,7 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  * [Empty At Zero Creator](https://assetstore.unity.com/packages/tools/utilities/empty-at-zero-creator-97576)
  * [Hierarchy 2](https://github.com/truongnguyentungduy/hierarchy-2)
  * [Project Window Details](https://github.com/Team-on/ProjectWindowDetails) - package manager
- * [PrefabPainter2D ](https://gist.github.com/SiarheiPilat/5f4ce26297492341c5d2d40a0e3902cf)
+ * [PrefabPainter2D](https://gist.github.com/SiarheiPilat/5f4ce26297492341c5d2d40a0e3902cf)
  * [Scene Asset Selector](https://github.com/baba-s/UniSceneAssetSelector) - package manager
  * [NewObjectBottomOfHierarchy.cs](https://gist.github.com/SiarheiPilat/4ed2c47a8d0882f266d676afd4b4fa48)
  * [SceneKeeper](https://github.com/brunomikoski/SceneKeeper) - package manager
