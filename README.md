@@ -56,6 +56,7 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
   * [Forge Property Drawers](https://github.com/rfadeev/unity-forge-property-drawers) - package manager
   * [One line](https://github.com/slavniyteo/one-line) - package manager
   * [Searchable Enum](https://github.com/roboryantron/UnityEditorJunkie)
+  * [CustomInspectorCreator.cs](https://gist.github.com/LotteMakesStuff/cb63e4e25e5dfdda19a95380e9c03436)
   
 ### WebGL:
   * [Better Minimal WebGL Template](https://seansleblanc.itch.io/better-minimal-webgl-template)
