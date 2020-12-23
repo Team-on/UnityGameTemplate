@@ -1,13 +1,25 @@
-﻿using UnityEngine.InputSystem;
+﻿using System;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 public static class InputEx {
 	public static bool IsAnyKeyPressedThisFrame() {
-		return (Mouse.current?.leftButton?.wasPressedThisFrame ?? false) ||
-			(Mouse.current?.rightButton?.wasPressedThisFrame ?? false) ||
-			(Mouse.current?.middleButton?.wasPressedThisFrame ?? false) ||
-			(Mouse.current?.forwardButton?.wasPressedThisFrame ?? false) ||
-			(Mouse.current?.backButton?.wasPressedThisFrame ?? false) ||
-			(Keyboard.current?.anyKey?.wasPressedThisFrame ?? false) ||
+		if(Mouse.current != null) {
+			Vector3 mousePos = Mouse.current.position.ReadValue();
+			Vector3 mouseViewPos = TemplateGameManager.Instance.Camera.ScreenToViewportPoint(mousePos);
+
+			if (
+				(	Mouse.current.leftButton.wasPressedThisFrame ||
+					Mouse.current.rightButton.wasPressedThisFrame ||
+					Mouse.current.middleButton.wasPressedThisFrame ||
+					Mouse.current.forwardButton.wasPressedThisFrame ||
+					Mouse.current.backButton.wasPressedThisFrame
+				) && (0 <= mouseViewPos.x && mouseViewPos.x <= 1 && 0 <= mouseViewPos.y && mouseViewPos.y <= 1)
+			)
+				return true;
+		}
+
+		return (Keyboard.current?.anyKey?.wasPressedThisFrame ?? false) ||
 			(Keyboard.current?.spaceKey?.wasPressedThisFrame ?? false) ||
 			(Gamepad.current?.buttonEast?.wasPressedThisFrame ?? false) ||
 			(Gamepad.current?.buttonNorth?.wasPressedThisFrame ?? false) ||
