@@ -73,3 +73,5 @@ crashlytics-build.properties
 **/Assets/Editor/Butler/
 **/Assets/Editor/Butler.meta
 */.vsconfig
+GameTemplate/Assets/Editor/Github/
+GameTemplate/Assets/Editor/Github.meta
