@@ -27,7 +27,8 @@ public abstract class MenuBase : MonoBehaviour {
 		EnableAllSelectable();
 
 		SelectButton();
-		lastSelectedButton = firstButton.gameObject;
+		if(firstButton)
+			lastSelectedButton = firstButton.gameObject;
 
 		if (isForce)
 			canvasGroup.alpha = 1.0f;
@@ -62,7 +63,8 @@ public abstract class MenuBase : MonoBehaviour {
 	}
 
 	public void SelectButton() {
-		TemplateGameManager.Instance.uiinput.SetFirstButton(lastSelectedButton ? lastSelectedButton : firstButton.gameObject);
+		if(lastSelectedButton || firstButton)
+			TemplateGameManager.Instance.uiinput.SetFirstButton(lastSelectedButton ? lastSelectedButton : firstButton.gameObject);
 	}
 
 	public void SaveLastButton() {
