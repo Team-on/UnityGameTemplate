@@ -2,12 +2,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(CanvasGroup))]
 public abstract class MenuBase : MonoBehaviour {
+	public bool IsCanReturnToMenu => isCanReturnToMenu;
+	
 	[NonSerialized] public MenuManager MenuManager;
 
 	[Header("Base menu values")]
 	[SerializeField] protected float animTime = 0.2f;
-	protected CanvasGroup canvasGroup;
+	[SerializeField] protected bool isCanReturnToMenu = true;
+
+	[Header("Refs")]
+	[NaughtyAttributes.ReadOnly] public CanvasGroup cg;
+	[NaughtyAttributes.ReadOnly] public RectTransform rt;
 
 	[Header("Buttons")]
 	[Space]
@@ -16,38 +23,53 @@ public abstract class MenuBase : MonoBehaviour {
 
 	Selectable[] selectables;
 
+#if UNITY_EDITOR
+	private void OnValidate() {
+		if(!cg)
+			cg = GetComponent<CanvasGroup>();
+		if (!rt)
+			rt = GetComponent<RectTransform>();
+	}
+#endif
+
 	protected virtual void Awake() {
-		canvasGroup = GetComponent<CanvasGroup>();
 		selectables = GetComponentsInChildren<Selectable>(true);
 	}
 
 	internal virtual void Show(bool isForce) {
-		LeanTween.cancel(canvasGroup.gameObject);
+		enabled = true;
 		gameObject.SetActive(true);
-		EnableAllSelectable();
 
+		LeanTween.cancel(cg.gameObject);
+		cg.interactable = cg.blocksRaycasts = true;
+
+		EnableAllSelectable();
 		SelectButton();
-		if(firstButton)
+		if (firstButton)
 			lastSelectedButton = firstButton.gameObject;
 
 		if (isForce)
-			canvasGroup.alpha = 1.0f;
+			cg.alpha = 1.0f;
 		else
-			LeanTweenEx.ChangeAlpha(canvasGroup, 1.0f, animTime);
+			LeanTweenEx.ChangeAlpha(cg, 1.0f, animTime);
 	}
 
 	internal virtual void Hide(bool isForce) {
-		LeanTween.cancel(canvasGroup.gameObject);
+		LeanTween.cancel(cg.gameObject);
+		cg.interactable = cg.blocksRaycasts = false;
+
 		SaveLastButton();
 
 		if (isForce) {
-			canvasGroup.alpha = 0.0f;
+			cg.alpha = 0.0f;
 			gameObject.SetActive(false);
+			enabled = false;
 		}
 		else {
-			LeanTweenEx.ChangeAlpha(canvasGroup, 0.0f, animTime)
+			LeanTweenEx.ChangeAlpha(cg, 0.0f, animTime)
 			.setOnComplete(() => {
 				gameObject.SetActive(false);
+				enabled = false;
 			});
 		}
 	}

@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MenuManager : MonoBehaviour {
+	[Header("Menus"), Space]
 	[SerializeField] byte FirstMenuId;
 	[SerializeField] MenuBase[] Menus;
+
 	Stack<MenuBase> currMenu;
 
 	void Start() {
@@ -18,6 +20,10 @@ public class MenuManager : MonoBehaviour {
 				menu.Hide(true);
 			else
 				menu.Show(true);
+
+			if(menu.rt.anchorMin == Vector2.zero && menu.rt.anchorMax == Vector2.one && menu.rt.pivot.x == 0.5f && menu.rt.pivot.y == 0.5f && !(menu is PopupMenuBase)) {
+				menu.rt.transform.localPosition = Vector2.zero;
+			}
 
 			menu.MenuManager = this;
 		}
@@ -44,7 +50,7 @@ public class MenuManager : MonoBehaviour {
 			}
 		}
 
-		if(menu != null) {
+		if (menu != null) {
 			if (currMenu.Count > 0) {
 				if (hidePrev) {
 					currMenu.Pop().Hide(false);
@@ -61,7 +67,7 @@ public class MenuManager : MonoBehaviour {
 		else {
 			Debug.LogError($"Cant find menu with name {menuScriptName}");
 		}
-		
+
 	}
 
 	public void Show(MenuBase menu, bool hidePrev = true) {
@@ -74,15 +80,15 @@ public class MenuManager : MonoBehaviour {
 				currMenu.Peek().DisableAllSelectable();
 			}
 		}
-		
+
 		currMenu.Push(menu);
 		menu.Show(false);
 	}
 
 	public void HideTopMenu(bool isForce = false) {
-		if(currMenu.Count > 1)
+		if (IsCanHideTopMenu()) {
 			currMenu.Pop().Hide(isForce);
-		if(currMenu.Count >= 1) {
+
 			currMenu.Peek().EnableAllSelectable();
 			currMenu.Peek().SelectButton();
 		}
@@ -95,9 +101,21 @@ public class MenuManager : MonoBehaviour {
 
 	public T GetNeededMenu<T>() where T : MenuBase {
 		for (int i = 0; i < Menus.Length; ++i)
-			if(Menus[i] is T)
+			if (Menus[i] is T)
 				return Menus[i] as T;
 		return null;
+	}
+
+	public bool IsCanHideTopMenu() {
+		if (currMenu.Count >= 2) {
+			MenuBase topMenu = currMenu.Pop();
+			bool isCanReturn = currMenu.Peek().IsCanReturnToMenu;
+			currMenu.Push(topMenu);
+
+			return isCanReturn;
+		}
+
+		return false;
 	}
 
 	void OnCancelClick(InputAction.CallbackContext context) {
