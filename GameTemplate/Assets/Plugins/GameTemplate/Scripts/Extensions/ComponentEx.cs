@@ -22,6 +22,19 @@ public static class ComponentEx {
 		return val;
 	}
 
+#if UNITY_EDITOR
+    public static T LoadAssetRef<T>(this Component comp, string name) where T : Component {
+        T val = default(T);
+        if (val == null) {
+            val = comp.GetComponent<T>();
+            if (val == null)
+                val = comp.GetComponentInParent<T>();
+        }
+        return UnityEditor.AssetDatabase.LoadAssetAtPath<T>(UnityEditor.AssetDatabase.GUIDToAssetPath(UnityEditor.AssetDatabase.FindAssets(name)[0])); ;
+    }
+#endif
+
+
     //public static Component CopyComponent(this Component original, GameObject destination) {
     //    System.Type type = original.GetType();
     //    Component copy = destination.AddComponent(type);
