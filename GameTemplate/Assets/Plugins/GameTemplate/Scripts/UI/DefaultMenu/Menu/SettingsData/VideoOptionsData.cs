@@ -36,6 +36,6 @@ public struct VideoOptionsData {
 
 	public void ApplyResolutionSettings() {
 		Screen.SetResolution(resolution.width, resolution.height, isFullscreen);
-		TemplateGameManager.Instance.Events.CallOnScreenResolutionChange();
+		TemplateGameManager.Instance.events.CallOnScreenResolutionChange();
 	}
 }

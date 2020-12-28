@@ -9,7 +9,7 @@ using NaughtyAttributes;
 
 [CreateAssetMenu(fileName = "Template Game Manager", menuName = "Singletons/TemplateGameManager")]
 public class TemplateGameManager : Singleton<TemplateGameManager> {
-	//Properties
+	//Cameras
 	public Camera Camera { get {
 			if(mainCamera == null) 
 				mainCamera = Camera.main;
@@ -22,42 +22,73 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 			return virtualCamera;
 		}
 	}
+	Camera mainCamera;
+	CinemachineVirtualCamera virtualCamera;
 
-	//Global data
+	//Resources
+	public int this[ResourceType type] {
+		get {
+			return resources[(int)type];
+		}
+		set {
+			resources[(int)type] = value;
+			onResourceChange[(int)type]?.Invoke(value);
+		}
+	}
+	public Action<int>[] onResourceChange;
+	[SerializeField] int[] startResources;
+	[ReadOnly] int[] resources;
+
+	[Header("Global data"), Space]
 	[ReadOnly] public string buildNameString;
 	[ReadOnly] public string productName;
 
-	//UI
+	[Header("UI navigation"), Space]
 	[ReadOnly] public UIInput uiinput;
 	[ReadOnly] public EventSystem eventSystem;
 	[ReadOnly] public InputSystemUIInputModule inputSystem;
 
-	//Debug UI
+
+	[Header("Debug UI"), Space]
 	[ReadOnly] public UIPopupGroup debugPopups;
 
 	//Other singletons
-	public EventManager Events { get; private set; }
+	public EventManager events { get; private set; }
 	public AudioManager audioManager;
 	public SceneLoader sceneLoader;
 
-	Camera mainCamera;
-	CinemachineVirtualCamera virtualCamera;
+#if UNITY_EDITOR
+	private void OnValidate() {
+		int newLen = Enum.GetNames(typeof(ResourceType)).Length;
+		if (startResources.Length != newLen) {
+			int[] newArr = new int[newLen];
+
+			for (int i = 0; i < startResources.Length && i < newArr.Length; ++i)
+				newArr[i] = startResources[i];
+
+			startResources = newArr;
+		}
+	}
+#endif
 
 	protected override void Initialize() {
 		Debug.Log("GameManager.Initialize()");
 		base.Initialize();
 
-		Events = new EventManager();
-
+		events = new EventManager();
 		EventManager.OnSceneLoadEnd += OnSceneLoadEnd;
+
+		resources = new int[startResources.Length];
+		for(int i = 0; i < startResources.Length; ++i) 
+			resources[i] = startResources[i];
 
 		StartCoroutine(DelayedSetup());
 
 		IEnumerator DelayedSetup() {
 			yield return null;
 			yield return null;
-			Events.CallOnOnApplicationStart();
-			Events.CallOnSceneLoadEnd(null);
+			events.CallOnOnApplicationStart();
+			events.CallOnSceneLoadEnd(null);
 		}
 	}
 
@@ -66,7 +97,7 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 		base.Deinitialize();
 
 		EventManager.OnSceneLoadEnd -= OnSceneLoadEnd;
-		Events.CallOnOnApplicationExit();
+		events.CallOnOnApplicationExit();
 	}
 
 	void OnSceneLoadEnd(EventData data) {
