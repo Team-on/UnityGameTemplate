@@ -5,11 +5,13 @@ using UnityEngine.UI;
 using TMPro;
 
 public class ArrowsController : MonoBehaviour {
+	[Header("Data"), Space]
+	[SerializeField] ContactFilter2D filterPointToPlayer = new ContactFilter2D();
+	[SerializeField] float framesSize = 0.9f;
+
 	[Header("Refs"), Space]
 	[SerializeField] GameObject arrowPrefab;
 
-	[Header("Data"), Space]
-	[SerializeField] float framesSize = 0.9f;
 
 	BoxCollider2D screenFrames;
 	float frameToScreenDist;
@@ -45,7 +47,7 @@ public class ArrowsController : MonoBehaviour {
 
 	public void AddArrow(Transform pointTo, float scale) {
 		UIArrow2D arrow = Instantiate(arrowPrefab, Vector3.zero, Quaternion.identity, transform).GetComponent<UIArrow2D>();
-		arrow.Init(pointTo, screenFrames, frameToScreenDist, scale);
+		arrow.Init(pointTo, filterPointToPlayer, screenFrames, frameToScreenDist, scale);
 		arrows.Add(arrow);
 	}
 

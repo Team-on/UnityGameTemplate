@@ -5,12 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//TODO: poll this
 public class UIArrow2D : MonoBehaviour {
 	[NonSerialized] public Transform pointTo;
-
-	[Header("Filter"), Space]
-	[SerializeField] ContactFilter2D filterPointToPlayer = new ContactFilter2D();
-	List<RaycastHit2D> hits = new List<RaycastHit2D>(16);
+	[NonSerialized] public ContactFilter2D filterPointToPlayer = new ContactFilter2D();
 
 	[Header("Scale tween"), Space]
 	[SerializeField] Vector3 minScale = new Vector3(0.95f, 0.95f, 1.0f);
@@ -24,6 +22,8 @@ public class UIArrow2D : MonoBehaviour {
 	[SerializeField] Image img;
 	[SerializeField] CanvasGroup cg;
 
+	List<RaycastHit2D> hits = new List<RaycastHit2D>(16);
+
 	BoxCollider2D screenFrames;
 	float frameToScreenDist;
 
@@ -33,10 +33,11 @@ public class UIArrow2D : MonoBehaviour {
 	Vector3 dir;
 	int hitted;
 
-	public void Init(Transform pointTo, BoxCollider2D screenFrames, float frameToScreenDist, float scale) {
+	public void Init(Transform pointTo, ContactFilter2D filterPointToPlayer, BoxCollider2D screenFrames, float frameToScreenDist, float scale) {
 		this.pointTo = pointTo;
 		this.screenFrames = screenFrames;
 		this.frameToScreenDist = frameToScreenDist;
+		this.filterPointToPlayer = filterPointToPlayer;
 
 		minScale *= scale;
 		maxScale *= scale;
