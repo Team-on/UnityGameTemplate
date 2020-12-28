@@ -48,6 +48,8 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 	[ReadOnly] public EventSystem eventSystem;
 	[ReadOnly] public InputSystemUIInputModule inputSystem;
 
+	[Header("UI"), Space]
+	[ReadOnly] public ArrowsController arrows;
 
 	[Header("Debug UI"), Space]
 	[ReadOnly] public UIPopupGroup debugPopups;
