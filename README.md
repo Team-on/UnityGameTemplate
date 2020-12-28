@@ -30,10 +30,11 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  * [Empty At Zero Creator](https://assetstore.unity.com/packages/tools/utilities/empty-at-zero-creator-97576)
  * [Hierarchy 2](https://github.com/truongnguyentungduy/hierarchy-2)
  * [Project Window Details](https://github.com/Team-on/ProjectWindowDetails) - package manager
- * [PrefabPainter2D](https://gist.github.com/SiarheiPilat/5f4ce26297492341c5d2d40a0e3902cf)
+ * [Prefab Painter 2D](https://gist.github.com/SiarheiPilat/5f4ce26297492341c5d2d40a0e3902cf)
  * [Scene Asset Selector](https://github.com/baba-s/UniSceneAssetSelector) - package manager
- * [NewObjectBottomOfHierarchy.cs](https://gist.github.com/SiarheiPilat/4ed2c47a8d0882f266d676afd4b4fa48)
- * [SceneKeeper](https://github.com/brunomikoski/SceneKeeper) - package manager
+ * [New Object Bottom Of Hierarchy](https://gist.github.com/SiarheiPilat/4ed2c47a8d0882f266d676afd4b4fa48)
+ * [Scene Keeper](https://github.com/brunomikoski/SceneKeeper) - package manager
+ * [Extended Transform Editor](https://github.com/bradsc0tt/Unity-Extended-Transform-Editor)
  
 ### Tweening:
   * [LeanTween](https://assetstore.unity.com/packages/tools/animation/leantween-3595)
@@ -50,10 +51,10 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
 ### UI:
   * [Simple UI Elements](https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276)
   * [UIEffect](https://github.com/mob-sakai/UIEffect) - package manager
-  * [unity-ui-extensions](https://github.com/JohannesDeml/unity-ui-extensions) - package manager
+  * [unity ui extensions](https://github.com/JohannesDeml/unity-ui-extensions) - package manager
   
 ### Inspector attributes:
-  * [NaughtyAttributes](https://github.com/dbrizov/NaughtyAttributes/) - package manager
+  * [Naughty Attributes](https://github.com/dbrizov/NaughtyAttributes/) - package manager
   * [Forge Property Drawers](https://github.com/rfadeev/unity-forge-property-drawers) - package manager
   * [One line](https://github.com/slavniyteo/one-line) - package manager
   * [Searchable Enum](https://github.com/roboryantron/UnityEditorJunkie)
@@ -63,15 +64,15 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
   * [Better Minimal WebGL Template](https://seansleblanc.itch.io/better-minimal-webgl-template)
   
 ### Other:
-  * [ArrayPrefs2](http://wiki.unity3d.com/index.php/ArrayPrefs2)
+  * [Array Prefs 2](http://wiki.unity3d.com/index.php/ArrayPrefs2)
   * [Player Loop Interface](https://github.com/Baste-RainGames/PlayerLoopInterface) - package manager
   * [Prefab Asset Utility](https://github.com/MileyHollenberg/PrefabAssetUtility) - package manager
   * [System Calc](https://github.com/LightGive/SystemCalc)
   * [yaSingleton](https://github.com/jedybg/yaSingleton)
   * [Rect Extensions](https://github.com/slavniyteo/rect-ex) - package manager
   * [Transition Manager](https://github.com/LightGive/TransitionManager)
-  * [UnityConstantsGenerator](https://github.com/nickgravelyn/UnityToolbag/blob/master/UnityConstants/Editor/UnityConstantsGenerator.cs)
-  * [ParticleEffectForUGUI](https://github.com/mob-sakai/ParticleEffectForUGUI) - package manager
+  * [Unity Constants Generator](https://github.com/nickgravelyn/UnityToolbag/blob/master/UnityConstants/Editor/UnityConstantsGenerator.cs)
+  * [Particle Effect For UGUI](https://github.com/mob-sakai/ParticleEffectForUGUI) - package manager
   * [Unity Forge Anim Callbacks](https://github.com/rfadeev/unity-forge-anim-callbacks) - package manager
   * [Auto attach component via attributes](https://github.com/Nrjwolf/unity-auto-attach-component-attributes) - package manager
   
