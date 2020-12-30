@@ -52,6 +52,7 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
   * [Simple UI Elements](https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276)
   * [UIEffect](https://github.com/mob-sakai/UIEffect) - package manager
   * [unity ui extensions](https://github.com/JohannesDeml/unity-ui-extensions) - package manager
+  * [UI Effect Snapshot](https://github.com/mob-sakai/UIEffectSnapshot) - package manager
   
 ### Inspector attributes:
   * [Naughty Attributes](https://github.com/dbrizov/NaughtyAttributes/) - package manager

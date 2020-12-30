@@ -6,6 +6,7 @@
     "com.blackfeatherproductions.slngen": "https://github.com/jhett12321/Unity-Slngen.git",
     "com.brunomikoski.scenekeeper": "https://github.com/brunomikoski/SceneKeeper.git",
     "com.coffee.ui-effect": "https://github.com/mob-sakai/UIEffect.git",
+    "com.coffee.ui-effect-snapshot": "https://github.com/mob-sakai/UIEffectSnapshot.git",
     "com.coffee.ui-particle": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
     "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
     "com.gemserk.selectionhistory": "https://github.com/acoppes/unity-history-window.git#1.0.4",

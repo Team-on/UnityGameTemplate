@@ -44,6 +44,13 @@
       "dependencies": {},
       "hash": "b43e40508b167d143330d8b9eff0d5c9965cdf3c"
     },
+    "com.coffee.ui-effect-snapshot": {
+      "version": "https://github.com/mob-sakai/UIEffectSnapshot.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6e2db954830d726264c22acb6def93f3c83c1310"
+    },
     "com.coffee.ui-particle": {
       "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
       "depth": 0,
