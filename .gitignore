@@ -8,6 +8,10 @@
 [Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# MemoryCaptures can get excessive in size.
+# They also could contain extremely sensitive data
 [Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
@@ -18,6 +22,8 @@
 
 # Visual Studio cache directory
 .vs/
+.vsconfig/
+*.vsconfig
 
 # Gradle cache directory
 .gradle/
@@ -50,28 +56,35 @@ sysinfo.txt
 
 # Builds
 *.apk
+*.aab
 *.unitypackage
 
 # Crashlytics generated file
 crashlytics-build.properties
 
-# Build analytics logs
-/*/Assets/BuildReports/
-/*/Assets/BuildReports.meta
+# Packed Addressables
+[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
-# Screenshots & recoring files
-/*/Recordings/
-/*/Screenshots/
+# Temporary auto-generated Android Assets
+[Aa]ssets/[Ss]treamingAssets/aa.meta
+[Aa]ssets/[Ss]treamingAssets/aa/*
 
-# NVIIA fps log files
-/*/fpslog/
-/*/ProjectSettings/ProjectCuratorSettings.json
+#
+# End of default gitignore
+#
 
+# Build reports from build inspector asset
+**/[Aa]ssets/[Bb]uild[Rr]eports/*
+**/[Aa]ssets/[Bb]uild[Rr]eports.meta
 
-/*/VideoCaptureLib_Log.txt
-*/Assets/Samples/*
+# Assets samples
+**/Assets/Samples/*
+
+# Auto-downloaded files by build manager
 **/Assets/Editor/Butler/
 **/Assets/Editor/Butler.meta
-*/.vsconfig
-GameTemplate/Assets/Editor/Github/
-GameTemplate/Assets/Editor/Github.meta
+**/Assets/Editor/Github/
+**/Assets/Editor/Github.meta
+
+# Project curator database
+**/ProjectSettings/ProjectCuratorSettings.json
