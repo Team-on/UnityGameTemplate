@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97690dbca7025a4ebeae4ac93229110, type: 3}
+  m_Name: EditorToolboxSettings
+  m_EditorClassIdentifier: 
+  useToolboxHierarchy: 0
+  drawHorizontalLines: 1
+  showSelectionsCount: 0
+  rowDataItems: 0000000001000000020000000300000004000000
+  useToolboxFolders: 0
+  largeIconScale: 0.8
+  smallIconScale: 0.7
+  largeIconPadding: {x: 0, y: 0.15}
+  smallIconPadding: {x: 0.15, y: 0.15}
+  customFolders: []
+  useToolboxDrawers: 1
+  decoratorDrawerHandlers:
+  - classReference: Toolbox.Editor.Drawers.BeginGroupAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.BeginHorizontalAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.BeginIndentAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.EndGroupAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.EndHorizontalAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.EndIndentAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.HelpAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.HighlightAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.ImageAreaAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.IndentAreaAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.LabelAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.LineAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.SpaceAreaAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.ToolboxButtonAttributeDrawer, Toolbox-Editor
+  conditionDrawerHandlers:
+  - classReference: Toolbox.Editor.Drawers.DisableAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.DisableIfAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.EnableIfAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.HideAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.HideIfAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.ShowIfAttributeDrawer, Toolbox-Editor
+  selfPropertyDrawerHandlers:
+  - classReference: Toolbox.Editor.Drawers.InLineEditorAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.RegexValueAttributeDrawer, Toolbox-Editor
+  listPropertyDrawerHandlers:
+  - classReference: Toolbox.Editor.Drawers.ReorderableListAttributeDrawer, Toolbox-Editor
+  - classReference: Toolbox.Editor.Drawers.ScrollableItemsAttributeDrawer, Toolbox-Editor
+  targetTypeDrawerHandlers:
+  - classReference: Toolbox.Editor.Drawers.DictionaryDrawer, Toolbox-Editor

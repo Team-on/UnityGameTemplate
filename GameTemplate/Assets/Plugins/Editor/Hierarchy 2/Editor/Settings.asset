@@ -78,6 +78,6 @@ MonoBehaviour:
   applyTagTargetAndChild: 0
   applyLayerTargetAndChild: 1
   headerPrefix: $h
-  headerDefaultTag: Untagged
+  headerDefaultTag: EditorOnly
   onlyDisplayWhileMouseEnter: 0
   contentDisplay: 0

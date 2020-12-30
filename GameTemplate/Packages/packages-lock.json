@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.arimger.editor-toolbox": {
+      "version": "https://github.com/arimger/Unity-Editor-Toolbox.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.editorcoroutines": "1.0.0"
+      },
+      "hash": "b8f6938225ad15b55edd09049bf931e19a901dca"
+    },
     "com.baba-s.uni-scene-asset-selector": {
       "version": "https://github.com/baba-s/UniSceneAssetSelector.git#master",
       "depth": 0,

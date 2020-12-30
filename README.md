@@ -59,6 +59,7 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
   * [One line](https://github.com/slavniyteo/one-line) - package manager
   * [Searchable Enum](https://github.com/roboryantron/UnityEditorJunkie)
   * [CustomInspectorCreator.cs](https://gist.github.com/LotteMakesStuff/cb63e4e25e5dfdda19a95380e9c03436)
+  * [Editor Toolbox](https://github.com/arimger/Unity-Editor-Toolbox)
   
 ### WebGL:
   * [Better Minimal WebGL Template](https://seansleblanc.itch.io/better-minimal-webgl-template)
@@ -75,9 +76,5 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
   * [Particle Effect For UGUI](https://github.com/mob-sakai/ParticleEffectForUGUI) - package manager
   * [Unity Forge Anim Callbacks](https://github.com/rfadeev/unity-forge-anim-callbacks) - package manager
   * [Auto attach component via attributes](https://github.com/Nrjwolf/unity-auto-attach-component-attributes) - package manager
-  
- ### Other plugins/executables:
- * [DotNetZip](https://archive.codeplex.com/?p=DotNetZip) - used to compress builds to .zip
- * [butler](https://itch.io/docs/butler/) - used to push build to itch.io
    
 Check out [wiki](https://github.com/Team-on/UnityGameTemplate/wiki) for additional information
