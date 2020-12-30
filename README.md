@@ -33,7 +33,6 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  * [Prefab Painter 2D](https://gist.github.com/SiarheiPilat/5f4ce26297492341c5d2d40a0e3902cf)
  * [Scene Asset Selector](https://github.com/baba-s/UniSceneAssetSelector) - package manager
  * [New Object Bottom Of Hierarchy](https://gist.github.com/SiarheiPilat/4ed2c47a8d0882f266d676afd4b4fa48)
- * [Scene Keeper](https://github.com/brunomikoski/SceneKeeper) - package manager
  * [Extended Transform Editor](https://github.com/bradsc0tt/Unity-Extended-Transform-Editor)
  
 ### Tweening:

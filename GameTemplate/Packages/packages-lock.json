@@ -30,13 +30,6 @@
       "dependencies": {},
       "hash": "f1887f35e5d9949db2541253376033480985b93e"
     },
-    "com.brunomikoski.scenekeeper": {
-      "version": "https://github.com/brunomikoski/SceneKeeper.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "dec455f2e01d44a216d1ed60f342823b136ebd98"
-    },
     "com.coffee.ui-effect": {
       "version": "https://github.com/mob-sakai/UIEffect.git",
       "depth": 0,
