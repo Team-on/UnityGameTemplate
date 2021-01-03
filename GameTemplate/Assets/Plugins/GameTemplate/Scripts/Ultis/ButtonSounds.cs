@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-
-
 [RequireComponent(typeof(UIEvents))]
 public class ButtonSounds : MonoBehaviour {
 	[Header("Audio"), Space]

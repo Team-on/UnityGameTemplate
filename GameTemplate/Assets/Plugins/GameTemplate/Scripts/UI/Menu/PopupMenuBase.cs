@@ -16,6 +16,8 @@ public class PopupMenuBase : MenuBase {
 	private void Start() {
 		RecalcPos();
 
+		cg.interactable = cg.blocksRaycasts = true;
+
 		EventManager.OnScreenResolutionChange += RecalcPos;
 	}
 
