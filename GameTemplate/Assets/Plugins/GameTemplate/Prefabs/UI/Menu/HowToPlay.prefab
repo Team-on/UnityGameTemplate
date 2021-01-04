@@ -425,6 +425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: {fileID: 0}
+  events: {fileID: 0}
 --- !u!1 &9155458573533953967
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,6 +572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: {fileID: 0}
+  events: {fileID: 0}
 --- !u!1 &9155458573665907023
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +741,7 @@ MonoBehaviour:
   isCanReturnToMenu: 1
   cg: {fileID: 9155458573811335363}
   rt: {fileID: 9155458573811335362}
-  firstButton: {fileID: 9155458575113285511}
+  firstSelected: {fileID: 0}
   popupTransform: {fileID: 9155458574550321313}
   easeIn: 27
   easeOut: 26
@@ -1427,3 +1431,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: {fileID: 0}
+  events: {fileID: 0}

@@ -39,9 +39,8 @@ public class PopupMenuBase : MenuBase {
 		isShowed = true;
 		gameObject.SetActive(true);
 
+		EnableAllSelectable();
 		SelectButton();
-		if(firstButton)
-			lastSelectedButton = firstButton.gameObject;
 
 		if (isForce) {
 			CallBefore?.Invoke();

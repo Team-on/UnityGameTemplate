@@ -338,7 +338,7 @@ MonoBehaviour:
   isCanReturnToMenu: 1
   cg: {fileID: 5094277163381449898}
   rt: {fileID: 5094277163381449896}
-  firstButton: {fileID: 0}
+  firstSelected: {fileID: 0}
   timeToShow: 2
   nextMenu: {fileID: 0}
 --- !u!1 &5094277163510275767

@@ -50,7 +50,7 @@ public class SceneLoader : Singleton<SceneLoader> {
 	}
 
 	public void LoadScene(int id, bool needUI, bool uiNeedDelay) {
-		TemplateGameManager.Instance.uiinput.SetFirstButton(null);
+		TemplateGameManager.Instance.uiinput.SetSelectedButton(null);
 
 		TransitionManager.Instance.StartTransitonEffectIn(StartLoad);
 

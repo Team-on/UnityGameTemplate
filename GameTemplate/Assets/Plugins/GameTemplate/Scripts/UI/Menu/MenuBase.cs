@@ -18,8 +18,8 @@ public abstract class MenuBase : MonoBehaviour {
 
 	[Header("Buttons")]
 	[Space]
-	[SerializeField] protected Button firstButton;
-	protected GameObject lastSelectedButton = null;
+	[SerializeField] protected ButtonSelector firstSelected;
+	protected GameObject lastSelectedGO;
 
 	Selectable[] selectables;
 
@@ -45,8 +45,6 @@ public abstract class MenuBase : MonoBehaviour {
 
 		EnableAllSelectable();
 		SelectButton();
-		if (firstButton)
-			lastSelectedButton = firstButton.gameObject;
 
 		if (isForce)
 			cg.alpha = 1.0f;
@@ -85,11 +83,14 @@ public abstract class MenuBase : MonoBehaviour {
 	}
 
 	public void SelectButton() {
-		if(lastSelectedButton || firstButton)
-			TemplateGameManager.Instance.uiinput.SetFirstButton(lastSelectedButton ? lastSelectedButton : firstButton.gameObject);
+		if (firstSelected && !lastSelectedGO)
+			lastSelectedGO = firstSelected.gameObject;
+
+		if (lastSelectedGO)
+			TemplateGameManager.Instance.uiinput.SetSelectedButton(lastSelectedGO);
 	}
 
 	public void SaveLastButton() {
-		lastSelectedButton = TemplateGameManager.Instance.eventSystem.currentSelectedGameObject;
+		lastSelectedGO = TemplateGameManager.Instance.eventSystem.currentSelectedGameObject;
 	}
 }

@@ -444,6 +444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: {fileID: 0}
+  events: {fileID: 0}
 --- !u!1 &526304772183525452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,6 +1649,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: {fileID: 0}
+  events: {fileID: 0}
 --- !u!1 &1396353597868247092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,7 +1720,7 @@ MonoBehaviour:
   isCanReturnToMenu: 1
   cg: {fileID: 1396353597868247098}
   rt: {fileID: 1396353597868247099}
-  firstButton: {fileID: 1396353597844942331}
+  firstSelected: {fileID: 0}
   popupTransform: {fileID: 1396353597527708674}
   easeIn: 27
   easeOut: 26
@@ -2869,6 +2873,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: {fileID: 0}
+  events: {fileID: 0}
 --- !u!1 &2161352549186491457
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,6 +3857,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: {fileID: 0}
+  events: {fileID: 0}
 --- !u!1 &3621192759917582511
 GameObject:
   m_ObjectHideFlags: 0
@@ -4522,6 +4530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: {fileID: 0}
+  events: {fileID: 0}
 --- !u!1 &4440568723837320661
 GameObject:
   m_ObjectHideFlags: 0
@@ -6930,6 +6940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: {fileID: 0}
+  events: {fileID: 0}
 --- !u!1 &6385858623987834198
 GameObject:
   m_ObjectHideFlags: 0
@@ -8668,6 +8680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: {fileID: 0}
+  events: {fileID: 0}
 --- !u!1 &8251724012748834937
 GameObject:
   m_ObjectHideFlags: 0

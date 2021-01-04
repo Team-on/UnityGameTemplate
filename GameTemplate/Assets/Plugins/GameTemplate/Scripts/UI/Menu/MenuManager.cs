@@ -15,7 +15,7 @@ public class MenuManager : MonoBehaviour {
 		currMenu.Push(Menus[FirstMenuId]);
 
 		foreach (var menu in Menus) {
-			TemplateGameManager.Instance.uiinput.SetFirstButton(null);
+			TemplateGameManager.Instance.uiinput.SetSelectedButton(null);
 			if (menu != currMenu.Peek())
 				menu.Hide(true);
 			else
@@ -27,8 +27,6 @@ public class MenuManager : MonoBehaviour {
 
 			menu.MenuManager = this;
 		}
-
-		currMenu.Peek().SelectButton();
 
 		TemplateGameManager.Instance.inputSystem.cancel.action.performed += OnCancelClick;
 	}
