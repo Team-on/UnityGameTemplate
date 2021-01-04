@@ -187,6 +187,7 @@ MonoBehaviour:
   layoutGroup: {fileID: 5011146257190749629}
   popupPrefab: {fileID: 7723066682151496033, guid: 3ebd4fbd11d0ca043b6234bda1366aec,
     type: 3}
+  popupWithImagePrefab: {fileID: 0}
   popupWithRawImagePrefab: {fileID: 7723066682151496033, guid: 039e1c5754d577b4193b41c649ee7f95,
     type: 3}
 --- !u!114 &5093400636026061935
@@ -834,6 +835,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UserReportingPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 223250986720782450, guid: c1aa92cd8198f654b933334ac725dc4f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 30010
+      objectReference: {fileID: 0}
     - target: {fileID: 223319934459786462, guid: c1aa92cd8198f654b933334ac725dc4f,
         type: 3}
       propertyPath: m_PixelPerfect
@@ -1075,6 +1081,10 @@ PrefabInstance:
     - target: {fileID: 11492840, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22331464, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 30005
       objectReference: {fileID: 0}
     - target: {fileID: 22400762, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
       propertyPath: m_AnchoredPosition.y
