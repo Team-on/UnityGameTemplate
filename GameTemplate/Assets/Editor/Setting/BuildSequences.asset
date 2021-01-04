@@ -486,4 +486,4 @@ MonoBehaviour:
   scriptingDefineSymbols: UNITY_POST_PROCESSING_STACK_V2;TMP_PRESENT;ARABSUPPORT_ENABLED;POLYGLOT;GAME_TEMPLATE
   itchGameLink: teamon/GameTemplate
   githubUserName: Team-on
-  githubRepoName: UnityGameTemplate
+  githubRepoName: TemplateTest

@@ -142,7 +142,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "4c2487d1fc2b94569108718f87ad91d3995abc13"
+      "hash": "4c001bda134685018e6e30d85366b6798298652d"
     },
     "com.teamon.projectwindowdetails": {
       "version": "https://github.com/Team-on/ProjectWindowDetails.git#master",
@@ -293,7 +293,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "70e72f9fc0a423a064ba470997c55fbea37aa3c8"
+      "hash": "be7fc89e9d600c3caa5ba4effe8b85a63f747b30"
     },
     "io.megamiley.prefab-asset-utility": {
       "version": "https://github.com/MileyHollenberg/PrefabAssetUtility.git#master",
