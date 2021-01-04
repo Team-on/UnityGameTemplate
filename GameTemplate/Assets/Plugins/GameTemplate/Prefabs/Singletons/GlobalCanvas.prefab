@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
-  m_MoveRepeatRate: 0.1
+  m_MoveRepeatRate: 0.2
   m_ActionsAsset: {fileID: -944628639613478452, guid: 4c230cc241385474eaf2d332120102d3,
     type: 3}
   m_PointAction: {fileID: -7030558540554099380, guid: 4c230cc241385474eaf2d332120102d3,

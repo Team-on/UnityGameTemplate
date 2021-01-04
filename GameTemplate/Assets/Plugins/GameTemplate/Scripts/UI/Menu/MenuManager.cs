@@ -14,8 +14,9 @@ public class MenuManager : MonoBehaviour {
 		currMenu = new Stack<MenuBase>();
 		currMenu.Push(Menus[FirstMenuId]);
 
+		TemplateGameManager.Instance.uiinput.SetSelectedButton(null);
+	
 		foreach (var menu in Menus) {
-			TemplateGameManager.Instance.uiinput.SetSelectedButton(null);
 			if (menu != currMenu.Peek())
 				menu.Hide(true);
 			else

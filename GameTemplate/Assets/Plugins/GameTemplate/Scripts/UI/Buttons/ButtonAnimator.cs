@@ -48,8 +48,20 @@ public class ButtonAnimator : MonoBehaviour {
 		defaultSprite = img.sprite;
 	}
 
+	private void OnDisable () {
+		LeanTween.cancel(gameObject);
+
+		transform.localScale = defaultScale;
+		img.color = defaultColor;
+		img.sprite = defaultSprite;
+	}
+
 	void OnEnter() {
-		img.color = hoverColor;
+		LeanTween.scale(img.gameObject, hoverScale, time).setEase(hoverScaleTweenType);
+		LeanTweenEx.ChangeColor(img, hoverColor, time).setEase(hoverColorTweenType);
+
+		if (hoverSprite)
+			img.sprite = hoverSprite;
 	}
 
 	void OnClick() {
@@ -57,6 +69,9 @@ public class ButtonAnimator : MonoBehaviour {
 	}
 
 	void OnExit() {
-		img.color = defaultColor;
+		LeanTween.scale(img.gameObject, defaultScale, time).setEase(hoverScaleTweenType);
+		LeanTweenEx.ChangeColor(img, defaultColor, time).setEase(hoverColorTweenType);
+
+		img.sprite = defaultSprite;
 	}
 }
