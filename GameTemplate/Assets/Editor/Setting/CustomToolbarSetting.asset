@@ -88,7 +88,7 @@ MonoBehaviour:
         IsEnabled: 1
         WidthInToolbar: 200
         minTime: 0
-        maxTime: 10
+        maxTime: 2
     0000000B:
       type: {class: ToolbarFPSSlider, ns: , asm: CustomToolbar.Editor}
       data:
