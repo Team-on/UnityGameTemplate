@@ -136,7 +136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 39.53}
+  m_AnchoredPosition: {x: 0, y: 51.700195}
   m_SizeDelta: {x: 901.458, y: 79.05966}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2356937978728950480
