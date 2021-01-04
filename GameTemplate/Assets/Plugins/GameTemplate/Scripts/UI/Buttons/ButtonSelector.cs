@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DisableNavigationOnMouseHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler {
+public class ButtonSelector : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler {
 	public void OnPointerDown(PointerEventData eventData) {
 		TemplateGameManager.Instance.uiinput.OnPointerDownButton();
 	}
