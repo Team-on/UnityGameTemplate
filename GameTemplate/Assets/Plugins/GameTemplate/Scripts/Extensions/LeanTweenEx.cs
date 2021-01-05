@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public static class LeanTweenEx {
 	public static void InterriptPrev(GameObject go) {
-		LeanTween.cancel(go, false);
+		LeanTween.cancel(go);
 	}
 
 	public static void InterriptPrev(MonoBehaviour mb) {
-		LeanTween.cancel(mb.gameObject, false);
+		LeanTween.cancel(mb.gameObject);
 	}
 
 	public static LTDescr ChangeAlpha(CanvasGroup canvasGroup, float alpha, float animTime) {

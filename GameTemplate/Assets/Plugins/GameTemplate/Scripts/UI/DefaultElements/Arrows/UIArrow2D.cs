@@ -49,7 +49,7 @@ public class UIArrow2D : MonoBehaviour {
 	}
 
 	void OnDestroy() {
-		LeanTween.cancel(img.gameObject, false);
+		LeanTween.cancel(img.gameObject);
 	}
 
 	void Update() {
@@ -109,7 +109,7 @@ public class UIArrow2D : MonoBehaviour {
 			return;
 		isShowed = true;
 
-		LeanTween.cancel(img.gameObject, false);
+		LeanTween.cancel(img.gameObject);
 
 		LeanTween.value(img.gameObject, img.color.a, maxA, 0.3f)
 		.setOnUpdate((float a) => {
@@ -127,7 +127,7 @@ public class UIArrow2D : MonoBehaviour {
 			return;
 		isShowed = false;
 
-		LeanTween.cancel(img.gameObject, false);
+		LeanTween.cancel(img.gameObject);
 
 		LeanTween.value(img.gameObject, img.color.a, 0.0f, 0.1f)
 		.setOnUpdate((float a) => {

@@ -62,7 +62,7 @@ public class BarUI : MonoBehaviour {
 
 
 	void UpdateBar() {
-		LeanTween.cancel(barFirst.gameObject, false);
+		LeanTween.cancel(barFirst.gameObject);
 
 		LeanTween.value(barFirst.gameObject, barFirst.value, currValue, firstBarTime)
 		.setEase(LeanTweenType.linear)
@@ -70,7 +70,7 @@ public class BarUI : MonoBehaviour {
 			barFirst.value = val;
 		});
 
-		LeanTween.cancel(barSecond.gameObject, false);
+		LeanTween.cancel(barSecond.gameObject);
 		LeanTween.value(barSecond.gameObject, barSecond.value, currValue, secondBarTime)
 		.setEase(LeanTweenType.easeInQuart)
 		.setOnUpdate((float val) => {

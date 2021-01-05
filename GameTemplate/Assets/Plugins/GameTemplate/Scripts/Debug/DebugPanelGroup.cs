@@ -33,7 +33,7 @@ public class DebugPanelGroup : MonoBehaviour {
 			return;
 		isShowed = true;
 
-		LeanTween.cancel(gameObject, false);
+		LeanTween.cancel(gameObject);
 
 		disableParent.SetActive(true);	
 		cg.interactable = cg.blocksRaycasts = true;
@@ -46,7 +46,7 @@ public class DebugPanelGroup : MonoBehaviour {
 			return;
 		isShowed = false;
 
-		LeanTween.cancel(gameObject, false);
+		LeanTween.cancel(gameObject);
 
 		cg.interactable = cg.blocksRaycasts = false;
 		LeanTween.alphaCanvas(cg, 0.0f, 0.05f)
