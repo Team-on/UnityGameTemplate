@@ -48,7 +48,6 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
   * [Arabic Letters Support For Unity](https://github.com/Konash/arabic-support-unity )
   
 ### UI:
-  * [Simple UI Elements](https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276)
   * [UIEffect](https://github.com/mob-sakai/UIEffect) - package manager
   * [unity ui extensions](https://github.com/JohannesDeml/unity-ui-extensions) - package manager
   * [UI Effect Snapshot](https://github.com/mob-sakai/UIEffectSnapshot) - package manager
@@ -76,6 +75,11 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
   * [Particle Effect For UGUI](https://github.com/mob-sakai/ParticleEffectForUGUI) - package manager
   * [Unity Forge Anim Callbacks](https://github.com/rfadeev/unity-forge-anim-callbacks) - package manager
   * [Auto attach component via attributes](https://github.com/Nrjwolf/unity-auto-attach-component-attributes) - package manager
+  
+### UI assets:
+  * https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276 - UI placeholders
+  * https://www.iconfinder.com/icons/4373196/discord_logo_logos_icon - discord icon
+  * https://www.pngkit.com/view/u2w7w7i1u2a9r5w7_free-icons-png-web-icon-round-png/ - website icon
   
 ### Sound assets:
  * https://freesound.org/people/unfa/sounds/244266/ - button click 
