@@ -994,6 +994,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tips:
   - You can set loading tips in [GlobalCanvas/Loading image] prefab. Or disable them
+  onLoadingEndClip: {fileID: 8300000, guid: 11711bfded1dce649b68c1a1f12e4cca, type: 3}
+  onAnyKeyPressClip: {fileID: 8300000, guid: b9c8758345aeecc45965d2d946f6726c, type: 3}
   additionalDelay: {x: 0.5, y: 1}
   tipText: {fileID: 7052802825247106243}
   canvasGroup: {fileID: 7052802825514451058}

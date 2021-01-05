@@ -32,6 +32,10 @@ public class UIEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 		isOnlyForMouse = selectable.navigation.mode == Navigation.Mode.None;
 	}
 
+	private void OnDisable() {
+		enterCount = 0;
+	}
+
 	public void OnPointerClick(PointerEventData eventData) {
 		Click();
 	}

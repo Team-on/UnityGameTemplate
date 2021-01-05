@@ -12,6 +12,11 @@ public abstract class MenuBase : MonoBehaviour {
 	[SerializeField] protected float animTime = 0.2f;
 	[SerializeField] protected bool isCanReturnToMenu = true;
 
+	[Header("Audio")]
+	[SerializeField] protected bool playOnForce = false;
+	[SerializeField] protected AudioClip openClip;
+	[SerializeField] protected AudioClip closeClip;
+
 	[Header("Refs")]
 	[NaughtyAttributes.ReadOnly] public CanvasGroup cg;
 	[NaughtyAttributes.ReadOnly] public RectTransform rt;
@@ -46,16 +51,23 @@ public abstract class MenuBase : MonoBehaviour {
 		EnableAllSelectable();
 		SelectButton();
 
-		if (isForce)
+		if ((!isForce || playOnForce) && openClip)
+				AudioManager.Instance.Play(openClip);
+
+		if (isForce) {
 			cg.alpha = 1.0f;
-		else
+		}
+		else {
 			LeanTweenEx.ChangeAlpha(cg, 1.0f, animTime);
+		}
 	}
 
 	internal virtual void Hide(bool isForce) {
 		LeanTween.cancel(cg.gameObject);
 		cg.interactable = cg.blocksRaycasts = false;
 
+		if ((!isForce || playOnForce) && closeClip)
+			AudioManager.Instance.Play(closeClip);
 
 		if (isForce) {
 			cg.alpha = 0.0f;
@@ -64,7 +76,7 @@ public abstract class MenuBase : MonoBehaviour {
 		}
 		else {
 			SaveLastButton();
-			
+
 			LeanTweenEx.ChangeAlpha(cg, 0.0f, animTime)
 			.setOnComplete(() => {
 				gameObject.SetActive(false);
@@ -87,8 +99,14 @@ public abstract class MenuBase : MonoBehaviour {
 		if (firstSelected && !lastSelectedGO)
 			lastSelectedGO = firstSelected.gameObject;
 
-		if (lastSelectedGO)
+		if (lastSelectedGO) {
+			ButtonSounds bs = lastSelectedGO.GetComponent<ButtonSounds>();
+			if (bs) {
+				bs.isIgnoreNextEnter = true;
+			}
+
 			TemplateGameManager.Instance.uiinput.SetSelectedButton(lastSelectedGO);
+		}
 	}
 
 	public void SaveLastButton() {

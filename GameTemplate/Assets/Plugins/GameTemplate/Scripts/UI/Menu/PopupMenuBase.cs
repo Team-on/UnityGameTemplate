@@ -42,6 +42,9 @@ public class PopupMenuBase : MenuBase {
 		EnableAllSelectable();
 		SelectButton();
 
+		if ((!isForce || playOnForce) && openClip)
+			AudioManager.Instance.Play(openClip);
+
 		if (isForce) {
 			CallBefore?.Invoke();
 			popupTransform.position = openPos.position;
@@ -61,6 +64,8 @@ public class PopupMenuBase : MenuBase {
 			return;
 		isShowed = false;
 
+		if ((!isForce || playOnForce) && closeClip)
+			AudioManager.Instance.Play(closeClip);
 
 		if (isForce) {
 			CallBefore?.Invoke();
@@ -70,7 +75,7 @@ public class PopupMenuBase : MenuBase {
 		}
 		else {
 			SaveLastButton();
-			
+
 			CallBefore?.Invoke();
 			LeanTween.move(popupTransform.gameObject, closePos.position, animTime)
 				.setEase(easeOut)

@@ -9,8 +9,13 @@ using NaughtyAttributes;
 public class LoadingBar : MonoBehaviour {
 	[Header("Tips")]
 	[Space]
-	string tipBeggining = "TIP:";
 	[SerializeField] List<string> tips;
+	string tipBeggining = "TIP:";
+
+	[Header("Audio")]
+	[Space]
+	[SerializeField] AudioClip onLoadingEndClip;
+	[SerializeField] AudioClip onAnyKeyPressClip;
 
 	[Header("Timings")]
 	[Space]
@@ -87,8 +92,12 @@ public class LoadingBar : MonoBehaviour {
 	void OnSceneLoadEnd(EventData data) {
 		if (data == null)
 			return;
+
 		if(loadingBarRoutine != null)
 			StopCoroutine(loadingBarRoutine);
+
+		if (onLoadingEndClip)
+			AudioManager.Instance.Play(onLoadingEndClip);
 		
 		LeanTweenEx.ChangeAlpha(pressAnyKeyText, 1.0f, 0.5f).setIgnoreTimeScale(true)
 		.setOnComplete(()=> {
@@ -146,6 +155,9 @@ public class LoadingBar : MonoBehaviour {
 
 	void OnAnyKeyPress() {
 		isLoadingEnd = false;
+
+		if (onAnyKeyPressClip)
+			AudioManager.Instance.Play(onAnyKeyPressClip);
 
 		LeanTweenEx.ChangeAlpha(pressAnyKeyText, 0.0f, 0.2f).setIgnoreTimeScale(true);
 

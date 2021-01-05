@@ -80,14 +80,14 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
 ### Sound assets:
  * https://freesound.org/people/unfa/sounds/244266/ - button click 
  * https://freesound.org/people/unfa/sounds/244266/ - button enter/exit
- * https://freesound.org/people/unfa/sounds/244266/ - menu slide sound
- * https://freesound.org/people/unfa/sounds/244266/ - menu hide
+ * https://freesound.org/people/unfa/sounds/244266/ - menu show/hide
  * https://freesound.org/people/unfa/sounds/244266/ - press any key
+ * https://freesound.org/people/unfa/sounds/244266/ - loading end
+ * https://freesound.org/people/gunnarsen94/sounds/141589/ - splash screen intro
  * https://freesound.org/people/TheAtomicBrain/sounds/394082/ - typing effect (not used)
- * https://freesound.org/people/rhodesmas/sounds/342759/ - counter sound
+ * https://freesound.org/people/rhodesmas/sounds/342759/ - resource counter
  
 ### Music assets:
- * - splash screen auto ambient
  * - splash screen any key ambient
  * - menu ambient
    

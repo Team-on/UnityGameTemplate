@@ -445,7 +445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectable: {fileID: 0}
   events: {fileID: 0}
 --- !u!114 &313555809022041740
 MonoBehaviour:
@@ -468,6 +467,7 @@ MonoBehaviour:
   onExit:
     m_PersistentCalls:
       m_Calls: []
+  selectable: {fileID: 0}
 --- !u!1 &526304772183525452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1593,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animTime: 0.5
   isCanReturnToMenu: 1
+  playOnForce: 0
+  openClip: {fileID: 8300000, guid: ab5f1226a54ffbc4c979803631fadfac, type: 3}
+  closeClip: {fileID: 8300000, guid: bd7e54061f1a64b4e8c5fce3dbd1a041, type: 3}
   cg: {fileID: 1396353597868247098}
   rt: {fileID: 1396353597868247099}
   firstSelected: {fileID: 0}
@@ -2749,7 +2752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectable: {fileID: 0}
   events: {fileID: 0}
 --- !u!114 &4632629262247979682
 MonoBehaviour:
@@ -2772,6 +2774,7 @@ MonoBehaviour:
   onExit:
     m_PersistentCalls:
       m_Calls: []
+  selectable: {fileID: 0}
 --- !u!1 &2161352549186491457
 GameObject:
   m_ObjectHideFlags: 0
@@ -3755,7 +3758,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectable: {fileID: 0}
   events: {fileID: 0}
 --- !u!114 &3986662493315579110
 MonoBehaviour:
@@ -3778,6 +3780,7 @@ MonoBehaviour:
   onExit:
     m_PersistentCalls:
       m_Calls: []
+  selectable: {fileID: 0}
 --- !u!1 &3621192759917582511
 GameObject:
   m_ObjectHideFlags: 0
@@ -4450,7 +4453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectable: {fileID: 0}
   events: {fileID: 0}
 --- !u!114 &6550320922004346347
 MonoBehaviour:
@@ -4473,6 +4475,7 @@ MonoBehaviour:
   onExit:
     m_PersistentCalls:
       m_Calls: []
+  selectable: {fileID: 0}
 --- !u!1 &4440568723837320661
 GameObject:
   m_ObjectHideFlags: 0
@@ -6882,7 +6885,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectable: {fileID: 0}
   events: {fileID: 0}
 --- !u!114 &5626955096841516401
 MonoBehaviour:
@@ -6905,6 +6907,7 @@ MonoBehaviour:
   onExit:
     m_PersistentCalls:
       m_Calls: []
+  selectable: {fileID: 0}
 --- !u!1 &6385858623987834198
 GameObject:
   m_ObjectHideFlags: 0
@@ -8644,7 +8647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectable: {fileID: 0}
   events: {fileID: 0}
 --- !u!114 &1308891255038165470
 MonoBehaviour:
@@ -8667,6 +8669,7 @@ MonoBehaviour:
   onExit:
     m_PersistentCalls:
       m_Calls: []
+  selectable: {fileID: 0}
 --- !u!1 &8251724012748834937
 GameObject:
   m_ObjectHideFlags: 0
@@ -10151,6 +10154,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1396353597527708674}
     m_Modifications:
+    - target: {fileID: 6042130559254334392, guid: 03ffde436ce582f4981b39f8bb0dd40a,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042130559254334392, guid: 03ffde436ce582f4981b39f8bb0dd40a,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042130559254334392, guid: 03ffde436ce582f4981b39f8bb0dd40a,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042130559254334392, guid: 03ffde436ce582f4981b39f8bb0dd40a,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: HideTopMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042130559254334392, guid: 03ffde436ce582f4981b39f8bb0dd40a,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: MenuManager, GameTemplateGeneralAssembly
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042130559254334392, guid: 03ffde436ce582f4981b39f8bb0dd40a,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7143126299936962416, guid: 03ffde436ce582f4981b39f8bb0dd40a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

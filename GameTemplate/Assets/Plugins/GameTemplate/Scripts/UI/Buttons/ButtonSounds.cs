@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(UIEvents))]
 public class ButtonSounds : MonoBehaviour {
+	[NonSerialized] public bool isIgnoreNextEnter = false;
+
 	[Header("Audio"), Space]
 	[SerializeField] AudioClip enterClip;
 	[SerializeField] AudioClip clickClip;
@@ -35,6 +37,11 @@ public class ButtonSounds : MonoBehaviour {
 #endif
 
 	void OnEnter() {
+		if (isIgnoreNextEnter) {
+			isIgnoreNextEnter = false;
+			return;
+		}
+
 		if(enterClip)
 			AudioManager.Instance.Play(enterClip);
 	}
