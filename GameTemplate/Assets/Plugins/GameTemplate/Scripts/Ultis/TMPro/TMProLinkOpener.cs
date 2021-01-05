@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,7 +10,16 @@ public class TMProLinkOpener : MonoBehaviour, IPointerClickHandler {
 		int linkIndex = TMP_TextUtilities.FindIntersectingLink(pTextMeshPro, eventData.position, null);
 		if (linkIndex != -1) {
 			TMP_LinkInfo linkInfo = pTextMeshPro.textInfo.linkInfo[linkIndex];
+#if UNITY_WEBGL
+			openWindow(linkInfo.GetLinkID());
+#else
 			Application.OpenURL(linkInfo.GetLinkID());
+#endif
 		}
 	}
+
+#if UNITY_WEBGL
+	[DllImport("__Internal")]
+	private static extern void openWindow(string url);
+#endif
 }

@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(UIEvents))]
 public class ButtonLinkOpener : MonoBehaviour {
@@ -27,7 +25,17 @@ public class ButtonLinkOpener : MonoBehaviour {
 #endif
 
 	void OnClick() {
-		if (!string.IsNullOrEmpty(link))
-			Application.OpenURL(link);
+		if (!string.IsNullOrEmpty(link)) {
+#if UNITY_WEBGL
+		openWindow(link);
+#else
+		Application.OpenURL(link);
+#endif
+		}
 	}
+
+#if UNITY_WEBGL
+	[DllImport("__Internal")]
+	private static extern void openWindow(string url);
+#endif
 }
