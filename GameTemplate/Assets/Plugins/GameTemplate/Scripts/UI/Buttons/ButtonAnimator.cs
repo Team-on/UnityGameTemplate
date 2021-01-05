@@ -20,10 +20,14 @@ public class ButtonAnimator : MonoBehaviour {
 	[Header("Refs"), Space]
 	[SerializeField] UIEvents events;
 	[SerializeField] Image img;
+	[SerializeField] TMPro.TextMeshProUGUI text;
 
-	Vector3 defaultScale;
-	Color defaultColor;
+	Vector3 defaultScaleImg;
+	Color defaultColorImg;
 	Sprite defaultSprite;
+
+	Vector3 defaultScaleText;
+	Color defaultColorText;
 
 #if UNITY_EDITOR
 	private void Reset() {
@@ -43,20 +47,28 @@ public class ButtonAnimator : MonoBehaviour {
 #endif
 
 	private void Awake() {
-		defaultScale = transform.localScale;
-		defaultColor = img.color;
+		defaultScaleImg = transform.localScale;
+		defaultColorImg = img.color;
 		defaultSprite = img.sprite;
+
+		defaultScaleText = text.transform.localScale;
+		defaultColorText= text.color;
 	}
 
 	private void OnDisable () {
 		LeanTween.cancel(gameObject);
 
-		transform.localScale = defaultScale;
-		img.color = defaultColor;
+		transform.localScale = defaultScaleImg;
+		img.color = defaultColorImg;
 		img.sprite = defaultSprite;
 	}
 
 	void OnEnter() {
+		if (text) {
+			LeanTween.scale(text.gameObject, hoverScale, time).setEase(hoverScaleTweenType);
+			LeanTweenEx.ChangeColor(text, hoverColor, time).setEase(hoverColorTweenType);
+		}
+
 		LeanTween.scale(img.gameObject, hoverScale, time).setEase(hoverScaleTweenType);
 		LeanTweenEx.ChangeColor(img, hoverColor, time).setEase(hoverColorTweenType);
 
@@ -69,8 +81,13 @@ public class ButtonAnimator : MonoBehaviour {
 	}
 
 	void OnExit() {
-		LeanTween.scale(img.gameObject, defaultScale, time).setEase(hoverScaleTweenType);
-		LeanTweenEx.ChangeColor(img, defaultColor, time).setEase(hoverColorTweenType);
+		if (text) {
+			LeanTween.scale(text.gameObject, defaultScaleText, time).setEase(hoverScaleTweenType);
+			LeanTweenEx.ChangeColor(text, defaultColorText, time).setEase(hoverColorTweenType);
+		}
+
+		LeanTween.scale(img.gameObject, defaultScaleImg, time).setEase(hoverScaleTweenType);
+		LeanTweenEx.ChangeColor(img, defaultColorImg, time).setEase(hoverColorTweenType);
 
 		img.sprite = defaultSprite;
 	}

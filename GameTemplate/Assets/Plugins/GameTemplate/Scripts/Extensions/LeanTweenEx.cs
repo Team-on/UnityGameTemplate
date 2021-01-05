@@ -33,6 +33,13 @@ public static class LeanTweenEx {
 			});
 	}
 
+	public static LTDescr ChangeColor(Graphic img, Color color, float animTime) {
+		return LeanTween.value(img.gameObject, img.color, color, animTime)
+			.setOnUpdate((Color c) => {
+				img.color = c;
+			});
+	}
+
 	public static LTDescr StayWorldPos(GameObject obj, float time, Vector3 localPosReturn) {
 		obj.transform.localPosition = localPosReturn;
 		Vector3 worldPos = obj.transform.position;
