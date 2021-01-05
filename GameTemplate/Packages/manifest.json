@@ -60,7 +60,8 @@
     "com.unity.modules.umbra": "1.0.0",
     "com.unity.modules.unityanalytics": "1.0.0",
     "com.unity.modules.video": "1.0.0",
-    "com.unity.modules.vr": "1.0.0"
+    "com.unity.modules.vr": "1.0.0",
+	"com.unity.toolchain.win-x86_64-linux-x86_64": "0.1.17-preview"
   },
   "scopedRegistries": []
 }
