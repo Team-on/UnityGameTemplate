@@ -29,10 +29,10 @@ public class UIEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 #endif
 
 	private void Awake() {
-		isOnlyForMouse = selectable.navigation.mode == Navigation.Mode.None;
-
 #if UNITY_ANDROID
 		isOnlyForMouse = true;
+#else
+		isOnlyForMouse = selectable.navigation.mode == Navigation.Mode.None;
 #endif
 	}
 
@@ -45,7 +45,8 @@ public class UIEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	}
 
 	public void OnSubmit(BaseEventData eventData) {
-		Click();
+		if(!isOnlyForMouse)
+			Click();
 	}
 
 	public void OnPointerEnter(PointerEventData eventData) {
@@ -53,7 +54,8 @@ public class UIEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	}
 
 	public void OnSelect(BaseEventData eventData) {
-		Enter();
+		if(!isOnlyForMouse)
+			Enter();
 	}
 
 	public void OnPointerExit(PointerEventData eventData) {
@@ -61,7 +63,8 @@ public class UIEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	}
 
 	public void OnDeselect(BaseEventData eventData) {
-		Exit();
+		if(!isOnlyForMouse)
+			Exit();
 	}
 
 	public void DeselectOnOtherSelected() {

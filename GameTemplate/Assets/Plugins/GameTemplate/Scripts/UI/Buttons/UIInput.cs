@@ -33,19 +33,24 @@ public class UIInput : MonoBehaviour {
 	public void SetSelectedButton(GameObject go) {
 		selectedGo = go;
 
-		eventSystem.SetSelectedGameObject(null);
+#if !UNITY_ANDROID
+		if(TemplateGameManager.Instance.eventSystem.currentSelectedGameObject != null)
+			eventSystem.SetSelectedGameObject(null);
 		eventSystem.SetSelectedGameObject(selectedGo);
+#endif
 	}
 
 	public void OnEnterButton(ButtonSelector selector) {
 		if (selectedGo != selector.gameObject) {
-			if(selectedGo)
+			if (selectedGo)
 				selectedGo.GetComponent<UIEvents>().DeselectOnOtherSelected();
 
 			selectedGo = selector.gameObject;
 
-			if(eventSystem.currentSelectedGameObject != selectedGo)
+#if !UNITY_ANDROID
+			if (eventSystem.currentSelectedGameObject != selectedGo)
 				eventSystem.SetSelectedGameObject(selectedGo);
+#endif
 		}
 	}
 }

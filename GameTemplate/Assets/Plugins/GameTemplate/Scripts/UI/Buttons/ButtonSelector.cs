@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Selectable))]
 [RequireComponent(typeof(UIEvents))]
 public class ButtonSelector : MonoBehaviour {
 	[Header("Refs"), Space]
