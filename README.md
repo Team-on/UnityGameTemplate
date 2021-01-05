@@ -78,12 +78,13 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
   * [Auto attach component via attributes](https://github.com/Nrjwolf/unity-auto-attach-component-attributes) - package manager
   
 ### Sound assets:
- * https://freesound.org/people/annabloom/sounds/219069/ - UI click 
- * https://freesound.org/people/Nightflame/sounds/397604/ - UI enter/exit
+ * https://freesound.org/people/unfa/sounds/244266/ - button click 
+ * https://freesound.org/people/unfa/sounds/244266/ - button enter/exit
+ * https://freesound.org/people/unfa/sounds/244266/ - menu slide sound
+ * https://freesound.org/people/unfa/sounds/244266/ - menu hide
+ * https://freesound.org/people/unfa/sounds/244266/ - press any key
  * https://freesound.org/people/TheAtomicBrain/sounds/394082/ - typing effect (not used)
  * https://freesound.org/people/rhodesmas/sounds/342759/ - counter sound
- * https://freesound.org/people/Qat/sounds/108335/ - menu slide sound
- * - menu hide
  
 ### Music assets:
  * - splash screen auto ambient
