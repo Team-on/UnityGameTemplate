@@ -309,7 +309,7 @@ MonoBehaviour:
       target: 24
       options: 0
       isVirtualRealitySupported: 0
-      isReleaseBuild: 0
+      isReleaseBuild: 1
       needZip: 1
       needItchPush: 1
       itchChannel: linux-universal
