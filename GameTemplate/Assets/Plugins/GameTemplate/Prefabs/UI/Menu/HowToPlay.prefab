@@ -1156,18 +1156,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03ffde436ce582f4981b39f8bb0dd40a, type: 3}
---- !u!114 &9155458575113285511 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7143126299936962416, guid: 03ffde436ce582f4981b39f8bb0dd40a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2031055910227433719}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &9155458575113285510 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7143126299936962417, guid: 03ffde436ce582f4981b39f8bb0dd40a,
@@ -1290,7 +1278,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
-      objectReference: {fileID: 9155458575113285511}
+      objectReference: {fileID: 0}
     - target: {fileID: 7083691138278052340, guid: c913d63d79340c041b364b92eb29f5c6,
         type: 3}
       propertyPath: m_Navigation.m_SelectOnRight
@@ -1372,7 +1360,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
-      objectReference: {fileID: 9155458575113285511}
+      objectReference: {fileID: 0}
     - target: {fileID: 4047445711927339036, guid: 57b5afe623d8ae1489cae14a417b84b4,
         type: 3}
       propertyPath: m_Navigation.m_SelectOnLeft

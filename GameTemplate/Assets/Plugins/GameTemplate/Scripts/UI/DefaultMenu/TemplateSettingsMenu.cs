@@ -19,9 +19,9 @@ public class TemplateSettingsMenu : PopupMenuBase {
 	[SerializeField] TMP_Dropdown graphicsDropdown = null;
 	VideoOptionsData videoOptionsData = new VideoOptionsData();
 
-	private new void Awake() {
-		base.Awake();
+	bool isInit = false;
 
+	void Init() {
 		enableAudioOnToggle.onValueChanged.AddListener(OnToggleOnAudio);
 		mainVolumeSlider.onValueChanged.AddListener(OnMainVolumeSliderChange);
 		musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeSliderChange);
@@ -38,6 +38,11 @@ public class TemplateSettingsMenu : PopupMenuBase {
 
 	internal override void Show(bool isForce) {
 		Show(isForce);
+
+		if (!isInit) {
+			isInit = true;
+			Init();
+		}
 
 		enableAudioOnToggle.SetIsOnWithoutNotify(AudioManager.Instance.IsEnabled);
 		mainVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.GetVolume(AudioManager.AudioChannel.Master));

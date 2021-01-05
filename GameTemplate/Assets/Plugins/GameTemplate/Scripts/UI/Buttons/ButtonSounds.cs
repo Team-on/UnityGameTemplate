@@ -26,6 +26,10 @@ public class ButtonSounds : MonoBehaviour {
 			events.AddPersistentListener(ref events.onEnter, this, "OnEnter");
 			events.AddPersistentListener(ref events.onClick, this, "OnClick");
 			events.AddPersistentListener(ref events.onExit, this, "OnExit");
+
+			enterClip = this.LoadAssetRef<AudioClip>("ButtonEnter");
+			clickClip = this.LoadAssetRef<AudioClip>("ButtonClick");
+			exitClip = this.LoadAssetRef<AudioClip>("ButtonExit");
 		}
 	}
 #endif

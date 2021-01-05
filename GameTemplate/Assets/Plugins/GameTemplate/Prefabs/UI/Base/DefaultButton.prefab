@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7676828743458691071}
   - component: {fileID: 2702172945473896055}
   - component: {fileID: 1014279040792948155}
+  - component: {fileID: 2620523516248762260}
   m_Layer: 5
   m_Name: DefaultButton
   m_TagString: Untagged
@@ -160,6 +161,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2620523516248762260}
+        m_TargetAssemblyTypeName: ButtonSounds, GameTemplateGeneralAssembly
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onEnter:
     m_PersistentCalls:
       m_Calls:
@@ -177,6 +190,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1014279040792948155}
         m_TargetAssemblyTypeName: ButtonAnimator, GameTemplateGeneralAssembly
+        m_MethodName: OnEnter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2620523516248762260}
+        m_TargetAssemblyTypeName: ButtonSounds, GameTemplateGeneralAssembly
         m_MethodName: OnEnter
         m_Mode: 0
         m_Arguments:
@@ -214,6 +239,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2620523516248762260}
+        m_TargetAssemblyTypeName: ButtonSounds, GameTemplateGeneralAssembly
+        m_MethodName: OnExit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  selectable: {fileID: 1746390021564245907}
 --- !u!114 &2702172945473896055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4930089d7c145e94da48ec2b3d709c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectable: {fileID: 1746390021564245907}
   events: {fileID: 7676828743458691071}
 --- !u!114 &1014279040792948155
 MonoBehaviour:
@@ -248,6 +285,22 @@ MonoBehaviour:
   time: 0.2
   events: {fileID: 7676828743458691071}
   img: {fileID: 1377769284214138177}
+--- !u!114 &2620523516248762260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417316442638819521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16c1ea7a0b04cc4790f009e97e02cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterClip: {fileID: 8300000, guid: da833e1c9f6291342a5753dd6afe8df9, type: 3}
+  clickClip: {fileID: 8300000, guid: c9690636328b271409800835f871cfba, type: 3}
+  exitClip: {fileID: 8300000, guid: da646267778a3c749b44dc9a825b8d90, type: 3}
+  events: {fileID: 7676828743458691071}
 --- !u!1 &4649219955547807035
 GameObject:
   m_ObjectHideFlags: 0

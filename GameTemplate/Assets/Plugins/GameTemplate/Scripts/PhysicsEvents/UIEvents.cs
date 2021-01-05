@@ -11,11 +11,26 @@ using UnityEditor.Events;
 
 [RequireComponent(typeof(Selectable))]
 public class UIEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, ISelectHandler, IDeselectHandler, ISubmitHandler {
+	[Header("Events")]
 	public UnityEvent onClick;
 	public UnityEvent onEnter;
 	public UnityEvent onExit;
 
+	[Header("Refs"), Space]
+	public Selectable selectable;
+
+	[NonSerialized] public bool isOnlyForMouse = false;
 	int enterCount = 0;
+
+#if UNITY_EDITOR
+	private void Reset() {
+		selectable = GetComponent<Selectable>();
+	}
+#endif
+
+	private void Awake() {
+		isOnlyForMouse = selectable.navigation.mode == Navigation.Mode.None;
+	}
 
 	public void OnPointerClick(PointerEventData eventData) {
 		Click();

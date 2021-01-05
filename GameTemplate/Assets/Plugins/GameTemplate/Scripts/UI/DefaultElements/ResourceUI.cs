@@ -22,6 +22,12 @@ public class ResourceUI : MonoBehaviour {
 	int oldValue;
 	int currValue;
 
+#if UNITY_EDITOR
+	private void Reset() {
+		counterSound = this.LoadAssetRef<AudioClip>("ResourceCounter");
+	}
+#endif
+
 	private void Awake() {
 		TemplateGameManager.Instance.onResourceChange[(int)type] += OnValueUpdated;
 	}

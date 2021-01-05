@@ -8,13 +8,11 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(UIEvents))]
 public class ButtonSelector : MonoBehaviour {
 	[Header("Refs"), Space]
-	public Selectable selectable;
 	[SerializeField] UIEvents events;
 
 #if UNITY_EDITOR
 	private void Reset() {
 		events = GetComponent<UIEvents>();
-		selectable = GetComponent<Selectable>();
 
 		StartCoroutine(Init());
 
@@ -29,7 +27,8 @@ public class ButtonSelector : MonoBehaviour {
 #endif
 
 	void OnEnter() {
-		TemplateGameManager.Instance.uiinput.OnEnterButton(this);
+		if(!events.isOnlyForMouse)
+			TemplateGameManager.Instance.uiinput.OnEnterButton(this);
 	}
 
 	void OnClick() {

@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PS4
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 99f2eb0dc22175e40a0c0e6089df1787, type: 3}
+    totalSpriteSurfaceArea: 170000
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3e20a6306ae08e34f970de090c3a1cd1, type: 3}
+  - {fileID: 21300000, guid: 04f2711270cd5b64099d2ca2f99529de, type: 3}
+  - {fileID: 21300000, guid: 428de70370df69d45bd4c0025b7ba36e, type: 3}
+  - {fileID: 21300000, guid: 87dce22414624c74d90f8bfc4bf3582f, type: 3}
+  - {fileID: 21300000, guid: f375a935d0c38f84d94844236012f26c, type: 3}
+  - {fileID: 21300000, guid: 7e177675a5fc16248b6e164ef7a7f2a6, type: 3}
+  - {fileID: 21300000, guid: c7f381483fb41f14e935b2d6d9fec62f, type: 3}
+  - {fileID: 21300000, guid: 7eaab648006558044a9680311037b8f9, type: 3}
+  - {fileID: 21300000, guid: 4cb9b89846007d142a4a78a190c2d6fe, type: 3}
+  - {fileID: 21300000, guid: f920addac480add4c99e64df920b61a3, type: 3}
+  - {fileID: 21300000, guid: 22b97dfa5af0d1947a62312c31e633e5, type: 3}
+  - {fileID: 21300000, guid: be71706bc979d5240bf156bfdfee0ae6, type: 3}
+  - {fileID: 21300000, guid: 47b0c8cbcd450124abdb1b62fb7f5806, type: 3}
+  - {fileID: 21300000, guid: 2da2d15ce082e12448ac493c55a33f0f, type: 3}
+  - {fileID: 21300000, guid: 5fc2490d4f2941f4ca46f33e329cf3d7, type: 3}
+  - {fileID: 21300000, guid: bff5253ebc5a14f43b4bd8aa1d207855, type: 3}
+  - {fileID: 21300000, guid: a521d4effb3d3c64b9329370383eb640, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - PS4_Options
+  - PS4_Right_Stick
+  - PS4_Square
+  - PS4_R2
+  - PS4_Dpad_Up
+  - PS4_Left_Stick
+  - PS4_Circle
+  - PS4_L1
+  - PS4_Dpad_Left
+  - PS4_L2
+  - PS4_R1
+  - PS4_Dpad_Right
+  - PS4_Triangle
+  - PS4_Cross
+  - PS4_Dpad_Down
+  - PS4_Dpad
+  - PS4_Share
+  m_RenderDataMap: {}
+  m_Tag: PS4
+  m_IsVariant: 0

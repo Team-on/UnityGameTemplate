@@ -23,13 +23,7 @@ public static class ComponentEx {
 	}
 
 #if UNITY_EDITOR
-    public static T LoadAssetRef<T>(this Component comp, string name) where T : Component {
-        T val = default(T);
-        if (val == null) {
-            val = comp.GetComponent<T>();
-            if (val == null)
-                val = comp.GetComponentInParent<T>();
-        }
+    public static T LoadAssetRef<T>(this Component comp, string name) where T : Object {
         return UnityEditor.AssetDatabase.LoadAssetAtPath<T>(UnityEditor.AssetDatabase.GUIDToAssetPath(UnityEditor.AssetDatabase.FindAssets(name)[0])); ;
     }
 #endif

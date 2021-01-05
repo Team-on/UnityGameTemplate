@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Xbox
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: b82ad4276c614104397a548b2d14ed2e, type: 3}
+    totalSpriteSurfaceArea: 170000
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: cde7469096582e04897fae80dfc34fbe, type: 3}
+  - {fileID: 21300000, guid: d08c52c09554ca8418a86627f4bd14e1, type: 3}
+  - {fileID: 21300000, guid: cfa9b832ea5877745a96e61e8ffaeca2, type: 3}
+  - {fileID: 21300000, guid: 4273c283a5e145a468dc60af5dcb46e7, type: 3}
+  - {fileID: 21300000, guid: f609c9b3b1675f947a865ec558b5ad90, type: 3}
+  - {fileID: 21300000, guid: 17fd7d74524d4cc4ea612a100880d012, type: 3}
+  - {fileID: 21300000, guid: 0ae60af4bd5e539409acc10ec4300105, type: 3}
+  - {fileID: 21300000, guid: d29819659aa175a459d7c519a30d70aa, type: 3}
+  - {fileID: 21300000, guid: 139b83464b859cd429d0370dc816028c, type: 3}
+  - {fileID: 21300000, guid: d544feb63b186dd45b32d12cfc6762bf, type: 3}
+  - {fileID: 21300000, guid: 44d8f279ef345c442ae875caa0c26731, type: 3}
+  - {fileID: 21300000, guid: d1610599218d48042bffac0712c379a6, type: 3}
+  - {fileID: 21300000, guid: 9c61f7c9d0b7b8b4f9d2350b73289e23, type: 3}
+  - {fileID: 21300000, guid: 4cc6aa9aa8107734da22c80d289cff98, type: 3}
+  - {fileID: 21300000, guid: 672696fcd6aec9d4c84945fa59765f64, type: 3}
+  - {fileID: 21300000, guid: ed60ff0de79971e468ae179e077d66ca, type: 3}
+  - {fileID: 21300000, guid: 5c1e24bea89729e4a8ed25e26a432f84, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - XboxOne_X
+  - XboxOne_B
+  - XboxOne_Dpad_Right
+  - XboxOne_Windows
+  - XboxOne_A
+  - XboxOne_Y
+  - XboxOne_RT
+  - XboxOne_LT
+  - XboxOne_Left_Stick
+  - XboxOne_Dpad_Down
+  - XboxOne_Dpad_Left
+  - XboxOne_Dpad
+  - XboxOne_Right_Stick
+  - XboxOne_Dpad_Up
+  - XboxOne_LB
+  - XboxOne_RB
+  - XboxOne_Menu
+  m_RenderDataMap: {}
+  m_Tag: Xbox
+  m_IsVariant: 0

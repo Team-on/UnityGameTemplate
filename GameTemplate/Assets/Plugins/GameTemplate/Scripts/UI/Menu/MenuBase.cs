@@ -56,7 +56,6 @@ public abstract class MenuBase : MonoBehaviour {
 		LeanTween.cancel(cg.gameObject);
 		cg.interactable = cg.blocksRaycasts = false;
 
-		SaveLastButton();
 
 		if (isForce) {
 			cg.alpha = 0.0f;
@@ -64,6 +63,8 @@ public abstract class MenuBase : MonoBehaviour {
 			enabled = false;
 		}
 		else {
+			SaveLastButton();
+			
 			LeanTweenEx.ChangeAlpha(cg, 0.0f, animTime)
 			.setOnComplete(() => {
 				gameObject.SetActive(false);

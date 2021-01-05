@@ -1,0 +1,247 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: KeyboardMouse
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ceef6472fe3d1544aa1767cc2dac8c2a, type: 3}
+    - {fileID: 102900000, guid: c6abeb1e63bcdf546bc3a85f18ebca30, type: 3}
+    totalSpriteSurfaceArea: 950000
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 14293400902683c4297a77d1890a7cfc, type: 3}
+  - {fileID: 21300000, guid: 4011146039649b04c8c1ddaa82d675d3, type: 3}
+  - {fileID: 21300000, guid: 7cc33e602c32b4d4aac823c65c1b2837, type: 3}
+  - {fileID: 21300000, guid: af31ec90dd6fb8c40a7a9605b491d172, type: 3}
+  - {fileID: 21300000, guid: 12c433b0bfed176408feac2bc171c9ab, type: 3}
+  - {fileID: 21300000, guid: a3fa83d0b18947c42a09184aea5c4676, type: 3}
+  - {fileID: 21300000, guid: 1c83e7e0c293e7548ac7a46804ca7c90, type: 3}
+  - {fileID: 21300000, guid: 7db2a001681083240bd7df9149612a2f, type: 3}
+  - {fileID: 21300000, guid: c37fb9016571a8e49866d4064bca390a, type: 3}
+  - {fileID: 21300000, guid: 67c50f11a4dcd664ebc3f88aa5aa117b, type: 3}
+  - {fileID: 21300000, guid: 03e2cca150c56bc488965d1aae9ba985, type: 3}
+  - {fileID: 21300000, guid: eecd01d153a0a04439ef1df345901a29, type: 3}
+  - {fileID: 21300000, guid: 34f605d1b6e56be4597940a86b031957, type: 3}
+  - {fileID: 21300000, guid: 5389ecd1dcf8a3a4f9479bc11c8699a9, type: 3}
+  - {fileID: 21300000, guid: 5d1db1f1544464843b922601cbc5b2b5, type: 3}
+  - {fileID: 21300000, guid: bcd9dd0210d70954d909c241ea2e1956, type: 3}
+  - {fileID: 21300000, guid: ad9dea42f82e9b341a1163701b8bba79, type: 3}
+  - {fileID: 21300000, guid: f80bf992b87412145b14b0b248fb5eec, type: 3}
+  - {fileID: 21300000, guid: 3a2010a206e4366448d1fec9b08f0b3c, type: 3}
+  - {fileID: 21300000, guid: 865db2c2184c4634cad85475afd8a9f8, type: 3}
+  - {fileID: 21300000, guid: 4ef8f6c20c15eb04c9e4f9528b870096, type: 3}
+  - {fileID: 21300000, guid: c2fff113c1164ba4bbcf174b13de034c, type: 3}
+  - {fileID: 21300000, guid: 7318d323d2320744d89d7de47446523e, type: 3}
+  - {fileID: 21300000, guid: 3f4a47331e20b2a4793ec1cf6dab6cab, type: 3}
+  - {fileID: 21300000, guid: 736d0393dd9c188478513e234dd00e01, type: 3}
+  - {fileID: 21300000, guid: 5c19b593dc0d92749aef15387931278f, type: 3}
+  - {fileID: 21300000, guid: d49be4a3d3283d64185673ea76104dde, type: 3}
+  - {fileID: 21300000, guid: 532e50d3c4c79a140bb44a0e00f16076, type: 3}
+  - {fileID: 21300000, guid: 7be694f359986f74ab72f44d5228a7af, type: 3}
+  - {fileID: 21300000, guid: 58c2190429153704caac2927302b13d5, type: 3}
+  - {fileID: 21300000, guid: c6da4224e415a57468cc83ea4cce6e4d, type: 3}
+  - {fileID: 21300000, guid: 147068247217b9445a59a52c266d1d80, type: 3}
+  - {fileID: 21300000, guid: 474dbfc478ef74d408c2e3805003c65b, type: 3}
+  - {fileID: 21300000, guid: 2369d3e44d1fdec498e35dfe8f7e48ca, type: 3}
+  - {fileID: 21300000, guid: a37f44e4e50dee1499df7c4806f96738, type: 3}
+  - {fileID: 21300000, guid: 031bc00575c31e74da85dfbb827ffd3e, type: 3}
+  - {fileID: 21300000, guid: 00073e353dd9ddd44a65f49f2b1ced7a, type: 3}
+  - {fileID: 21300000, guid: 3f47ab659f61de440bffca4f163cdb88, type: 3}
+  - {fileID: 21300000, guid: 8a94a7853f3c25746b15f1778738b86a, type: 3}
+  - {fileID: 21300000, guid: 2b5e77e50b1762e489f228a9b735db70, type: 3}
+  - {fileID: 21300000, guid: bea4e526fae8bc8409aba5097489bc16, type: 3}
+  - {fileID: 21300000, guid: c31c8a36ee0ec3c4aa4a1a68de06ebb1, type: 3}
+  - {fileID: 21300000, guid: 467fac660c4e54743a7d1bd1fcbcb953, type: 3}
+  - {fileID: 21300000, guid: 2de40f660f48b8944a837ce06435c79b, type: 3}
+  - {fileID: 21300000, guid: ffe844a66ab932141be0aae714efb83d, type: 3}
+  - {fileID: 21300000, guid: 47701ea6c991884448677b30c0ceef5b, type: 3}
+  - {fileID: 21300000, guid: b3ee32d6f019dc44e8aea68c95fd1ec8, type: 3}
+  - {fileID: 21300000, guid: 6c2a79d6d9a35b24fbb50598df9ea0e7, type: 3}
+  - {fileID: 21300000, guid: 12e850f64a6623e4eb2036fc6289d932, type: 3}
+  - {fileID: 21300000, guid: b7df4f378874f864f8003078cfbb5a4c, type: 3}
+  - {fileID: 21300000, guid: cce56647f261bbd40b820c5ede18cd05, type: 3}
+  - {fileID: 21300000, guid: a0ddf65765a44844c81967cde2d1619f, type: 3}
+  - {fileID: 21300000, guid: d568e077bd372e44083a1dc9be01a817, type: 3}
+  - {fileID: 21300000, guid: 9e1a3b972eb5fbc4698db9d0298c189a, type: 3}
+  - {fileID: 21300000, guid: c3720ba75a787dc4db8ff461003cc4ad, type: 3}
+  - {fileID: 21300000, guid: 5e3afeb700d82b34b956d75595767426, type: 3}
+  - {fileID: 21300000, guid: c47c3cd75f913bc49a9ddb15ff94af59, type: 3}
+  - {fileID: 21300000, guid: 455fca380dae19e4d8cb29fb01a4ca3e, type: 3}
+  - {fileID: 21300000, guid: e9300db8854ede84c9e9c9c14fc42db4, type: 3}
+  - {fileID: 21300000, guid: 85dfd4c815b8e6145a3ce7fb7a956bd7, type: 3}
+  - {fileID: 21300000, guid: 1405c1f8861c73743a1933fb90ec290d, type: 3}
+  - {fileID: 21300000, guid: 03c0a01953449314d80d21d78cc9a27f, type: 3}
+  - {fileID: 21300000, guid: 855092492903e4046868b39a18a5216d, type: 3}
+  - {fileID: 21300000, guid: dea80b49e6e79ea459f43fd3cc90bdd5, type: 3}
+  - {fileID: 21300000, guid: a37010d9eb226dd4c8f791b35d9055b4, type: 3}
+  - {fileID: 21300000, guid: a06a72f9665875642873fcda29d62b9a, type: 3}
+  - {fileID: 21300000, guid: 1065c80af8d790443bb057da4c8ef38e, type: 3}
+  - {fileID: 21300000, guid: 2abdc07adc3272149ac5e7a94687702d, type: 3}
+  - {fileID: 21300000, guid: deb2857abd7e21e4a86578972817fe3d, type: 3}
+  - {fileID: 21300000, guid: 875545da9d720e44e93dfe0deccb3ad9, type: 3}
+  - {fileID: 21300000, guid: 7303ab0bfb0cbbb4e813180ed434299b, type: 3}
+  - {fileID: 21300000, guid: 290a843bcb26a6a4ca7abc5397c1a6f3, type: 3}
+  - {fileID: 21300000, guid: 87b4bc6b20472324392f4366c80893d0, type: 3}
+  - {fileID: 21300000, guid: 0ddb72cb92e1d9e4198623da5c9f3062, type: 3}
+  - {fileID: 21300000, guid: 82f1931cf85af054eaf43264cfa3b6c0, type: 3}
+  - {fileID: 21300000, guid: 50da012cd22157745a54f5edf7cc97f9, type: 3}
+  - {fileID: 21300000, guid: 24e1dd6c1d433514e955219928f6e420, type: 3}
+  - {fileID: 21300000, guid: 60aee98cee79d784f88489488166ad02, type: 3}
+  - {fileID: 21300000, guid: 33081bac030644f4b928f25cb1f450c0, type: 3}
+  - {fileID: 21300000, guid: 3edb03ec58a4df94f9384348828c9ea0, type: 3}
+  - {fileID: 21300000, guid: b6a8faecc45e36248a1adc2c41fae9e0, type: 3}
+  - {fileID: 21300000, guid: 762304fcecc1710478a745d67b34ff2b, type: 3}
+  - {fileID: 21300000, guid: f52b270d05ba48c4c83d19fac7615b0a, type: 3}
+  - {fileID: 21300000, guid: 1eb18d0d60a0d164e86ebd94d3be18b9, type: 3}
+  - {fileID: 21300000, guid: b160967d6fb2755489db98b6c62852b8, type: 3}
+  - {fileID: 21300000, guid: 7610b98d36d8edf4a989a8706d1faec4, type: 3}
+  - {fileID: 21300000, guid: a87531fd246a3e643aa1613c576fbc1d, type: 3}
+  - {fileID: 21300000, guid: 2e3e061e479e6f847bb585c861b1cbc9, type: 3}
+  - {fileID: 21300000, guid: c5328c3e582d85b4683ed6c9641a01c7, type: 3}
+  - {fileID: 21300000, guid: 0583a18e3cfae6645bd3af64987ef561, type: 3}
+  - {fileID: 21300000, guid: b0d932aebf1dec1438bb70854cf3798a, type: 3}
+  - {fileID: 21300000, guid: 970d02ce5bdb65744b67415e9406486f, type: 3}
+  - {fileID: 21300000, guid: 50a12f1faff41da499bb1b4c01c4689d, type: 3}
+  - {fileID: 21300000, guid: 3b7d2b5fa8c68894ebc0a2c43aa43abc, type: 3}
+  - {fileID: 21300000, guid: 84bc236f810f27b488c295d9b12d7ae3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Keyboard_Black_Caps_Lock
+  - Keyboard_Black_F5
+  - Keyboard_Black_F11
+  - Keyboard_Black_Z
+  - Keyboard_Black_Arrow_Up
+  - Keyboard_Black_H
+  - Keyboard_Black_Y
+  - Keyboard_Black_Del
+  - Keyboard_Black_6
+  - Keyboard_Black_Semicolon
+  - Keyboard_Black_4
+  - Keyboard_Black_Plus
+  - Keyboard_Black_8
+  - Keyboard_Black_12
+  - Keyboard_Black_Shift
+  - Keyboard_Black_Shift_Alt
+  - Keyboard_Black_F
+  - Keyboard_Black_E
+  - Keyboard_Black_Command
+  - Keyboard_Black_Arrow_Right
+  - Keyboard_Black_F10
+  - Keyboard_Black_Slash
+  - Keyboard_Black_Page_Up
+  - Keyboard_Black_J
+  - Keyboard_Black_F9
+  - Keyboard_Black_Space
+  - Keyboard_Black_F3
+  - Keyboard_Black_O
+  - Keyboard_Black_Q
+  - Keyboard_Black_9
+  - Keyboard_Black_Page_Down
+  - Keyboard_Black_Plus_Tall
+  - Keyboard_Black_Win
+  - Keyboard_Black_Tilda
+  - Keyboard_Black_Quote
+  - Keyboard_Black_Bracket_Left
+  - Keyboard_Black_Home
+  - Keyboard_Black_F4
+  - Keyboard_Black_F7
+  - Keyboard_Black_Backspace
+  - Keyboard_Black_R
+  - Keyboard_Black_F1
+  - Keyboard_Black_Print_Screen
+  - Keyboard_Black_End
+  - Keyboard_Black_U
+  - Keyboard_Black_0
+  - Keyboard_Black_S
+  - Keyboard_Black_M
+  - Keyboard_Black_T
+  - Keyboard_Black_A
+  - Keyboard_Black_Asterisk
+  - Keyboard_Black_11
+  - Keyboard_Black_Mouse_Simple
+  - Keyboard_Black_1
+  - Keyboard_Black_W
+  - Keyboard_Black_L
+  - Keyboard_Black_Bracket_Right
+  - Keyboard_Black_Tab
+  - Keyboard_Black_Backspace_Alt
+  - Keyboard_Black_F8
+  - Keyboard_Black_V
+  - Keyboard_Black_G
+  - Keyboard_Black_Enter_Tall
+  - Keyboard_Black_P
+  - Keyboard_Black_Enter_Alt
+  - Keyboard_Black_Ctrl
+  - Keyboard_Black_Mark_Right
+  - Keyboard_Black_Alt
+  - Keyboard_Black_F12
+  - Keyboard_Black_Num_Lock
+  - Keyboard_Black_F2
+  - Keyboard_Black_F6
+  - Keyboard_Black_I
+  - Keyboard_Black_5
+  - Keyboard_Black_Enter
+  - Keyboard_Black_Insert
+  - Keyboard_Black_10
+  - Keyboard_Black_N
+  - Keyboard_Black_X
+  - Keyboard_Black_D
+  - Keyboard_Black_C
+  - Keyboard_Black_3
+  - Keyboard_Black_Mouse_Left
+  - Keyboard_Black_Mouse_Right
+  - Keyboard_Black_Arrow_Down
+  - Keyboard_Black_Question
+  - Keyboard_Black_2
+  - Keyboard_Black_Esc
+  - Keyboard_Black_B
+  - Keyboard_Black_Mouse_Middle
+  - Keyboard_Black_Mark_Left
+  - Keyboard_Black_Arrow_Left
+  - Keyboard_Black_K
+  - Keyboard_Black_Minus
+  - Keyboard_Black_7
+  m_RenderDataMap: {}
+  m_Tag: KeyboardMouse
+  m_IsVariant: 0

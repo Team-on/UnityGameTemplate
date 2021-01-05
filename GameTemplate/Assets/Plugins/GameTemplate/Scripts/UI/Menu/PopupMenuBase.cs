@@ -61,7 +61,6 @@ public class PopupMenuBase : MenuBase {
 			return;
 		isShowed = false;
 
-		SaveLastButton();
 
 		if (isForce) {
 			CallBefore?.Invoke();
@@ -70,6 +69,8 @@ public class PopupMenuBase : MenuBase {
 			CallAfter?.Invoke();
 		}
 		else {
+			SaveLastButton();
+			
 			CallBefore?.Invoke();
 			LeanTween.move(popupTransform.gameObject, closePos.position, animTime)
 				.setEase(easeOut)
