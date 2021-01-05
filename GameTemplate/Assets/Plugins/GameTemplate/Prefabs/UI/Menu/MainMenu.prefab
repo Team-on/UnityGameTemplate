@@ -223,6 +223,7 @@ MonoBehaviour:
   playOnForce: 0
   openClip: {fileID: 0}
   closeClip: {fileID: 0}
+  ambient: {fileID: 0}
   cg: {fileID: 9054416191566551963}
   rt: {fileID: 9054416191566551960}
   firstSelected: {fileID: 1678618541157534196}

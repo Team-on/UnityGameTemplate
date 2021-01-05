@@ -44,6 +44,9 @@ public class PopupMenuBase : MenuBase {
 
 		if ((!isForce || playOnForce) && openClip)
 			AudioManager.Instance.Play(openClip);
+		
+		if ((!isForce || playOnForce) && ambient)
+			AudioManager.Instance.PlayMusic(ambient);
 
 		if (isForce) {
 			CallBefore?.Invoke();

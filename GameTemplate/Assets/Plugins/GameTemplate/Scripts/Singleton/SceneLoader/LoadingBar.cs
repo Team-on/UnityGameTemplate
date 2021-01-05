@@ -83,6 +83,8 @@ public class LoadingBar : MonoBehaviour {
 		enabled = true;
 		bool needDelay = (bool)data?["uiNeedDelay"];
 
+		AudioManager.Instance.MuteMusicAndDelete();
+
 		loadingBarRoutine = StartCoroutine(needDelay ? LoadingBarUpdateWithDelay() : LoadingBarUpdate());
 
 		tipText.text = tipBeggining + " " + tips.Random();

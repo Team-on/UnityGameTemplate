@@ -751,6 +751,7 @@ MonoBehaviour:
   playOnForce: 0
   openClip: {fileID: 0}
   closeClip: {fileID: 8300000, guid: b9c8758345aeecc45965d2d946f6726c, type: 3}
+  ambient: {fileID: 8300000, guid: 17f61406dec02e5488604385e2de3a58, type: 3}
   cg: {fileID: 2102257481463776148}
   rt: {fileID: 2102257481463776146}
   firstSelected: {fileID: 0}

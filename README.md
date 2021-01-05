@@ -88,7 +88,6 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
  * https://freesound.org/people/rhodesmas/sounds/342759/ - resource counter
  
 ### Music assets:
- * - splash screen any key ambient
- * - menu ambient
+ * https://freesound.org/people/Andrewkn/sounds/530376/ - menu ambient
    
 Check out [wiki](https://github.com/Team-on/UnityGameTemplate/wiki) for additional information

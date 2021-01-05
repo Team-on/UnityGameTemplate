@@ -16,6 +16,8 @@ public abstract class MenuBase : MonoBehaviour {
 	[SerializeField] protected bool playOnForce = false;
 	[SerializeField] protected AudioClip openClip;
 	[SerializeField] protected AudioClip closeClip;
+	[Space]
+	[SerializeField] protected AudioClip ambient;
 
 	[Header("Refs")]
 	[NaughtyAttributes.ReadOnly] public CanvasGroup cg;
@@ -53,6 +55,9 @@ public abstract class MenuBase : MonoBehaviour {
 
 		if ((!isForce || playOnForce) && openClip)
 				AudioManager.Instance.Play(openClip);
+
+		if ((!isForce || playOnForce) && ambient)
+			AudioManager.Instance.PlayMusic(ambient);
 
 		if (isForce) {
 			cg.alpha = 1.0f;
