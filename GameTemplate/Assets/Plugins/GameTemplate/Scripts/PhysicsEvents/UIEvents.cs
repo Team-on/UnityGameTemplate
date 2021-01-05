@@ -30,6 +30,10 @@ public class UIEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
 	private void Awake() {
 		isOnlyForMouse = selectable.navigation.mode == Navigation.Mode.None;
+
+#if UNITY_ANDROID
+		isOnlyForMouse = true;
+#endif
 	}
 
 	private void OnDisable() {

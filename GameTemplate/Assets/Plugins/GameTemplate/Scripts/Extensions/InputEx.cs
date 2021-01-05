@@ -21,6 +21,7 @@ public static class InputEx {
 
 		return (Keyboard.current?.anyKey?.wasPressedThisFrame ?? false) ||
 			(Keyboard.current?.spaceKey?.wasPressedThisFrame ?? false) ||
+
 			(Gamepad.current?.buttonEast?.wasPressedThisFrame ?? false) ||
 			(Gamepad.current?.buttonNorth?.wasPressedThisFrame ?? false) ||
 			(Gamepad.current?.buttonSouth?.wasPressedThisFrame ?? false) ||
@@ -36,7 +37,10 @@ public static class InputEx {
 			(Gamepad.current?.leftShoulder?.wasPressedThisFrame ?? false) ||
 			(Gamepad.current?.rightShoulder?.wasPressedThisFrame ?? false) ||
 			(Gamepad.current?.leftTrigger?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.rightTrigger?.wasPressedThisFrame ?? false);
+			(Gamepad.current?.rightTrigger?.wasPressedThisFrame ?? false) ||
+
+			(Touchscreen.current?.press?.wasPressedThisFrame ?? false) 
+			;
 	}
 
 	public static bool IsUseGamepad(InputDevice device) {
