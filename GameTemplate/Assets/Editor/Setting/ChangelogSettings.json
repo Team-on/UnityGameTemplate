@@ -8,5 +8,5 @@
             "notes": []
         }
     ],
-    "readme": ""
+    "readme": "Game page - https://teamon.itch.io/gametemplate\nSource code - https://github.com/Team-on/UnityGameTemplate\n\n\nAvailable in Windows, OSX, Linux, Android and Web \r\nIf you encounter any problem, please leave a issue! \nUse in-game form for that, report it in discord, or email me directly to timonsol13@gmail.com\n\r\nMac Version Notes:\r\nIf you get \"this package is from an unidentified developer\" right click (or control-click) and select open. You should now get the option to open anyways.\r\n\r\nLinux Version Notes:\r\nMake sure to set the x86_64 as executable before running.\r\n\n\nUsed assets:\nhttps://github.com/Team-on/UnityGameTemplate/wiki/Used-assets"
 }
