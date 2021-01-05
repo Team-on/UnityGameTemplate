@@ -45,7 +45,8 @@ SpriteAtlas:
     packables:
     - {fileID: 102900000, guid: 1c0f0859ea62bf24e8ce9ce35fe338f2, type: 3}
     - {fileID: 102900000, guid: 4655dbc33f830884f92eb86e34a835c9, type: 3}
-    totalSpriteSurfaceArea: 2213701
+    - {fileID: 102900000, guid: 42a7f9cf69731664d9a8b5b3c840ec6f, type: 3}
+    totalSpriteSurfaceArea: 2989254
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -77,6 +78,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 432f6b92520cb384b91c381860c74141, type: 3}
   - {fileID: 21300000, guid: 9e1f36a2b01c53a41be7b755751d463d, type: 3}
   - {fileID: 21300000, guid: 1efe4aa24a33d0e4181b793c7107a7df, type: 3}
+  - {fileID: 21300000, guid: fc3db9e2039ebe449b4b9f8828152192, type: 3}
   - {fileID: 21300000, guid: aa71daf2bdaf98f4294b307607c548cb, type: 3}
   - {fileID: 21300000, guid: 02bc6413e9c541c4c8fd2e7501c27232, type: 3}
   - {fileID: 21300000, guid: 43e9e9534dbced44d8adc26fb27a07c2, type: 3}
@@ -107,6 +109,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 93d678c711286d84f8621241c92445a0, type: 3}
   - {fileID: 21300000, guid: 3bad5fd713d2d0642855514472e08c80, type: 3}
   - {fileID: 21300000, guid: 466d33f7eb07e9640986ec48a54a4baa, type: 3}
+  - {fileID: 21300000, guid: 5bdc17f7c2399a842af1b17963282e55, type: 3}
   - {fileID: 21300000, guid: a8109a18a3c872844b67d55f6efda61a, type: 3}
   - {fileID: 21300000, guid: cd8f0e18abed1e84ab0cb2758c964e8c, type: 3}
   - {fileID: 21300000, guid: 575f0768799e8504a929d65ae3bc2c28, type: 3}
@@ -192,6 +195,7 @@ SpriteAtlas:
   - down
   - progressBar1
   - pause
+  - WebSite
   - sign1
   - SquareRy8
   - left arrow
@@ -222,6 +226,7 @@ SpriteAtlas:
   - menu2
   - menu2
   - progressBar4
+  - Discord
   - hamburger icon
   - cross
   - Button A

@@ -80,6 +80,7 @@ Some assets was reworked, see changelog in Assets\Plugins\CustomChanges.md. Thes
   * https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276 - UI placeholders
   * https://www.iconfinder.com/icons/4373196/discord_logo_logos_icon - discord icon
   * https://www.pngkit.com/view/u2w7w7i1u2a9r5w7_free-icons-png-web-icon-round-png/ - website icon
+  * https://opengameart.org/content/free-keyboard-and-controllers-prompts-pack - input icons
   
 ### Sound assets:
  * https://freesound.org/people/unfa/sounds/244266/ - button click 
