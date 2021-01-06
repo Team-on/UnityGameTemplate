@@ -1,0 +1,236 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: OthersGamepads
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: a9da1b49e450c9a479dc58cf86fedb38, type: 3}
+    totalSpriteSurfaceArea: 900000
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a797bd10662086d41bcaba65aead2a69, type: 3}
+  - {fileID: 21300000, guid: 5be8a7203eef37140897f108f0fada52, type: 3}
+  - {fileID: 21300000, guid: b18ead9014728404c8d41883fe9816d2, type: 3}
+  - {fileID: 21300000, guid: ea554cd04ebe0ee4a9a6cb94de75e24d, type: 3}
+  - {fileID: 21300000, guid: 375043010a5f01247b8fab1b1abf2b4e, type: 3}
+  - {fileID: 21300000, guid: 81d436a188fb5ea428ecdf3e2ba68428, type: 3}
+  - {fileID: 21300000, guid: 8ff87aa14150bc24e931d7db9a0126b3, type: 3}
+  - {fileID: 21300000, guid: da18ace19804b6c4885b495fa11fb6fa, type: 3}
+  - {fileID: 21300000, guid: 8f70e8f1f914a524cbe0cc96e7a5d28d, type: 3}
+  - {fileID: 21300000, guid: 889e0af198911e44db40613675d2493e, type: 3}
+  - {fileID: 21300000, guid: 0c895bf110075224d8c5dd13aff364f3, type: 3}
+  - {fileID: 21300000, guid: a210dc326504e774ea52b5b76184393c, type: 3}
+  - {fileID: 21300000, guid: 84cc68a23f627184a87d6cd6f4bc786b, type: 3}
+  - {fileID: 21300000, guid: ebe4a5d211c209c47bb76c83b9080e0e, type: 3}
+  - {fileID: 21300000, guid: 48b99e53c154ddf4a89471f022028dff, type: 3}
+  - {fileID: 21300000, guid: d38f206450a3cfd439ab9a27270fe1b8, type: 3}
+  - {fileID: 21300000, guid: f2416a94f4bd8644c9d2de1acf99268e, type: 3}
+  - {fileID: 21300000, guid: e49736c4fe925f2448f3d3e16fab8a0b, type: 3}
+  - {fileID: 21300000, guid: ba3de3f4f3726524cb26265558989ce5, type: 3}
+  - {fileID: 21300000, guid: df08f60599b448b48b5b7e00d2e1564c, type: 3}
+  - {fileID: 21300000, guid: 304bb335531f33643bf123460358d165, type: 3}
+  - {fileID: 21300000, guid: a7fe3745a4ca9874083782e82cceea89, type: 3}
+  - {fileID: 21300000, guid: 34c63b45165dce44fbe135ab7ff86b03, type: 3}
+  - {fileID: 21300000, guid: d1cd00556f45e2c49870c3b9b1569797, type: 3}
+  - {fileID: 21300000, guid: 129e957591c7fbc4e926aaba8a54eed5, type: 3}
+  - {fileID: 21300000, guid: 7c21cd85c7977ed4eb7d7a6dbbbb2800, type: 3}
+  - {fileID: 21300000, guid: 343e61a5d2d4cbf4db099d0e1cb27adf, type: 3}
+  - {fileID: 21300000, guid: ba6a0ba5c277d6c4ebfbe0b06e003734, type: 3}
+  - {fileID: 21300000, guid: 0171cbb5463bb4e4187dbb75fa213a78, type: 3}
+  - {fileID: 21300000, guid: bcdbf0c508c130942a777d123c1aba35, type: 3}
+  - {fileID: 21300000, guid: d2fa7cd5b5ea9404e919d41185412e92, type: 3}
+  - {fileID: 21300000, guid: 58a65b06f65bf8347a562fa325b6e9b2, type: 3}
+  - {fileID: 21300000, guid: 3ccfcd26ced58f7498a37986a7a876bf, type: 3}
+  - {fileID: 21300000, guid: d25ea1960e50a1b419d244fb9f2c097e, type: 3}
+  - {fileID: 21300000, guid: 4fca5896118ce0743bbbfb6b4a49dad0, type: 3}
+  - {fileID: 21300000, guid: b829d907f2dfa6a47b0c23fbd03d1fd2, type: 3}
+  - {fileID: 21300000, guid: 98c8c057b8801b94a9b0dede3ac180c1, type: 3}
+  - {fileID: 21300000, guid: 6efa3b676ac0c5044ae39a3b838fa8b6, type: 3}
+  - {fileID: 21300000, guid: 8e873087b5e234c4d8582bf9104982c1, type: 3}
+  - {fileID: 21300000, guid: 40349fe7288aad048b9ae465d86f63a7, type: 3}
+  - {fileID: 21300000, guid: 4fe19608ffe4a7c499ce7d80cf11106d, type: 3}
+  - {fileID: 21300000, guid: e04d6368a65ff6244990820075e03ce2, type: 3}
+  - {fileID: 21300000, guid: 9143c298947592d459ae1d4e616af545, type: 3}
+  - {fileID: 21300000, guid: 22e0e7f85df9a9b46aeaf5cd1d20e13d, type: 3}
+  - {fileID: 21300000, guid: 7df9a509933cb444eba0a2d0d0b9e734, type: 3}
+  - {fileID: 21300000, guid: 90811629ed4e9e24da821b644cd6ad53, type: 3}
+  - {fileID: 21300000, guid: ac11fb29f389702448d0c7d2053a9487, type: 3}
+  - {fileID: 21300000, guid: 29892a7987f3d474887967a70e59cc05, type: 3}
+  - {fileID: 21300000, guid: 7acccd89d5a79b7488742cdc12ab0a1d, type: 3}
+  - {fileID: 21300000, guid: 2e07b5e9904565c4a83a89085fa20641, type: 3}
+  - {fileID: 21300000, guid: 828765f98677ac2438437a75c8bbb107, type: 3}
+  - {fileID: 21300000, guid: f871bef9a59f377419cf127a26888f35, type: 3}
+  - {fileID: 21300000, guid: cc49541a2a1e87a478578c64375c7709, type: 3}
+  - {fileID: 21300000, guid: ae2c845ad7e53cd49acb6800085801c1, type: 3}
+  - {fileID: 21300000, guid: 6a9a175a7977e664dac073e10d0d3195, type: 3}
+  - {fileID: 21300000, guid: afab5a6a12f80514fb4901223bb9de29, type: 3}
+  - {fileID: 21300000, guid: 672410aa7befaac4faaf917ad4091952, type: 3}
+  - {fileID: 21300000, guid: 5dc8d3aa814f86549a4291534708eb45, type: 3}
+  - {fileID: 21300000, guid: b42dc0da2d4194f47a17ca40744f5395, type: 3}
+  - {fileID: 21300000, guid: 006651da8488cc948a7b31eb96ad3169, type: 3}
+  - {fileID: 21300000, guid: e212d20bb36b4a34db092dac5a12d822, type: 3}
+  - {fileID: 21300000, guid: fd3de41bf99743a4a84a6a13e93218b0, type: 3}
+  - {fileID: 21300000, guid: 898e995b04a6a6049a7f215d4413ddf2, type: 3}
+  - {fileID: 21300000, guid: a7c9c77b456a27b4ab6a595a04aded47, type: 3}
+  - {fileID: 21300000, guid: be934a7b2527b2745b7ec03b2a66e5cc, type: 3}
+  - {fileID: 21300000, guid: 1e71848bff4d98e468fd4c848d0a5970, type: 3}
+  - {fileID: 21300000, guid: b201fbbb2ef01d445b46994207f54434, type: 3}
+  - {fileID: 21300000, guid: f74feecb272cafd4eb1b01861c4f20a4, type: 3}
+  - {fileID: 21300000, guid: b590050c7c526bd40bb26c68e7ad67d5, type: 3}
+  - {fileID: 21300000, guid: baad207c467656b44a5281df45921c9b, type: 3}
+  - {fileID: 21300000, guid: 19e5c27ce310afa488e99b36a117d826, type: 3}
+  - {fileID: 21300000, guid: a25a3fac2c96c0049a3a906f2e67913d, type: 3}
+  - {fileID: 21300000, guid: 60e07abc8323eef4ba95faff8c049eba, type: 3}
+  - {fileID: 21300000, guid: dc6c1ecc33743ef42a01ea2f3f5be9d9, type: 3}
+  - {fileID: 21300000, guid: 806477dc6b658d34fa0b50e5c7d850c4, type: 3}
+  - {fileID: 21300000, guid: 8a50ad2d8f51ef9458873bad1a32e452, type: 3}
+  - {fileID: 21300000, guid: 63f58a7db275a994fad52a9be823dc53, type: 3}
+  - {fileID: 21300000, guid: 09dd218d26259fc4ba45877966c4da97, type: 3}
+  - {fileID: 21300000, guid: a2f1950ee0c382545bb75fda950978de, type: 3}
+  - {fileID: 21300000, guid: 348ec32ed45088d4aad258005b4eed21, type: 3}
+  - {fileID: 21300000, guid: b0b80f3ecf3be1948b5992caa5f3ac1e, type: 3}
+  - {fileID: 21300000, guid: 93967a5e00c0e0a47b947f79618b6417, type: 3}
+  - {fileID: 21300000, guid: b9853d6e741905142aa12b15cefdee44, type: 3}
+  - {fileID: 21300000, guid: 7e6790ae975948743b859b2079d77282, type: 3}
+  - {fileID: 21300000, guid: 4770ebdee39325e48a956e29242cf1f9, type: 3}
+  - {fileID: 21300000, guid: f703203f3fe96f141973ac83c03d23ba, type: 3}
+  - {fileID: 21300000, guid: 60c2f35fcb377a84fbf596991138a5d8, type: 3}
+  - {fileID: 21300000, guid: 847f295f9c1d1b748974d105660d97d2, type: 3}
+  - {fileID: 21300000, guid: ddb4ab6f8212139499144183b8abc6f3, type: 3}
+  - {fileID: 21300000, guid: 1631fadfda150e345b1cb60eaf388c2e, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Switch_A
+  - Ouya_L1
+  - Luna_Dpad_Up
+  - Switch_Minus
+  - Ouya_R2
+  - Steam_RT
+  - Ouya_Right_Stick
+  - Stadia_X
+  - Stadia_Dpad_Up
+  - Ouya_O
+  - Ouya_Dpad_Up
+  - Switch_Plus
+  - Switch_RB
+  - Ouya_L2
+  - Luna_Y
+  - Stadia_Dpad_Right
+  - Stadia_A
+  - Steam_Left_Track_Up
+  - Ouya_Left_Stick
+  - Ouya_Dpad_Down
+  - Luna_Dpad
+  - Stadia_Select
+  - Steam_Back
+  - Steam_B
+  - Switch_Dpad_Up
+  - Switch_Dpad
+  - Luna_Dpad_Down
+  - Steam_Right_Track
+  - Stadia_R1
+  - Steam_LT
+  - Luna_LB
+  - Switch_Left_Stick
+  - Stadia_B
+  - Steam_Left_Track_Center
+  - Steam_Left_Track_Right
+  - Switch_X
+  - Luna_RB
+  - Luna_RT
+  - Luna_Circle
+  - Switch_Right_Stick
+  - Steam_A
+  - Stadia_Dpad_Down
+  - Switch_Dpad_Down
+  - Ouya_Dpad
+  - Steam_Left_Track_Down
+  - Stadia_Dpad
+  - Steam_Left_Track_Left
+  - Luna_Right_Stick_Click
+  - Luna_LT
+  - Luna_Menu
+  - Stadia_R2
+  - Steam_LB
+  - Luna_Left_Stick
+  - Steam_Y
+  - Ouya_R1
+  - Stadia_Menu
+  - Steam_RB
+  - Switch_Y
+  - Switch_LB
+  - Luna_Dpad_Left
+  - Steam_Right_Grip
+  - Ouya_Dpad_Right
+  - Steam_Right_Track_Center
+  - Luna_Dpad_Right
+  - Ouya_U
+  - Switch_Dpad_Left
+  - Stadia_Dpad_Left
+  - Switch_RT
+  - Stadia_Left_Stick
+  - Switch_B
+  - Stadia_L2
+  - Steam_X
+  - Luna_X
+  - Steam_Left_Track
+  - Luna_B
+  - Ouya_Y
+  - Luna_Left_Stick_Click
+  - Stadia_Right_Stick.png
+  - Switch_LT
+  - Luna_A
+  - Switch_Dpad_Right
+  - Stadia_L1
+  - Luna_Right_Stick
+  - Stadia_Dots
+  - Steam_Left_Grip
+  - Ouya_Dpad_Left
+  - Ouya_A
+  - Steam_Stick
+  - Stadia_Y
+  - Steam_Start
+  m_RenderDataMap: {}
+  m_Tag: OthersGamepads
+  m_IsVariant: 0

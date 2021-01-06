@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Xbox
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: d03d5d69321923c4988b0a626d1c9109, type: 3}
+    - {fileID: 102900000, guid: 03c31f797d5717e42bb976f478ff1ea0, type: 3}
+    - {fileID: 102900000, guid: b42c059b42c425c4485691ed1ab89e91, type: 3}
+    totalSpriteSurfaceArea: 580000
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: cc19dd402b7519942b8dc508d1017f83, type: 3}
+  - {fileID: 21300000, guid: 18b21170b1194b945aeed4ee3d73f100, type: 3}
+  - {fileID: 21300000, guid: ac3efc70ff5d7984daf9afcf4eeb5f04, type: 3}
+  - {fileID: 21300000, guid: 0e503fc04fa612648af01cec9c5eceba, type: 3}
+  - {fileID: 21300000, guid: 9ab255d033e1f914ca3b7cbf5c2d03c2, type: 3}
+  - {fileID: 21300000, guid: a3f18801b00a5fb4c815b1d452710e3d, type: 3}
+  - {fileID: 21300000, guid: fef2fa6189bf9664ba1fe1074e17c563, type: 3}
+  - {fileID: 21300000, guid: 2914df712e758b64482ea05d21cf235e, type: 3}
+  - {fileID: 21300000, guid: 656234a143fd479479b89556b6c95c49, type: 3}
+  - {fileID: 21300000, guid: 7aaf37c10336df04c91196f7ac1d45a5, type: 3}
+  - {fileID: 21300000, guid: e7f83262d7b148746a3aeeafba69b93c, type: 3}
+  - {fileID: 21300000, guid: 03cf7bf280f94674a9216b9f76ef15ed, type: 3}
+  - {fileID: 21300000, guid: d70c9043023309545804d2e63d53da1a, type: 3}
+  - {fileID: 21300000, guid: feb098c3ad57b12428541a55c1088d20, type: 3}
+  - {fileID: 21300000, guid: b39507f3aa95dd94a8a9a5b34f6e517c, type: 3}
+  - {fileID: 21300000, guid: af0c845437881b44db2d58c59eb3bed5, type: 3}
+  - {fileID: 21300000, guid: 3e7dde941a19649449d73df7aa550c99, type: 3}
+  - {fileID: 21300000, guid: 88582ef4269aa524ba644080c9cba268, type: 3}
+  - {fileID: 21300000, guid: 85467c65096de1a45bdcb9e7c4700e7c, type: 3}
+  - {fileID: 21300000, guid: 5ced9185701ce4c42b865d3357aa9043, type: 3}
+  - {fileID: 21300000, guid: 275c9ea5447f4fb4c89720f5873eb87d, type: 3}
+  - {fileID: 21300000, guid: 97203556c7e06c242ba88cfa87cdd0e7, type: 3}
+  - {fileID: 21300000, guid: 49828e86a8e81ea4096c002b2ac29a1e, type: 3}
+  - {fileID: 21300000, guid: 45084db6e6580da4397546bcff1ff345, type: 3}
+  - {fileID: 21300000, guid: 01996ef6cb461e9478ad425392abc1e2, type: 3}
+  - {fileID: 21300000, guid: d0e606175583f864baefa4a996d71560, type: 3}
+  - {fileID: 21300000, guid: be2b4e275138fc04990342a3bb7610b6, type: 3}
+  - {fileID: 21300000, guid: d18e0eb7af14b5a4192f61cba81b0c05, type: 3}
+  - {fileID: 21300000, guid: 325ad46896a66b143a0280cb315d90f7, type: 3}
+  - {fileID: 21300000, guid: a9e476f86f0f0b54aa937da89e183e50, type: 3}
+  - {fileID: 21300000, guid: 593bc0199e922224fbc4b6d5d9159079, type: 3}
+  - {fileID: 21300000, guid: a7f5dfb93ac10de4690a8f3dfee8c30e, type: 3}
+  - {fileID: 21300000, guid: 0137e13a8e84efe4880d21ca6458511d, type: 3}
+  - {fileID: 21300000, guid: b61fa96a799a80941b774415bffccc14, type: 3}
+  - {fileID: 21300000, guid: 753ef07ab387ab744a2d4602ccc1cbd4, type: 3}
+  - {fileID: 21300000, guid: 4800fa9a649cd1f4eabff5f9bc8f3182, type: 3}
+  - {fileID: 21300000, guid: 86de18eac62b92b4bacdf9902d7b3f3f, type: 3}
+  - {fileID: 21300000, guid: 81fc83fa1a80d784188be57ecb4733f8, type: 3}
+  - {fileID: 21300000, guid: b9bfd38bc302d174ea653e8d8b93c446, type: 3}
+  - {fileID: 21300000, guid: 40df35ab448171749877181cbc4caf3c, type: 3}
+  - {fileID: 21300000, guid: 75a9a5cb586ae644e92bb8997a0e72a1, type: 3}
+  - {fileID: 21300000, guid: b067357cfc26fe6418734a055b819284, type: 3}
+  - {fileID: 21300000, guid: 04af06cc0a486ed4d95dbed1f0d2cd1a, type: 3}
+  - {fileID: 21300000, guid: 23a4a20de1084714d98a0e7e0fdcc6ee, type: 3}
+  - {fileID: 21300000, guid: be26bb4da2d193b4fb6293585b830a2d, type: 3}
+  - {fileID: 21300000, guid: 3387ad8d184b24d429e76a00105b3955, type: 3}
+  - {fileID: 21300000, guid: f098e8cd617482b4c814f4f3cdebe7d9, type: 3}
+  - {fileID: 21300000, guid: b5a7d9cd54ac75145b228243581299b1, type: 3}
+  - {fileID: 21300000, guid: b47dc00ee784fc949aa5504ec3986b1c, type: 3}
+  - {fileID: 21300000, guid: b590512ee0a15a04797d2f4205bc8ed3, type: 3}
+  - {fileID: 21300000, guid: 1d259b4e6f93fad4e92578c96adf0a13, type: 3}
+  - {fileID: 21300000, guid: 9bbdeb8e9dcdbaf4a8fb080f1e202c91, type: 3}
+  - {fileID: 21300000, guid: e1e7999eaf86c83448d5c61cc524c57c, type: 3}
+  - {fileID: 21300000, guid: 70de23be20b85fb49a6b23d2647841a9, type: 3}
+  - {fileID: 21300000, guid: 39c607ce5ccc7e1429c78195f6cb8beb, type: 3}
+  - {fileID: 21300000, guid: 4748e52fae7b6d241ad7d006cf75cab7, type: 3}
+  - {fileID: 21300000, guid: 74f4838ffbfffc74888bc01c8264cd07, type: 3}
+  - {fileID: 21300000, guid: a6e391cfe908f5e4f9e88d1cb2925cb9, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - XboxSeriesX_Dpad_Up
+  - XboxOne_Dpad_Left
+  - XboxSeriesX_View
+  - XboxSeriesX_LB
+  - XboxSeriesX_Dpad_Right
+  - XboxOne_Windows
+  - XboxOne_Left_Stick_Click
+  - XboxOne_Dpad_Down
+  - 360_Right_Stick_Click
+  - XboxOne_RT
+  - XboxOne_Menu
+  - XboxSeriesX_Menu
+  - 360_RB
+  - 360_Dpad_Up
+  - XboxSeriesX_RB
+  - 360_Start
+  - XboxOne_RB
+  - 360_Left_Stick_Click
+  - XboxOne_LB
+  - 360_Dpad_Left
+  - XboxOne_A
+  - XboxOne_Dpad_Up
+  - XboxSeriesX_Dpad_Down
+  - XboxSeriesX_Left_Stick_Click
+  - XboxSeriesX_RT
+  - XboxOne_Right_Stick
+  - XboxSeriesX_Right_Stick_Click
+  - XboxSeriesX_Right_Stick
+  - XboxSeriesX_A
+  - 360_A
+  - XboxSeriesX_Y
+  - XboxOne_Left_Stick
+  - 360_LT
+  - XboxOne_Y
+  - XboxOne_LT
+  - XboxOne_X
+  - XboxSeriesX_LT
+  - XboxOne_Right_Stick_Click
+  - 360_Dpad
+  - XboxOne_B
+  - 360_Right_Stick
+  - XboxSeriesX_Dpad_Left
+  - 360_Dpad_Right
+  - XboxSeriesX_Left_Stick
+  - 360_LB
+  - XboxOne_Dpad
+  - 360_Y
+  - 360_Dpad_Down
+  - XboxSeriesX_X
+  - 360_X
+  - 360_Back
+  - 360_Left_Stick
+  - XboxSeriesX_Share
+  - XboxSeriesX_B
+  - XboxSeriesX_Dpad
+  - 360_RT
+  - XboxOne_Dpad_Right
+  - 360_B
+  m_RenderDataMap: {}
+  m_Tag: Xbox
+  m_IsVariant: 0

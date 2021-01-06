@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Gestures
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f9bcb1c030fa3204590d776a389b1b3c, type: 3}
+    totalSpriteSurfaceArea: 234660
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c81afe5218075dd41b1b1953ffdc49bb, type: 3}
+  - {fileID: 21300000, guid: eea7c782d0e56554b9d37a6977d876f9, type: 3}
+  - {fileID: 21300000, guid: 3fd69de2235baeb43b4ea312a71c2097, type: 3}
+  - {fileID: 21300000, guid: dbc15583f4fb88a449cd0e6bb1178f4d, type: 3}
+  - {fileID: 21300000, guid: 55239593d73000b45aefc991e79fc6e2, type: 3}
+  - {fileID: 21300000, guid: 6d9e5ac4b521e9c4086d86a9af675b74, type: 3}
+  - {fileID: 21300000, guid: 8201c005ff7eea94e84e7425e7c93c91, type: 3}
+  - {fileID: 21300000, guid: aa7d4b35d9125cf41af1acb61224026e, type: 3}
+  - {fileID: 21300000, guid: 2dfadef5da4ef6e489996755390f3ebb, type: 3}
+  - {fileID: 21300000, guid: 1c7a50366e2cb0c4fab4003a055a053d, type: 3}
+  - {fileID: 21300000, guid: 5d64f3b6c36e0834aa659b4c5b71bbca, type: 3}
+  - {fileID: 21300000, guid: 9731eb27ef659fa448419cdf4a7c72ff, type: 3}
+  - {fileID: 21300000, guid: 2db6f6183420e174b8bd450b15632a0a, type: 3}
+  - {fileID: 21300000, guid: a852bac826b1adf46bd2ef148c045186, type: 3}
+  - {fileID: 21300000, guid: 8e5873b9065ebf04a8a08b500038b13e, type: 3}
+  - {fileID: 21300000, guid: ebcd5be9a298a7f4c82b01802b226b89, type: 3}
+  - {fileID: 21300000, guid: 4e1e578ba596bc34b858660ff70a3cdd, type: 3}
+  - {fileID: 21300000, guid: 1436219b4cb35f64ba49a082c3d6a7b5, type: 3}
+  - {fileID: 21300000, guid: 6e0591cd75caa574bb558fa4281e30fe, type: 3}
+  - {fileID: 21300000, guid: 8deace0e3977e084b9c7c009271d69c3, type: 3}
+  - {fileID: 21300000, guid: 4682deeebf54e9a478b719e409e0b4ba, type: 3}
+  - {fileID: 21300000, guid: 91d6bc0f7d540764ba571b85e66a6e94, type: 3}
+  - {fileID: 21300000, guid: d871553ff20b736488c40ac69e6e0bab, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Gesture_Hold
+  - Gesture_Swipe_Top_Left
+  - Gesture_Swipe_Bottom_Left
+  - Gesture_Swipe_Bottom_Right
+  - Gesture_Finger_Front
+  - Gesture_Half_Circle
+  - Gesture_Tap
+  - Gesture_Scroll_Left
+  - Gesture_Scroll_Right
+  - Gesture_Swipe_Bottom
+  - Gesture_Swipe_Up
+  - Gesture_Double_Tap
+  - Gesture_Zoom_Out
+  - Gesture_Finger_Side
+  - Gesture_Swipe_Top_Right
+  - Gesture_Swipe_Left
+  - Gesture_Quarter_Circle
+  - Gesture_Scroll_Up
+  - Gesture_Full_Circle
+  - Gesture_Double_Rotate
+  - Gesture_Zoom_In
+  - Gesture_Scroll_Down
+  - Gesture_Swipe_Right
+  m_RenderDataMap: {}
+  m_Tag: Gestures
+  m_IsVariant: 0

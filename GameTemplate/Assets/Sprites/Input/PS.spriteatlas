@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PS
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 6b8a843860bbaaf40a869bdd2a8c78a9, type: 3}
+    - {fileID: 102900000, guid: 99f2eb0dc22175e40a0c0e6089df1787, type: 3}
+    - {fileID: 102900000, guid: 00692ae9d589fd340a5622de3d9835d5, type: 3}
+    totalSpriteSurfaceArea: 600000
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: adb30e007e1dcca47bcbc2625c7db2fe, type: 3}
+  - {fileID: 21300000, guid: 3e20a6306ae08e34f970de090c3a1cd1, type: 3}
+  - {fileID: 21300000, guid: e50028c0adc855146968b0b1c6438491, type: 3}
+  - {fileID: 21300000, guid: e88dbeb1992c7d744a26b058d83fc2fd, type: 3}
+  - {fileID: 21300000, guid: 5a23ecc1f3183f94ca7dd4c19cad37ee, type: 3}
+  - {fileID: 21300000, guid: 2a2f8ef16c5b3404fa2bf333d00e477b, type: 3}
+  - {fileID: 21300000, guid: 04f2711270cd5b64099d2ca2f99529de, type: 3}
+  - {fileID: 21300000, guid: 101fdd42a1d0b3a4a944d030d56a0b94, type: 3}
+  - {fileID: 21300000, guid: a3eebab2c8edfa2409baa5c25e2f322a, type: 3}
+  - {fileID: 21300000, guid: 6b9234c263f56ac49bf21b0896bccd95, type: 3}
+  - {fileID: 21300000, guid: df3c81033a24eb14b9ae34ac8e9870ab, type: 3}
+  - {fileID: 21300000, guid: 428de70370df69d45bd4c0025b7ba36e, type: 3}
+  - {fileID: 21300000, guid: c493e213f30c98b49b85e08969afa713, type: 3}
+  - {fileID: 21300000, guid: cf7dcb33e033cb4408e375825fb472dc, type: 3}
+  - {fileID: 21300000, guid: 87dce22414624c74d90f8bfc4bf3582f, type: 3}
+  - {fileID: 21300000, guid: f3622f54b149b184bb91459f5d9c2dd6, type: 3}
+  - {fileID: 21300000, guid: 04e56715533c7964c9d4d0aedc758e43, type: 3}
+  - {fileID: 21300000, guid: f375a935d0c38f84d94844236012f26c, type: 3}
+  - {fileID: 21300000, guid: 7e177675a5fc16248b6e164ef7a7f2a6, type: 3}
+  - {fileID: 21300000, guid: f4c11e85d580f0142b58cab6356acced, type: 3}
+  - {fileID: 21300000, guid: d8a9e7b51d13a2c47a5375342f089353, type: 3}
+  - {fileID: 21300000, guid: cf6700a65e618ac4482ebe2f68b50cbd, type: 3}
+  - {fileID: 21300000, guid: 25ec0ce622b056d4a9ce8dc6053ec0a3, type: 3}
+  - {fileID: 21300000, guid: 3e4ed4471a345e043944c1bfbe22ffd9, type: 3}
+  - {fileID: 21300000, guid: 351a1887f9d4227408c840d111d19614, type: 3}
+  - {fileID: 21300000, guid: c84ac3a7776d11a419c8343ce8d0ff51, type: 3}
+  - {fileID: 21300000, guid: ab4ff3a70eb447c4aa4942694ff7bd67, type: 3}
+  - {fileID: 21300000, guid: c7f381483fb41f14e935b2d6d9fec62f, type: 3}
+  - {fileID: 21300000, guid: 7eaab648006558044a9680311037b8f9, type: 3}
+  - {fileID: 21300000, guid: 921567488542975409a23dd9a8b3345b, type: 3}
+  - {fileID: 21300000, guid: 7e40fd680fa27944cbe5b3dd4835b752, type: 3}
+  - {fileID: 21300000, guid: f0612e7899705cc4dada1964b9b931c5, type: 3}
+  - {fileID: 21300000, guid: 4cb9b89846007d142a4a78a190c2d6fe, type: 3}
+  - {fileID: 21300000, guid: 2ed395d868a2e8343a7198f45826c66d, type: 3}
+  - {fileID: 21300000, guid: 0ed43129014f7bf4cb680eccd1e80cd7, type: 3}
+  - {fileID: 21300000, guid: 1d48fba9c0b43cc42932c02eb17cbba2, type: 3}
+  - {fileID: 21300000, guid: ced3e35a11fe81e4893de27243af7554, type: 3}
+  - {fileID: 21300000, guid: 5292eadacbd6e204898976bc7b35505f, type: 3}
+  - {fileID: 21300000, guid: f920addac480add4c99e64df920b61a3, type: 3}
+  - {fileID: 21300000, guid: 22b97dfa5af0d1947a62312c31e633e5, type: 3}
+  - {fileID: 21300000, guid: ad9a132b5dc44994c9b821f4262665ac, type: 3}
+  - {fileID: 21300000, guid: be71706bc979d5240bf156bfdfee0ae6, type: 3}
+  - {fileID: 21300000, guid: aa98b48bf8ad642438bbd7b11aa622ff, type: 3}
+  - {fileID: 21300000, guid: 9fa6d59bf6de73840a4d49f35b3a70f4, type: 3}
+  - {fileID: 21300000, guid: 775d24bb50c5127478099094c1563f2e, type: 3}
+  - {fileID: 21300000, guid: 47b0c8cbcd450124abdb1b62fb7f5806, type: 3}
+  - {fileID: 21300000, guid: ddbeb73c00d34124f9d8ecd767fadd7e, type: 3}
+  - {fileID: 21300000, guid: 2da2d15ce082e12448ac493c55a33f0f, type: 3}
+  - {fileID: 21300000, guid: 034a475cd8c2dc747b7fb2bc9efee87d, type: 3}
+  - {fileID: 21300000, guid: 33b1be8c5a7407a419d3f1ba95aac0b3, type: 3}
+  - {fileID: 21300000, guid: 8e3e51ac59058a24d9f5dc5fc713216e, type: 3}
+  - {fileID: 21300000, guid: 03de59ec806696e44a2e470ba4c901bf, type: 3}
+  - {fileID: 21300000, guid: 5fc2490d4f2941f4ca46f33e329cf3d7, type: 3}
+  - {fileID: 21300000, guid: be46b35d01c4d9b45b7a0dc9d5c95196, type: 3}
+  - {fileID: 21300000, guid: 414886bde0863944095d45f4565656ff, type: 3}
+  - {fileID: 21300000, guid: 72c82d2eb4dc38041a793129d65fda60, type: 3}
+  - {fileID: 21300000, guid: bff5253ebc5a14f43b4bd8aa1d207855, type: 3}
+  - {fileID: 21300000, guid: 13c3b23f9eb47e74c80e34e84cda7d13, type: 3}
+  - {fileID: 21300000, guid: 7f4d447fa56750e479028ee1ef54e623, type: 3}
+  - {fileID: 21300000, guid: a521d4effb3d3c64b9329370383eb640, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - PS5_Share
+  - PS4_Options
+  - PS3_Left_Stick
+  - PS5_Right_Stick_Click
+  - PS3_Select
+  - PS5_Microphone
+  - PS4_Right_Stick
+  - PS5_Options
+  - PS3_Dpad
+  - PS5_R1
+  - PS5_Left_Stick
+  - PS4_Square
+  - PS3_Dpad_Right
+  - PS3_Start
+  - PS4_R2
+  - PS5_Square
+  - PS5_Dpad_Left
+  - PS4_Dpad_Up
+  - PS4_Left_Stick
+  - PS5_Dpad_Right
+  - PS5_Cross
+  - PS5_Triangle
+  - PS3_Right_Stick_Click
+  - PS5_Left_Stick_Click
+  - PS5_Circle
+  - PS3_Cross
+  - PS4_Right_Stick_Click
+  - PS4_Circle
+  - PS4_L1
+  - PS5_Dpad_Down
+  - PS5_L1
+  - PS3_L2
+  - PS4_Dpad_Left
+  - PS3_Dpad_Down
+  - PS5_Dpad_Up
+  - PS3_R1
+  - PS5_Dpad
+  - PS5_L2
+  - PS4_L2
+  - PS4_R1
+  - PS3_Dpad_Up
+  - PS4_Dpad_Right
+  - PS5_Right_Stick
+  - PS3_Square
+  - PS4_Left_Stick_Click
+  - PS4_Triangle
+  - PS5_R2
+  - PS4_Cross
+  - PS3_R2
+  - PS3_Dpad_Left
+  - PS3_Left_Stick_Click
+  - PS3_Triangle
+  - PS4_Dpad_Down
+  - PS5_Touch_Pad
+  - PS3_L1
+  - PS3_Right_Stick
+  - PS4_Dpad
+  - PS3_Circle
+  - PS4_Touch_Pad
+  - PS4_Share
+  m_RenderDataMap: {}
+  m_Tag: PS
+  m_IsVariant: 0

@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Arrows
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: b5fd288d248b1cf4ca4dfc380ffd54af, type: 3}
+    totalSpriteSurfaceArea: 147699
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 6ef1e802afb33134f856b2950a1f8052, type: 3}
+  - {fileID: 21300000, guid: 6db18ad2f6bd18c49ba384549127b092, type: 3}
+  - {fileID: 21300000, guid: d5c736e306da4a3429f815acb95e79be, type: 3}
+  - {fileID: 21300000, guid: fcdd25068aef3e64682c27b2b20114e3, type: 3}
+  - {fileID: 21300000, guid: 98062b864d694874093157e355d674fa, type: 3}
+  - {fileID: 21300000, guid: 03f0f597463bb394095b3dc0400a489e, type: 3}
+  - {fileID: 21300000, guid: 4552f4db7745e65409a232191f7f52b7, type: 3}
+  - {fileID: 21300000, guid: 451ce37c7d4efb1418db2d1f122f452a, type: 3}
+  - {fileID: 21300000, guid: f02ab63e1f5d07a4a915d717b06dc308, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Directional_Arrow_Sides
+  - Directional_Arrow_Horizontal
+  - Directional_Arrow_Vertical
+  - Directional_Arrow_Quarter_Circle
+  - Directional_Arrow_Straight
+  - Directional_Arrow_Full_Circle
+  - Directional_Arrow_Diagonal
+  - Directional_Arrow_Cross
+  - Directional_Arrow_Half_Circle
+  m_RenderDataMap: {}
+  m_Tag: Arrows
+  m_IsVariant: 0
