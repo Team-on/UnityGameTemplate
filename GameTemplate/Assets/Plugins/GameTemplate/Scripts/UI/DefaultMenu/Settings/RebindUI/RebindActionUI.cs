@@ -6,10 +6,9 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 using UnityEngine.UI;
+using TMPro;
+
 public class RebindActionUI : MonoBehaviour {
-	/// <summary>
-	/// Reference to the action that is to be rebound.
-	/// </summary>
 	public InputActionReference actionReference {
 		get => m_Action;
 		set {
@@ -42,7 +41,7 @@ public class RebindActionUI : MonoBehaviour {
 	/// <summary>
 	/// Text component that receives the name of the action. Optional.
 	/// </summary>
-	public Text actionLabel {
+	public TextMeshProUGUI actionLabel {
 		get => m_ActionLabel;
 		set {
 			m_ActionLabel = value;
@@ -54,7 +53,7 @@ public class RebindActionUI : MonoBehaviour {
 	/// Text component that receives the display string of the binding. Can be <c>null</c> in which
 	/// case the component entirely relies on <see cref="updateBindingUIEvent"/>.
 	/// </summary>
-	public Text bindingText {
+	public TextMeshProUGUI bindingText {
 		get => m_BindingText;
 		set {
 			m_BindingText = value;
@@ -67,7 +66,7 @@ public class RebindActionUI : MonoBehaviour {
 	/// </summary>
 	/// <seealso cref="startRebindEvent"/>
 	/// <seealso cref="rebindOverlay"/>
-	public Text rebindPrompt {
+	public TextMeshProUGUI rebindPrompt {
 		get => m_RebindText;
 		set => m_RebindText = value;
 	}
@@ -127,6 +126,41 @@ public class RebindActionUI : MonoBehaviour {
 	/// Otherwise, it is <c>null</c>.
 	/// </summary>
 	public InputActionRebindingExtensions.RebindingOperation ongoingRebind => m_RebindOperation;
+
+	// We want the label for the action name to update in edit mode, too, so
+	// we kick that off from here.
+#if UNITY_EDITOR
+	protected void OnValidate() {
+		UpdateActionLabel();
+		UpdateBindingDisplay();
+	}
+
+#endif
+
+	protected void OnEnable() {
+		if (s_RebindActionUIs == null)
+			s_RebindActionUIs = new List<RebindActionUI>();
+		s_RebindActionUIs.Add(this);
+		if (s_RebindActionUIs.Count == 1)
+			InputSystem.onActionChange += OnActionChange;
+
+		// Hook into all updateBindingUIEvents on all RebindActionUI components in our hierarchy.
+		updateBindingUIEvent.AddListener(InputSpritesManager.Instance.OnUpdateBindingDisplay);
+		UpdateBindingDisplay();
+	}
+
+	protected void OnDisable() {
+		m_RebindOperation?.Dispose();
+		m_RebindOperation = null;
+
+		s_RebindActionUIs.Remove(this);
+		if (s_RebindActionUIs.Count == 0) {
+			s_RebindActionUIs = null;
+			InputSystem.onActionChange -= OnActionChange;
+		}
+	}
+
+
 
 	/// <summary>
 	/// Return the action and binding index for the binding that is targeted by the component
@@ -241,9 +275,9 @@ public class RebindActionUI : MonoBehaviour {
 					UpdateBindingDisplay();
 					CleanUp();
 
-						// If there's more composite parts we should bind, initiate a rebind
-						// for the next part.
-						if (allCompositeParts) {
+				// If there's more composite parts we should bind, initiate a rebind
+				// for the next part.
+				if (allCompositeParts) {
 						var nextBindingIndex = bindingIndex + 1;
 						if (nextBindingIndex < action.bindings.Count && action.bindings[nextBindingIndex].isPartOfComposite)
 							PerformInteractiveRebind(action, nextBindingIndex, true);
@@ -273,25 +307,6 @@ public class RebindActionUI : MonoBehaviour {
 		m_RebindStartEvent?.Invoke(this, m_RebindOperation);
 
 		m_RebindOperation.Start();
-	}
-
-	protected void OnEnable() {
-		if (s_RebindActionUIs == null)
-			s_RebindActionUIs = new List<RebindActionUI>();
-		s_RebindActionUIs.Add(this);
-		if (s_RebindActionUIs.Count == 1)
-			InputSystem.onActionChange += OnActionChange;
-	}
-
-	protected void OnDisable() {
-		m_RebindOperation?.Dispose();
-		m_RebindOperation = null;
-
-		s_RebindActionUIs.Remove(this);
-		if (s_RebindActionUIs.Count == 0) {
-			s_RebindActionUIs = null;
-			InputSystem.onActionChange -= OnActionChange;
-		}
 	}
 
 	// When the action system re-resolves bindings, we want to update our UI in response. While this will
@@ -332,11 +347,11 @@ public class RebindActionUI : MonoBehaviour {
 	[Tooltip("Text label that will receive the name of the action. Optional. Set to None to have the "
 		+ "rebind UI not show a label for the action.")]
 	[SerializeField]
-	private Text m_ActionLabel;
+	private TextMeshProUGUI m_ActionLabel;
 
 	[Tooltip("Text label that will receive the current, formatted binding string.")]
 	[SerializeField]
-	private Text m_BindingText;
+	private TextMeshProUGUI m_BindingText;
 
 	[Tooltip("Optional UI that will be shown while a rebind is in progress.")]
 	[SerializeField]
@@ -344,7 +359,7 @@ public class RebindActionUI : MonoBehaviour {
 
 	[Tooltip("Optional text label that will be updated with prompt for user input.")]
 	[SerializeField]
-	private Text m_RebindText;
+	private TextMeshProUGUI m_RebindText;
 
 	[Tooltip("Event that is triggered when the way the binding is display should be updated. This allows displaying "
 		+ "bindings in custom ways, e.g. using images instead of text.")]
@@ -364,16 +379,6 @@ public class RebindActionUI : MonoBehaviour {
 	private InputActionRebindingExtensions.RebindingOperation m_RebindOperation;
 
 	private static List<RebindActionUI> s_RebindActionUIs;
-
-	// We want the label for the action name to update in edit mode, too, so
-	// we kick that off from here.
-#if UNITY_EDITOR
-	protected void OnValidate() {
-		UpdateActionLabel();
-		UpdateBindingDisplay();
-	}
-
-#endif
 
 	private void UpdateActionLabel() {
 		if (m_ActionLabel != null) {
