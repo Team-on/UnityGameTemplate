@@ -1067,12 +1067,12 @@ PrefabInstance:
     - target: {fileID: 3742093116268514289, guid: f7126c738f3ab8d46ad882c95c852d9c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 197.6765
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3742093116268514289, guid: f7126c738f3ab8d46ad882c95c852d9c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 197.6765
+      value: 172
       objectReference: {fileID: 0}
     - target: {fileID: 3742093116268514289, guid: f7126c738f3ab8d46ad882c95c852d9c,
         type: 3}
@@ -2024,6 +2024,11 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 4945514210925259517}
+    - target: {fileID: 6236903767860580310, guid: f7126c738f3ab8d46ad882c95c852d9c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 35.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7142561765821026163, guid: f7126c738f3ab8d46ad882c95c852d9c,
         type: 3}
       propertyPath: m_Name
@@ -2033,6 +2038,21 @@ PrefabInstance:
         type: 3}
       propertyPath: link
       value: https://team-on.github.io/
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832897696977531706, guid: f7126c738f3ab8d46ad882c95c852d9c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832897696977531706, guid: f7126c738f3ab8d46ad882c95c852d9c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832897696977531706, guid: f7126c738f3ab8d46ad882c95c852d9c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -110.900024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7126c738f3ab8d46ad882c95c852d9c, type: 3}

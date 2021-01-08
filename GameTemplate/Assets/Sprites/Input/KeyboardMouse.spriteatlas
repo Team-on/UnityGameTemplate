@@ -44,7 +44,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 0acadc9e61c77ef448e855db55629add, type: 3}
-    totalSpriteSurfaceArea: 950000
+    totalSpriteSurfaceArea: 900000
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -58,7 +58,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b3371d31173696d4d93bfb7669882a8a, type: 3}
   - {fileID: 21300000, guid: 075f5d71ccd02c94c8eca6495ed01f35, type: 3}
   - {fileID: 21300000, guid: 1d42f4b10862bd745a6c0929e666a457, type: 3}
-  - {fileID: 21300000, guid: 3b9b86b14861b1a4a9bcc04d73f0f859, type: 3}
   - {fileID: 21300000, guid: 571c3de1319549c48aae66a8eb22e5d7, type: 3}
   - {fileID: 21300000, guid: 32837002f5651464fb2e94c2177eb195, type: 3}
   - {fileID: 21300000, guid: a9a45532b70508e48bc499bd3d20e4a6, type: 3}
@@ -67,15 +66,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 01819ce2e10e4f942968cd7640f18629, type: 3}
   - {fileID: 21300000, guid: d5b7aff28003aa74d8a5a9b17efc9bbf, type: 3}
   - {fileID: 21300000, guid: ebde4553c38bff14489cf256067f7568, type: 3}
-  - {fileID: 21300000, guid: 2ad5a3739a5bf344bbac6416bc8c9b1d, type: 3}
   - {fileID: 21300000, guid: 8834e3a3a5dbe6e429f8363bed0f6cb3, type: 3}
   - {fileID: 21300000, guid: 9ed87b348bf785d48a943fd30b37f669, type: 3}
-  - {fileID: 21300000, guid: aa3ffc34c918be94cb5b83c5ac6a672d, type: 3}
   - {fileID: 21300000, guid: dcfdfc4482bce744a8445b72f71412ba, type: 3}
   - {fileID: 21300000, guid: 3197a3644f754f04bac6b81f99954d0b, type: 3}
   - {fileID: 21300000, guid: 4c09ff74eb008f44c8534f2c9d7ed726, type: 3}
   - {fileID: 21300000, guid: 04bbc4844a919664688774d2707b855c, type: 3}
-  - {fileID: 21300000, guid: dd6e70940acb0ef48b8522866154c49a, type: 3}
   - {fileID: 21300000, guid: 5537849470945f141bcd054bdeef13e9, type: 3}
   - {fileID: 21300000, guid: 705db0a4d9c9ce24ea667359ba7303e1, type: 3}
   - {fileID: 21300000, guid: 482c91a4d0f6cc940a8e0bf4c0e044c2, type: 3}
@@ -85,13 +81,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: af9e0f55e98cb5343974d1bf9ed16a50, type: 3}
   - {fileID: 21300000, guid: 87c040953af5c6e4187d566558755a6b, type: 3}
   - {fileID: 21300000, guid: 8e36e295a2b1c1e428973133f98a6a84, type: 3}
-  - {fileID: 21300000, guid: 06d4fa06919ce504e88ec8ee58fe1184, type: 3}
   - {fileID: 21300000, guid: 68210f366fcfe0d4599308307718bbac, type: 3}
   - {fileID: 21300000, guid: be783b76edcc2f54aa854db285f5334e, type: 3}
   - {fileID: 21300000, guid: 487a60b680d9809459d7437932555c47, type: 3}
   - {fileID: 21300000, guid: 3a1aaad62c49e00438ce45458734e161, type: 3}
   - {fileID: 21300000, guid: 6016ebf6818aeb14b8cc7e2c30ace077, type: 3}
   - {fileID: 21300000, guid: 5c742417888521644baae7883929560f, type: 3}
+  - {fileID: 21300000, guid: 88ae8657047a89446b1d932c0172052c, type: 3}
   - {fileID: 21300000, guid: 8076cc57e884a9541b8df85932daf5da, type: 3}
   - {fileID: 21300000, guid: d41b8787a11c6094bbc98a2429e07d3f, type: 3}
   - {fileID: 21300000, guid: 4b81a3979acc05e479119703b1db9096, type: 3}
@@ -111,7 +107,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 3badae7af28040a4b96700dd69f6e799, type: 3}
   - {fileID: 21300000, guid: 58b0539a6d476a443bc7571f4ab63b53, type: 3}
   - {fileID: 21300000, guid: 7e4f7fba5a0b08943a7b0279de8fcbcc, type: 3}
-  - {fileID: 21300000, guid: af7d80da295d64e4593d5a6550da4b1c, type: 3}
   - {fileID: 21300000, guid: feb6476b7c45aee45b25eb0ff8e32ba8, type: 3}
   - {fileID: 21300000, guid: 0593aa7baadc2134e8b5fefc43f54a56, type: 3}
   - {fileID: 21300000, guid: 8fe15e9b5d438874ca741f0c0efb4fbd, type: 3}
@@ -154,7 +149,6 @@ SpriteAtlas:
   - Mark_Left_Key_Dark
   - F11_Key_Dark
   - J_Key_Dark
-  - Enter_Alt_Key_Dark
   - H_Key_Dark
   - Enter_Key_Dark
   - Page_Up_Key_Dark
@@ -163,15 +157,12 @@ SpriteAtlas:
   - Space_Key_Dark
   - Tilda_Key_Dark
   - Bracket_Left_Key_Dark
-  - 10_Key_Dark
   - Arrow_Left_Key_Dark
   - F6_Key_Dark
-  - Backspace_Alt_Key_Dark
   - Win_Key_Dark
   - Alt_Key_Dark
   - Insert_Key_Dark
   - Caps_Lock_Key_Dark
-  - 12_Key_Dark
   - M_Key_Dark
   - N_Key_Dark
   - Backspace_Key_Dark
@@ -181,13 +172,13 @@ SpriteAtlas:
   - Mouse_Right_Key_Dark
   - Mouse_Left_Key_Dark
   - V_Key_Dark
-  - 11_Key_Dark
   - Shift_Key_Dark
   - Ctrl_Key_Dark
   - 1_Key_Dark
   - R_Key_Dark
   - F5_Key_Dark
   - Home_Key_Dark
+  - Blank_Black_Normal
   - B_Key_Dark
   - Print_Screen_Key_Dark
   - 2_Key_Dark
@@ -207,7 +198,6 @@ SpriteAtlas:
   - Question_Key_Dark
   - 3_Key_Dark
   - L_Key_Dark
-  - Shift_Alt_Key_Dark
   - O_Key_Dark
   - Minus_Key_Dark
   - P_Key_Dark
