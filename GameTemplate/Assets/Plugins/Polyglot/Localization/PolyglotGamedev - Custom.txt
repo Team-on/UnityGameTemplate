@@ -2,6 +2,6 @@ STRING ID	DESCRIPTION	ENGLISH	FRENCH / FRANÇAIS	SPANISH / ESPAÑOL	GERMAN / DEU
 LANGUAGE_CODE	IETF language tag(s) without dash	enUS enGB	frFR	esES esAR esMX	deDE deCH deAT	itIT itCH	ptBR	ptPT	ruRU	elGR	trTR	daDK	noNB	svSE	nlNL	plPL	fiFI	jaJP	zhCN zhSG	zhTW zhHK zhMO	koKR	csCZ	huHU	roRO	thTH	bgBG	heIL	ar001	bsBS
 LANGUAGE_EN	[LanguageName] in english	English	French	Spanish	German	Italian 	Portuguese (Brazil)	Portuguese	Russian	Greek	Turkish	Danish	Norwegian	Swedish	Dutch	Polish	Finnish	Japanese	Simplified Chinese	Traditional Chinese	Korean	Czech	Hungarian	Romanian	Thai	Bulgarian	Hebrew	Arabic	Bosnian
 LANGUAGE_DIRECTION	ltr or rtl (text direction used by game code)	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	ltr	rtl	rtl	ltr
-																													
+LANGUAGE_CODE_SHORT	Used by google translate	en	fr	es	de	it	pt	pt	ru	el	tr	da	no	sv	nl	pl	fi	ja	zh	zh	ko	cs	hu	ro	th	bg	he	ar	bs
 Polyglot	100																												
-Changelog_0.1		Set this changelog from local polyglot file							Тестовый чейнджлог																				
+MENU_IO_RESET	Reset control bindibng	Reset	Réinitialiser	Reiniciar	Reset	Ripristina	Redefinir	Redefinir	Сброс	Επαναφορά	Sıfırla	Nulstil	Nullstille	Återställa	Reset	Resetowanie	Nollaa	リセット	重启	重启	초기화	Reset	Visszaállítás	Resetați	ตั้งค่าใหม่	Нулиране	אִתחוּל	إعادة تعيين	Resetovati
