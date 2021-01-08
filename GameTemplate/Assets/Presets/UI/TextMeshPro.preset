@@ -402,6 +402,10 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: _SortingLayer
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: _SortingLayerID
     value: 0
     objectReference: {fileID: 0}

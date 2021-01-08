@@ -284,6 +284,7 @@ MonoBehaviour:
   time: 0.2
   events: {fileID: 6042130559254334392}
   img: {fileID: 7143126299936962423}
+  text: {fileID: 0}
 --- !u!114 &1142939758833870046
 MonoBehaviour:
   m_ObjectHideFlags: 0
