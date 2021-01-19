@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class TabMenuBase : PopupMenuBase {
 	[Header("Tab menu settings")]
 	[SerializeField] float alphaChangeSpeed = 0.2f;
-	[SerializeField] Button ArrowLeft;
-	[SerializeField] Button ArrowRight;
+	[SerializeField] GameObject ArrowLeft;
+	[SerializeField] GameObject ArrowRight;
 	[SerializeField] CanvasGroup[] Tabs;
 
 	byte currTab = 0;

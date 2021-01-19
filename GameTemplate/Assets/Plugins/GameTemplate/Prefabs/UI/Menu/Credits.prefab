@@ -867,8 +867,8 @@ MonoBehaviour:
   openPos: {fileID: 64514905}
   closePos: {fileID: 2120067718}
   alphaChangeSpeed: 0.2
-  ArrowLeft: {fileID: 0}
-  ArrowRight: {fileID: 0}
+  ArrowLeft: {fileID: 6649815545721647722}
+  ArrowRight: {fileID: 4346163380414206220}
   Tabs:
   - {fileID: 1136375305332963028}
 --- !u!1 &1136375305689731455
@@ -2044,6 +2044,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b5afe623d8ae1489cae14a417b84b4, type: 3}
+--- !u!1 &4346163380414206220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4047445711927339035, guid: 57b5afe623d8ae1489cae14a417b84b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 323070596982061335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4346163380414206216 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4047445711927339039, guid: 57b5afe623d8ae1489cae14a417b84b4,
@@ -2204,6 +2210,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c913d63d79340c041b364b92eb29f5c6, type: 3}
+--- !u!1 &6649815545721647722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7083691138278052343, guid: c913d63d79340c041b364b92eb29f5c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4469461503329608605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6649815545721647726 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7083691138278052339, guid: c913d63d79340c041b364b92eb29f5c6,

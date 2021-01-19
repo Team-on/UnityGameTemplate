@@ -28,7 +28,7 @@ SpriteAtlas:
       m_TextureFormat: -1
       m_TextureCompression: 1
       m_CompressionQuality: 50
-      m_CrunchedCompression: 0
+      m_CrunchedCompression: 1
       m_AllowsAlphaSplitting: 0
       m_Overridden: 0
       m_AndroidETC2FallbackOverride: 0
@@ -44,7 +44,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: f9bcb1c030fa3204590d776a389b1b3c, type: 3}
-    totalSpriteSurfaceArea: 382359
+    totalSpriteSurfaceArea: 234660
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
