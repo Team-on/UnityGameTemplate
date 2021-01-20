@@ -458,6 +458,7 @@ MonoBehaviour:
   openPos: {fileID: 1217747790}
   closePos: {fileID: 2065475312}
   alphaChangeSpeed: 0.2
+  canTabWithMoveAction: 1
   ArrowLeft: {fileID: 9155458573410460469}
   ArrowRight: {fileID: 9155458573533953967}
   Tabs:

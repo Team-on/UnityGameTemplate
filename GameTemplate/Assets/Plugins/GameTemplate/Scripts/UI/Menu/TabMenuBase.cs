@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 
 public class TabMenuBase : PopupMenuBase {
 	[Header("Tab menu settings")]
 	[SerializeField] float alphaChangeSpeed = 0.2f;
+	[SerializeField] bool canTabWithMoveAction = false;
 	[SerializeField] GameObject ArrowLeft;
 	[SerializeField] GameObject ArrowRight;
 	[SerializeField] CanvasGroup[] Tabs;
 
 	byte currTab = 0;
 
-	new void Awake() {
+	protected override void Awake() {
 		base.Awake();
 
 		foreach (var tab in Tabs) {
@@ -29,7 +33,7 @@ public class TabMenuBase : PopupMenuBase {
 	}
 
 	internal override void Show(bool isForce) {
-		if(Tabs.Length != 0) {
+		if (Tabs.Length != 0) {
 			Tabs[currTab].alpha = 0;
 			Tabs[currTab].interactable = Tabs[currTab].blocksRaycasts = false;
 
@@ -48,6 +52,37 @@ public class TabMenuBase : PopupMenuBase {
 		}
 
 		base.Show(isForce);
+
+		if (canTabWithMoveAction) {
+			TemplateGameManager.Instance.inputSystem.move.action.started += OnMove;
+		}
+	}
+
+	internal override void Hide(bool isForce) {
+		Hide(isForce);
+
+		if (canTabWithMoveAction) {
+			TemplateGameManager.Instance.inputSystem.move.action.started -= OnMove;
+		}
+	}
+
+	private void Update() {
+		if (!isShowed)
+			return;
+
+		if (Gamepad.current != null) {
+			if (Gamepad.current.leftShoulder.wasPressedThisFrame)
+				TabLeft();
+			else if (Gamepad.current.rightShoulder.wasPressedThisFrame)
+				TabRight();
+		}
+
+		if (Keyboard.current != null) {
+			if (Keyboard.current.qKey.wasPressedThisFrame)
+				TabLeft();
+			else if (Keyboard.current.eKey.wasPressedThisFrame)
+				TabRight();
+		}
 	}
 
 	public void TabLeft() {
@@ -81,6 +116,16 @@ public class TabMenuBase : PopupMenuBase {
 
 			if (currTab == Tabs.Length - 1)
 				ArrowRight.gameObject.SetActive(false);
+		}
+	}
+
+	void OnMove(InputAction.CallbackContext context) {
+		if (context.phase == InputActionPhase.Started) {
+			Vector2 v = context.ReadValue<Vector2>();
+			if (v.x < 0)
+				TabLeft();
+			else if (v.x > 0)
+				TabRight();
 		}
 	}
 }
