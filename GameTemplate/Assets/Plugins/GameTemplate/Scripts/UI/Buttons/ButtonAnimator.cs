@@ -8,10 +8,10 @@ using UnityEngine.UI;
 public class ButtonAnimator : MonoBehaviour {
 	[Header("Tweens"), Space]
 	[SerializeField] Vector3 hoverScale = new Vector3(1.1f, 1.1f, 1.0f);
-	[SerializeField] LeanTweenType hoverScaleTweenType = LeanTweenType.easeOutBack;
+	[SerializeField] LeanTweenType scaleTweenType = LeanTweenType.easeOutBack;
 	[Space]
 	[SerializeField] Color hoverColor = Color.yellow;
-	[SerializeField] LeanTweenType hoverColorTweenType = LeanTweenType.easeInOutQuad;
+	[SerializeField] LeanTweenType colorTweenType = LeanTweenType.easeInOutQuad;
 	[Space]
 	[SerializeField] Sprite hoverSprite = null;
 	[Space]
@@ -22,12 +22,12 @@ public class ButtonAnimator : MonoBehaviour {
 	[SerializeField] Image img;
 	[SerializeField] TMPro.TextMeshProUGUI text;
 
-	Vector3 defaultScale;
+	Vector3 defaultScale, defaultScaleSaved;
 
-	Color defaultColorImg;
-	Sprite defaultSprite;
+	Color defaultColorImg, defaultColorImgSaved;
+	Sprite defaultSprite, defaultSpriteSaved;
 
-	Color defaultColorText;
+	Color defaultColorText, defaultColorTextSaved;
 
 #if UNITY_EDITOR
 	private void Reset() {
@@ -47,20 +47,24 @@ public class ButtonAnimator : MonoBehaviour {
 #endif
 
 	private void Awake() {
-		defaultScale = transform.localScale;
+		defaultScaleSaved = defaultScale = transform.localScale;
 
 		if (img) {
-			defaultColorImg = img.color;
-			defaultSprite = img.sprite;
+			defaultColorImgSaved = defaultColorImg = img.color;
+			defaultSpriteSaved = defaultSprite = img.sprite;
 		}
 
 		if (text) {
-			defaultColorText = text.color;
+			defaultColorTextSaved = defaultColorText = text.color;
 		}
 	}
 
 	private void OnDisable () {
 		LeanTween.cancel(gameObject);
+		if(img)
+			LeanTween.cancel(img.gameObject);
+		if(text)
+			LeanTween.cancel(text.gameObject);
 
 		transform.localScale = defaultScale;
 		
@@ -74,18 +78,68 @@ public class ButtonAnimator : MonoBehaviour {
 		}
 	}
 
-	void OnEnter() {
-		LeanTween.scale(gameObject, hoverScale, time).setEase(hoverScaleTweenType);
-		
-		if (text) 
-			LeanTweenEx.ChangeColor(text, hoverColor, time).setEase(hoverColorTweenType);
+	public void SetState(Color color, Sprite sprite = null) {
+		SetState(defaultScale, color, defaultColorText, sprite);
+	}
+
+	public void SetState(Color color, Color colorText, Sprite sprite = null) {
+		SetState(defaultScale, color, colorText, sprite);
+	}
+
+	public void SetState(Vector3 scale, Color color, Sprite sprite = null) {
+		SetState(scale, color, defaultColorText, sprite);
+	}
+
+	public void SetState(Vector3 scale, Color color, Color colorText, Sprite sprite = null) {
+		LeanTween.scale(gameObject, scale, time).setEase(scaleTweenType);
+
+		if (text)
+			LeanTweenEx.ChangeColor(text, colorText, time).setEase(colorTweenType);
 
 		if (img) {
-			LeanTweenEx.ChangeColor(img, hoverColor, time).setEase(hoverColorTweenType);
+			LeanTweenEx.ChangeColor(img, color, time).setEase(colorTweenType);
 
-			if (hoverSprite)
-				img.sprite = hoverSprite;
+			if (sprite)
+				img.sprite = sprite;
 		}
+	}
+
+	public void OverrideDefaultState(Color color, Sprite sprite = null) {
+		OverrideDefaultState(defaultScale, color, defaultColorText, sprite);
+	}
+
+	public void OverrideDefaultState(Color color, Color colorText, Sprite sprite = null) {
+		OverrideDefaultState(defaultScale, color, colorText, sprite);
+	}
+
+	public void OverrideDefaultState(Vector3 scale, Color color, Sprite sprite = null) {
+		OverrideDefaultState(scale, color, defaultColorText, sprite);
+	}
+
+	public void OverrideDefaultState(Vector3 scale, Color color, Color colorText, Sprite sprite = null) {
+		defaultScale = scale;
+		defaultColorImg = color;
+		defaultColorText = colorText;
+		defaultSprite = sprite;
+	}
+
+
+	public void OverrideDefaultStateBack() {
+		defaultScale = defaultScaleSaved ;
+		defaultColorImg = defaultColorImgSaved;
+		defaultColorText = defaultColorTextSaved;
+		defaultSprite = defaultSpriteSaved;
+	}
+	public void SetHoverState() {
+		OnEnter();
+	}
+
+	public void SetDefaultState() {
+		OnExit();
+	}
+
+	void OnEnter() {
+		SetState(hoverScale, hoverColor, hoverColor, hoverSprite);
 	}
 
 	void OnClick() {
@@ -93,14 +147,6 @@ public class ButtonAnimator : MonoBehaviour {
 	}
 
 	void OnExit() {
-		LeanTween.scale(gameObject, defaultScale, time).setEase(hoverScaleTweenType);
-		
-		if (text) 
-			LeanTweenEx.ChangeColor(text, defaultColorText, time).setEase(hoverColorTweenType);
-
-		if (img) {
-			LeanTweenEx.ChangeColor(img, defaultColorImg, time).setEase(hoverColorTweenType);
-			img.sprite = defaultSprite;
-		}
+		SetState(defaultScale, defaultColorImg, defaultColorText, defaultSprite);
 	}
 }

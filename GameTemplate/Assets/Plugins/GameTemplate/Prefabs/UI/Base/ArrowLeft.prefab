@@ -279,10 +279,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72222ba94fbb02f4bb741c36e424cb06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverScale: {x: 1.1, y: 1.1, z: 1}
-  hoverScaleTweenType: 27
+  hoverScale: {x: -1.1, y: 1.1, z: 1}
+  scaleTweenType: 27
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  hoverColorTweenType: 4
+  colorTweenType: 4
   hoverSprite: {fileID: 0}
   time: 0.2
   events: {fileID: 9034409694489324351}

@@ -1,17 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.UI;
 
 public class TabMenuBase : PopupMenuBase {
 	[Header("Tab menu settings")]
 	[SerializeField] float alphaChangeSpeed = 0.2f;
 	[SerializeField] bool canTabWithMoveAction = false;
-	[SerializeField] GameObject ArrowLeft;
-	[SerializeField] GameObject ArrowRight;
+	[SerializeField] UIEvents ArrowLeft;
+	[SerializeField] UIEvents ArrowRight;
 	[SerializeField] CanvasGroup[] Tabs;
 
 	byte currTab = 0;
@@ -30,6 +27,9 @@ public class TabMenuBase : PopupMenuBase {
 		}
 
 		ArrowLeft.gameObject.SetActive(false);
+
+		ArrowLeft.onClick.AddListener(TabLeft);
+		ArrowRight.onClick.AddListener(TabRight);
 	}
 
 	internal override void Show(bool isForce) {
@@ -72,20 +72,29 @@ public class TabMenuBase : PopupMenuBase {
 
 		if (Gamepad.current != null) {
 			if (Gamepad.current.leftShoulder.wasPressedThisFrame)
-				TabLeft();
+				SimulateTabLeft();
 			else if (Gamepad.current.rightShoulder.wasPressedThisFrame)
-				TabRight();
+				SimulateTabRight();
 		}
 
 		if (Keyboard.current != null) {
 			if (Keyboard.current.qKey.wasPressedThisFrame)
-				TabLeft();
+				SimulateTabLeft();
 			else if (Keyboard.current.eKey.wasPressedThisFrame)
-				TabRight();
+				SimulateTabRight();
 		}
 	}
 
-	public void TabLeft() {
+	void SimulateTabLeft() {
+		ArrowLeft.onClick?.Invoke();
+	}
+
+	void SimulateTabRight() {
+		ArrowRight.onClick?.Invoke();
+	}
+
+
+	void TabLeft() {
 		if (currTab != 0) {
 			if (currTab == Tabs.Length - 1)
 				ArrowRight.gameObject.SetActive(true);
@@ -102,7 +111,7 @@ public class TabMenuBase : PopupMenuBase {
 		}
 	}
 
-	public void TabRight() {
+	void TabRight() {
 		if (currTab != Tabs.Length - 1) {
 			if (currTab == 0)
 				ArrowLeft.gameObject.SetActive(true);
@@ -122,10 +131,11 @@ public class TabMenuBase : PopupMenuBase {
 	void OnMove(InputAction.CallbackContext context) {
 		if (context.phase == InputActionPhase.Started) {
 			Vector2 v = context.ReadValue<Vector2>();
-			if (v.x < 0)
-				TabLeft();
+			if (v.x < 0) {
+				SimulateTabLeft();
+			}
 			else if (v.x > 0)
-				TabRight();
+				SimulateTabRight();
 		}
 	}
 }
