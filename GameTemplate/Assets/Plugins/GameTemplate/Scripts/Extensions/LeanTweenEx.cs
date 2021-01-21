@@ -40,29 +40,21 @@ public static class LeanTweenEx {
 			});
 	}
 
-	public static LTDescr StayWorldPos(GameObject obj, float time, Vector3 localPosReturn) {
-		obj.transform.localPosition = localPosReturn;
+	public static LTDescr StayWorldPos(GameObject obj, float time) {
 		Vector3 worldPos = obj.transform.position;
 
 		return LeanTween.value(0, 1, time)
 		.setOnUpdate((float t) => {
 			obj.transform.position = worldPos;
-		})
-		.setOnComplete(() => {
-			obj.transform.localPosition = localPosReturn;
 		});
 	}
 
-	public static LTDescr StayWorldPosAndMoveUp(GameObject obj, float time, float yMove, Vector3 localPosReturn) {
-		obj.transform.localPosition = localPosReturn;
+	public static LTDescr StayWorldPosAndMoveUp(GameObject obj, float time, float yMove) {
 		Vector3 worldPos = obj.transform.position;
 
 		return LeanTween.value(obj, 0, 1, time)
 		.setOnUpdate((float t) => {
 			obj.transform.position = worldPos + Vector3.up * yMove * t;
-		})
-		.setOnComplete(() => {
-			obj.transform.localPosition = localPosReturn;
 		});
 	}
 
