@@ -1,10 +1,10 @@
-# [GAME_NAME](GAME_LINK)
+ # [GAME_NAME](GAME_LINK)
 Made in X hours for [JAM_NAME](JAM_LINK)  
 Theme: THEME  
 
 Short desc  
 
-![Cover](Screenshots/Cover Image.png) 
+![Cover](Screenshots/CoverImage.png) 
 
 Long desc  
 
