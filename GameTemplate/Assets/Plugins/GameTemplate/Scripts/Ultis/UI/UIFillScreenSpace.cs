@@ -27,7 +27,7 @@ public class UIFillScreenSpace : MonoBehaviour {
 	void RecalFill(EventData ed = null) {
 		Vector2 originalSize = img.sprite.rect.size;
 		float originalApsect = originalSize.x / originalSize.y;
-		Vector2 neededSize = canvas.GetComponent<RectTransform>().sizeDelta;
+		Vector2 neededSize = canvas.GetComponent<RectTransform>().rect.size;
 		Vector2 calcSize = originalSize;
 
 		calcSize.x = neededSize.x;
