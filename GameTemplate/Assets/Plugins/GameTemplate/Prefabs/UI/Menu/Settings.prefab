@@ -3648,7 +3648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4567080870411217317}
   m_Layer: 5
-  m_Name: Keys
+  m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4977,6 +4977,12 @@ MonoBehaviour:
   - {fileID: 4519993051299625344}
   - {fileID: 6900660109735987320}
   - {fileID: 6615195597108127386}
+  firstSelected:
+  - {fileID: 1143616427729964363}
+  - {fileID: 5042791952997893868}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 461006261306156551}
 --- !u!1 &6134766724134793939
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class TabControl : MonoBehaviour {
@@ -11,12 +12,15 @@ public class TabControl : MonoBehaviour {
 	[Header("Refs"), Space]
 	[SerializeField] UIEvents[] buttons;
 	[SerializeField] GameObject[] content;
+	[SerializeField] Selectable[] firstSelected;
+	Selectable[] lastSelected;
 	ButtonAnimator[] buttonAnimators;
 
 	byte currTab = 0;
 
 	private void Awake() {
 		buttonAnimators = new ButtonAnimator[content.Length];
+		lastSelected = new Selectable[firstSelected.Length];
 
 		for (byte i = 0; i < content.Length; ++i) {
 			byte id = i;
@@ -62,10 +66,20 @@ public class TabControl : MonoBehaviour {
 		buttons[tabId].enabled = !isSelected;
 
 		if (isSelected) {
+			Selectable toSelect;
+			if(lastSelected[tabId] == null)
+				toSelect = firstSelected[tabId];
+			else
+				toSelect = lastSelected[tabId];
+			if(toSelect != null)
+				TemplateGameManager.Instance.eventSystem.SetSelectedGameObject(toSelect.gameObject);
+
 			buttonAnimators[tabId].OverrideDefaultStateBack();
 			buttonAnimators[tabId].SetDefaultState();
 		}
 		else {
+			lastSelected[tabId] = TemplateGameManager.Instance.eventSystem.currentSelectedGameObject.GetComponent<Selectable>();
+
 			buttonAnimators[tabId].OverrideDefaultState(disabledColor, disabledSprite);
 			buttonAnimators[tabId].SetState(disabledColor, disabledSprite);
 		}
