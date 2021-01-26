@@ -29,9 +29,9 @@ MonoBehaviour:
       isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 1
-      needItchPush: 1
+      needItchPush: 0
       itchChannel: windows-testing
-      needGithubPush: 1
+      needGithubPush: 0
       needGamejolthPush: 0
       needSteamPush: 0
       needGoogleDrivePush: 0
