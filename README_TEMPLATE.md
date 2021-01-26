@@ -39,6 +39,11 @@ Video about TriJam from Rocknight Studios: https://www.youtube.com/watch?v=6PysB
  * Share the source code of your project
 
 
+# Credits
+ * [Team-on](https://github.com/Team-on) - programmer
+ * [Who](LINK) - role
+
+
 # Used tools:
  * Unity 2020.2.0f1
  * Visual Studio 2019
