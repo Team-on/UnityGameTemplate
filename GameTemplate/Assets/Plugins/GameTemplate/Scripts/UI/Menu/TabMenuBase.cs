@@ -32,6 +32,16 @@ public class TabMenuBase : PopupMenuBase {
 		ArrowRight.onClick.AddListener(TabRight);
 	}
 
+	private void OnEnable() {
+		TemplateGameManager.Instance.actions.UI.TabLeft.performed += SimulateTabLeft;
+		TemplateGameManager.Instance.actions.UI.TabRight.performed += SimulateTabRight;
+	}
+
+	private void OnDisable() {
+		TemplateGameManager.Instance.actions.UI.TabLeft.performed -= SimulateTabLeft;
+		TemplateGameManager.Instance.actions.UI.TabRight.performed -= SimulateTabRight;
+	}
+
 	internal override void Show(bool isForce) {
 		if (Tabs.Length != 0) {
 			Tabs[currTab].alpha = 0;
@@ -66,23 +76,12 @@ public class TabMenuBase : PopupMenuBase {
 		}
 	}
 
-	private void Update() {
-		if (!isShowed)
-			return;
+	void SimulateTabLeft(InputAction.CallbackContext context) {
+		SimulateTabLeft();
+	}
 
-		if (Gamepad.current != null) {
-			if (Gamepad.current.leftShoulder.wasPressedThisFrame)
-				SimulateTabLeft();
-			else if (Gamepad.current.rightShoulder.wasPressedThisFrame)
-				SimulateTabRight();
-		}
-
-		if (Keyboard.current != null) {
-			if (Keyboard.current.qKey.wasPressedThisFrame)
-				SimulateTabLeft();
-			else if (Keyboard.current.eKey.wasPressedThisFrame)
-				SimulateTabRight();
-		}
+	void SimulateTabRight(InputAction.CallbackContext context) {
+		SimulateTabRight();
 	}
 
 	void SimulateTabLeft() {
@@ -92,7 +91,6 @@ public class TabMenuBase : PopupMenuBase {
 	void SimulateTabRight() {
 		ArrowRight.onClick?.Invoke();
 	}
-
 
 	void TabLeft() {
 		if (currTab != 0) {

@@ -36,22 +36,14 @@ public class TabControl : MonoBehaviour {
 			SetSelection(i, i == currTab);
 			content[i].SetActive(i == currTab);
 		}
+
+		TemplateGameManager.Instance.actions.UI.TabLeft.performed += OnTabLeft;
+		TemplateGameManager.Instance.actions.UI.TabRight.performed += OnTabRight;
 	}
 
-	private void Update() {
-		if (Gamepad.current != null) {
-			if (Gamepad.current.leftShoulder.wasPressedThisFrame && currTab != 0)
-				buttons[currTab - 1].onClick?.Invoke();
-			else if (Gamepad.current.rightShoulder.wasPressedThisFrame && currTab != content.Length - 1)
-				buttons[currTab + 1].onClick?.Invoke();
-		}
-
-		if (Keyboard.current != null) {
-			if (Keyboard.current.qKey.wasPressedThisFrame && currTab != 0)
-				buttons[currTab - 1].onClick?.Invoke();
-			else if (Keyboard.current.eKey.wasPressedThisFrame && currTab != content.Length - 1)
-				buttons[currTab + 1].onClick?.Invoke();
-		}
+	private void OnDisable() {
+		TemplateGameManager.Instance.actions.UI.TabLeft.performed -= OnTabLeft;
+		TemplateGameManager.Instance.actions.UI.TabRight.performed -= OnTabRight;
 	}
 
 	void OnTabClick(byte tabId) {
@@ -83,5 +75,15 @@ public class TabControl : MonoBehaviour {
 			buttonAnimators[tabId].OverrideDefaultState(disabledColor, disabledSprite);
 			buttonAnimators[tabId].SetState(disabledColor, disabledSprite);
 		}
+	}
+
+	void OnTabLeft(InputAction.CallbackContext context) {
+		if (currTab != 0)
+			buttons[currTab - 1].onClick?.Invoke();
+	}
+
+	void OnTabRight(InputAction.CallbackContext context) {
+		if (currTab != content.Length - 1)
+			buttons[currTab + 1].onClick?.Invoke();
 	}
 }

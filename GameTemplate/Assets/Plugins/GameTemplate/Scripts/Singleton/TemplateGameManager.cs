@@ -55,6 +55,7 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 	[ReadOnly] public UIPopupGroup debugPopups;
 
 	//Other singletons
+	public PlayerInputActions actions;
 	public EventManager events { get; private set; }
 	public AudioManager audioManager;
 	public SceneLoader sceneLoader;
@@ -83,6 +84,9 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 		resources = new int[startResources.Length];
 		for(int i = 0; i < startResources.Length; ++i) 
 			resources[i] = startResources[i];
+
+		actions = new PlayerInputActions();
+		actions.Enable();
 
 		StartCoroutine(DelayedSetup());
 
