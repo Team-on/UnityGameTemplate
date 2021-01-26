@@ -21,7 +21,7 @@ MonoBehaviour:
       outputRoot: Builds/
       middlePath: $NAME_TEST/$NAME$EXECUTABLE
       dirPathForPostProcess: $NAME_TEST
-      isPassbyBuild: 1
+      isPassbyBuild: 0
       scriptingDefineSymbolsOverride: 
       targetGroup: 1
       target: 5
