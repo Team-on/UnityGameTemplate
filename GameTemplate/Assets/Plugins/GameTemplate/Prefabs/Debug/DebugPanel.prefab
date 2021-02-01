@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7637422004325598370}
+  - component: {fileID: 6554582809364344317}
   m_Layer: 0
   m_Name: DisableParent
   m_TagString: Untagged
@@ -34,6 +35,18 @@ Transform:
   m_Father: {fileID: 4697546198047181447}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!225 &6554582809364344317
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829815883717083205}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &3951512988968833570
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showKey: 96
   cg: {fileID: 8973471617376888689}
-  disableParent: {fileID: 829815883717083205}
+  disablecg: {fileID: 6554582809364344317}
 --- !u!225 &8973471617376888689
 CanvasGroup:
   m_ObjectHideFlags: 0

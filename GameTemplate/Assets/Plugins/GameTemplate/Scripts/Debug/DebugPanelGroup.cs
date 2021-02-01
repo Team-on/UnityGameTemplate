@@ -8,7 +8,7 @@ public class DebugPanelGroup : MonoBehaviour {
 
 	[Header("Refs"), Space]
 	[SerializeField] CanvasGroup cg;
-	[SerializeField] GameObject disableParent;
+	[SerializeField] CanvasGroup disablecg;
 
 	bool isShowed;
 
@@ -16,7 +16,9 @@ public class DebugPanelGroup : MonoBehaviour {
 		isShowed = false;
 		cg.interactable = cg.blocksRaycasts = false;
 		cg.alpha = 0.0f;
-		disableParent.SetActive(false);
+
+		disablecg.interactable = disablecg.blocksRaycasts = false;
+		disablecg.alpha = 0.0f;
 	}
 
 	private void Update() {
@@ -35,7 +37,8 @@ public class DebugPanelGroup : MonoBehaviour {
 
 		LeanTween.cancel(gameObject);
 
-		disableParent.SetActive(true);	
+		disablecg.interactable = disablecg.blocksRaycasts = true;
+		disablecg.alpha = 1.0f;
 		cg.interactable = cg.blocksRaycasts = true;
 
 		LeanTween.alphaCanvas(cg, 1.0f, 0.05f);
@@ -51,7 +54,8 @@ public class DebugPanelGroup : MonoBehaviour {
 		cg.interactable = cg.blocksRaycasts = false;
 		LeanTween.alphaCanvas(cg, 0.0f, 0.05f)
 		.setOnComplete(()=> {
-			disableParent.SetActive(false);
+			disablecg.interactable = disablecg.blocksRaycasts = false;
+			disablecg.alpha = 0.0f;
 		});
 	}
 }
