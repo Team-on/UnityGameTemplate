@@ -25,16 +25,7 @@ public class SpriteRendererAnimator3 : MonoBehaviour {
 #endif
 
 	private void Awake() {
-		Sprite[] sprites = GetCurrSequence();
-
-		if (startWithRandom) {
-			currSprite = (byte)Random.Range(0, sprites.Length);
-			sr.sprite = sprites[currSprite];
-			time = Random.Range(0, secondsForOneSprite - Time.deltaTime);
-		}
-		else {
-			sr.sprite = sprites[currSprite];
-		}
+		Reinit();
 	}
 
 	void Update() {
@@ -47,6 +38,54 @@ public class SpriteRendererAnimator3 : MonoBehaviour {
 				currSprite = 0;
 			sr.sprite = sprites[currSprite];
 		}
+	}
+
+	public void SetSprites(Sprite[] _sprites, int id) {
+		switch (id) {
+			case 0:
+				sprites0 = _sprites;
+				break;
+			case 1:
+				sprites1 = _sprites;
+				break;
+			case 2:
+				sprites2 = _sprites;
+				break;
+		}
+
+		Reinit();
+	}
+
+	public void SetSpritesDublicateInner(Sprite[] _sprites, int id) {
+		List<Sprite> list = new List<Sprite>(_sprites.Length * 2 - 2);
+		list.AddRange(_sprites);
+		for (int i = _sprites.Length - 2; i >= 1; --i)
+			list.Add(_sprites[i]);
+
+		switch (id) {
+			case 0:
+				sprites0 = list.ToArray();
+				break;
+			case 1:
+				sprites1 = list.ToArray();
+				break;
+			case 2:
+				sprites2 = list.ToArray();
+				break;
+		}
+
+		Reinit();
+	}
+
+	void Reinit() {
+		Sprite[] sprites = GetCurrSequence();
+
+		if (startWithRandom) {
+			currSprite = (byte)Random.Range(0, sprites.Length);
+			time = Random.Range(0, secondsForOneSprite - Time.deltaTime);
+		}
+
+		sr.sprite = sprites[currSprite];
 	}
 
 	Sprite[] GetCurrSequence() {
