@@ -360,6 +360,26 @@ public class AudioManager : Singleton<AudioManager> {
 
 	//--------------------------------------------------------------------------------------
 	//Inner helpers 
+	public void ChangeASVolume(AudioSource source, float volume) {
+		ChangeASVolume(source, volume, crossfadeTime);
+	}
+
+	public void ChangeASVolume(AudioSource source, float volume, float time) {
+		if (source != null) {
+			LeanTween.cancel(source.gameObject, false);
+			if (time == 0) {
+				source.volume = volume;
+			}
+			else {
+				LeanTween.value(source.gameObject, source.volume, volume, time)
+				.setIgnoreTimeScale(true)
+				.setOnUpdate((float v) => {
+					source.volume = v;
+				});
+			}
+		}
+	}
+
 	float GetAdjustedVolume(float volume) {
 		return volume <= 0.0001f ? lowestDecibles : Mathf.Log10(volume) * 20;
 	}
@@ -386,26 +406,6 @@ public class AudioManager : Singleton<AudioManager> {
 				return soundGroup;
 			default:
 				return null;
-		}
-	}
-
-	void ChangeASVolume(AudioSource source, float volume) {
-		ChangeASVolume(source, volume, crossfadeTime);
-	}
-
-	void ChangeASVolume(AudioSource source, float volume, float time) {
-		if (source != null) {
-			LeanTween.cancel(source.gameObject, false);
-			if (time == 0) {
-				source.volume = volume;
-			}
-			else {
-				LeanTween.value(source.gameObject, source.volume, volume, time)
-				.setIgnoreTimeScale(true)
-				.setOnUpdate((float v) => {
-					source.volume = v;
-				});
-			}
 		}
 	}
 
