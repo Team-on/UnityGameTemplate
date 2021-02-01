@@ -67,6 +67,8 @@ public class LoadingBar : MonoBehaviour {
 			return;
 		}
 
+		AudioManager.Instance.MuteMusicAndDelete(0.0f);
+
 		bool needUI = (bool)data?["needUI"];
 		if (!needUI)
 			return;
@@ -83,7 +85,6 @@ public class LoadingBar : MonoBehaviour {
 		enabled = true;
 		bool needDelay = (bool)data?["uiNeedDelay"];
 
-		AudioManager.Instance.MuteMusicAndDelete();
 
 		loadingBarRoutine = StartCoroutine(needDelay ? LoadingBarUpdateWithDelay() : LoadingBarUpdate());
 
@@ -95,7 +96,11 @@ public class LoadingBar : MonoBehaviour {
 		if (data == null)
 			return;
 
-		if(loadingBarRoutine != null)
+		bool needUI = (bool)data?["needUI"];
+		if (!needUI)
+			return;
+
+		if (loadingBarRoutine != null)
 			StopCoroutine(loadingBarRoutine);
 
 		if (onLoadingEndClip)

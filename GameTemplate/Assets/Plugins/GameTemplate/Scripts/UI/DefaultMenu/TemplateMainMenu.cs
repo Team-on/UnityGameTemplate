@@ -11,6 +11,6 @@ public class TemplateMainMenu : MenuBase {
 	}
 
 	public void Load() {
-		SceneLoader.Instance.LoadScene(sceneIdToLoad, true, true);
+		SceneLoader.Instance.LoadScene(sceneIdToLoad, false, false);
 	}
 }
