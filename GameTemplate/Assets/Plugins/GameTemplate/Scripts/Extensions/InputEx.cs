@@ -9,37 +9,37 @@ public static class InputEx {
 			Vector3 mouseViewPos = TemplateGameManager.Instance.Camera.ScreenToViewportPoint(mousePos);
 
 			if (
-				(	Mouse.current.leftButton.wasPressedThisFrame ||
-					Mouse.current.rightButton.wasPressedThisFrame ||
-					Mouse.current.middleButton.wasPressedThisFrame ||
-					Mouse.current.forwardButton.wasPressedThisFrame ||
-					Mouse.current.backButton.wasPressedThisFrame
+				(	Mouse.current.leftButton.wasReleasedThisFrame ||
+					Mouse.current.rightButton.wasReleasedThisFrame ||
+					Mouse.current.middleButton.wasReleasedThisFrame ||
+					Mouse.current.forwardButton.wasReleasedThisFrame ||
+					Mouse.current.backButton.wasReleasedThisFrame
 				) && (0 <= mouseViewPos.x && mouseViewPos.x <= 1 && 0 <= mouseViewPos.y && mouseViewPos.y <= 1)
 			)
 				return true;
 		}
 
-		return (Keyboard.current?.anyKey?.wasPressedThisFrame ?? false) ||
-			(Keyboard.current?.spaceKey?.wasPressedThisFrame ?? false) ||
+		return (Keyboard.current?.anyKey?.wasReleasedThisFrame ?? false) ||
+			(Keyboard.current?.spaceKey?.wasReleasedThisFrame ?? false) ||
 
-			(Gamepad.current?.buttonEast?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.buttonNorth?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.buttonSouth?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.buttonWest?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.leftStickButton?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.rightStickButton?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.selectButton?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.startButton?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.dpad?.left?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.dpad?.up?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.dpad?.right?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.dpad?.down?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.leftShoulder?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.rightShoulder?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.leftTrigger?.wasPressedThisFrame ?? false) ||
-			(Gamepad.current?.rightTrigger?.wasPressedThisFrame ?? false) ||
+			(Gamepad.current?.buttonEast?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.buttonNorth?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.buttonSouth?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.buttonWest?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.leftStickButton?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.rightStickButton?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.selectButton?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.startButton?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.dpad?.left?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.dpad?.up?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.dpad?.right?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.dpad?.down?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.leftShoulder?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.rightShoulder?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.leftTrigger?.wasReleasedThisFrame ?? false) ||
+			(Gamepad.current?.rightTrigger?.wasReleasedThisFrame ?? false) ||
 
-			(Touchscreen.current?.press?.wasPressedThisFrame ?? false) 
+			(Touchscreen.current?.press?.wasReleasedThisFrame ?? false) 
 			;
 	}
 
