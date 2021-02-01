@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-static class RandomEx {
+public static class RandomEx {
 	public static bool GetEventWithChance(int percent) {
 		int number = UnityEngine.Random.Range(1, 101);
 		return number <= percent;
