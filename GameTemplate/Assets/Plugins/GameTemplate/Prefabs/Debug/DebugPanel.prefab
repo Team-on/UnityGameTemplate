@@ -283,7 +283,8 @@ MonoBehaviour:
   layoutGroup: {fileID: 5011146257190749629}
   popupPrefab: {fileID: 7723066682151496033, guid: 3ebd4fbd11d0ca043b6234bda1366aec,
     type: 3}
-  popupWithImagePrefab: {fileID: 0}
+  popupWithImagePrefab: {fileID: 7723066682151496033, guid: 17b0e88073b9b7540ad4f8afad4e9886,
+    type: 3}
   popupWithRawImagePrefab: {fileID: 7723066682151496033, guid: 039e1c5754d577b4193b41c649ee7f95,
     type: 3}
 --- !u!114 &5093400636026061935
