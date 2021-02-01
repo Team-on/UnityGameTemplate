@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,14 +14,13 @@ public class MenuManager : MonoBehaviour {
 	void Start() {
 		currMenu = new Stack<MenuBase>();
 		currMenu.Push(Menus[FirstMenuId]);
+		MenuBase firstMenu = currMenu.Peek();
 
 		TemplateGameManager.Instance.uiinput.SetSelectedButton(null);
 	
 		foreach (var menu in Menus) {
-			if (menu != currMenu.Peek())
+			if (menu != firstMenu)
 				menu.Hide(true);
-			else
-				menu.Show(true);
 
 			if(menu.rt.anchorMin == Vector2.zero && menu.rt.anchorMax == Vector2.one && menu.rt.pivot.x == 0.5f && menu.rt.pivot.y == 0.5f && !(menu is PopupMenuBase)) {
 				menu.rt.transform.localPosition = Vector2.zero;
@@ -30,6 +30,14 @@ public class MenuManager : MonoBehaviour {
 		}
 
 		TemplateGameManager.Instance.inputSystem.cancel.action.performed += OnCancelClick;
+
+		StartCoroutine(DelayedShow());
+
+		IEnumerator DelayedShow() {
+			yield return null;
+			yield return null;
+			firstMenu.Show(true);
+		}
 	}
 
 	private void OnDestroy() {
