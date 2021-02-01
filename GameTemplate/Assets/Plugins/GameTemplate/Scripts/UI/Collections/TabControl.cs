@@ -70,7 +70,8 @@ public class TabControl : MonoBehaviour {
 			buttonAnimators[tabId].SetDefaultState();
 		}
 		else {
-			lastSelected[tabId] = TemplateGameManager.Instance.eventSystem.currentSelectedGameObject.GetComponent<Selectable>();
+			if(TemplateGameManager.Instance.eventSystem.currentSelectedGameObject != null && TemplateGameManager.Instance.eventSystem.currentSelectedGameObject.transform.IsChildOf(content[tabId].transform))
+				lastSelected[tabId] = TemplateGameManager.Instance.eventSystem.currentSelectedGameObject.GetComponent<Selectable>();
 
 			buttonAnimators[tabId].OverrideDefaultState(disabledColor, disabledSprite);
 			buttonAnimators[tabId].SetState(disabledColor, disabledSprite);

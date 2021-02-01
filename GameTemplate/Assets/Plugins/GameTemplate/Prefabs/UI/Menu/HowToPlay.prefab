@@ -459,8 +459,8 @@ MonoBehaviour:
   closePos: {fileID: 2065475312}
   alphaChangeSpeed: 0.2
   canTabWithMoveAction: 1
-  ArrowLeft: {fileID: 0}
-  ArrowRight: {fileID: 0}
+  ArrowLeft: {fileID: 6926608105575520765}
+  ArrowRight: {fileID: 1950892438573375268}
   Tabs:
   - {fileID: 9155458573785620186}
   - {fileID: 9155458573665907017}
@@ -1167,7 +1167,7 @@ PrefabInstance:
     - target: {fileID: 7143126299936962417, guid: 03ffde436ce582f4981b39f8bb0dd40a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -16.00003
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 7143126299936962417, guid: 03ffde436ce582f4981b39f8bb0dd40a,
         type: 3}
@@ -1367,6 +1367,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2107942597389071042}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6926608105575520765 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9034409694489324351, guid: c913d63d79340c041b364b92eb29f5c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2107942597389071042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcfa99ea39dbe142bdc12bc0395665a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5126736292646803380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1537,3 +1549,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5126736292646803380}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1950892438573375268 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6644820632971872400, guid: 57b5afe623d8ae1489cae14a417b84b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5126736292646803380}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcfa99ea39dbe142bdc12bc0395665a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

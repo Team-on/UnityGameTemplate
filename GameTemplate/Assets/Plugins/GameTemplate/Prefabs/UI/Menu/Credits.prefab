@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 4075462566615987391}
   - component: {fileID: 5319223877906100519}
   - component: {fileID: 5500842220924942762}
+  - component: {fileID: 1608947865}
   m_Layer: 0
   m_Name: TranslatedBy
   m_TagString: Untagged
@@ -218,6 +219,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589e0922950241b499dcb6f48e09f269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1608947865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545575880302176458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 5319223877906100519}
+  maintainTextAlignment: 1
+  key: CREDITS_POLYGLOT
+  afterKeyValue: ' <link="https://docs.google.com/spreadsheets/d/17f0dQawb-s_Fd7DHgmVvJoEGDMH_yoSd8EYigrb0zmM/edit#gid=310116733"><u>(link)</u></link>'
 --- !u!1 &720615028772090445
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +247,7 @@ GameObject:
   - component: {fileID: 3899789412024999834}
   - component: {fileID: 1281299968486636572}
   - component: {fileID: 1305180114054888566}
+  - component: {fileID: 651299935}
   m_Layer: 0
   m_Name: SoundDesigner
   m_TagString: Untagged
@@ -365,6 +383,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589e0922950241b499dcb6f48e09f269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &651299935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720615028772090445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1281299968486636572}
+  maintainTextAlignment: 1
+  key: CREDITS_SOUND_DESIGNER
+  afterKeyValue: ': <link="https://team-on.github.io/"><u>Team-on</u></link>'
 --- !u!1 &1136375304420400168
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +686,7 @@ GameObject:
   - component: {fileID: 1136375305335137686}
   - component: {fileID: 1136375305335137687}
   - component: {fileID: 5638208413390774189}
+  - component: {fileID: 896950719}
   m_Layer: 0
   m_Name: Programmer
   m_TagString: Untagged
@@ -787,6 +822,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589e0922950241b499dcb6f48e09f269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &896950719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136375305335137681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1136375305335137687}
+  maintainTextAlignment: 1
+  key: CREDITS_PROGRAMMER
+  afterKeyValue: ': <link="https://team-on.github.io/"><u>Team-on</u></link>'
 --- !u!1 &1136375305404854011
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,8 +919,8 @@ MonoBehaviour:
   closePos: {fileID: 2120067718}
   alphaChangeSpeed: 0.2
   canTabWithMoveAction: 1
-  ArrowLeft: {fileID: 0}
-  ArrowRight: {fileID: 0}
+  ArrowLeft: {fileID: 4856600372323485858}
+  ArrowRight: {fileID: 6362710890319753607}
   Tabs:
   - {fileID: 1136375305332963028}
 --- !u!1 &1136375305689731455
@@ -964,6 +1015,7 @@ GameObject:
   - component: {fileID: 3799955048685644336}
   - component: {fileID: 2343343225242330}
   - component: {fileID: 4238068794297965659}
+  - component: {fileID: 1386932197}
   m_Layer: 0
   m_Name: DevelopedBy
   m_TagString: Untagged
@@ -1099,6 +1151,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589e0922950241b499dcb6f48e09f269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1386932197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162521869145715141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 2343343225242330}
+  maintainTextAlignment: 1
+  key: CREDITS_DEVELOPED_BY
+  afterKeyValue: ' <link="https://team-on.github.io/"><u>Team-on games</u></link>'
 --- !u!1 &2219353707687284606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,6 +1179,7 @@ GameObject:
   - component: {fileID: 7111507734008335308}
   - component: {fileID: 8260796916938812384}
   - component: {fileID: 5641869982757085602}
+  - component: {fileID: 61108180}
   m_Layer: 0
   m_Name: Artist
   m_TagString: Untagged
@@ -1165,7 +1234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Artist: <link="https://team-on.github.io/"><u>Team-on</u></link>'
+  m_text: Artist
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1246,6 +1315,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589e0922950241b499dcb6f48e09f269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &61108180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2219353707687284606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8260796916938812384}
+  maintainTextAlignment: 1
+  key: CREDITS_ARTIST
+  afterKeyValue: ': <link="https://team-on.github.io/"><u>Team-on</u></link>'
 --- !u!1 &4154756141703663111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1546,7 @@ GameObject:
   - component: {fileID: 3577790032035072818}
   - component: {fileID: 4955024125218546457}
   - component: {fileID: 5093234120315636221}
+  - component: {fileID: 83969087}
   m_Layer: 0
   m_Name: GamelDesigner
   m_TagString: Untagged
@@ -1596,6 +1682,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589e0922950241b499dcb6f48e09f269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &83969087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4520774760316987875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 4955024125218546457}
+  maintainTextAlignment: 1
+  key: CREDITS_GAME_DESIGNER
+  afterKeyValue: ': <link="https://team-on.github.io/"><u>Team-on</u></link>'
 --- !u!1 &5401249566416772863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,6 +2153,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 323070596982061335}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6362710890319753607 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6644820632971872400, guid: 57b5afe623d8ae1489cae14a417b84b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 323070596982061335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcfa99ea39dbe142bdc12bc0395665a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4469461503329608605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2205,6 +2319,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c913d63d79340c041b364b92eb29f5c6, type: 3}
+--- !u!114 &4856600372323485858 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9034409694489324351, guid: c913d63d79340c041b364b92eb29f5c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4469461503329608605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcfa99ea39dbe142bdc12bc0395665a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6649815545721647726 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7083691138278052339, guid: c913d63d79340c041b364b92eb29f5c6,
@@ -2361,12 +2487,12 @@ PrefabInstance:
     - target: {fileID: 7143126299936962417, guid: 03ffde436ce582f4981b39f8bb0dd40a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -12.000122
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 7143126299936962417, guid: 03ffde436ce582f4981b39f8bb0dd40a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -16.00003
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 7143126299936962417, guid: 03ffde436ce582f4981b39f8bb0dd40a,
         type: 3}

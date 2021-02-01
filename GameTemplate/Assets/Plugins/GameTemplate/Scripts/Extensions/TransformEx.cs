@@ -100,11 +100,24 @@ public static class TransformEx {
 	}
 
 	public static Transform DestroyAllChildrens(this Transform transform) {
-        foreach (Transform child in transform)
-            GameObject.Destroy(child.gameObject);
+		foreach (Transform child in transform)
+			GameObject.Destroy(child.gameObject);
 
-        transform.DetachChildren();
+		transform.DetachChildren();
 
-        return transform;
-    }
+		return transform;
+	}
+
+	public static bool IsChildOf(this Transform t, Transform wantedParent) {
+		Transform selectedParent = t.parent;
+
+		while (selectedParent != null) {
+			if (selectedParent == wantedParent)
+				return true;
+
+			selectedParent = selectedParent.parent;
+		}
+
+		return false;
+	}
 }

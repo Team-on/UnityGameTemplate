@@ -115,6 +115,7 @@ public abstract class MenuBase : MonoBehaviour {
 	}
 
 	public void SaveLastButton() {
-		lastSelectedGO = TemplateGameManager.Instance.eventSystem.currentSelectedGameObject;
+		if(TemplateGameManager.Instance.eventSystem.currentSelectedGameObject != null && TemplateGameManager.Instance.eventSystem.currentSelectedGameObject.transform.IsChildOf(gameObject.transform))
+			lastSelectedGO = TemplateGameManager.Instance.eventSystem.currentSelectedGameObject;
 	}
 }
