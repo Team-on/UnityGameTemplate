@@ -26,6 +26,20 @@ public static class LeanTweenEx {
 			});
 	}
 
+	public static LTDescr ChangeAlpha(SpriteRenderer sr, float alpha, float animTime) {
+		return LeanTween.value(sr.gameObject, sr.color.a, alpha, animTime)
+			.setOnUpdate((float a) => {
+				sr.color = sr.color.SetA(a);
+			});
+	}
+
+	public static LTDescr ChangeColor(SpriteRenderer sr, Color color, float animTime) {
+		return LeanTween.value(sr.gameObject, sr.color, color, animTime)
+			.setOnUpdate((Color c) => {
+				sr.color = c;
+			});
+	}
+
 	public static LTDescr ChangeColor(Image img, Color color, float animTime) {
 		return LeanTween.value(img.gameObject, img.color, color, animTime)
 			.setOnUpdate((Color c) => {
