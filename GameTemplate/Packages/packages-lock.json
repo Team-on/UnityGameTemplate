@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.editorcoroutines": "1.0.0"
       },
-      "hash": "336d4e8cd306c36ffb156f6f0d28cf16ff4b4bb6"
+      "hash": "aa3c46f0fd15bf3d161c71b326c9d792ba12c31a"
     },
     "com.baba-s.uni-scene-asset-selector": {
       "version": "https://github.com/baba-s/UniSceneAssetSelector.git#master",
@@ -49,14 +49,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "429ff2dd09264fd091ed3005c7a4c247f118c7ae"
+      "hash": "ba3b80db7a2575a0b5c9a3aafb86ac1b75b3d9f5"
     },
     "com.dbrizov.naughtyattributes": {
       "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "6610c4be31942e323a3be910ac567ec528c78d0b"
+      "hash": "fc456992b4d08ba8460567f7f5b629df76dbe059"
     },
     "com.gemserk.selectionhistory": {
       "version": "https://github.com/acoppes/unity-history-window.git#1.0.4",
@@ -70,7 +70,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "7b6e56526787b404c7962d5e2fcaa9b97a27dc56"
+      "hash": "9321c1c90f3fd666d76acd7cd72769f98b78fb23"
     },
     "com.ogxd.project-curator": {
       "version": "https://github.com/ogxd/project-curator.git#master",
@@ -84,7 +84,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "f10081cfc5f2f2aa139d35ecd921cf7397ab3fcb"
+      "hash": "007019d76c923d2bb41be22014e8c221f4d0cacd"
     },
     "com.rfadeev.pumpeditor": {
       "version": "https://github.com/rfadeev/pump-editor.git#master",
@@ -142,7 +142,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d6ed29021bf23282f69b76eb77a9dbfe80e8f021"
+      "hash": "ff123b9ee4140234784c29efe54c912d94e90b30"
     },
     "com.teamon.projectwindowdetails": {
       "version": "https://github.com/Team-on/ProjectWindowDetails.git#master",
@@ -319,7 +319,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "be7fc89e9d600c3caa5ba4effe8b85a63f747b30"
+      "hash": "716e23c6706703991b46de715cddde5af12b8845"
     },
     "io.megamiley.prefab-asset-utility": {
       "version": "https://github.com/MileyHollenberg/PrefabAssetUtility.git#master",
@@ -344,7 +344,7 @@
       "dependencies": {
         "st.rect-ex": "0.2.1"
       },
-      "hash": "321188262e4cb7bfd8a5bf14611fd3dbeb37a98c"
+      "hash": "0c049d166c59683d136276c63e7f8691f3b6a50c"
     },
     "st.rect-ex": {
       "version": "https://github.com/slavniyteo/rect-ex.git#master",
