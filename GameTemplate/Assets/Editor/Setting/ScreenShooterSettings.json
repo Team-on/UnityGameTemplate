@@ -84,6 +84,66 @@
             "resolutionMultiplier": 1.0,
             "captureOverlayUI": true,
             "lang": 0
+        },
+        {
+            "isEnabled": true,
+            "name": "133-75",
+            "targetCamera": 0,
+            "resolution": {
+                "x": 3325.0,
+                "y": 1920.0
+            },
+            "resolutionMultiplier": 1.0,
+            "captureOverlayUI": true,
+            "lang": 0
+        },
+        {
+            "isEnabled": true,
+            "name": "19-9",
+            "targetCamera": 0,
+            "resolution": {
+                "x": 1920.0,
+                "y": 909.0
+            },
+            "resolutionMultiplier": 1.0,
+            "captureOverlayUI": true,
+            "lang": 0
+        },
+        {
+            "isEnabled": true,
+            "name": "2-1",
+            "targetCamera": 0,
+            "resolution": {
+                "x": 1920.0,
+                "y": 960.0
+            },
+            "resolutionMultiplier": 1.0,
+            "captureOverlayUI": true,
+            "lang": 0
+        },
+        {
+            "isEnabled": true,
+            "name": "160-93",
+            "targetCamera": 0,
+            "resolution": {
+                "x": 1920.0,
+                "y": 1116.0
+            },
+            "resolutionMultiplier": 1.0,
+            "captureOverlayUI": true,
+            "lang": 0
+        },
+        {
+            "isEnabled": true,
+            "name": "WebGL",
+            "targetCamera": 0,
+            "resolution": {
+                "x": 960.0,
+                "y": 540.0
+            },
+            "resolutionMultiplier": 1.0,
+            "captureOverlayUI": true,
+            "lang": 0
         }
     ]
 }
