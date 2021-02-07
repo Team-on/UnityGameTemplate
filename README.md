@@ -5,3 +5,5 @@ Mainly includes usedfull custom windows, extensions methods, popular assets and 
 
 List of all [used assets](https://github.com/Team-on/UnityGameTemplate/wiki/Used-assets).  
 Check out [wiki](https://github.com/Team-on/UnityGameTemplate/wiki) for additional information
+
+![Screenshot3](Screenshots/GameTemplate_1.png)  
