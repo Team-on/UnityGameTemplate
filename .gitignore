@@ -88,3 +88,5 @@ crashlytics-build.properties
 
 # Project curator database
 **/ProjectSettings/ProjectCuratorSettings.json
+GameTemplate/connectwebgl.zip
+GameTemplate/webgl_sharing
