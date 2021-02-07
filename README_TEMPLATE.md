@@ -62,10 +62,21 @@ Video about TriJam from Rocknight Studios: https://www.youtube.com/watch?v=6PysB
 ![Screenshot2](Screenshots/Screenshot2.png)  
 ![Screenshot3](Screenshots/Screenshot3.png)  
 
-itchio
-tags : singleplayer, 2d, open-source, drm-free, linear, indie, experimental, casual, short
+itchio tags: 
+singleplayer, 2d, open-source, drm-free, linear, indie, experimental, casual, short
 
-github
-tags: game, unity, unity3d, jam, gamejam
-itchio, gamejolt, google-play
+GameJolt tags:
+#singleplayer, #2d, #opensource, #drmfree, #linear, #indie, #experimental, #casual, #short
+
+github tags:
+game, unity, unity3d, jam, gamejam
 windows-game, linux-game, osx-game, web-game, android-game
+itchio, gamejolt, google-play
+
+Twitter tags:
+#madewithunity #unity3d #unity 
+#demo #prototype 
+#indie #indiedev #indiegamedev #indiegame #Indiewatch
+#gamedev #games 
+#game #gaming 
+#steam #gamejolt #itchio #GooglePlay 
