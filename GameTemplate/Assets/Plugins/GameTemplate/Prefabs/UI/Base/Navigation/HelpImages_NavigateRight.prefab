@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 377290777536783731, guid: 08c095d774275654892ef2ca1bd7052d,
         type: 3}
       propertyPath: m_Name
-      value: HelpImages
+      value: HelpImages_NavigateRight
       objectReference: {fileID: 0}
     - target: {fileID: 1849098762696198308, guid: 08c095d774275654892ef2ca1bd7052d,
         type: 3}

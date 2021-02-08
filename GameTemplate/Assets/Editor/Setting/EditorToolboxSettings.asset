@@ -37,7 +37,7 @@ MonoBehaviour:
   - classReference: Toolbox.Editor.Drawers.LabelAttributeDrawer, Toolbox-Editor
   - classReference: Toolbox.Editor.Drawers.LineAttributeDrawer, Toolbox-Editor
   - classReference: Toolbox.Editor.Drawers.SpaceAreaAttributeDrawer, Toolbox-Editor
-  - classReference: Toolbox.Editor.Drawers.ToolboxButtonAttributeDrawer, Toolbox-Editor
+  - classReference: 
   conditionDrawerHandlers:
   - classReference: Toolbox.Editor.Drawers.DisableAttributeDrawer, Toolbox-Editor
   - classReference: Toolbox.Editor.Drawers.DisableIfAttributeDrawer, Toolbox-Editor

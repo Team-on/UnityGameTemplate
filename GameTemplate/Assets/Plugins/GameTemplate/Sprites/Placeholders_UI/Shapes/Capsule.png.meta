@@ -147,7 +147,7 @@ TextureImporter:
       spriteID: f669c7f71d485c180800000000000000
       internalID: -9095717837082945937
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     outline:
@@ -168,13 +168,13 @@ TextureImporter:
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
-    indices:
+    indices: 
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag:
+  spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
