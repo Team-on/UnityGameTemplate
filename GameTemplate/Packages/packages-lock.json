@@ -347,13 +347,6 @@
       },
       "hash": "8c57b0ec4ce9463a34f61052ca7c2957e549ff4d"
     },
-    "nrjwolf.games.attachattributes": {
-      "version": "https://github.com/Nrjwolf/unity-auto-attach-component-attributes.git#master",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "e7cf3dd7390a58e3671ee70854bdd36e93095f4c"
-    },
     "st.one-line": {
       "version": "https://github.com/slavniyteo/one-line.git#master",
       "depth": 0,

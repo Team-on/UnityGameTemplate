@@ -66,7 +66,7 @@ itchio tags:
 singleplayer, 2d, open-source, drm-free, linear, indie, experimental, casual, short
 
 GameJolt tags:
-#singleplayer, #2d, #opensource, #drmfree, #linear, #indie, #experimental, #casual, #short
+#singleplayer #2d #opensource #drmfree #linear #indie #experimental #casual #short
 
 github tags:
 game, unity, unity3d, jam, gamejam
@@ -77,6 +77,7 @@ Twitter tags:
 #madewithunity #unity3d #unity 
 #demo #prototype 
 #indie #indiedev #indiegamedev #indiegame #Indiewatch
-#gamedev #games 
-#game #gaming 
+#gamedev  
+#game #games #gaming 
+#wip
 #steam #gamejolt #itchio #GooglePlay 
