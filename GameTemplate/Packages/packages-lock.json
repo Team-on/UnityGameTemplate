@@ -49,7 +49,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "ba3b80db7a2575a0b5c9a3aafb86ac1b75b3d9f5"
+      "hash": "9f9e04724d7a237e68c463b79b5405dfc8fe4ae2"
     },
     "com.dbrizov.naughtyattributes": {
       "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
@@ -70,14 +70,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "9321c1c90f3fd666d76acd7cd72769f98b78fb23"
+      "hash": "c432cd0076a72796c5d1f863d49c17be5eae86b1"
     },
     "com.ogxd.project-curator": {
       "version": "https://github.com/ogxd/project-curator.git#master",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "5b808087070e9d327cf25488c7d8d785b40581b5"
+      "hash": "68a5c3a7afae05ea6752496d3e8a58003a9ade13"
     },
     "com.quantumcalzone.unitygitpackageupdater": {
       "version": "https://github.com/QuantumCalzone/UnityGitPackageUpdater.git#upm",
@@ -121,14 +121,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "5aa52c76f0a3da4b00c1fad8a9dcb7f76b4bbf23"
+      "hash": "7dd52f51893ae1a89dbb7bb2290ed0bb288026d4"
     },
     "com.smkplus.custom-toolbar": {
       "version": "https://github.com/smkplus/CustomToolbar.git#master",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "fd0c5c0e033ae3210950828f336d5eea215cdbb5"
+      "hash": "c5776fff190eb35ad5f230c327de5f7200afdaa6"
     },
     "com.tayx.graphy": {
       "version": "https://github.com/Tayx94/graphy.git",
@@ -142,7 +142,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "ff123b9ee4140234784c29efe54c912d94e90b30"
+      "hash": "dc01d71ba0a2ef7eb9c9b4244d8eda3f08fa7d14"
     },
     "com.teamon.projectwindowdetails": {
       "version": "https://github.com/Team-on/ProjectWindowDetails.git#master",
@@ -163,7 +163,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "520ca1ac767bdb652c4f7b4e67c167d6b79935af"
+      "hash": "c3b7353d255097589de085726b18f1c5f62dc494"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
@@ -336,7 +336,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "716e23c6706703991b46de715cddde5af12b8845"
+      "hash": "a9dafdcbcde80d0db9a5578449af1f44940e5591"
     },
     "io.megamiley.prefab-asset-utility": {
       "version": "https://github.com/MileyHollenberg/PrefabAssetUtility.git#master",

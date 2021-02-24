@@ -14,31 +14,50 @@ namespace yaSingleton {
     /// <typeparam name="TSingleton">The Inherited Singleton's Type</typeparam>
     [Serializable]
     public abstract class Singleton<TSingleton> : BaseSingleton where TSingleton : BaseSingleton {
-        public static TSingleton Instance { get; private set; }
-
-#if UNITY_EDITOR
-        public static TSingleton InstanceEditor {
+        public static TSingleton Instance {
             get {
-                var preloadedAssets = UnityEditor.PlayerSettings.GetPreloadedAssets().ToList();
-
-                foreach (var preloadedAsset in preloadedAssets) {
-                    if (preloadedAsset && preloadedAsset is TSingleton) {
-                        return preloadedAsset as TSingleton;
-                    }
-                }
-
-                return null;
+                if (!instance)
+                    Create();
+                return instance;
+            }
+            private set {
+                instance = value;
             }
         }
-#endif
-
+        static TSingleton instance;
 
         internal override void CreateInstance() {
-            if(Instance != null) {
+            if (instance != null) {
                 return;
             }
 
-            Instance = GetOrCreate<TSingleton>();
+            if (UnityEditor.EditorApplication.isPlaying) {
+                instance = GetOrCreate<TSingleton>();
+            }
+            else {
+#if UNITY_EDITOR
+                if (instance == null) {
+                    instance = UnityEditor.AssetDatabase.LoadAssetAtPath<TSingleton>(UnityEditor.AssetDatabase.GUIDToAssetPath(UnityEditor.AssetDatabase.FindAssets("t:" + typeof(TSingleton).Name)[0]));
+                }
+#endif
+            }
+        }
+
+        static void Create() {
+            if (instance != null) {
+                return;
+            }
+
+            if (UnityEditor.EditorApplication.isPlaying) {
+                instance = GetOrCreate<TSingleton>();
+            }
+            else {
+#if UNITY_EDITOR
+                if (instance == null) {
+                    instance = UnityEditor.AssetDatabase.LoadAssetAtPath<TSingleton>(UnityEditor.AssetDatabase.GUIDToAssetPath(UnityEditor.AssetDatabase.FindAssets($"t:scriptableobject {typeof(TSingleton).Name}")[0]));
+                }
+#endif
+            }
         }
     }
 }

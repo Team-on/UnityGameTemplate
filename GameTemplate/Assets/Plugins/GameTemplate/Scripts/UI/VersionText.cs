@@ -12,8 +12,8 @@ public class VersionText : MonoBehaviour {
 			textField = GetComponent<TextMeshProUGUI>();
 
 		if(textField != null) {
-			if(textField.text != TemplateGameManager.InstanceEditor.buildNameString) {
-				textField.text = TemplateGameManager.InstanceEditor.buildNameString;
+			if(textField.text != TemplateGameManager.Instance.buildNameString) {
+				textField.text = TemplateGameManager.Instance.buildNameString;
 				UnityEditor.EditorUtility.SetDirty(textField.gameObject);
 			}
 		}
