@@ -12,7 +12,10 @@ public class VersionText : MonoBehaviour {
 			textField = GetComponent<TextMeshProUGUI>();
 
 		if(textField != null) {
-			textField.text = TemplateGameManager.InstanceEditor.buildNameString;
+			if(textField.text != TemplateGameManager.InstanceEditor.buildNameString) {
+				textField.text = TemplateGameManager.InstanceEditor.buildNameString;
+				UnityEditor.EditorUtility.SetDirty(textField.gameObject);
+			}
 		}
 	}
 #endif
