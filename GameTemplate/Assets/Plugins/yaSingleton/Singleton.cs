@@ -7,57 +7,69 @@ using yaSingleton.Helpers;
 using yaSingleton.Utility;
 
 namespace yaSingleton {
-    /// <summary>
-    /// Singleton class. It'll be initialized before the Awake method of all other MonoBehaviours.
-    /// Inherit by passing the inherited type (e.g. class GameManager : Singleton&lt;GameManager&gt;)
-    /// </summary>
-    /// <typeparam name="TSingleton">The Inherited Singleton's Type</typeparam>
-    [Serializable]
-    public abstract class Singleton<TSingleton> : BaseSingleton where TSingleton : BaseSingleton {
-        public static TSingleton Instance {
-            get {
-                if (!instance)
-                    Create();
-                return instance;
-            }
-            private set {
-                instance = value;
-            }
-        }
-        static TSingleton instance;
+	/// <summary>
+	/// Singleton class. It'll be initialized before the Awake method of all other MonoBehaviours.
+	/// Inherit by passing the inherited type (e.g. class GameManager : Singleton&lt;GameManager&gt;)
+	/// </summary>
+	/// <typeparam name="TSingleton">The Inherited Singleton's Type</typeparam>
+	[Serializable]
+	public abstract class Singleton<TSingleton> : BaseSingleton where TSingleton : BaseSingleton {
+		public static TSingleton Instance {
+			get {
+				if (!instance)
+					Create();
 
-        internal override void CreateInstance() {
-            if (instance != null) {
-                return;
-            }
-
-            if (UnityEditor.EditorApplication.isPlaying) {
-                instance = GetOrCreate<TSingleton>();
-            }
-            else {
+				var res = instance;
 #if UNITY_EDITOR
-                if (instance == null) {
-                    instance = UnityEditor.AssetDatabase.LoadAssetAtPath<TSingleton>(UnityEditor.AssetDatabase.GUIDToAssetPath(UnityEditor.AssetDatabase.FindAssets("t:" + typeof(TSingleton).Name)[0]));
-                }
+				if (!UnityEditor.EditorApplication.isPlaying) {
+					instance = null;
+				}
 #endif
-            }
-        }
 
-        static void Create() {
-            if (instance != null) {
-                return;
-            }
+				return res;
+			}
+			private set {
+				instance = value;
+			}
+		}
+		static TSingleton instance;
 
-            if (UnityEditor.EditorApplication.isPlaying) {
-                instance = GetOrCreate<TSingleton>();
-            }
-            else {
+		internal override void CreateInstance() {
+			if (instance != null) {
+				return;
+			}
+
 #if UNITY_EDITOR
-                if (instance == null) {
-                    instance = UnityEditor.AssetDatabase.LoadAssetAtPath<TSingleton>(UnityEditor.AssetDatabase.GUIDToAssetPath(UnityEditor.AssetDatabase.FindAssets($"t:scriptableobject {typeof(TSingleton).Name}")[0]));
-                }
+			if (UnityEditor.EditorApplication.isPlaying) {
 #endif
-            }
-        }
-    }
+				instance = GetOrCreate<TSingleton>();
+#if UNITY_EDITOR
+			}
+			else {
+				if (instance == null) {
+					instance = UnityEditor.AssetDatabase.LoadAssetAtPath<TSingleton>(UnityEditor.AssetDatabase.GUIDToAssetPath(UnityEditor.AssetDatabase.FindAssets("t:" + typeof(TSingleton).Name)[0]));
+				}
+			}
+#endif
+		}
+
+		static void Create() {
+			if (instance != null) {
+				return;
+			}
+
+#if UNITY_EDITOR
+			if (UnityEditor.EditorApplication.isPlaying) {
+#endif
+				instance = GetOrCreate<TSingleton>();
+#if UNITY_EDITOR
+			}
+			else {
+				if (instance == null) {
+					instance = UnityEditor.AssetDatabase.LoadAssetAtPath<TSingleton>(UnityEditor.AssetDatabase.GUIDToAssetPath(UnityEditor.AssetDatabase.FindAssets($"t:scriptableobject {typeof(TSingleton).Name}")[0]));
+				}
+			}
+#endif
+		}
+	}
 }
