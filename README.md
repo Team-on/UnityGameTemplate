@@ -7,7 +7,7 @@ List of all [used assets](https://github.com/Team-on/UnityGameTemplate/wiki/Used
 Check out [wiki](https://github.com/Team-on/UnityGameTemplate/wiki) for additional information
 
 
-![Screenshot3](Screenshots/GameTemplate_1.png)  
+![Screenshot3](Screenshots/Template/GameTemplate_1.png)  
 
 
 ## Installation
