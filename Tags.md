@@ -22,6 +22,6 @@ Twitter tags:
 #earlymorningdev   ( for gamedev done usually between 6AM-9AM in the morning)
 #madewithunity (best day to tweet: Friday ) 
 #screenshotsaturday (best day to tweet: Saturday) 
-#indiedevhour ( http://www.indiedevhour.com/ )
+#indiedevhour ( http://www.indiedevhour.com/, середа )
 
 https://www.tagsfinder.com/en-us/related/gamedev/
