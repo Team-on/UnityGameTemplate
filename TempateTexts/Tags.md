@@ -10,14 +10,14 @@ windows-game, linux-game, osx-game, web-game, android-game
 itchio, gamejolt, google-play
 
 Twitter tags:
-#madewithunity #unity 
-#demo #prototype 
+#madewithunity #unity
+#demo #prototype
+#gamedev
 #indie #indiegame #indiegames #indiedev #indiegamedev #gamedevelopment #garagedev #solodev
-#gamedev  
 #game #games #gaming #videogames
 #wip
-#gamejam 
-#steam #gamejolt #itchio #GooglePlay 
+#gamejam
+#steam #gamejolt #itchio #GooglePlay
 
 #earlymorningdev   ( for gamedev done usually between 6AM-9AM in the morning)
 #madewithunity (best day to tweet: Friday ) 
