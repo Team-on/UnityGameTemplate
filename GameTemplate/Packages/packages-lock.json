@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.editorcoroutines": "1.0.0"
       },
-      "hash": "aa3c46f0fd15bf3d161c71b326c9d792ba12c31a"
+      "hash": "107d1b7b53f503075ac7a0d1899ad830a38c6ae3"
     },
     "com.baba-s.uni-scene-asset-selector": {
       "version": "https://github.com/baba-s/UniSceneAssetSelector.git#master",
@@ -49,14 +49,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "9f9e04724d7a237e68c463b79b5405dfc8fe4ae2"
+      "hash": "24d32d8441eb27da88e462a44935ab78e9172dbb"
     },
     "com.dbrizov.naughtyattributes": {
       "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "fc456992b4d08ba8460567f7f5b629df76dbe059"
+      "hash": "bf09948bcab85f0d1c30ad438e7f6d1d590823fb"
     },
     "com.gemserk.selectionhistory": {
       "version": "https://github.com/acoppes/unity-history-window.git#1.0.4",
@@ -70,21 +70,21 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c432cd0076a72796c5d1f863d49c17be5eae86b1"
+      "hash": "be9054f8fff96f0851ed0942f91fb8283be40896"
     },
     "com.ogxd.project-curator": {
       "version": "https://github.com/ogxd/project-curator.git#master",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "68a5c3a7afae05ea6752496d3e8a58003a9ade13"
+      "hash": "454dadcf0d3ce5b2719aa83456bdd3d1c90230a5"
     },
     "com.quantumcalzone.unitygitpackageupdater": {
       "version": "https://github.com/QuantumCalzone/UnityGitPackageUpdater.git#upm",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "007019d76c923d2bb41be22014e8c221f4d0cacd"
+      "hash": "82a9836fdc5056d5d3b3de0d8471e56d55f6f292"
     },
     "com.rfadeev.pumpeditor": {
       "version": "https://github.com/rfadeev/pump-editor.git#master",
@@ -93,7 +93,7 @@
       "dependencies": {
         "com.unity.modules.jsonserialize": "1.0.0"
       },
-      "hash": "4a62d2b3f8c9353bbad2726b310b391f8083acd7"
+      "hash": "d5137116954e08c1c1674069423225decf59c79f"
     },
     "com.rfadeev.pumpeditor.presetsbrowser": {
       "version": "https://github.com/rfadeev/presets-browser.git#master",
@@ -128,21 +128,21 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c5776fff190eb35ad5f230c327de5f7200afdaa6"
+      "hash": "3d4496ad5017d8b910c4e169a5b2906d2b03602d"
     },
     "com.tayx.graphy": {
       "version": "https://github.com/Tayx94/graphy.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "7c7ba62a8e9b4956b0f4fc45d29f05e1e4023d52"
+      "hash": "008ca2e1b64201e26ee41800d54bcec61991fc75"
     },
     "com.teamon.buildmanager": {
       "version": "https://github.com/Team-on/UnityBuildManager.git#main",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "dc01d71ba0a2ef7eb9c9b4244d8eda3f08fa7d14"
+      "hash": "4349937ccf6b21517af3946b1e0b9bbd7307dba0"
     },
     "com.teamon.projectwindowdetails": {
       "version": "https://github.com/Team-on/ProjectWindowDetails.git#master",
@@ -163,7 +163,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c3b7353d255097589de085726b18f1c5f62dc494"
+      "hash": "396f0c8e8335150e86c0e088a6683a6caaeeaa7c"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
@@ -329,14 +329,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "93fda056a0590b1fba2ce3c0bb24b83be72da6e6"
+      "hash": "001c2b93e9751700f50a01be3eb1cc6b5f25be99"
     },
     "com.yasirkula.ingamedebugconsole": {
       "version": "https://github.com/yasirkula/UnityIngameDebugConsole.git#master",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "a9dafdcbcde80d0db9a5578449af1f44940e5591"
+      "hash": "66d807d7ee2857d6a856865f516671ee002fd4fd"
     },
     "io.megamiley.prefab-asset-utility": {
       "version": "https://github.com/MileyHollenberg/PrefabAssetUtility.git#master",
