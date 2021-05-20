@@ -46,14 +46,13 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 1c0f0859ea62bf24e8ce9ce35fe338f2, type: 3}
     - {fileID: 102900000, guid: 4655dbc33f830884f92eb86e34a835c9, type: 3}
     - {fileID: 102900000, guid: 42a7f9cf69731664d9a8b5b3c840ec6f, type: 3}
-    totalSpriteSurfaceArea: 3142635
+    totalSpriteSurfaceArea: 3015531
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: b0325800c9b52704ab3193529a278ab6, type: 3}
-  - {fileID: 21300000, guid: 00bee90030e433c45936f536638fe8d4, type: 3}
   - {fileID: 21300000, guid: b32a75204000ebd43b6fbabebab6798e, type: 3}
   - {fileID: 21300000, guid: e11d3330e5e316e43b980432fab67f97, type: 3}
   - {fileID: 21300000, guid: 836cc840e5e199640b27fd4c8b01701c, type: 3}
@@ -181,7 +180,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 073512f85f127144c80e4e31d0edd53a, type: 3}
   - {fileID: 21300000, guid: afce83f863e31494781f3972d2734761, type: 3}
   - {fileID: 21300000, guid: 156f9a19ef4181a49aff23aa6981effe, type: 3}
-  - {fileID: 21300000, guid: 1caaeb19a20ef5345a1687d9a75f5331, type: 3}
   - {fileID: 21300000, guid: edf38f19c43c11b498eabbd356aed2e5, type: 3}
   - {fileID: 21300000, guid: cdf51f297971bed4d839669437195e6d, type: 3}
   - {fileID: 21300000, guid: 915f7e39bd6632c458f3ac141732d571, type: 3}
@@ -281,7 +279,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d72623ff7003bb7458128bc5b8be00b6, type: 3}
   m_PackedSpriteNamesToIndex:
   - right
-  - CloseBtn
   - left
   - exit right
   - south-west arrow
@@ -409,7 +406,6 @@ SpriteAtlas:
   - menu2
   - progressBar2
   - down
-  - Arrow
   - BUtton B
   - gamepad1
   - BUtton A
