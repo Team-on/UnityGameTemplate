@@ -1,6 +1,4 @@
 STRING ID,DESCRIPTION,ENGLISH,FRENCH / FRANÇAIS,SPANISH / ESPAÑOL,GERMAN / DEUTSCH,ITALIAN / ITALIANO,PORTUGUESE / PORTUGUÊS (BR),PORTUGUESE / PORTUGUÊS (PT),RUSSIAN / РУССКИЙ,GREEK / ΕΛΛΗΝΙΚΑ,TURKISH / TÜRKÇE,DANISH / DANSK,NORWEGIAN (NB) / NORSK BOKMÅL,SWEDISH / SVENSKA,DUTCH / NEDERLANDS,POLISH / POLSKI,FINNISH / SUOMI,JAPANESE / 日本語,SIMPLIFIED CHINESE / 简体中文,TRADITIONAL CHINESE / 繁体中文,KOREAN / 한국어,CZECH / ČEŠTINA,HUNGARIAN / MAGYAR,ROMANIAN / ROMÂNĂ,THAI / ภาษาไทย,BULGARIAN / БЪЛГАРСКИ,עברית / HEBREW, العربية / ARABIC,BOSNIAN / bosanski jezik,Indonesian / Bahasa Indonesia,Afrikaans / Afrikaans,Basque / euskara,Belarusian / беларуская мова,Catalan / català,Chinese / 中文,Estonian / eesti,Icelandic / Íslenska,Latvian / latviešu valoda        ,Lithuanian / lietuvių kalba,Slovak / Slovenčina,Slovenian / Slovenski jezik,Ukrainian / Українська,Vietnamese / Tiếng Việt
-LANGUAGE_CODE,IETF language tag(s) without dash,enUS enGB,frFR,esES esAR esMX,deDE deCH deAT,itIT itCH,ptBR,ptPT,ruRU,elGR,trTR,daDK,noNB,svSE,nlNL,plPL,fiFI,jaJP,zhCN zhSG,zhTW zhHK zhMO,koKR,csCZ,huHU,roRO,thTH,bgBG,heIL,ar001,bsBS,id,af,eu,be,ca,zh,et,is,lv,lt,sk,sl,uk,vi
-LANGUAGE_EN,[LanguageName] in english,English,French,Spanish,German,Italian ,Portuguese (Brazil),Portuguese,Russian,Greek,Turkish,Danish,Norwegian,Swedish,Dutch,Polish,Finnish,Japanese,Simplified Chinese,Traditional Chinese,Korean,Czech,Hungarian,Romanian,Thai,Bulgarian,Hebrew,Arabic,Bosnian,Indonesian,Afrikaans,Basque,Belarusian,Catalan,Chinese,Estonian,Icelandic,Latvian,Lithuanian,Slovak,Slovenian,Ukrainian,Vietnamese
 LANGUAGE_DIRECTION,ltr or rtl (text direction used by game code),ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,rtl,rtl,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr,ltr
 LANGUAGE_CODE_SHORT,Used by google translate,en,fr,es,de,it,pt,pt,ru,el,tr,da,no,sv,nl,pl,fi,ja,zh,zh,ko,cs,hu,ro,th,bg,he,ar,bs,id,af,eu,be,ca,zh,et,is,lv,lt,sk,sl,uk,vi
 Polyglot,100,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -75,7 +73,7 @@ Mindenesetre üdvözlöm minden visszajelzést!
 (หากต้องการกดรายงานข้อผิดพลาด <b> <i> ~ </ i> </ b> และคลิก <b> <i> สร้างรายงาน </ i> </ b>)","Бъдете наясно: играта все още е в алфа, така че не може да има няколко грешки.
 Във всеки случай, аз приветствам всички отзиви!
 (За да докладвате този потребител, натиснете <б> <i> ~ </ i> </ B> и кликнете върху <б> <i> Създаване на отчет </ i> </ B>)","שימו לב: המשחק עדיין בשלבי אלפא, כל כך לא יכולה להיות כמה באגים.
-בכל מקרה, אני מברך את כל המשוב!
+בכל מקרה, אני מברך את כל משוב!
 (ללחוץ דווח על תקלה <b> <i> ~ </ i> </ b> ולחץ על <b> <i> צור דוח </ i> </ b>)","كن على علم: اللعبة لا تزال في ألفا، لذلك يمكن أن يكون هناك عدد قليل من البق.
 في أي حال، وأنا أرحب بجميع ردود الفعل!
 (لصحفي تقرير الشوائب <ب> <ط> ~ </ i> </ b> و انقر فوق <b> <i> إنشاء تقرير </ I> </ B>)","Budite svjesni: igra još uvijek u alfa, tako da može biti nekoliko bugova.
