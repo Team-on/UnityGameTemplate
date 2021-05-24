@@ -28,3 +28,7 @@ MonoBehaviour:
   m_DefaultHoldTime: 0.4
   m_TapRadius: 5
   m_MultiTapDelayTime: 0.75
+  m_iOSSettings:
+    m_MotionUsage:
+      m_Enabled: 0
+      m_Description: 

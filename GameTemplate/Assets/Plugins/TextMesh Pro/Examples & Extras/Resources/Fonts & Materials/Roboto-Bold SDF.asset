@@ -125,6 +125,7 @@ MonoBehaviour:
   m_SourceFontFile: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
   m_AtlasPopulationMode: 1
   m_FaceInfo:
+    m_FaceIndex: 0
     m_FamilyName: Roboto
     m_StyleName: Bold
     m_PointSize: 90

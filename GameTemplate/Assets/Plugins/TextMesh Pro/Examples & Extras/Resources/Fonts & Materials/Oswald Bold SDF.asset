@@ -125,6 +125,7 @@ MonoBehaviour:
   m_SourceFontFile: {fileID: 12800000, guid: c9f6d0e7bc8541498c9a4799ba184ede, type: 3}
   m_AtlasPopulationMode: 1
   m_FaceInfo:
+    m_FaceIndex: 0
     m_FamilyName: Oswald
     m_StyleName: Bold
     m_PointSize: 90
