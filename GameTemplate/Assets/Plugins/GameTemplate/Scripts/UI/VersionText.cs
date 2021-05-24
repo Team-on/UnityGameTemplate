@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 
 public class VersionText : MonoBehaviour {
+	const string placeholderText = "Version - Update header here (date)";
+
 	[SerializeField] TextMeshProUGUI textField;
 
 #if UNITY_EDITOR
@@ -11,11 +13,9 @@ public class VersionText : MonoBehaviour {
 		if (textField == null)
 			textField = GetComponent<TextMeshProUGUI>();
 
-		if(textField != null) {
-			if(textField.text != TemplateGameManager.Instance.buildNameString) {
-				textField.text = TemplateGameManager.Instance.buildNameString;
-				UnityEditor.EditorUtility.SetDirty(textField.gameObject);
-			}
+		if (textField != null && textField.text != placeholderText) {
+			textField.text = placeholderText;
+			UnityEditor.EditorUtility.SetDirty(textField.gameObject);
 		}
 	}
 #endif

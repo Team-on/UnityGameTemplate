@@ -32,6 +32,22 @@ namespace Polyglot
         Bulgarian,
         Hebrew,
         Arabic,
-        Bosnian
-    }
+        Bosnian,
+
+        Indonesian,
+		Afrikaans,
+		Basque,
+		Belarusian,
+		Catalan,
+		Chinese,
+		Estonian,
+		Icelandic,
+		Indonesia,
+		Latvian,
+		Lithuanian,
+		Slovak,
+		Slovenian,
+		Ukrainian,
+		Vietnamese,
+	}
 }

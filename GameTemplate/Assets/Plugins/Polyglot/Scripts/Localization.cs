@@ -213,119 +213,101 @@ namespace Polyglot
 
         public Language ConvertSystemLanguage(SystemLanguage selected)
         {
-            switch (selected)
-            {
-                case SystemLanguage.Arabic:
-                    return Language.Arabic;
-                case SystemLanguage.Bulgarian:
-                    return Language.Bulgarian;
-                case SystemLanguage.Czech:
-                    return Language.Czech;
-                case SystemLanguage.Danish:
-                    return Language.Danish;
-                case SystemLanguage.Dutch:
-                    return Language.Dutch;
-                case SystemLanguage.English:
-                    return Language.English;
-                case SystemLanguage.Finnish:
-                    return Language.Finnish;
-                case SystemLanguage.French:
-                    return Language.French;
-                case SystemLanguage.German:
-                    return Language.German;
-                case SystemLanguage.Greek:
-                    return Language.Greek;
-                case SystemLanguage.Hebrew:
-                    return Language.Hebrew;
-                case SystemLanguage.Hungarian:
-                    return Language.Hungarian;
-                /*case SystemLanguage.Indonesian:
-                    return Language.Indonesian;*/
-                case SystemLanguage.Italian:
-                    return Language.Italian;
-                case SystemLanguage.Japanese:
-                    return Language.Japanese;
-                case SystemLanguage.Korean:
-                    return Language.Korean;
-                case SystemLanguage.Norwegian:
-                    return Language.Norwegian;
-                case SystemLanguage.Polish:
-                    return Language.Polish;
-                case SystemLanguage.Portuguese:
-                    return Language.Portuguese;
-                case SystemLanguage.Romanian:
-                    return Language.Romanian;
-                case SystemLanguage.Russian:
-                    return Language.Russian;
-                case SystemLanguage.Spanish:
-                    return Language.Spanish;
-                case SystemLanguage.Swedish:
-                    return Language.Swedish;
-                case SystemLanguage.Thai:
-                    return Language.Thai;
-                case SystemLanguage.Turkish:
-                    return Language.Turkish;
-                case SystemLanguage.ChineseSimplified:
-                    return Language.Simplified_Chinese;
-                case SystemLanguage.ChineseTraditional:
-                    return Language.Traditional_Chinese;
-                /*case SystemLanguage.Afrikaans:
-                    return Language.Afrikaans;
-                    break;
-                case SystemLanguage.Basque:
-                    return Language.Basque;
-                    break;
-                case SystemLanguage.Belarusian:
-                    return Language.Belarusian;
-                    break;
-                case SystemLanguage.Catalan:
-                    return Language.Catalan;
-                    break;
-                case SystemLanguage.Chinese:
-                    return Language.Chinese;
-                    break;
-                case SystemLanguage.Estonian:
-                    return Language.Estonian;
-                    break;
-                case SystemLanguage.Faroese:
-                    return Language.Faroese;
-                    break;
-                case SystemLanguage.Icelandic:
-                    return Language.Icelandic;
-                    break;
-                case SystemLanguage.Latvian:
-                    return Language.Latvian;
-                    break;
-                case SystemLanguage.Lithuanian:
-                    return Language.Lithuanian;
-                    break;
-                case SystemLanguage.SerboCroatian:
-                    return Language.SerboCroatian;
-                    break;
-                case SystemLanguage.Slovak:
-                    return Language.Slovak;
-                    break;
-                case SystemLanguage.Slovenian:
-                    return Language.Slovenian;
-                    break;
-                case SystemLanguage.Ukrainian:
-                    return Language.Ukrainian;
-                    break;
-                case SystemLanguage.Vietnamese:
-                    return Language.Vietnamese;
-                    break;
-                case SystemLanguage.Unknown:
-                    break;*/
-                default:
-                    return selectedLanguage;
-            }
-        }
+			switch (selected) {
+				case SystemLanguage.Arabic:
+					return Language.Arabic;
+				case SystemLanguage.Bulgarian:
+					return Language.Bulgarian;
+				case SystemLanguage.Czech:
+					return Language.Czech;
+				case SystemLanguage.Danish:
+					return Language.Danish;
+				case SystemLanguage.Dutch:
+					return Language.Dutch;
+				case SystemLanguage.English:
+					return Language.English;
+				case SystemLanguage.Finnish:
+					return Language.Finnish;
+				case SystemLanguage.French:
+					return Language.French;
+				case SystemLanguage.German:
+					return Language.German;
+				case SystemLanguage.Greek:
+					return Language.Greek;
+				case SystemLanguage.Hebrew:
+					return Language.Hebrew;
+				case SystemLanguage.Hungarian:
+					return Language.Hungarian;
+				case SystemLanguage.Indonesian:
+					return Language.Indonesian;
+				case SystemLanguage.Italian:
+					return Language.Italian;
+				case SystemLanguage.Japanese:
+					return Language.Japanese;
+				case SystemLanguage.Korean:
+					return Language.Korean;
+				case SystemLanguage.Norwegian:
+					return Language.Norwegian;
+				case SystemLanguage.Polish:
+					return Language.Polish;
+				case SystemLanguage.Portuguese:
+					return Language.Portuguese;
+				case SystemLanguage.Romanian:
+					return Language.Romanian;
+				case SystemLanguage.Russian:
+					return Language.Russian;
+				case SystemLanguage.Spanish:
+					return Language.Spanish;
+				case SystemLanguage.Swedish:
+					return Language.Swedish;
+				case SystemLanguage.Thai:
+					return Language.Thai;
+				case SystemLanguage.Turkish:
+					return Language.Turkish;
+				case SystemLanguage.ChineseSimplified:
+					return Language.Simplified_Chinese;
+				case SystemLanguage.ChineseTraditional:
+					return Language.Traditional_Chinese;
+				case SystemLanguage.Afrikaans:
+					return Language.Afrikaans;
+				case SystemLanguage.Basque:
+					return Language.Basque;
+				case SystemLanguage.Belarusian:
+					return Language.Belarusian;
+				case SystemLanguage.Catalan:
+					return Language.Catalan;
+				case SystemLanguage.Chinese:
+					return Language.Chinese;
+				case SystemLanguage.Estonian:
+					return Language.Estonian;
+				//case SystemLanguage.Faroese:
+				//	return Language.Faroese;
+				case SystemLanguage.Icelandic:
+					return Language.Icelandic;
+				case SystemLanguage.Latvian:
+					return Language.Latvian;
+				case SystemLanguage.Lithuanian:
+					return Language.Lithuanian;
+				//case SystemLanguage.SerboCroatian:
+				//	return Language.SerboCroatian;
+				case SystemLanguage.Slovak:
+					return Language.Slovak;
+				case SystemLanguage.Slovenian:
+					return Language.Slovenian;
+				case SystemLanguage.Ukrainian:
+					return Language.Ukrainian;
+				case SystemLanguage.Vietnamese:
+					return Language.Vietnamese;
+				default:
+					return selectedLanguage;
+			}
+		}
 
-        /// <summary>
-        /// Add a Localization listener to catch the event that is invoked when the selected language is changed.
-        /// </summary>
-        /// <param name="localize"></param>
-        public void AddOnLocalizeEvent(ILocalize localize)
+		/// <summary>
+		/// Add a Localization listener to catch the event that is invoked when the selected language is changed.
+		/// </summary>
+		/// <param name="localize"></param>
+		public void AddOnLocalizeEvent(ILocalize localize)
         {
             Localize.RemoveListener(localize.OnLocalize);
             Localize.AddListener(localize.OnLocalize);
@@ -417,5 +399,5 @@ namespace Polyglot
 
             return false;
         }
-    }
+	}
 }
