@@ -46,7 +46,7 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 1c0f0859ea62bf24e8ce9ce35fe338f2, type: 3}
     - {fileID: 102900000, guid: 4655dbc33f830884f92eb86e34a835c9, type: 3}
     - {fileID: 102900000, guid: 42a7f9cf69731664d9a8b5b3c840ec6f, type: 3}
-    totalSpriteSurfaceArea: 3015531
+    totalSpriteSurfaceArea: 3208531
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -262,6 +262,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 39e7a8ce6f598524a8394263b7b392c7, type: 3}
   - {fileID: 21300000, guid: ce290ade0c4f8d146aaeef139b5bd62d, type: 3}
   - {fileID: 21300000, guid: 8a17f6ee71d7cd84893f3bf08e22e95a, type: 3}
+  - {fileID: 21300000, guid: bfa52beeaecac11499218f494d2ed480, type: 3}
   - {fileID: 21300000, guid: 7482011f1dca20147b563b7b564eb262, type: 3}
   - {fileID: 21300000, guid: acfc314f747513a4e9ed3c67e3d171a7, type: 3}
   - {fileID: 21300000, guid: 3d16015f0355c5c4789c0e11b07f45e7, type: 3}
@@ -488,6 +489,7 @@ SpriteAtlas:
   - BUtton 1
   - sign2
   - up
+  - Twitter
   - gamepad2
   - rect3pxRy8
   - home
