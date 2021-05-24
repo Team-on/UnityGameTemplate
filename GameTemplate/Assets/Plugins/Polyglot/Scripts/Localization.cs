@@ -336,9 +336,13 @@ namespace Polyglot
         {
             var languages = LocalizationImporter.GetLanguages(key);
             var selected = (int) language;
-            if (languages.Count > 0 && selected >= 0 && selected < languages.Count)
+            if (languages.Count > 0)
             {
-                var currentString = languages[selected];
+                string currentString = null;
+
+                if(selected >= 0 && selected < languages.Count)
+                    currentString = languages[selected];
+
                 if (string.IsNullOrEmpty(currentString) || LocalizationImporter.IsLineBreak(currentString))
                 {
                     Debug.LogWarning("Could not find key " + key + " for current language " + language + ". Falling back to " + Instance.fallbackLanguage + " with " + languages[(int)Instance.fallbackLanguage]);

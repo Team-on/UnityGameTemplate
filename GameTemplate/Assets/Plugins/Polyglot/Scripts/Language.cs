@@ -42,7 +42,6 @@ namespace Polyglot
 		Chinese,
 		Estonian,
 		Icelandic,
-		Indonesia,
 		Latvian,
 		Lithuanian,
 		Slovak,
