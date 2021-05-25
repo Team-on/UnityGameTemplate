@@ -105,9 +105,11 @@ public abstract class MenuBase : MonoBehaviour {
 			lastSelectedGO = firstSelected.gameObject;
 
 		if (lastSelectedGO) {
-			ButtonSounds bs = lastSelectedGO.GetComponent<ButtonSounds>();
-			if (bs) {
-				bs.isIgnoreNextEnter = true;
+			if (TemplateGameManager.Instance.uiinput.isUseNavigation) {
+				ButtonSounds bs = lastSelectedGO.GetComponent<ButtonSounds>();
+				if (bs) {
+					bs.isIgnoreNextEnter = true;
+				}
 			}
 
 			TemplateGameManager.Instance.uiinput.SetSelectedButton(lastSelectedGO);
@@ -117,5 +119,10 @@ public abstract class MenuBase : MonoBehaviour {
 	public void SaveLastButton() {
 		if(TemplateGameManager.Instance.eventSystem.currentSelectedGameObject != null && TemplateGameManager.Instance.eventSystem.currentSelectedGameObject.transform.IsChildOf(gameObject.transform))
 			lastSelectedGO = TemplateGameManager.Instance.eventSystem.currentSelectedGameObject;
+	}
+
+	public void OnFirstMoveClick() {
+		TemplateGameManager.Instance.uiinput.isUseNavigation = true;
+		TemplateGameManager.Instance.uiinput.SetSelectedButton(lastSelectedGO);
 	}
 }

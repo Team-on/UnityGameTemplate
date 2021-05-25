@@ -63,8 +63,8 @@ public class TabControl : MonoBehaviour {
 				toSelect = firstSelected[tabId];
 			else
 				toSelect = lastSelected[tabId];
-			if(toSelect != null)
-				TemplateGameManager.Instance.eventSystem.SetSelectedGameObject(toSelect.gameObject);
+			//if(toSelect != null)
+			//	TemplateGameManager.Instance.eventSystem.SetSelectedGameObject(toSelect.gameObject);
 
 			buttonAnimators[tabId].OverrideDefaultStateBack();
 			buttonAnimators[tabId].SetDefaultState();

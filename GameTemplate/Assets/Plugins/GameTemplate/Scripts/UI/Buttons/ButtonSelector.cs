@@ -26,8 +26,7 @@ public class ButtonSelector : MonoBehaviour {
 #endif
 
 	void OnEnter() {
-		if(!events.isOnlyForMouse)
-			TemplateGameManager.Instance.uiinput.OnEnterButton(this);
+		TemplateGameManager.Instance.uiinput.OnEnterButton(this);
 	}
 
 	void OnClick() {
@@ -35,6 +34,6 @@ public class ButtonSelector : MonoBehaviour {
 	}
 
 	void OnExit() {
-
+		TemplateGameManager.Instance.uiinput.OnExitButton(this);
 	}
 }

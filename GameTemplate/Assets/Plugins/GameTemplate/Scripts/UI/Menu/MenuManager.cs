@@ -30,6 +30,7 @@ public class MenuManager : MonoBehaviour {
 		}
 
 		TemplateGameManager.Instance.inputSystem.cancel.action.performed += OnCancelClick;
+		TemplateGameManager.Instance.inputSystem.move.action.performed += OnMoveClick;
 
 		StartCoroutine(DelayedShow());
 
@@ -42,6 +43,7 @@ public class MenuManager : MonoBehaviour {
 
 	private void OnDestroy() {
 		TemplateGameManager.Instance.inputSystem.cancel.action.performed -= OnCancelClick;
+		TemplateGameManager.Instance.inputSystem.move.action.performed -= OnMoveClick;
 	}
 
 	public void Show(string menuScriptName) {
@@ -128,5 +130,10 @@ public class MenuManager : MonoBehaviour {
 	void OnCancelClick(InputAction.CallbackContext context) {
 		if (context.ReadValueAsButton() && context.phase == InputActionPhase.Performed)
 			HideTopMenu();
+	}
+
+	void OnMoveClick(InputAction.CallbackContext context) {
+		if (context.ReadValue<Vector2>() != Vector2.zero && context.phase == InputActionPhase.Performed && TemplateGameManager.Instance.eventSystem.currentSelectedGameObject == null)
+			currMenu.Peek().OnFirstMoveClick();
 	}
 }

@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 
 public class UIInput : MonoBehaviour {
+	[NonSerialized] public bool isUseNavigation = false;
+
 	[Header("This refs")]
 	[Space]
 	[SerializeField] EventSystem eventSystem;
@@ -31,26 +34,33 @@ public class UIInput : MonoBehaviour {
 	}
 
 	public void SetSelectedButton(GameObject go) {
-		selectedGo = go;
-
-#if !UNITY_ANDROID
-		if(TemplateGameManager.Instance.eventSystem.currentSelectedGameObject != null)
+		if (TemplateGameManager.Instance.eventSystem.currentSelectedGameObject != null) {
+			bool isUseNavigation = TemplateGameManager.Instance.uiinput.isUseNavigation;
 			eventSystem.SetSelectedGameObject(null);
-		eventSystem.SetSelectedGameObject(selectedGo);
-#endif
+			TemplateGameManager.Instance.uiinput.isUseNavigation = isUseNavigation;
+			if (selectedGo)
+				selectedGo.GetComponent<UIEvents>().DeselectOnOtherSelected();
+		}
+
+		selectedGo = null;
+
+		if (TemplateGameManager.Instance.uiinput.isUseNavigation) {
+			selectedGo = go;
+			eventSystem.SetSelectedGameObject(selectedGo);
+		}
 	}
 
 	public void OnEnterButton(ButtonSelector selector) {
-		if (selectedGo != selector.gameObject) {
-			if (selectedGo)
-				selectedGo.GetComponent<UIEvents>().DeselectOnOtherSelected();
+		selectedGo = selector.gameObject;
 
-			selectedGo = selector.gameObject;
-
-#if !UNITY_ANDROID
-			if (eventSystem.currentSelectedGameObject != selectedGo)
-				eventSystem.SetSelectedGameObject(selectedGo);
-#endif
+		if (eventSystem.currentSelectedGameObject != selectedGo) {
+			bool isUseNavigation = TemplateGameManager.Instance.uiinput.isUseNavigation;
+			eventSystem.SetSelectedGameObject(selectedGo);
+			TemplateGameManager.Instance.uiinput.isUseNavigation = isUseNavigation;
 		}
+	}
+
+	public void OnExitButton(ButtonSelector selector) {
+
 	}
 }

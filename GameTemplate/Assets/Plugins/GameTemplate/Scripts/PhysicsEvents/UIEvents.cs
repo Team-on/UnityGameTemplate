@@ -19,9 +19,6 @@ public class UIEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	[Header("Refs"), Space]
 	public Selectable selectable;
 
-	[NonSerialized] public bool isOnlyForMouse = false;
-	int enterCount = 0;
-
 #if UNITY_EDITOR
 	private void Reset() {
 		selectable = GetComponent<Selectable>();
@@ -29,52 +26,55 @@ public class UIEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 #endif
 
 	private void Awake() {
-#if UNITY_ANDROID
-		isOnlyForMouse = true;
-#else
-		isOnlyForMouse = selectable.navigation.mode == Navigation.Mode.None;
-#endif
+
 	}
 
 	private void OnDisable() {
-		enterCount = 0;
+
 	}
 
 	public void OnPointerClick(PointerEventData eventData) {
+		TemplateGameManager.Instance.uiinput.isUseNavigation = false;
+
 		Click();
 	}
 
 	public void OnSubmit(BaseEventData eventData) {
-		if(!isOnlyForMouse)
-			Click();
+		TemplateGameManager.Instance.uiinput.isUseNavigation = true;
+
+		Click();
 	}
 
 	public void OnPointerEnter(PointerEventData eventData) {
+		TemplateGameManager.Instance.uiinput.isUseNavigation = false;
+
 		Enter();
 	}
 
 	public void OnSelect(BaseEventData eventData) {
-		if(!isOnlyForMouse)
-			Enter();
+		TemplateGameManager.Instance.uiinput.isUseNavigation = true;
+
+		Enter();
 	}
 
 	public void OnPointerExit(PointerEventData eventData) {
+		TemplateGameManager.Instance.uiinput.isUseNavigation = false;
+
 		Exit();
 	}
 
 	public void OnDeselect(BaseEventData eventData) {
-		if(!isOnlyForMouse)
-			Exit();
+		TemplateGameManager.Instance.uiinput.isUseNavigation = true;
+
+		Exit();
 	}
 
 	public void DeselectOnOtherSelected() {
-		ForceExit();
+		Exit();
 	}
 
 	void Enter() {
-		++enterCount;
-		if (enterCount == 1)
-			onEnter?.Invoke();
+		onEnter?.Invoke();
 	}
 
 	void Click() {
@@ -82,19 +82,7 @@ public class UIEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	}
 
 	void Exit() {
-		if (enterCount <= 0)
-			return;
-
-		--enterCount;
-		if (enterCount == 0)
-			onExit?.Invoke();
-	}
-
-	void ForceExit() {
-		if (enterCount != 0) {
-			enterCount = 0;
-			onExit?.Invoke();
-		}
+		onExit?.Invoke();
 	}
 
 #if UNITY_EDITOR
