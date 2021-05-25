@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 76662950}
   - component: {fileID: 76662952}
   - component: {fileID: 76662951}
+  - component: {fileID: 737021279}
   m_Layer: 5
   m_Name: GamepadText
   m_TagString: Untagged
@@ -34,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -147}
+  m_AnchoredPosition: {x: 0, y: -121}
   m_SizeDelta: {x: 0, y: 67.2205}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &76662952
@@ -134,6 +135,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &737021279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76662949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 76662951}
+  maintainTextAlignment: 1
+  key: SPLASH_SCREEN_ANYKEY_BEST_EXPERIENCED
+  afterKeyValue: 
 --- !u!1 &584327241
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +162,7 @@ GameObject:
   - component: {fileID: 584327242}
   - component: {fileID: 584327244}
   - component: {fileID: 584327243}
+  - component: {fileID: 1281214565}
   m_Layer: 5
   m_Name: BugsText
   m_TagString: Untagged
@@ -168,7 +186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5}
+  m_AnchoredPosition: {x: 0, y: 31}
   m_SizeDelta: {x: 0, y: 134.17719}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &584327244
@@ -274,6 +292,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1281214565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584327241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 584327243}
+  maintainTextAlignment: 1
+  key: SPLASH_SCREEN_ANYKEY_AWARE
+  afterKeyValue: 
 --- !u!1 &847197111
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +319,7 @@ GameObject:
   - component: {fileID: 847197112}
   - component: {fileID: 847197114}
   - component: {fileID: 847197113}
+  - component: {fileID: 215447942}
   m_Layer: 5
   m_Name: GameNameField
   m_TagString: Untagged
@@ -306,9 +341,9 @@ RectTransform:
   m_Father: {fileID: 2102257481463776146}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 381}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -88}
   m_SizeDelta: {x: 0, y: 144}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &847197114
@@ -408,6 +443,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &215447942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847197111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 847197113}
+  maintainTextAlignment: 1
+  key: MAIN_MENU_GAME_NAME
+  afterKeyValue: 
 --- !u!1 &1588261644
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +470,7 @@ GameObject:
   - component: {fileID: 1588261645}
   - component: {fileID: 1588261647}
   - component: {fileID: 1588261646}
+  - component: {fileID: 132157342}
   m_Layer: 5
   m_Name: PrototypeText
   m_TagString: Untagged
@@ -442,7 +494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 97}
+  m_AnchoredPosition: {x: 0, y: 123}
   m_SizeDelta: {x: 0, y: 80.15161}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1588261647
@@ -542,6 +594,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &132157342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588261644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1588261646}
+  maintainTextAlignment: 1
+  key: SPLASH_SCREEN_ANYKEY_PROTOTYPE
+  afterKeyValue: 
 --- !u!1 &2077827656
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +621,7 @@ GameObject:
   - component: {fileID: 2077827657}
   - component: {fileID: 2077827659}
   - component: {fileID: 2077827658}
+  - component: {fileID: 741962142}
   m_Layer: 5
   m_Name: WelcomeText
   m_TagString: Untagged
@@ -576,7 +645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 249}
+  m_AnchoredPosition: {x: 0, y: 320}
   m_SizeDelta: {x: 0, y: 75.24011}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2077827659
@@ -676,6 +745,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &741962142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077827656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 2077827658}
+  maintainTextAlignment: 1
+  key: SPLASH_SCREEN_ANYKEY_SUBHEADER
+  afterKeyValue: 
 --- !u!1 &2102257481463776145
 GameObject:
   m_ObjectHideFlags: 0

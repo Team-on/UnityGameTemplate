@@ -233,8 +233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 5319223877906100519}
   maintainTextAlignment: 1
-  key: CREDITS_POLYGLOT
-  afterKeyValue: ' <link="https://docs.google.com/spreadsheets/d/17f0dQawb-s_Fd7DHgmVvJoEGDMH_yoSd8EYigrb0zmM/edit#gid=310116733"><u>(link)</u></link>'
+  key: CREDITS_TRANSLATED_BY_SINGLE
+  afterKeyValue: 
 --- !u!1 &720615028772090445
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,8 +397,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1281299968486636572}
   maintainTextAlignment: 1
-  key: CREDITS_SOUND_DESIGNER
-  afterKeyValue: ': <link="https://team-on.github.io/"><u>Team-on</u></link>'
+  key: CREDITS_SOUND_DESIGNER_SINGLE
+  afterKeyValue: 
 --- !u!1 &1136375304420400168
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,8 +836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1136375305335137687}
   maintainTextAlignment: 1
-  key: CREDITS_PROGRAMMER
-  afterKeyValue: ': <link="https://team-on.github.io/"><u>Team-on</u></link>'
+  key: CREDITS_PROGRAMMER_SINGLE
+  afterKeyValue: 
 --- !u!1 &1136375305404854011
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,10 +960,10 @@ RectTransform:
   m_Father: {fileID: 1136375305404854010}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1601, y: 1080}
-  m_SizeDelta: {x: -580.69995, y: -314.3}
+  m_SizeDelta: {x: 1339.3, y: 765.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1136375305689731452
 CanvasRenderer:
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 7416e2806d5dcbc478bb455815e55376, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.2
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1162521869145715141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,8 +1165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 2343343225242330}
   maintainTextAlignment: 1
-  key: CREDITS_DEVELOPED_BY
-  afterKeyValue: ' <link="https://team-on.github.io/"><u>Team-on games</u></link>'
+  key: CREDITS_DEVELOPED_BY_SINGLE
+  afterKeyValue: 
 --- !u!1 &2219353707687284606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,8 +1329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 8260796916938812384}
   maintainTextAlignment: 1
-  key: CREDITS_ARTIST
-  afterKeyValue: ': <link="https://team-on.github.io/"><u>Team-on</u></link>'
+  key: CREDITS_ARTIST_SINGLE
+  afterKeyValue: 
 --- !u!1 &4154756141703663111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1341,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8742361735751097373}
   - component: {fileID: 142028567458406068}
-  - component: {fileID: 2755986920348648174}
   m_Layer: 0
   m_Name: Splitter
   m_TagString: Untagged
@@ -1376,95 +1375,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4154756141703663111}
   m_CullTransparentMesh: 0
---- !u!114 &2755986920348648174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4154756141703663111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 44
-  m_fontSizeBase: 72
-  m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 44
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 1
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4302246351328009864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,8 +1606,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 4955024125218546457}
   maintainTextAlignment: 1
-  key: CREDITS_GAME_DESIGNER
-  afterKeyValue: ': <link="https://team-on.github.io/"><u>Team-on</u></link>'
+  key: CREDITS_GAME_DESIGNER_SINGLE
+  afterKeyValue: 
 --- !u!1 &5401249566416772863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1620,7 @@ GameObject:
   - component: {fileID: 3878639370604390230}
   - component: {fileID: 6291005697648419543}
   - component: {fileID: 5833306160781963725}
+  - component: {fileID: 1136375305323458057}
   m_Layer: 0
   m_Name: UsedAssets
   m_TagString: Untagged
@@ -1845,6 +1756,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589e0922950241b499dcb6f48e09f269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1136375305323458057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401249566416772863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 6291005697648419543}
+  maintainTextAlignment: 1
+  key: CREDITS_DEVELOPED_BY_SINGLE
+  afterKeyValue: 
 --- !u!1 &8700599555019089892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,6 +1784,7 @@ GameObject:
   - component: {fileID: 4440084149927683026}
   - component: {fileID: 5706741316420866691}
   - component: {fileID: 8140971408511865601}
+  - component: {fileID: 1136375305323458056}
   m_Layer: 0
   m_Name: Template
   m_TagString: Untagged
@@ -1911,7 +1839,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Created with  <link="https://github.com/Team-on/UnityGameTemplate"><u>Unity
+  m_text: Created with <link="https://github.com/Team-on/UnityGameTemplate"><u>Unity
     Game Template</u></link>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1993,6 +1921,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589e0922950241b499dcb6f48e09f269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1136375305323458056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700599555019089892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27798c389c988da48b345a899559ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 5706741316420866691}
+  maintainTextAlignment: 1
+  key: CREDITS_GAME_TEMPLATE_SINGLE
+  afterKeyValue: 
 --- !u!1001 &323070596982061335
 PrefabInstance:
   m_ObjectHideFlags: 0
