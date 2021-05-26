@@ -614,7 +614,7 @@ PrefabInstance:
     - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 71.6
       objectReference: {fileID: 0}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
@@ -959,7 +959,7 @@ PrefabInstance:
     - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 71.6
       objectReference: {fileID: 0}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
@@ -1342,7 +1342,7 @@ PrefabInstance:
     - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 71.6
       objectReference: {fileID: 0}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
@@ -1572,7 +1572,7 @@ PrefabInstance:
     - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 71.6
       objectReference: {fileID: 0}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
@@ -1792,7 +1792,7 @@ PrefabInstance:
     - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 71.6
       objectReference: {fileID: 0}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
@@ -2419,7 +2419,7 @@ PrefabInstance:
     - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 71.6
       objectReference: {fileID: 0}
     - target: {fileID: 7676828743458691071, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Localization
   m_EditorClassIdentifier: 
   polyglotDocument:
-    docsId: 17f0dQawb-s_Fd7DHgmVvJoEGDMH_yoSd8EYigrb0zmM
-    sheetId: 296134756
+    docsId: 13YCRi6fHNaS_DRApBelilgdM6O833hLiCy68F47KWIU
+    sheetId: 1450689713
     format: 0
     textAsset: {fileID: 4900000, guid: c4dc0d059266d8d47862f46460cf8f31, type: 3}
     downloadOnStart: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
   - textAsset: {fileID: 4900000, guid: 4910d674711b8454ab705286f4996867, type: 3}
     format: 0
   supportedLanguages: 
-  selectedLanguage: 0
+  selectedLanguage: 40
   fallbackLanguage: 0
   showTashkeel: 1
   useHinduNumbers: 0

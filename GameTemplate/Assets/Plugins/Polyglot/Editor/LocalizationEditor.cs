@@ -129,7 +129,7 @@ namespace Polyglot
                 masterSheet = null;
             }
 
-            DisplayDocsAndSheetId("Official Polyglot Master", true, false, masterSheet, serializedObject.FindProperty("polyglotDocument"), OfficialSheet, OfficialGId, polyglotPath, DownloadMasterSheet);
+            DisplayDocsAndSheetId("Official Polyglot Master", false, false, masterSheet, serializedObject.FindProperty("polyglotDocument"), OfficialSheet, OfficialGId, polyglotPath, DownloadMasterSheet);
 
             EditorGUILayout.Space();
 
