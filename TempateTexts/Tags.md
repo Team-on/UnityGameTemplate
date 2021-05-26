@@ -23,5 +23,6 @@ Twitter tags:
 #madewithunity (best day to tweet: Friday ) 
 #screenshotsaturday (best day to tweet: Saturday) 
 #indiedevhour ( http://www.indiedevhour.com/, середа )
+#MondayMotivation
 
 https://www.tagsfinder.com/en-us/related/gamedev/
