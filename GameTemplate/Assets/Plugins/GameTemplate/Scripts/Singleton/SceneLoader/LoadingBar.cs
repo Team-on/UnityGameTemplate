@@ -9,8 +9,8 @@ using NaughtyAttributes;
 public class LoadingBar : MonoBehaviour {
 	[Header("Tips")]
 	[Space]
-	[SerializeField] List<string> tips;
-	string tipBeggining = "TIP:";
+	[SerializeField] List<string> tipsKeys;
+	[SerializeField] string tipContainerKey;
 
 	[Header("Audio")]
 	[Space]
@@ -85,10 +85,9 @@ public class LoadingBar : MonoBehaviour {
 		enabled = true;
 		bool needDelay = (bool)data?["uiNeedDelay"];
 
-
 		loadingBarRoutine = StartCoroutine(needDelay ? LoadingBarUpdateWithDelay() : LoadingBarUpdate());
 
-		tipText.text = tipBeggining + " " + tips.Random();
+		tipText.text = Polyglot.Localization.GetFormat(tipContainerKey, Polyglot.Localization.Get(tipsKeys.Random()));
 		EnableCanvasGroup();
 	}
 
