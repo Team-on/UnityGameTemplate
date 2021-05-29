@@ -26,3 +26,6 @@ Twitter tags:
 #MondayMotivation
 
 https://www.tagsfinder.com/en-us/related/gamedev/
+
+#madewithunity — можно твитить в любой день, но по пятницам настоящие, живые сотрудники Unity отбирают и ретвитят понравившиеся им.
+#unitytips — по вторникам Unity ретвитит лучшие подсказки по работе с движком.
