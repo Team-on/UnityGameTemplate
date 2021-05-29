@@ -34,7 +34,7 @@ MonoBehaviour:
   - textAsset: {fileID: 4900000, guid: 4910d674711b8454ab705286f4996867, type: 3}
     format: 0
   supportedLanguages: 
-  selectedLanguage: 40
+  selectedLanguage: 7
   fallbackLanguage: 0
   showTashkeel: 1
   useHinduNumbers: 0
