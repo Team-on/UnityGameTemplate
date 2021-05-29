@@ -276,8 +276,8 @@ namespace Polyglot
 					return Language.Belarusian;
 				case SystemLanguage.Catalan:
 					return Language.Catalan;
-				case SystemLanguage.Chinese:
-					return Language.Chinese;
+				//case SystemLanguage.Chinese:
+				//	return Language.Chinese;
 				case SystemLanguage.Estonian:
 					return Language.Estonian;
 				//case SystemLanguage.Faroese:

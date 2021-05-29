@@ -39,7 +39,6 @@ namespace Polyglot
 		Basque,
 		Belarusian,
 		Catalan,
-		Chinese,
 		Estonian,
 		Icelandic,
 		Latvian,
