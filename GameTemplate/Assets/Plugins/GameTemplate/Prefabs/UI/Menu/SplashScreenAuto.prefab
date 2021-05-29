@@ -363,7 +363,12 @@ MonoBehaviour:
   rt: {fileID: 5094277163381449896}
   firstSelected: {fileID: 0}
   timeToShow: 2
+  startTextSize: 72
+  endTextSize: 300
+  startAlpha: 1
+  endAlpha: 0
   nextMenu: {fileID: 0}
+  logoText: {fileID: 1735301220}
 --- !u!1 &5094277163510275767
 GameObject:
   m_ObjectHideFlags: 0
