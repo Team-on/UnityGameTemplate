@@ -21,7 +21,13 @@ public class MouseTooltip : MonoBehaviour {
 	[SerializeField] TextMeshProUGUI textField;
 	[SerializeField] LayoutElement childLayoutElement;
 
-	bool isShowed;
+	RectTransform selected;
+
+	string neededText = "";
+
+	bool isShowed = false;
+	bool isNeedShow = false;
+	bool isCompleteHide = true;
 
 #if UNITY_EDITOR
 	private void OnValidate() {
@@ -55,8 +61,6 @@ public class MouseTooltip : MonoBehaviour {
 		//TODO: move tooltip to not be overlaped by cursor
 
 		if (TemplateGameManager.Instance.uiinput.isUseNavigation) {
-			RectTransform selected = TemplateGameManager.Instance.eventSystem.currentSelectedGameObject.GetComponent<RectTransform>();
-
 			rt.position = selected.position +
 				new Vector3((selected.pivot.x) * selected.rect.width, (1.0f - selected.pivot.y) * selected.rect.height) + 
 				new Vector3(-16, 16);
@@ -83,13 +87,53 @@ public class MouseTooltip : MonoBehaviour {
 	}
 
 	public void SetText(string text) {
-		textField.text = text;
+		neededText = text;
+	}
+
+	public void Show() {
+		if(TemplateGameManager.Instance.eventSystem.currentSelectedGameObject)
+			selected = TemplateGameManager.Instance.eventSystem.currentSelectedGameObject.GetComponent<RectTransform>();
+
+		if (isCompleteHide) {
+			TryShow();
+		}
+		else {
+			isNeedShow = true;
+		}
+	}
+
+	public void Hide() {
+		isCompleteHide = false;
+		isShowed = false;
+		isNeedShow = false;
+
+		--canvasSortOrder;
+
+		LeanTween.cancel(gameObject, false);
+		LeanTweenEx.ChangeAlpha(cg, 0.0f, 0.1f)
+		.setEase(LeanTweenType.easeInOutQuad)
+		.setOnComplete(() => {
+			enabled = false;
+			isCompleteHide = true;
+
+			if (isNeedShow) {
+				TryShow();
+			}
+		});
+	}
+
+	void TryShow() {
+		enabled = isShowed = true;
+
+		canvas.sortingOrder = canvasSortOrder++;
+
+		textField.text = neededText;
 
 		bool needMaxWidth = false;
 		int charsInThisLine = 0;
 
-		for (int i = 0; i < text.Length; ++i) {
-			if (text[i] == '\n') {
+		for (int i = 0; i < neededText.Length; ++i) {
+			if (neededText[i] == '\n') {
 				charsInThisLine = 0;
 			}
 			else {
@@ -102,29 +146,10 @@ public class MouseTooltip : MonoBehaviour {
 		}
 
 		childLayoutElement.enabled = needMaxWidth;
-	}
-
-	public void Show() {
-		enabled = isShowed = true;
-
-		canvas.sortingOrder = canvasSortOrder++;
 
 		LeanTween.cancel(gameObject, false);
 		LeanTweenEx.ChangeAlpha(cg, 1.0f, 0.1f)
 			.setEase(LeanTweenType.easeInOutQuad)
 			.setDelay(0.5f);
-	}
-
-	public void Hide() {
-		isShowed = false;
-
-		--canvasSortOrder;
-
-		LeanTween.cancel(gameObject, false);
-		LeanTweenEx.ChangeAlpha(cg, 0.0f, 0.1f)
-		.setEase(LeanTweenType.easeInOutQuad)
-		.setOnComplete(() => {
-			enabled = false;
-		});
 	}
 }
