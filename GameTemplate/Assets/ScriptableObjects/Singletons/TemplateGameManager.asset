@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19297eb15034c464993a85251aad48be, type: 3}
   m_Name: TemplateGameManager
   m_EditorClassIdentifier: 
+  minHelpLevel: 0
+  maxHelpLevel: 2
+  startHelpLevel: 2
   startResources: 
   buildNameString: 0.1 - Jam edition (1/4/2021)
   productName: GameTemplate
@@ -19,6 +22,7 @@ MonoBehaviour:
   eventSystem: {fileID: 0}
   inputSystem: {fileID: 0}
   arrows: {fileID: 0}
+  tooltip: {fileID: 0}
   debugPopups: {fileID: 0}
   audioManager: {fileID: 11400000, guid: 1e50efc8570298c4997dbe1167707e66, type: 2}
   sceneLoader: {fileID: 11400000, guid: b4da153d93a196a43993d743823e9a34, type: 2}

@@ -38,6 +38,12 @@ Make sure to set the x86_64 as executable before running.
  * Controls
  * WASD - move
  * Mouse - aim
+ 
+ 
+# Cheatcodes
+ * Press ` to toggle debug texts
+ * Hold ` to open debug console
+ * In console write *Help* to see list of commands
 
 
 # How to play

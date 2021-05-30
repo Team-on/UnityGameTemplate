@@ -37,6 +37,7 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 	}
 	public Action<int>[] onResourceChange;
 
+	//Help level
 	public int HelpLevelMode {
 		get => helpLevelMode;
 		set {
@@ -48,6 +49,23 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 	}
 	public Action<int> OnHelpModeChange;
 	int helpLevelMode = 0;
+
+	//Debug mode
+	public bool IsDebugMode {
+		get => isDebugMode;
+		set {
+			if (isDebugMode != value) {
+				isDebugMode = value;
+				OnDebugModeChange?.Invoke(isDebugMode);
+			}
+		}
+	}
+	public Action<bool> OnDebugModeChange;
+#if UNITY_EDITOR
+	bool isDebugMode = true;
+#else
+	bool isDebugMode = false;
+#endif
 
 	[Header("Help"), Space]
 	[Tooltip("Inclusive minimum value")] public int minHelpLevel = 0;

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class DebugPanelGroup : MonoBehaviour {
-	[SerializeField] KeyCode showKey = KeyCode.BackQuote;
-
 	[Header("Refs"), Space]
 	[SerializeField] CanvasGroup cg;
 	[SerializeField] CanvasGroup disablecg;
@@ -19,15 +18,19 @@ public class DebugPanelGroup : MonoBehaviour {
 
 		disablecg.interactable = disablecg.blocksRaycasts = false;
 		disablecg.alpha = 0.0f;
+
+		TemplateGameManager.Instance.actions.Cheats.ToggleConsole.performed += OnConsoleToggle;
 	}
 
-	private void Update() {
-		if (Input.GetKeyDown(showKey)) {
-			if (isShowed)
-				Hide();
-			else
-				Show();
-		}
+	private void OnDestroy() {
+		TemplateGameManager.Instance.actions.Cheats.ToggleConsole.performed -= OnConsoleToggle;
+	}
+
+	void OnConsoleToggle(InputAction.CallbackContext context) {
+		if (isShowed)
+			Hide();
+		else
+			Show();
 	}
 
 	void Show() {
