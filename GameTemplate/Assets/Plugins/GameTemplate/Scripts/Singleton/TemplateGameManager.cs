@@ -69,6 +69,7 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 
 	[Header("UI"), Space]
 	[ReadOnly] public ArrowsController arrows;
+	[ReadOnly] public MouseTooltip tooltip;
 
 	[Header("Debug UI"), Space]
 	[ReadOnly] public UIPopupGroup debugPopups;
