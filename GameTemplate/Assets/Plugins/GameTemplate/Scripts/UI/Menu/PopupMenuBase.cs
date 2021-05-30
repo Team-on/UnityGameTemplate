@@ -13,12 +13,14 @@ public class PopupMenuBase : MenuBase {
 
 	protected bool isShowed = true;
 
-	private void Start() {
+	protected override void Awake() {
 		RecalcPos();
 
 		cg.interactable = cg.blocksRaycasts = true;
 
 		EventManager.OnScreenResolutionChange += RecalcPos;
+
+		base.Awake();
 	}
 
 	private void OnDestroy() {

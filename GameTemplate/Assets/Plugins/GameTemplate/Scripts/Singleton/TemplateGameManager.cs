@@ -36,6 +36,25 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 		}
 	}
 	public Action<int>[] onResourceChange;
+
+	public int HelpLevelMode {
+		get => helpLevelMode;
+		set {
+			if (helpLevelMode != value) {
+				helpLevelMode = value;
+				OnHelpModeChange?.Invoke(helpLevelMode);
+			}
+		}
+	}
+	public Action<int> OnHelpModeChange;
+	int helpLevelMode = 0;
+
+	[Header("Help"), Space]
+	[Tooltip("Inclusive minimum value")] public int minHelpLevel = 0;
+	[Tooltip("Inclusive maximum value")] public int maxHelpLevel = 2;
+	[Tooltip("")] public int startHelpLevel = 2;
+
+	[Header("Resources"), Space]
 	[SerializeField] int[] startResources;
 	[ReadOnly] int[] resources;
 
@@ -78,9 +97,15 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 		Debug.Log("GameManager.Initialize()");
 		base.Initialize();
 
+		//TODO: save this on exit and load on enter
+		//TODO: use this for each save
+		helpLevelMode = startHelpLevel;
+
 		events = new EventManager();
 		EventManager.OnSceneLoadEnd += OnSceneLoadEnd;
 
+		//TODO: save this on exit and load on enter
+		//TODO: use this for each save
 		resources = new int[startResources.Length];
 		for(int i = 0; i < startResources.Length; ++i) 
 			resources[i] = startResources[i];

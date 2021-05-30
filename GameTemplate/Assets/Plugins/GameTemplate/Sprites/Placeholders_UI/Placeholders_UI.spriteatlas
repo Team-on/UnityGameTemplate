@@ -46,7 +46,7 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 1c0f0859ea62bf24e8ce9ce35fe338f2, type: 3}
     - {fileID: 102900000, guid: 4655dbc33f830884f92eb86e34a835c9, type: 3}
     - {fileID: 102900000, guid: 42a7f9cf69731664d9a8b5b3c840ec6f, type: 3}
-    totalSpriteSurfaceArea: 12003731
+    totalSpriteSurfaceArea: 10013267
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -151,7 +151,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ba0998b69bda33642b0aeccfb88745ef, type: 3}
   - {fileID: 21300000, guid: 792299b6da89b8f43b2f54dac62b9f98, type: 3}
   - {fileID: 21300000, guid: 135427c69ca9fd14c9a77c60701078cc, type: 3}
-  - {fileID: 21300000, guid: 6b2bbec690e90a14d84f18e04cbc6fd5, type: 3}
   - {fileID: 21300000, guid: cea396d6cd530524d9ba0ca67ace27f3, type: 3}
   - {fileID: 21300000, guid: 1d4d0cd6fb3a3c240a1e0d589cc78725, type: 3}
   - {fileID: 21300000, guid: 84e82be6dba927947b3326e9a8bfcdd9, type: 3}
@@ -199,7 +198,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c3e154f98c2acf540a698d3a69c83788, type: 3}
   - {fileID: 21300000, guid: 2218ff1a2c15d104e873b8dee7545bd3, type: 3}
   - {fileID: 21300000, guid: b6fcb67aab932ab47845505c9a99494c, type: 3}
-  - {fileID: 21300000, guid: a562788aba1f46746b970ef342d81018, type: 3}
   - {fileID: 21300000, guid: 0971759ab6cda414ebcb0c23b78883ed, type: 3}
   - {fileID: 21300000, guid: 82ed6b9a2a9cd0b429146bcad42a3f7f, type: 3}
   - {fileID: 21300000, guid: 9dde89aa890342541a7eab6fe3af8187, type: 3}
@@ -251,6 +249,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 815c9f9d3930c164c9926ca4c02aa0a8, type: 3}
   - {fileID: 21300000, guid: 403d64cdae12e5446a5402152468999f, type: 3}
   - {fileID: 21300000, guid: d270f1dd858e5f34e93cea83f9196652, type: 3}
+  - {fileID: 21300000, guid: d289ebfd671d96740b2bce76fa940e93, type: 3}
   - {fileID: 21300000, guid: eecf120ef52b2974193220609e7469a2, type: 3}
   - {fileID: 21300000, guid: 7be0d50e261c663449a17cb62a823959, type: 3}
   - {fileID: 21300000, guid: 344fe81eb5885dc49a97989fab66c16e, type: 3}
@@ -384,7 +383,6 @@ SpriteAtlas:
   - menu1
   - star
   - home
-  - itchio-logo-black
   - right exit
   - south-west arrow
   - backward
@@ -432,7 +430,6 @@ SpriteAtlas:
   - south-east arrow
   - backward
   - down arrow
-  - itchio-logo-white
   - progressBar3
   - up
   - unlock
@@ -484,6 +481,7 @@ SpriteAtlas:
   - gamepad1
   - yes-tic
   - mic on
+  - RectNoBorders
   - Button 1
   - video
   - forward

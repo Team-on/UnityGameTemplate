@@ -40,7 +40,8 @@ public class UIEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	}
 
 	public void OnSubmit(BaseEventData eventData) {
-		TemplateGameManager.Instance.uiinput.isUseNavigation = true;
+		if (!TemplateGameManager.Instance.uiinput.isUseNavigation)
+			return;
 
 		Click();
 	}
