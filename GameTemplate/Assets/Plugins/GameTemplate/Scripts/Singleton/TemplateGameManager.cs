@@ -92,11 +92,16 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 	[Header("Debug UI"), Space]
 	[ReadOnly] public UIPopupGroup debugPopups;
 
-	//Other singletons
-	public PlayerInputActions actions;
-	public EventManager events { get; private set; }
+	[Header("Floating text"), Space]
+	public GameObject floatingTextDefaultPrefab;
+	public GameObject floatingTextCapsPrefab;
+
+
+	[Header("Other singlethones"), Space]
 	public AudioManager audioManager;
 	public SceneLoader sceneLoader;
+	public PlayerInputActions actions;
+	public EventManager events { get; private set; }
 
 #if UNITY_EDITOR
 	private void OnValidate() {

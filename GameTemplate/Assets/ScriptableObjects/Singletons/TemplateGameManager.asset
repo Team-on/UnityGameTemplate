@@ -24,5 +24,9 @@ MonoBehaviour:
   arrows: {fileID: 0}
   tooltip: {fileID: 0}
   debugPopups: {fileID: 0}
+  floatingTextDefaultPrefab: {fileID: 3523908261357506118, guid: a5b46d8a9cb46094694e8ef3f3ce0869,
+    type: 3}
+  floatingTextCapsPrefab: {fileID: 3523908261357506118, guid: 66281c695c914f14db40ff6d60d17fda,
+    type: 3}
   audioManager: {fileID: 11400000, guid: 1e50efc8570298c4997dbe1167707e66, type: 2}
   sceneLoader: {fileID: 11400000, guid: b4da153d93a196a43993d743823e9a34, type: 2}
