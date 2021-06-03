@@ -3,10 +3,10 @@
 Mainly includes usedfull custom windows, extensions methods, popular assets and basic UI
 
 # Main Features:
- * 1
- * 2
- * 3
- * 4
+ * Full **main menu with 6 screens** (2 *splash screen*s, *language selection* on first launch, main menu, *settings* popup, *credits* popup, *how to play* popup)
+ * **Gamepad and mouse navigation** for UI
+ * **Polished editor UI** for more comfortable work ([custom toolbar](https://github.com/Team-on/CustomToolbar), [history window](https://github.com/Team-on/unity-history-window), [better project](https://github.com/Team-on/ProjectWindowDetails) and [hierarchy window](https://github.com/truongnguyentungduy/hierarchy-2), etc...)
+ * Integrated [Polyglot](https://github.com/agens-no/PolyglotUnity) for localization with **all supported steam languages** and google translate for strings that wasn't translated (better than nothing, isn't it?)
  * 5
  * 6
  * 7
@@ -17,9 +17,10 @@ Mainly includes usedfull custom windows, extensions methods, popular assets and 
 
 List of all [used assets](https://github.com/Team-on/UnityGameTemplate/wiki/Used-assets).  
 Check out [wiki](https://github.com/Team-on/UnityGameTemplate/wiki) for additional information and full list of features and scripts
+Future plans and WIP can be found in [Projects tab](https://github.com/Team-on/UnityGameTemplate/projects/1)
 
 
-![Screenshot3](Screenshots/Template/GameTemplate_1.png)  
+![Screenshot1](Screenshots/Template/GameTemplate_1.png)  
 
 
 ## Installation
