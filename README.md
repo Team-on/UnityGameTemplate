@@ -5,15 +5,18 @@ Mainly includes usedfull custom windows, extensions methods, popular assets and 
 
 ## Main Features:
  * Full **main menu with 6 screens** (2 *splash screen*s, *language selection* on first launch, main menu, *settings* popup, *credits* popup, *how to play* popup)
+ * Settings menu with implemented **video, audio, controls and general settigns tab**. Also includes gameplay tab for your needs
  * **Gamepad and mouse navigation** for UI
  * **Polished editor UI** for more comfortable work ([custom toolbar](https://github.com/Team-on/CustomToolbar), [history window](https://github.com/Team-on/unity-history-window), [better project](https://github.com/Team-on/ProjectWindowDetails) and [hierarchy window](https://github.com/truongnguyentungduy/hierarchy-2), etc...)
  * Integrated [Polyglot](https://github.com/agens-no/PolyglotUnity) for localization with **all supported steam languages** and google translate for strings that wasn't translated (better than nothing, isn't it?)
- * 5
- * 6
- * 7
- * 8
- * 9
- * 10
+ * [Screen Shooter](https://github.com/Team-on/UnityScreenShooter) to do **screenshots of game with different resolutions and languages in 1 click**
+ * [Build window](https://github.com/Team-on/UnityBuildManager) to **run multiple builds, archivate them and push it to itch.io and github**
+ * [Changelog window](https://github.com/Team-on/UnityBuildManager) to **keep your changelog in editor and auto-include it in your game folder**
+ * **Debug canvas** with FPS, RAM, report bug window and console
+ * Subsystems with **already implemented features**. Tooltips, sprite animators, 2D UI arrows, chears and debug, floating text, resources...
+ * Managers for **audio, inputs, events and scene loading**
+ * Many **extensions methods** for default Unity classes to do things with 1 line. For example, change color, alpha, set only 1 dimension to vector...
+ * A bunch of **utility classes** that do simple but needed things. For example, spawning random prefab, drop something on destroy, look at camera, tween UI, keep zero rotation...
 
 
 ## Links:
