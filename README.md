@@ -2,9 +2,21 @@
 **Game Template** is all necessary stuff taken care for Unity users not to worry about creating most boring and tedious work. I'd be happy for any contribution to make this template as good as it can be.  
 Mainly includes usedfull custom windows, extensions methods, popular assets and basic UI
 
+# Main Features:
+ * 1
+ * 2
+ * 3
+ * 4
+ * 5
+ * 6
+ * 7
+ * 8
+ * 9
+ * 10
+
 
 List of all [used assets](https://github.com/Team-on/UnityGameTemplate/wiki/Used-assets).  
-Check out [wiki](https://github.com/Team-on/UnityGameTemplate/wiki) for additional information
+Check out [wiki](https://github.com/Team-on/UnityGameTemplate/wiki) for additional information and full list of features and scripts
 
 
 ![Screenshot3](Screenshots/Template/GameTemplate_1.png)  
