@@ -406,10 +406,25 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 29999
       objectReference: {fileID: 0}
+    - target: {fileID: 4384198636394307472, guid: 023e065ef2c8371478e0c512f395557c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384198636394307472, guid: 023e065ef2c8371478e0c512f395557c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4384198636394393144, guid: 023e065ef2c8371478e0c512f395557c,
         type: 3}
       propertyPath: m_SortingOrder
       value: 29995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538735663978893794, guid: 023e065ef2c8371478e0c512f395557c,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 023e065ef2c8371478e0c512f395557c, type: 3}

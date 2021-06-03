@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 1947546124}
   - component: {fileID: 1947546127}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: CheatDebugTextExample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
