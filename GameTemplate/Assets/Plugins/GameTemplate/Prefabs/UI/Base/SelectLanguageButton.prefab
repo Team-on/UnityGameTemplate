@@ -15,7 +15,32 @@ PrefabInstance:
     - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_fontSize
-      value: 72
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}

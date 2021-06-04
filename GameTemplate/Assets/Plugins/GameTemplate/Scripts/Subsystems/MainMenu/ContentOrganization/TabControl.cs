@@ -46,6 +46,15 @@ public class TabControl : MonoBehaviour {
 		TemplateGameManager.Instance.actions.UI.TabRight.performed -= OnTabRight;
 	}
 
+	public void SetFirstSelected(GameObject go, Selectable first) {
+		for(int i = 0; i < content.Length; ++i) {
+			if(content[i] == go) {
+				firstSelected[i] = first;
+				return;
+			}
+		}
+	}
+
 	void OnTabClick(byte tabId) {
 		content[currTab].SetActive(false);
 		SetSelection(currTab, false);
@@ -58,13 +67,18 @@ public class TabControl : MonoBehaviour {
 		buttons[tabId].enabled = !isSelected;
 
 		if (isSelected) {
-			Selectable toSelect;
-			if(lastSelected[tabId] == null)
-				toSelect = firstSelected[tabId];
-			else
-				toSelect = lastSelected[tabId];
-			//if(toSelect != null)
-			//	TemplateGameManager.Instance.eventSystem.SetSelectedGameObject(toSelect.gameObject);
+			if (firstSelected[tabId] && !lastSelected[tabId])
+				lastSelected[tabId] = firstSelected[tabId];
+
+			if (lastSelected[tabId] != null) {
+				if (TemplateGameManager.Instance.uiinput.isUseNavigation) {
+					ButtonSounds bs = lastSelected[tabId].GetComponent<ButtonSounds>();
+					if (bs)
+						bs.isIgnoreNextEnter = true;
+				}
+
+				TemplateGameManager.Instance.uiinput.SetSelectedButton(lastSelected[tabId].gameObject);
+			}
 
 			buttonAnimators[tabId].OverrideDefaultStateBack();
 			buttonAnimators[tabId].SetDefaultState();

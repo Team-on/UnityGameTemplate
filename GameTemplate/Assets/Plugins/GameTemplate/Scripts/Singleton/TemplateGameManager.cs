@@ -121,27 +121,30 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 		Debug.Log("GameManager.Initialize()");
 		base.Initialize();
 
-		//TODO: save this on exit and load on enter
-		//TODO: use this for each save
-		helpLevelMode = startHelpLevel;
-
 		events = new EventManager();
 		EventManager.OnSceneLoadEnd += OnSceneLoadEnd;
 
-		//TODO: save this on exit and load on enter
-		//TODO: use this for each save
-		resources = new int[startResources.Length];
-		for(int i = 0; i < startResources.Length; ++i) 
-			resources[i] = startResources[i];
 
 		actions = new PlayerInputActions();
-		actions.Enable();
 
 		StartCoroutine(DelayedSetup());
 
 		IEnumerator DelayedSetup() {
 			yield return null;
 			yield return null;
+
+			//TODO: save this on exit and load on enter
+			//TODO: use this for each save
+			helpLevelMode = startHelpLevel;
+
+			//TODO: save this on exit and load on enter
+			//TODO: use this for each save
+			resources = new int[startResources.Length];
+			for (int i = 0; i < startResources.Length; ++i)
+				resources[i] = startResources[i];
+
+			actions.Enable();
+
 			events.CallOnOnApplicationStart();
 			events.CallOnSceneLoadEnd(null);
 		}

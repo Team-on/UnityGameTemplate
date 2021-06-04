@@ -24,6 +24,7 @@ Twitter tags:
 #screenshotsaturday (best day to tweet: Saturday) 
 #indiedevhour ( http://www.indiedevhour.com/, середа )
 #MondayMotivation
+#ThrowbackThursday
 
 https://www.tagsfinder.com/en-us/related/gamedev/
 
