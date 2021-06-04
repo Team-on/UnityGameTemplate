@@ -5,7 +5,7 @@ Mainly includes usedfull custom windows, extensions methods, popular assets and 
 
 ## Main Features:
  * Full **main menu with 6 screens** (2 *splash screen*s, *language selection* on first launch, main menu, *settings* popup, *credits* popup, *how to play* popup)
- * Settings menu with implemented **video, audio, controls and general settigns tab**. Also includes gameplay tab for your needs
+ * Settings menu with implemented **video, audio, controls and language settigns tab**. Also includes gameplay tab for your needs
  * **Gamepad and mouse navigation** for UI
  * **Polished editor UI** for more comfortable work ([custom toolbar](https://github.com/Team-on/CustomToolbar), [history window](https://github.com/Team-on/unity-history-window), [better project](https://github.com/Team-on/ProjectWindowDetails) and [hierarchy window](https://github.com/truongnguyentungduy/hierarchy-2), etc...)
  * Integrated [Polyglot](https://github.com/agens-no/PolyglotUnity) for localization with **all supported steam languages** and google translate for strings that wasn't translated (better than nothing, isn't it?)
