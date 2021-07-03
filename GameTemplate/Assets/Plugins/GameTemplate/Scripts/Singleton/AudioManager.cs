@@ -9,37 +9,29 @@ using yaSingleton;
 //TODO: add audio source pooling 
 [CreateAssetMenu(fileName = "Audio Manager", menuName = "Singletons/AudioManager")]
 public class AudioManager : Singleton<AudioManager> {
-	public enum AudioChannel : byte { Master, Music, Sound, LastChannel }
+	public enum AudioChannel : byte { Master, Music, Sound }
 
 	const int lowestDecibles = -80;
-
-	const string SAVE_KEY_MASTER = "AudioManager.MasterVolume";
-	const string SAVE_KEY_MUSIC = "AudioManager.MusicVolume";
-	const string SAVE_KEY_SOUND = "AudioManager.SoundVolume";
-	const string SAVE_KEY_ENABLED = "AudioManager.Enabled";
 
 	public bool IsEnabled {
 		get {
 			return isEnabled;
 		}
 		set {
-			bool prevState = isEnabled;
 			isEnabled = value;
-			PlayerPrefsX.SetBool(SAVE_KEY_ENABLED, isEnabled);
+			TemplateGameManager.Instance.settingsData.audioSettigns.isEnabled = isEnabled;
 
 			if (value)
-				masterMixer.SetFloat("MasterVolume", GetAdjustedVolume(PlayerPrefs.GetFloat(SAVE_KEY_MASTER, defaultMasterVolume)));
+				masterMixer.SetFloat(audioGroups[0].volumeExposedStrings, GetAdjustedVolume(TemplateGameManager.Instance.settingsData.audioSettigns.volumes[0]));
 			else
-				masterMixer.SetFloat("MasterVolume", GetAdjustedVolume(0.0f));
+				masterMixer.SetFloat(audioGroups[0].volumeExposedStrings, GetAdjustedVolume(0.0f));
 		}
 	}
 	bool isEnabled;
 
 	[Header("Audio mixer refs")]
 	public AudioMixer masterMixer;
-	public AudioMixerGroup masterGroup;
-	public AudioMixerGroup musicGroup;
-	public AudioMixerGroup soundGroup;
+	[UnityEngine.Serialization.FormerlySerializedAs("audioGroupDatas")] public AudioGroupData[] audioGroups;
 
 	[Header("3D sound settings")]
 	public bool is3DGame = false;
@@ -53,12 +45,6 @@ public class AudioManager : Singleton<AudioManager> {
 
 	[Header("Misc settings")]
 	public float minTimeBetweenSfx = 0.1f;
-
-	[Header("Default settings")]
-	public float defaultMasterVolume = 0.75f;
-	public float defaultMusicVolume = 1;
-	public float defaultSoundVolume = 1;
-	public bool defaultEnabled = true;
 
 	Dictionary<AudioClip, AudioSource> musicAudioSources;
 	Dictionary<AudioClip, float> audioPlayedTracker;
@@ -80,10 +66,18 @@ public class AudioManager : Singleton<AudioManager> {
 		IEnumerator DelayedSetup() {
 			yield return null;
 			yield return null;
-			IsEnabled = PlayerPrefsX.GetBool(SAVE_KEY_ENABLED, defaultEnabled);
-			SetVolume(AudioChannel.Master, PlayerPrefs.GetFloat(SAVE_KEY_MASTER, defaultMasterVolume));
-			SetVolume(AudioChannel.Music, PlayerPrefs.GetFloat(SAVE_KEY_MUSIC, defaultMusicVolume));
-			SetVolume(AudioChannel.Sound, PlayerPrefs.GetFloat(SAVE_KEY_SOUND, defaultSoundVolume));
+			
+		}
+	}
+
+	public void ApplySettings(AudioSettigns settigns) {
+		IsEnabled = settigns.isEnabled;
+
+		for(int i = 0; i < audioGroups.Length; ++i) {
+			if (settigns.volumes.Count < i)
+				settigns.volumes.Add(1.0f);
+
+			SetVolume((AudioChannel)i, settigns.volumes[i]);
 		}
 	}
 
@@ -93,34 +87,13 @@ public class AudioManager : Singleton<AudioManager> {
 	public void SetVolume(AudioChannel channel, float volume) {
 		float adjustedVolume = GetAdjustedVolume(volume);
 
-		switch (channel) {
-			case AudioChannel.Master:
-				if(isEnabled)
-					masterMixer.SetFloat("MasterVolume", adjustedVolume);
-				PlayerPrefs.SetFloat(SAVE_KEY_MASTER, volume);
-				break;
-			case AudioChannel.Music:
-				masterMixer.SetFloat("MusicVolume", adjustedVolume);
-				PlayerPrefs.SetFloat(SAVE_KEY_MUSIC, volume);
-				break;
-			case AudioChannel.Sound:
-				masterMixer.SetFloat("SoundsVolume", adjustedVolume);
-				PlayerPrefs.SetFloat(SAVE_KEY_SOUND, volume);
-				break;
-		}
+		TemplateGameManager.Instance.settingsData.audioSettigns.volumes[(int)channel] = volume;
+		masterMixer.SetFloat(audioGroups[(int)channel].volumeExposedStrings, adjustedVolume);
+
 	}
 
 	public float GetVolume(AudioChannel channel) {
-		switch (channel) {
-			case AudioChannel.Master:
-				return PlayerPrefs.GetFloat(SAVE_KEY_MASTER, defaultMasterVolume);
-			case AudioChannel.Music:
-				return PlayerPrefs.GetFloat(SAVE_KEY_MUSIC, defaultMusicVolume);
-			case AudioChannel.Sound:
-				return PlayerPrefs.GetFloat(SAVE_KEY_SOUND, defaultSoundVolume);
-		}
-
-		return 0.0f;
+		return TemplateGameManager.Instance.settingsData.audioSettigns.volumes[(int)channel];
 	}
 
 	//--------------------------------------------------------------------------------------
@@ -397,16 +370,7 @@ public class AudioManager : Singleton<AudioManager> {
 	}
 
 	AudioMixerGroup GetAudioMixer(AudioChannel channel) {
-		switch (channel) {
-			case AudioChannel.Master:
-				return masterGroup;
-			case AudioChannel.Music:
-				return musicGroup;
-			case AudioChannel.Sound:
-				return soundGroup;
-			default:
-				return null;
-		}
+		return audioGroups[(int)channel].mixer;
 	}
 
 	float GetSinceLastPlayed(AudioClip clip) {
@@ -420,5 +384,12 @@ public class AudioManager : Singleton<AudioManager> {
 			audioPlayedTracker[clip] = Time.unscaledTime;
 		else 
 			audioPlayedTracker.Add(clip, Time.unscaledTime);
+	}
+
+	[Serializable]
+	public struct AudioGroupData {
+		public AudioMixerGroup mixer;
+		public string volumeExposedStrings;
+		public string translatedStringForSettings;
 	}
 }

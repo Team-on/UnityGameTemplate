@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1014279040792948155, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: hoverScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014279040792948155, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: hoverScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4417316442638819521, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_Name
