@@ -1,6 +1,10 @@
 ﻿using System.Runtime.CompilerServices;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public static class ComponentEx {
 	public static T GetComponentThisOrParent<T>(this GameObject go) where T : Component {
 		T val = default(T);
@@ -9,6 +13,7 @@ public static class ComponentEx {
 			if (val == null)
 				val = go.GetComponentInParent<T>();
 		}
+
 		return val;
 	}
 
@@ -19,12 +24,22 @@ public static class ComponentEx {
 			if (val == null)
 				val = comp.GetComponentInParent<T>();
 		}
+
 		return val;
 	}
 
 #if UNITY_EDITOR
     public static T LoadAssetRef<T>(this Component comp, string name) where T : Object {
-        return UnityEditor.AssetDatabase.LoadAssetAtPath<T>(UnityEditor.AssetDatabase.GUIDToAssetPath(UnityEditor.AssetDatabase.FindAssets(name)[0])); ;
+        if (typeof(T) == typeof(AudioClip))
+            return LoadAssetRef<T>(comp, name, "t:AudioClip");
+        if (typeof(T) == typeof(GameObject))
+            return LoadAssetRef<T>(comp, name, "t:prefab");
+
+        return AssetDatabase.LoadAssetAtPath<T>(AssetDatabase.GUIDToAssetPath(AssetDatabase.FindAssets($"\"{name}\"")[0]));
+    }
+
+    public static T LoadAssetRef<T>(this Component comp, string name, string filter) where T : Object {
+        return AssetDatabase.LoadAssetAtPath<T>(AssetDatabase.GUIDToAssetPath(AssetDatabase.FindAssets($"\"{name}\" {filter}")[0]));
     }
 #endif
 

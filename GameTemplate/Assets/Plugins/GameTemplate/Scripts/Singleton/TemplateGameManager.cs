@@ -96,12 +96,15 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 	public GameObject floatingTextDefaultPrefab;
 	public GameObject floatingTextCapsPrefab;
 
-
 	[Header("Other singlethones"), Space]
 	public AudioManager audioManager;
 	public SceneLoader sceneLoader;
 	public PlayerInputActions actions;
 	public EventManager events { get; private set; }
+
+	[Header("Saving data"), Space]
+	[ReadOnly] public GameSettingsData settingsData;
+	
 
 #if UNITY_EDITOR
 	private void OnValidate() {
@@ -124,8 +127,9 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 		events = new EventManager();
 		EventManager.OnSceneLoadEnd += OnSceneLoadEnd;
 
-
 		actions = new PlayerInputActions();
+
+		settingsData = GameSettingsData.Load();
 
 		StartCoroutine(DelayedSetup());
 
@@ -145,6 +149,8 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 
 			actions.Enable();
 
+			settingsData.ApplyAllSettings();
+
 			events.CallOnOnApplicationStart();
 			events.CallOnSceneLoadEnd(null);
 		}
@@ -153,6 +159,8 @@ public class TemplateGameManager : Singleton<TemplateGameManager> {
 	protected override void Deinitialize() {
 		Debug.Log("GameManager.Deinitialize()");
 		base.Deinitialize();
+
+		GameSettingsData.Save(settingsData);
 
 		EventManager.OnSceneLoadEnd -= OnSceneLoadEnd;
 		events.CallOnOnApplicationExit();

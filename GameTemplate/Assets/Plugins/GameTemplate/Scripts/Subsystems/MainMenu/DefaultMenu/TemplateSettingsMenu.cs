@@ -3,14 +3,6 @@ using UnityEngine.UI;
 using TMPro;
 
 public class TemplateSettingsMenu : PopupMenuBase {
-	[Header("Audio settings")]
-	[SerializeField] ToggleGroup enableAudioToggles = null;
-	[SerializeField] Toggle enableAudioOnToggle = null;
-	[SerializeField] Toggle enableAudioOffToggle = null;
-	[SerializeField] Slider mainVolumeSlider = null;
-	[SerializeField] Slider musicVolumeSlider = null;
-	[SerializeField] Slider soundVolumeSlider = null;
-
 	[Header("Video settings")]
 	[SerializeField] ToggleGroup fullscreenToggles = null;
 	[SerializeField] Toggle fullscreenOnToggle = null;
@@ -22,11 +14,6 @@ public class TemplateSettingsMenu : PopupMenuBase {
 	bool isInit = false;
 
 	void Init() {
-		enableAudioOnToggle.onValueChanged.AddListener(OnToggleOnAudio);
-		mainVolumeSlider.onValueChanged.AddListener(OnMainVolumeSliderChange);
-		musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeSliderChange);
-		soundVolumeSlider.onValueChanged.AddListener(OnSoundVolumeSliderChange);
-
 		fullscreenOnToggle.onValueChanged.AddListener(OnToggleOnFullscreen);
 		resolutionDropdown.onValueChanged.AddListener(OnResolutionChanged);
 		graphicsDropdown.onValueChanged.AddListener(OnGraphicsChanged);
@@ -43,11 +30,6 @@ public class TemplateSettingsMenu : PopupMenuBase {
 			isInit = true;
 			Init();
 		}
-
-		enableAudioOnToggle.SetIsOnWithoutNotify(AudioManager.Instance.IsEnabled);
-		mainVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.GetVolume(AudioManager.AudioChannel.Master));
-		musicVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.GetVolume(AudioManager.AudioChannel.Music));
-		soundVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.GetVolume(AudioManager.AudioChannel.Sound));
 
 		videoOptionsData.Load();
 
@@ -68,24 +50,6 @@ public class TemplateSettingsMenu : PopupMenuBase {
 		videoOptionsData.Save();
 	}
 
-	#region Audio Settings
-	public void OnMainVolumeSliderChange(float value) {
-		AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Master, value);
-	}
-
-	public void OnMusicVolumeSliderChange(float value) {
-		AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Music, value);
-	}
-
-	public void OnSoundVolumeSliderChange(float value) {
-		AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Sound, value);
-	}
-
-	public void OnToggleOnAudio(bool value) {
-		AudioManager.Instance.IsEnabled = value;
-	}
-	#endregion
-
 	#region Video
 	public void OnToggleOnFullscreen(bool value) {
 		videoOptionsData.isFullscreen = value;
@@ -100,22 +64,4 @@ public class TemplateSettingsMenu : PopupMenuBase {
 
 	}
 	#endregion
-
-	#region Key bindings
-
-	#endregion
-
-	#region Gameplay
-
-	#endregion
-
-	//TODO: Am I need this? Maybe move it to `general tab` with some other settings
-	#region Language	
-
-	#endregion
-
-	#region Mods
-
-	#endregion
-
 }
