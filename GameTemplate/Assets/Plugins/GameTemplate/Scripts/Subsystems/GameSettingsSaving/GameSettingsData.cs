@@ -10,7 +10,7 @@ public class GameSettingsData {
 	//Language get saved by Polyglot
 
 	//Audio settings
-	public AudioSettigns audioSettigns;
+	public AudioSettigns audioSettigns = new AudioSettigns();
 
 	public void ApplyAllSettings() {
 		ApplyAudioSettings();
@@ -46,5 +46,5 @@ public class GameSettingsData {
 [Serializable]
 public class AudioSettigns {
 	public bool isEnabled = true;
-	public List<float> volumes = new List<float> { 0.75f, 1.0f, 1.0f };
+	public List<float> volumes = new List<float> { 0.5f, 1.0f, 1.0f };
 }

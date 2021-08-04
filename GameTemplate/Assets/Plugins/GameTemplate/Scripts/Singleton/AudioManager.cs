@@ -31,7 +31,7 @@ public class AudioManager : Singleton<AudioManager> {
 
 	[Header("Audio mixer refs")]
 	public AudioMixer masterMixer;
-	[UnityEngine.Serialization.FormerlySerializedAs("audioGroupDatas")] public AudioGroupData[] audioGroups;
+	public AudioGroupData[] audioGroups;
 
 	[Header("3D sound settings")]
 	public bool is3DGame = false;

@@ -9,8 +9,10 @@ using TMPro;
 using Polyglot;
 
 public class AudioTab : MonoBehaviour {
-	[Header("Refs"), Space]
+	[Header("Refs - general"), Space]
 	[SerializeField] TabControl tabControl;
+	[Header("Refs - toggle"), Space]
+	[Header("Refs - slider"), Space]
 	[SerializeField] GridLayoutGroup volumeSliderGrid;
 	[SerializeField] GameObject volumeSliderPrefab;
 

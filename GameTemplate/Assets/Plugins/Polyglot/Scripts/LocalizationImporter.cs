@@ -154,12 +154,10 @@ namespace Polyglot
                 //Remove description
                 row.RemoveAt(0);
 
-                if (
-                    languageStrings.ContainsKey(key) &&
-                    (key != "MENU_LANGUAGE_DIRECTION" && key != "MENU_LANGUAGE_THIS" && key != "MENU_LANGUAGE_THIS_EN") // Ignore this, because we override this in custom sheet always
-                    )
+                if (languageStrings.ContainsKey(key))
                 {
-                    Debug.Log("The key '" + key + "' already exist, but is now overwritten");
+                    if(key != "MENU_LANGUAGE_DIRECTION" && key != "MENU_LANGUAGE_THIS" && key != "MENU_LANGUAGE_THIS_EN") // Ignore this, because we override this in custom sheet always
+                        Debug.Log("The key '" + key + "' already exist, but is now overwritten");
                     languageStrings[key] = row;
                     continue;
                 }

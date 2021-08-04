@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AudioManager
   m_EditorClassIdentifier: 
   masterMixer: {fileID: 24100000, guid: 01360023bba8a95409d35b2a77969f01, type: 2}
-  audioGroupDatas:
+  audioGroups:
   - mixer: {fileID: 24300002, guid: 01360023bba8a95409d35b2a77969f01, type: 2}
     volumeExposedStrings: MasterVolume
     translatedStringForSettings: MENU_SETTINGS_AUDIO_MASTER_SLIDER_HEADER
@@ -25,18 +25,6 @@ MonoBehaviour:
       type: 2}
     volumeExposedStrings: SoundsVolume
     translatedStringForSettings: MENU_SETTINGS_AUDIO_SOUNDS_SLIDER_HEADER
-  audioGroups:
-  - {fileID: 24300002, guid: 01360023bba8a95409d35b2a77969f01, type: 2}
-  - {fileID: -3560723077068409778, guid: 01360023bba8a95409d35b2a77969f01, type: 2}
-  - {fileID: -9056115165908447019, guid: 01360023bba8a95409d35b2a77969f01, type: 2}
-  audioGroupVolumeExposedStrings:
-  - MasterVolume
-  - MusicVolume
-  - SoundsVolume
-  audioGroupTranslatedStringForSettings:
-  - MENU_SETTINGS_AUDIO_MASTER_SLIDER_HEADER
-  - MENU_SETTINGS_AUDIO_MUSIC_SLIDER_HEADER
-  - MENU_SETTINGS_AUDIO_SOUNDS_SLIDER_HEADER
   is3DGame: 0
   maxSoundDistance: 20
   volumeRolloff:
