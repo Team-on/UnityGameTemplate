@@ -24,4 +24,31 @@ public static class Vector2Ex {
 	public static Vector2 ChangeY(this Vector2 v, float y) {
 		return new Vector2(v.x, v.y + y);
 	}
+
+	public static string MinMaxValueToString(this Vector2 value, int numbersAfterComma = 0) {
+		return MinMaxValueToString(value.x, value.y, numbersAfterComma);
+	}
+
+	public static string MinMaxValueToString(float minValue, float maxValue, int numbersAfterComma) {
+		if (minValue > maxValue) {
+			float temp = maxValue;
+			maxValue = minValue;
+			minValue = temp;
+		}
+
+		if (numbersAfterComma == 0) {
+			if (minValue == maxValue)
+				return Mathf.RoundToInt(minValue).ToString();
+			return Mathf.RoundToInt(minValue).ToString() + " - " + Mathf.RoundToInt(maxValue).ToString();
+		}
+		else {
+			if (minValue == maxValue)
+				return minValue.ToString();
+
+			string precisionString = "0." + new string('#', numbersAfterComma);
+			;
+			return minValue.ToString(precisionString) + " - " + maxValue.ToString(precisionString);
+		}
+
+	}
 }
