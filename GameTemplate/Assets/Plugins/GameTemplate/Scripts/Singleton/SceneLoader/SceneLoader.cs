@@ -66,11 +66,15 @@ public class SceneLoader : Singleton<SceneLoader> {
 			TemplateGameManager.Instance.events.CallOnSceneLoadStart(eventData);
 
 			loader.completed += (a) => {
-				EventData eventData_ = new EventData("OnSceneLoadStart");
+				EventData eventData_ = new EventData("OnSceneLoadEnd");
 				eventData_.Data.Add("id", id);
 				eventData_.Data.Add("loader", loader);
 				eventData_.Data.Add("needUI", needUI);
 				TemplateGameManager.Instance.events.CallOnSceneLoadEnd(eventData_);
+
+				Resources.UnloadUnusedAssets();
+				System.GC.Collect();
+
 				TransitionManager.Instance.ChangeDefaultEffectTypeToOpposite();
 				if(!needUI)
 					TransitionManager.Instance.StartTransitonEffectOut();
