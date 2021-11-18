@@ -129,10 +129,6 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_EditorData.totalSpriteSurfaceArea
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
     propertyPath: m_EditorData.bindAsDefault
     value: 1
     objectReference: {fileID: 0}

@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54366bfe243ee24684af8aa9706ccb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showKey: 96
   cg: {fileID: 4538735663978893794}
   disablecg: {fileID: 1766104537000336238}
 --- !u!225 &4538735663978893794

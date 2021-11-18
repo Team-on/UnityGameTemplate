@@ -97,18 +97,6 @@ MonoBehaviour:
   toggleDebugUI: 286
   toggleAllUI: 287
   debugParent: {fileID: 9125196094761558632}
---- !u!114 &5598895613902954444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5836153601822863708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be655117ab5adaa4f94b6ab01c671eaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8485971785824006821
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,3 +428,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4788726007019828883}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5598895613902954444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5836153601822863708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be655117ab5adaa4f94b6ab01c671eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
