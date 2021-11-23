@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.editorcoroutines": "1.0.0"
       },
-      "hash": "107d1b7b53f503075ac7a0d1899ad830a38c6ae3"
+      "hash": "14721d8ffbf199f3ec91a6c4f9cac0ea55489a42"
     },
     "com.baba-s.uni-scene-asset-selector": {
       "version": "https://github.com/baba-s/UniSceneAssetSelector.git#master",
@@ -21,7 +21,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "deed8ab15d2fa1571de010333dbb93f24afb2f8e"
+      "hash": "9857ebf2cea90dd40480be8d7d3c9a1ab4f88655"
     },
     "com.blackfeatherproductions.slngen": {
       "version": "https://github.com/jhett12321/Unity-Slngen.git",
@@ -42,21 +42,21 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "6e2db954830d726264c22acb6def93f3c83c1310"
+      "hash": "85e955431db5fdde1bf44b3c1618991594b41722"
     },
     "com.coffee.ui-particle": {
       "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "24d32d8441eb27da88e462a44935ab78e9172dbb"
+      "hash": "2e4d80bc1cbbfe5400fb052778c65bcccc505abd"
     },
     "com.dbrizov.naughtyattributes": {
       "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "bf09948bcab85f0d1c30ad438e7f6d1d590823fb"
+      "hash": "6ff42768879f6d3721f27c1fc1ba0c1d145a3f27"
     },
     "com.gemserk.selectionhistory": {
       "version": "https://github.com/acoppes/unity-history-window.git#1.0.4",
@@ -70,7 +70,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "be9054f8fff96f0851ed0942f91fb8283be40896"
+      "hash": "6ad1015c4489ed2b4eadda4f649386bf461877d6"
     },
     "com.ogxd.project-curator": {
       "version": "https://github.com/ogxd/project-curator.git#master",
@@ -93,7 +93,7 @@
       "dependencies": {
         "com.unity.modules.jsonserialize": "1.0.0"
       },
-      "hash": "d5137116954e08c1c1674069423225decf59c79f"
+      "hash": "c5ba87ad9fa09df09b02aa992124ebc44ded5365"
     },
     "com.rfadeev.pumpeditor.presetsbrowser": {
       "version": "https://github.com/rfadeev/presets-browser.git#master",
@@ -121,7 +121,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "7dd52f51893ae1a89dbb7bb2290ed0bb288026d4"
+      "hash": "fe5dc0925ca55c930fb748adaeb44744ff6d2818"
     },
     "com.smkplus.custom-toolbar": {
       "version": "https://github.com/smkplus/CustomToolbar.git#master",
@@ -142,7 +142,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "4349937ccf6b21517af3946b1e0b9bbd7307dba0"
+      "hash": "5ccccffd24b63fdfe65d45a02362e5798e941ee1"
     },
     "com.teamon.projectwindowdetails": {
       "version": "https://github.com/Team-on/ProjectWindowDetails.git#master",
@@ -336,6 +336,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
+      "hash": "72558ca123e8589456888fd74eefb0bba3729a82"
     },
     "st.one-line": {
       "version": "https://github.com/slavniyteo/one-line.git#master",
