@@ -232,13 +232,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.nuget.newtonsoft-json": {
-      "version": "2.0.0",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.performance.profile-analyzer": {
       "version": "1.1.1",
       "depth": 0,
@@ -343,16 +336,6 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "66d807d7ee2857d6a856865f516671ee002fd4fd"
-    },
-    "io.megamiley.prefab-asset-utility": {
-      "version": "https://github.com/MileyHollenberg/PrefabAssetUtility.git#master",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "2.0.0"
-      },
-      "hash": "8c57b0ec4ce9463a34f61052ca7c2957e549ff4d"
     },
     "st.one-line": {
       "version": "https://github.com/slavniyteo/one-line.git#master",

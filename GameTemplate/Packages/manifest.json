@@ -40,7 +40,6 @@
     "com.unity.ugui": "1.0.0",
     "com.unity.uiextensions": "https://github.com/JohannesDeml/unity-ui-extensions.git",
     "com.yasirkula.ingamedebugconsole": "https://github.com/yasirkula/UnityIngameDebugConsole.git#master",
-    "io.megamiley.prefab-asset-utility": "https://github.com/MileyHollenberg/PrefabAssetUtility.git#master",
     "st.one-line": "https://github.com/slavniyteo/one-line.git#master",
     "st.rect-ex": "https://github.com/slavniyteo/rect-ex.git#master",
     "com.unity.modules.androidjni": "1.0.0",
