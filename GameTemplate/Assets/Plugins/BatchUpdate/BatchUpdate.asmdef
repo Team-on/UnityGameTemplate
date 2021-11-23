@@ -1,0 +1,16 @@
+{
+    "name": "BatchUpdate",
+    "rootNamespace": "",
+    "references": [
+        "GUID:89dcb66bc38a0d640922fdcb803cf4bf"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
