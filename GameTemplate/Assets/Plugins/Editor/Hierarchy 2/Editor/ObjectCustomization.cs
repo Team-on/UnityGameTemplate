@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor;
-using UnityEditor.Experimental.SceneManagement;
+
 using UnityEditor.UIElements;
 
 namespace Hierarchy2
@@ -27,7 +27,7 @@ namespace Hierarchy2
 
             shelfButton.RegisterCallback<MouseDownEvent>((evt) =>
             {
-                var isPrefabMode = PrefabStageUtility.GetCurrentPrefabStage() != null ? true : false;
+                var isPrefabMode = UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage() != null ? true : false;
                 if (isPrefabMode)
                 {
                     Debug.LogWarning("Cannot custom object in prefab.");
