@@ -7,3 +7,6 @@ using UnityEngine.Events;
 
 [Serializable] public class CollisionEvent : UnityEvent<Collision> { }
 [Serializable] public class Collision2DEvent : UnityEvent<Collision2D> { }
+
+[Serializable] public class VoidParticlesEvent : UnityEvent<ParticleSystem> { }
+[Serializable] public class GameObjectParticlesEvent : UnityEvent<ParticleSystem, GameObject> { }
