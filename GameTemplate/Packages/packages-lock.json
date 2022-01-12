@@ -240,7 +240,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.postprocessing": {
-      "version": "3.1.1",
+      "version": "3.2.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -294,7 +294,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.6.2",
+      "version": "1.6.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
