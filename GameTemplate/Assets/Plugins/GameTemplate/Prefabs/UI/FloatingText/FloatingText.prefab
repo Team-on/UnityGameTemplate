@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3523908261357506117}
   - component: {fileID: 4997454480277807146}
   - component: {fileID: 8489182614723156763}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: FloatingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4590698869589640263}
   - component: {fileID: 7055604481723151338}
   - component: {fileID: 5503415986795263449}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: TextFIeld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
