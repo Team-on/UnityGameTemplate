@@ -133,7 +133,11 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	void OnMoveClick(InputAction.CallbackContext context) {
-		if (context.ReadValue<Vector2>() != Vector2.zero && context.phase == InputActionPhase.Performed && TemplateGameManager.Instance.eventSystem.currentSelectedGameObject == null)
+		if (
+			context.ReadValue<Vector2>() != Vector2.zero &&
+			context.phase == InputActionPhase.Performed &&
+			(TemplateGameManager.Instance.eventSystem.currentSelectedGameObject == null || !TemplateGameManager.Instance.eventSystem.currentSelectedGameObject.gameObject.activeInHierarchy)
+		)
 			currMenu.Peek().OnFirstMoveClick();
 	}
 }
