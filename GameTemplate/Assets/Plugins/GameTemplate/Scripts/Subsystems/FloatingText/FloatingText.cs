@@ -17,8 +17,8 @@ public class FloatingText : MonoBehaviour {
 	}
 #endif
 
-	public void Play(string textKey, Color color) {
-		textField.text = Polyglot.Localization.Get(textKey);
+	public void Play(string text, Color color) {
+		textField.text = text;
 		textField.color = color;
 
 		textField.color = textField.color.SetA(0.0f);
@@ -38,21 +38,39 @@ public class FloatingText : MonoBehaviour {
 		});
 	}
 
-	public void Play(string textKey) {
-		Play(textKey, Color.white);
+	public void Play(string text) {
+		Play(text, Color.white);
 	}
 
-	public static FloatingText PlayFloatingText(Vector3 worldPos, string textKey, Color color) {
+	public static FloatingText PlayFloatingText(Vector3 worldPos, string text, Color color) {
 		FloatingText floatingText = Instantiate(TemplateGameManager.Instance.floatingTextDefaultPrefab, worldPos, Quaternion.identity, null).GetComponent<FloatingText>();
-
-		floatingText.Play(textKey, color);
-
+		floatingText.Play(text, color);
 		return floatingText;
 	}
 
 	public static FloatingText PlayFloatingText(Vector3 worldPos, string textKey) {
 		return PlayFloatingText(worldPos, textKey, Color.white);
 	}
+
+	#region Localized Play
+	public void PlayLocalized(string textKey, Color color) {
+		Play(Polyglot.Localization.Get(textKey), color);
+	}
+
+	public void PlayLocalized(string textKey) {
+		PlayLocalized(textKey, Color.white);
+	}
+
+	public static FloatingText PlayFloatingTextLocalized(Vector3 worldPos, string textKey, Color color) {
+		FloatingText floatingText = Instantiate(TemplateGameManager.Instance.floatingTextDefaultPrefab, worldPos, Quaternion.identity, null).GetComponent<FloatingText>();
+		floatingText.PlayLocalized(textKey, color);
+		return floatingText;
+	}
+
+	public static FloatingText PlayFloatingTextLocalized(Vector3 worldPos, string textKey) {
+		return PlayFloatingTextLocalized(worldPos, textKey, Color.white);
+	}
+	#endregion
 
 	static LTDescr StayWorldPos(GameObject obj, float time, Vector3 localPosReturn) {
 		obj.transform.localPosition = localPosReturn;

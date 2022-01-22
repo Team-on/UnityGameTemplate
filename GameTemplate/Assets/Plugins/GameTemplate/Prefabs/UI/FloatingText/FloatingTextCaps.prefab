@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3523908261357506114}
   - component: {fileID: 3523908261357506117}
   - component: {fileID: 1438107305492411949}
+  - component: {fileID: 1582538753059615956}
   m_Layer: 5
   m_Name: FloatingTextCaps
   m_TagString: Untagged
@@ -28,6 +29,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4590698869589640263}
   m_Father: {fileID: 0}
@@ -55,8 +57,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1726142733
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 1569790775
   m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &1438107305492411949
@@ -73,6 +75,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textField: {fileID: 5503415986795263449}
   textRect: {fileID: 4590698869589640263}
+--- !u!114 &1582538753059615956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3523908261357506118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2513f3de28c4a8429c640dad166b5d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6585191376885679494
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +115,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3523908261357506114}
   m_RootOrder: 0
