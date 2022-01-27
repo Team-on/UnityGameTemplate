@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 639477188463566948, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 639477188463566948, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 639477188463566948, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 639477188463566948, guid: 175d8b4b549be85458818f12f1d96b4b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1014279040792948155, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: hoverScale.x
@@ -25,7 +45,7 @@ PrefabInstance:
     - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_fontSize
-      value: 10
+      value: 31.8
       objectReference: {fileID: 0}
     - target: {fileID: 7544377491179391785, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
@@ -90,12 +110,12 @@ PrefabInstance:
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7907364572785845315, guid: 175d8b4b549be85458818f12f1d96b4b,
         type: 3}
