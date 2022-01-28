@@ -6,7 +6,7 @@ Preset:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UIShortAudioClip
+  m_Name: Dialogue_Music_Ambient_Background_AudioClip (long, always, single)
   m_TargetType:
     m_NativeTypeID: 1020
     m_ManagedTypePPtr: {fileID: 0}
@@ -18,11 +18,11 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_DefaultSettings.loadType
-    value: 1
+    value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_DefaultSettings.sampleRateSetting
-    value: 1
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_DefaultSettings.sampleRateOverride
@@ -30,7 +30,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_DefaultSettings.compressionFormat
-    value: 0
+    value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_DefaultSettings.quality
